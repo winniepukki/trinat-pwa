@@ -1,0 +1,87 @@
+{
+  "add": "pievienot",
+  "blockquote": {
+    "blockquote-content": "Ēdienu gatavošana ir valoda, ar kuru pavārs var parādīt pats savu attieksmi",
+    "description": "Spāņu šefpavārs",
+    "author": "Ferran Adria"
+  },
+  "booking": "rezervācija",
+  "contact": {
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias dicta, nihil odit quam reiciendis repellendus repudiandae saepe tempora ut? Aliquam dicta ipsa odio rem.",
+    "title": "Kontakti"
+  },
+  "contact-form": {
+    "fullName": "vārds uzvārds",
+    "email": "e-pasts",
+    "review": "atsauksme"
+  },
+  "copyright": "copyright Trinat SIA © Visas tiesības ir aizsargātas",
+  "delete": "nodzēst",
+  "delicious": "garšīgi",
+  "food-types": {
+    "desserts": "deserti",
+    "meals": "karstie ēdieni",
+    "kids": "bērniem",
+    "alcohol": "alkohols"
+  },
+  "food-menu": {
+    "day-menus": "dienas izvēlnes",
+    "title": "menu"
+  },
+  "footer-contact-info": "Kontakt informācija",
+  "footer-menu": [
+    "par mums",
+    "pavāri",
+    "piegāde",
+    "vakances"
+  ],
+  "recent-posts": "peidējās publikācijas",
+  "view-gallery": "apskatīt galēriju",
+  "footer-text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nisi obcaecati officiis quo repellat totam.",
+  "hero": {
+    "title": "gatavojam ekskluzīvu ēdienu, kurš ir Garšīgs Un, No 2017 Nodrosējiet Vai Zvaniet 371 26715053"
+  },
+  "lang": "lv",
+  "menu": [
+    "musu vēsture",
+    "menu",
+    "kompleks ēdieni",
+    "kontakti"
+  ],
+  "reservation": "rezervācija",
+  "reservation-items": {
+    "email": "e-pasts",
+    "phone": "telefons",
+    "name": "vārds",
+    "date": "datums",
+    "time": "laiks",
+    "people": [
+      "1 persona", "2 personas", "3 personas"
+    ]
+  },
+  "send": "nosūtīt",
+  "starter-form": {
+    "ingredients": "ingredienti",
+    "price": "cena",
+    "title": "nosaukums"
+  },
+  "starters": "kompleksi",
+  "starters-info": "Kompleksi ir pieejami no 11 līdz 14:00",
+  "story": {
+    "description": "VISPĀRĒJĀ ĒDINĀŠANAS PIEREDZE NEVIS PATĪK",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.",
+    "title": "Mūsu vēsture"
+  },
+  "title": "trinat",
+  "trinat": {
+    "title": "Trinat",
+    "type": "Kafeinīca"
+  },
+  "admin-zone": {
+    "starter-add": "kompleksu pievienošana",
+    "starter-add-description": "izmantojiet visus laukus, lai pieviejot jaunu kompleksu"
+  },
+  "notification": {
+    "lang-change": "Jūs veiksmīgi samainījāt valodu uz latviešu"
+  }
+}

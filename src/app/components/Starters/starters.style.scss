@@ -1,0 +1,18 @@
+.starters-menu {
+  background: {
+    image: url('starters.jpg'); };}
+.parallax-section-starters {
+  background: url('./starters.jpg') no-repeat left;
+  .inner-container-starters {
+    float: right; }}
+
+.starter-item {
+  .starter-title {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .starter-ingredients {
+    font-size: 13px;
+    color: var(--auxiliary-color-lightener);
+  }
+}

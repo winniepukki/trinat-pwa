@@ -1,0 +1,101 @@
+button {
+  cursor: pointer;
+  display: block;
+  border: transparent;
+  font-family: 'Roboto', Arial, sans-serif;
+  &:focus {
+    outline: none; }}
+
+.reservation {
+  position: relative;
+  cursor: pointer; }
+
+.reservation-button {
+  border: 1px solid var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  max-width: 200px;
+  display: block;
+  text-align: center;
+  position: relative;
+  transition: .5s;
+  padding: 10px 15px;
+  overflow: hidden; }
+
+.reservation-button::before,
+.reservation-button::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: rgba(var(--primary-base-color), 1);
+  top: 0;
+  left: -100%;
+  opacity: .5;
+  transition: .3s;
+  z-index: -1; }
+
+.reservation-button::after {
+  opacity: 1;
+  transition-delay: .2s; }
+
+.reservation-button:hover {
+  color: #fff; }
+
+.reservation-button:hover::before,
+.reservation-button:hover::after {
+  left: 0; }
+
+.reservation-close-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 25px;
+  background: transparent !important;
+  color: var(--white);
+  outline: none;
+  &:hover {
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: all 300ms; }}
+
+.button-default {
+  text-transform: uppercase;
+  background: rgb(var(--black));
+  color: var(--white);
+  height: 45px;
+  width: 180px;
+  padding: 10px 35px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  @media screen and (max-width: 1000px){
+    width: 100% !important; }
+}
+
+.button-dark {
+  background: rgb(var(--black));
+  &:hover {
+    border: 1px solid rgb(var(--black));
+    color: rgb(var(--black));
+    background: transparent; }}
+
+.button-light {
+  background: rgb(var(--primary-base-color));
+  &:hover {
+    border: 1px solid rgb(var(--primary-base-color));
+    color: rgb(var(--primary-base-color));
+    background: transparent; }}
+
+.scroll-top-button {
+  position: absolute;
+  top: -20px;
+  padding: 10px 10px;
+  font-size: 20px;
+  color: var(--white);
+  background: rgb(var(--primary-base-color)); };
+
+.book-meal-button {
+  background: rgb(var(--primary-base-color));
+  color: var(--white);
+  border-radius: 6px;
+  width: 100%; }

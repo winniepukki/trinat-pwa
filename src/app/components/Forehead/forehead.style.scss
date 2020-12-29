@@ -1,0 +1,23 @@
+.forehead {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+  min-height: 40px;
+  font-size: 14px;
+  color: var(--white);
+  background: rgba(var(--primary-base-color), 0.85);
+  @media screen and (max-width: 1300px) {
+    padding: 10px 0;
+    .forehead-item span {
+      font-size: 10px;
+      display: inherit !important; }}
+
+  .language-switcher,
+  & span {
+    cursor: pointer; }
+
+  .container,
+  .row {
+    min-height: inherit; }}

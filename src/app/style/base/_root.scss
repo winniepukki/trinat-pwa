@@ -1,0 +1,17 @@
+
+:root {
+  --primary-base-color: var(--imported-primary-base-color, #{$primary-base-color});
+  --primary-dark-color: var(--imported-primary-dark-color, #{$primary-dark-color});
+  --primary-light-color: var(--imported-primary-light-color, #{$primary-light-color});
+
+  --secondary-base-color: var(--imported-secondary-base-color, #{$secondary-base-color});
+  --secondary-dark-color: var(--imported-secondary-dark-color, #{$secondary-dark-color});
+  --secondary-light-color: var(--imported-secondary-light-color, #{$secondary-light-color});
+
+  --auxiliary-color-lightener: var(--auxiliary-color-lightener, #{$auxiliary-color-lightener});
+
+  --white: var(--imported-white-color, #{$white});
+  --black: var(--imported-black-color, #{$black});
+
+  --secondary-font-family: var(--imported-secondary-font-family, #{$secondary-font-family});
+}

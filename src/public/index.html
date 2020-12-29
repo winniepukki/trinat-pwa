@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafeinīca | Trinat SIA</title>
+    <link rel="icon" href="assets/favicon/favicon.ico" />
+
+    <!-- Meta Tags -->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Trinat SIA">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Kafeinīca | Trinat SIA">
+    <meta property="og:site_name" content="Payment platform | Emerald24">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="https://trinat.lv">
+
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://trinat.lv">
+</head>
+<body>
+    <div id="root"></div>
+    <div id="fb-root"></div>
+    <div class="fb-customerchat"
+         attribution=setup_tool
+         page_id="1208947662491740"
+         logged_in_greeting="Здравствуйте! Чем мы можем вам помочь?"
+         logged_out_greeting="Здравствуйте! Чем мы можем вам помочь?">
+    </div>
+
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-a11y="true"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VHZCCXJS9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-9VHZCCXJS9');
+    </script>
+
+    <!-- Facebook Messenger SDK -->
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                xfbml            : true,
+                version          : 'v9.0'
+            });
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/ru_RU/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+</body>
+</html>
