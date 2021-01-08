@@ -1,15 +1,17 @@
 import React from 'react';
-import {useTranslation} from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import firebase from '../../util/firebase';
 
-export default function Starter({starter}) {
-    const {t} = useTranslation();
-    const deleteStarter = () => {
-      const starterRef = firebase.database().ref('Starter').child(starter.id);
-      starterRef.remove();
-    };
+export default function Starter({ starter }) {
+  // eslint-disable-next-line no-unused-vars
+  const { t } = useTranslation();
+  // eslint-disable-next-line no-unused-vars
+  const deleteStarter = () => {
+    const starterRef = firebase.database().ref('Starter').child(starter.id);
+    starterRef.remove();
+  };
 
-    return <div className="starter-item" key={starter.id}>
+  return <div className="starter-item" key={starter.id}>
         <div className="row">
             <div className="col">
                 <p className="starter-title">{starter.title}</p>

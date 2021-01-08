@@ -1,17 +1,28 @@
 import React from 'react';
-import {useTranslation} from "react-i18next";
+import { withTranslation } from 'react-i18next';
 
-function Blockquote() {
-    const {t} = useTranslation();
-    return <div className="container">
+class Blockquote extends React.Component {
+  constructor(props) {
+    super(props);
+    this.renderBlockqouteEntities = this.renderBlockqouteEntities.bind(this);
+  }
+
+  renderBlockqouteEntities() {
+    const { t } = this.props;
+    return (
+      Object.entries(t('blockquote', { returnObjects: true })).map((item, index) => <p key={index} className={item[0]}>{item[1]}</p>)
+    );
+  }
+
+  render() {
+    return (
+      <div className="container">
         <blockquote className="custom-tac">
-            {
-                Object.entries(t('blockquote', { returnObjects: true })).map((item, index) => {
-                    return <p key={index} className={item[0]}>{item[1]}</p>
-                })
-            }
+          { this.renderBlockqouteEntities() }
         </blockquote>
-    </div>
+      </div>
+    );
+  }
 }
 
-export default Blockquote;
+export default withTranslation()(Blockquote);

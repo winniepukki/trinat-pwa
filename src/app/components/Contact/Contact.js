@@ -1,11 +1,12 @@
 import React from 'react';
-import {withTranslation} from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 
 import './contact.style.scss';
 
 class Contact extends React.Component {
     constructor(props) {
         super(props);
+        
         this.state = {
           values: {
               fullName: '',
@@ -33,7 +34,7 @@ class Contact extends React.Component {
     };
 
     render() {
-        const {t} = this.props;
+        const { t } = this.props;
         return <div className="container">
             <div className="parallax-section parallax-section-contact">
                 <div className="inner-container inner-container-contact">
