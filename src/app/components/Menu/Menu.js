@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import './menu.style.scss';
 import Reservation from '../Reservation/Reservation';
@@ -33,17 +34,20 @@ class Menu extends React.Component {
   }
 
   handleReservation() {
+    const { visible } = this.state;
     this.setState({
-      visible: !this.state.visible,
+      visible: !visible,
     });
   }
 
   render() {
     const { t } = this.props;
+    const { visible, menu } = this.state;
+
     return (
       <div>
-        {this.state.visible ? <Reservation handler={this.handleReservation} /> : ''}
-        <div className={this.state.menu ? 'menu' : 'menu test-menu'}>
+        {visible ? <Reservation handler={this.handleReservation} /> : ''}
+        <div className={menu ? 'menu' : 'menu test-menu'}>
           <div className="container">
             <div className="row justify-content-center align-items-center">
               <div className="col-6 col-sm-4">
@@ -59,8 +63,8 @@ class Menu extends React.Component {
               <div className="col-6 col-sm-8">
                 <ul className="nav custom-flexbox custom-justify-spa custom-align-ic">
                   {
-                                    Object.values(t('menu', { returnObjects: true })).map((item, index) => <li key={index}><a href="#">{item}</a></li>)
-                                }
+                    Object.values(t('menu', { returnObjects: true })).map((item, index) => <li key={index}><a href="#">{item}</a></li>)
+                  }
                   <li>
                     <div className="reservation">
                       <a
@@ -80,5 +84,9 @@ class Menu extends React.Component {
     );
   }
 }
+
+Menu.propTypes = {
+  t: PropTypes.func.isRequired,
+};
 
 export default withTranslation()(Menu);

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 
 import './story.style.scss';
@@ -20,7 +21,6 @@ class Story extends React.Component {
     const innerContainerStory = document.querySelectorAll('.parallax-item');
 
     if (window.innerWidth > 700) {
-      // innerContainerStory.style.transform = `translateY(${currentScrollPos / 16}px)`;
       innerContainerStory.forEach((item) => {
         item.style.transform = `translateY(${currentScrollPos / 16}px)`;
       });
@@ -58,5 +58,9 @@ class Story extends React.Component {
     );
   }
 }
+
+Story.propTypes = {
+  t: PropTypes.func.isRequired,
+};
 
 export default withTranslation()(Story);

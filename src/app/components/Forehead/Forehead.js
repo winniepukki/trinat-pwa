@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import i18next from 'i18next';
 
@@ -8,10 +9,6 @@ import lv from './latvia.svg';
 import ru from './russia.svg';
 
 class Forehead extends React.Component {
-  // static propTypes = {
-
-  // }
-
   constructor(props) {
     super(props);
     this.state = {
@@ -40,28 +37,31 @@ class Forehead extends React.Component {
   }
 
   handleLanguage() {
-    const { i18n } = this.props;
+    const { i18n, parentCallback } = this.props;
+
     if (i18n.language === 'lv') {
-      this.props.parentCallback('ru');
+      parentCallback('ru');
     } else {
-      this.props.parentCallback('lv');
+      parentCallback('lv');
     }
   }
 
   render() {
+    const { menu } = this.state;
+
     return (
-      <div className={this.state.menu ? 'forehead' : 'hidden'}>
+      <div className={menu ? 'forehead' : 'hidden'}>
         <div className="container">
           <div className="row justify-content-center align-items-center">
             <div className="col forehead-item">
               <span>
                 <i className="fas fa-map-marker-alt" />
                 {' '}
-                <a href={this.props.address.url}>{this.props.address.line}</a>
+                <a href="#">address</a>
               </span>
               <span>
                 <i className="fas fa-phone-alt" />
-                <a href={`tel:${this.props.phone}`}>{this.props.phone}</a>
+                <a href={`tel:`}>phone</a>
               </span>
             </div>
             <div className="col forehead-item custom-tar">
@@ -92,12 +92,10 @@ class Forehead extends React.Component {
   }
 }
 
-Forehead.defaultProps = {
-  address: {
-    line: 'Kurzemes prospekts 92a, Imanta, Riga, Latvia',
-    url: 'https://goo.gl/maps/fm1VYskY9HckKctq6',
-  },
-  phone: '+371 20000000',
+Forehead.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  i18n: PropTypes.object.isRequired,
+  parentCallback: PropTypes.func.isRequired,
 };
 
 export default withTranslation()(Forehead);

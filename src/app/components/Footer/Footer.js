@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 
 import './footer.style.scss';
@@ -15,6 +16,7 @@ class Footer extends React.Component {
     super(props);
     this.renderFooter = this.renderFooter.bind(this);
     this.renderFooterNotice = this.renderFooterNotice.bind(this);
+    this.renderFooterMenuItems = this.renderFooterMenuItems.bind(this);
   }
 
   renderFooter() {
@@ -76,6 +78,17 @@ class Footer extends React.Component {
     );
   }
 
+  renderFooterMenuItems() {
+    const { t } = this.props;
+    return (
+      Object.values(t('footer-menu', { returnObjects: true })).map((item, index) => (
+        <li key={index} className="footer-notice-text">
+          <a href="#">{item}</a>
+        </li>
+      ))
+    );
+  }
+
   renderFooterNotice() {
     const { t } = this.props;
     return (
@@ -88,13 +101,7 @@ class Footer extends React.Component {
             </div>
             <div className="col-sm-6">
               <ul className="footer-links">
-                {
-                    Object.values(t('footer-menu', { returnObjects: true })).map((item, index) => (
-                      <li key={index} className="footer-notice-text">
-                        <a href="#">{item}</a>
-                      </li>
-                    ))
-                  }
+                { this.renderFooterMenuItems() }
               </ul>
             </div>
           </div>
