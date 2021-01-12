@@ -27,6 +27,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
       
-    - name: Perform ESLint check
+    - name: Install ESLint globally
       uses: actions/setup-node@v1
-    - run: eslint
+    - run: npm i -g eslint
+      
+    - name: Perform ESLint check
+      uses: actions.setup-node@v1
+    - run: eslint "**/*.js" --ignore-pattern node_modules/
