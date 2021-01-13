@@ -10,30 +10,31 @@
 - Learn more
 
 ## Prerequisites
-1. Docker
-2. Node, npm, time, effort, developer, his eyes and straight hands.
+1. Node, npm, time, effort, developer, his eyes and straight hands.
 
 ## Installation
-1. Clone the project
+1. Fork this project
 2. Navigate to the directory
-3. Run `docker-compose up -d --build --remove-orphans`
-
-Use `docker exec -it trinat-app sh` to access the container
+3. `cd src/app/util/ && cp config.sample.js config.js`
+4. Fill copied config with your own firebase credentials
+3. Run `npm install`
 
 ## Updating
-1. `git pull`
-2. `npm install`
+0. `git remote add upstream git@github.com:winniepukki/trinat.git`
+1. `git fetch upstream`
+2. `git merge upstream/[corresponding_branch]`
 3. `git checkout -b 'TRS–task-short-description'`
-4. Merge into master upon finish & remove your branch
+4. Ensure there is no ESLint warnings before PR
+5. Send your PR to the `master`. Await for approval 
 
 ## Deployment
 1. `git add .`
 2. `git commit -m 'your-message'`
-3. `git pull`
+3. `git fetch upstream` (any changes -> merge)
 4. `npm install`
 5. `git push`
 
-[Ensure your pipeline finished with the exit code 0](https://gitlab.com/winniepukki/trinat/-/pipelines)
+[Ensure your pipeline finished with the exit code 0](#)
 
 ## Tests
 Not implemented
