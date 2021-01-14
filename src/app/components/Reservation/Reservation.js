@@ -69,9 +69,9 @@ class Reservation extends React.Component {
                 </select>
               </div>
             </div>
-            <button className="button-default button-light" style={{ margin: '0 auto 25px auto' }}>{t('send')}</button>
+            <button type="button" className="button-default button-light" style={{ margin: '0 auto 25px auto' }}>{t('send')}</button>
           </div>
-          <button onClick={handler} className="reservation-close-btn"><i className="far fa-times-circle" /></button>
+          <button type="button" onClick={handler} className="reservation-close-btn"><i className="far fa-times-circle" /></button>
         </div>
       </div>
     );

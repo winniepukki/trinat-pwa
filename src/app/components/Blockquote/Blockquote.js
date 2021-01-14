@@ -27,7 +27,7 @@ class Blockquote extends React.Component {
 }
 
 Blockquote.propTypes = {
-  t: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired
 };
 
 export default withTranslation()(Blockquote);

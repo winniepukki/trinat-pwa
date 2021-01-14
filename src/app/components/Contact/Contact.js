@@ -12,8 +12,8 @@ class Contact extends React.Component {
       values: {
         fullName: '',
         email: '',
-        review: '',
-      },
+        review: ''
+      }
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -21,7 +21,7 @@ class Contact extends React.Component {
   handleChange(e) {
     const { values } = this.state;
     this.setState({
-      values: { ...values, [e.target.name]: e.target.value },
+      values: { ...values, [e.target.name]: e.target.value }
     });
   }
 
@@ -30,7 +30,7 @@ class Contact extends React.Component {
       t,
       fullName,
       email,
-      review,
+      review
     } = this.props;
 
     return (
@@ -80,7 +80,7 @@ Contact.propTypes = {
   t: PropTypes.func.isRequired,
   fullName: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
-  review: PropTypes.string.isRequired,
+  review: PropTypes.string.isRequired
 };
 
 export default withTranslation()(Contact);

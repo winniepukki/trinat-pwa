@@ -2,7 +2,7 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
+  Route
 } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
@@ -57,7 +57,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  i18n: PropTypes.object.isRequired,
+  i18n: PropTypes.objectOf(PropTypes.object()).isRequired
 };
 
 export default withTranslation()(App);

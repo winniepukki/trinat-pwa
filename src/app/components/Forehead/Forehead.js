@@ -12,7 +12,7 @@ class Forehead extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      menu: true,
+      menu: true
     };
     this.handleScroll = this.handleScroll.bind(this);
     this.handleLanguage = this.handleLanguage.bind(this);
@@ -27,11 +27,11 @@ class Forehead extends React.Component {
     const heroFrame = document.getElementById('hero').offsetHeight;
     if (currentScrollPos > heroFrame) {
       this.setState({
-        menu: false,
+        menu: false
       });
     } else {
       this.setState({
-        menu: true,
+        menu: true
       });
     }
   }
@@ -95,7 +95,7 @@ class Forehead extends React.Component {
 Forehead.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   i18n: PropTypes.object.isRequired,
-  parentCallback: PropTypes.func.isRequired,
+  parentCallback: PropTypes.func.isRequired
 };
 
 export default withTranslation()(Forehead);

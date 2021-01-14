@@ -8,7 +8,7 @@ export default function Form() {
     {
       title: '',
       ingredients: '',
-      price: '',
+      price: ''
     });
 
   const handleChange = (evt) => {
@@ -21,7 +21,7 @@ export default function Form() {
     const starter = {
       title: userInput.title,
       ingredients: userInput.ingredients,
-      price: userInput.price,
+      price: userInput.price
     };
     starterRef.push(starter);
   };

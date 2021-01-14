@@ -9,7 +9,7 @@ class Menu extends React.Component {
     super(props);
     this.state = {
       visible: false,
-      menu: true,
+      menu: true
     };
     this.handleReservation = this.handleReservation.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
@@ -24,11 +24,11 @@ class Menu extends React.Component {
     const heroFrame = document.getElementById('hero').offsetHeight;
     if (currentScrollPos > heroFrame) {
       this.setState({
-        menu: false,
+        menu: false
       });
     } else {
       this.setState({
-        menu: true,
+        menu: true
       });
     }
   }
@@ -36,7 +36,7 @@ class Menu extends React.Component {
   handleReservation() {
     const { visible } = this.state;
     this.setState({
-      visible: !visible,
+      visible: !visible
     });
   }
 
@@ -86,7 +86,7 @@ class Menu extends React.Component {
 }
 
 Menu.propTypes = {
-  t: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired
 };
 
 export default withTranslation()(Menu);

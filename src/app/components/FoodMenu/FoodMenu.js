@@ -119,8 +119,7 @@ class FoodMenu extends React.Component {
 }
 
 FoodMenu.propTypes = {
-  t: PropTypes.func.isRequired,
-  types: PropTypes.array.isRequired,
+  t: PropTypes.func.isRequired
 };
 
 export default withTranslation()(FoodMenu);

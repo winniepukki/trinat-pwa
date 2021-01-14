@@ -60,7 +60,7 @@ class Story extends React.Component {
 }
 
 Story.propTypes = {
-  t: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired
 };
 
 export default withTranslation()(Story);

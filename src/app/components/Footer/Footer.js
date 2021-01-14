@@ -49,27 +49,27 @@ class Footer extends React.Component {
               <h6>{t('footer-contact-info')}</h6>
               <p className="simple-text">
                 <i className="fas fa-map-marker-alt" />
-                <span>{this.props.address.line}</span>
+                <span>address</span>
               </p>
               <p className="simple-text">
                 <i className="fas fa-phone-alt" />
                 <a
-                  href={`tel:${this.props.phone}`}
+                  href="tel:phone"
                 >
-                  {this.props.phone}
+                  phone
                 </a>
               </p>
               <p className="simple-text">
                 <i className="fas fa-at" />
                 <a
-                  href={`mailto:${this.props.mail}`}
+                  href="mailto:email"
                 >
-                  {this.props.mail}
+                  email
                 </a>
               </p>
               <p className="simple-text">
                 <i className="fas fa-globe" />
-                <span>{this.props.web}</span>
+                <span>web</span>
               </p>
             </div>
           </div>
@@ -120,14 +120,8 @@ class Footer extends React.Component {
   }
 }
 
-Footer.defaultProps = {
-  address: {
-    line: 'Kurzemes prospekts 92a, Imanta, Riga, Latvia',
-    url: 'https://goo.gl/maps/fm1VYskY9HckKctq6',
-  },
-  phone: '+371 20000000',
-  mail: 'info@trinat.lv',
-  web: 'trinat.lv',
+Footer.propTypes = {
+  t: PropTypes.func.isRequired
 };
 
 export default withTranslation()(Footer);

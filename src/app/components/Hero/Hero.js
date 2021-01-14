@@ -18,21 +18,21 @@ class Hero extends React.Component {
     const { t } = this.props;
     return (
       <div className="caption-title">
-          <div className="container">
-            <div className="row">
-              <div className="col-sm-6">
-                <h2 className="parallax-item">
-                  <p className="title-first">Welcome to</p>
-                  <p className="title-caption">
-                    {t('trinat.title')}
-                    <strong>{t('trinat.type')}</strong>
-                  </p>
-                  <span className="sub-title">{t('hero.title')}</span>
-                </h2>
-              </div>
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-6">
+              <h2 className="parallax-item">
+                <p className="title-first">Welcome to</p>
+                <p className="title-caption">
+                  {t('trinat.title')}
+                  <strong>{t('trinat.type')}</strong>
+                </p>
+                <span className="sub-title">{t('hero.title')}</span>
+              </h2>
             </div>
           </div>
         </div>
+      </div>
     );
   }
 
@@ -58,7 +58,7 @@ class Hero extends React.Component {
 }
 
 Hero.propTypes = {
-  t: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired
 };
 
 export default withTranslation()(Hero);
