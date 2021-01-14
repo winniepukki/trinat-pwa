@@ -37,7 +37,7 @@
 [Ensure your pipeline finished with the exit code 0](#)
 
 ## Tests
-Not implemented
+- [ESLint Check CI](https://github.com/winniepukki/trinat/actions) - a static code analysis tool for identifying problematic patterns found in JavaScript code
 
 ## License
 This project is under CreamCamp © All Rights Reserved License
