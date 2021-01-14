@@ -1,3 +1,5 @@
+/* eslint-disable no-prototype-builtins */
+/* eslint-disable no-shadow */
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import firebase from '../../util/firebase';
@@ -42,7 +44,12 @@ function Starters() {
             </h3>
             <p className="simple-text">{t('starters-info')}</p>
             {
-              startersList ? startersList.map((starter, index) => <Starter starter={starter} key={index} />) : ''
+              startersList ? startersList.map((starter) => {
+                const { id } = starter;
+                return (
+                  <Starter starter={starter} key={id} />
+                );
+              }) : ''
             }
           </div>
         </div>

@@ -61,7 +61,7 @@ class Forehead extends React.Component {
               </span>
               <span>
                 <i className="fas fa-phone-alt" />
-                <a href={`tel:`}>phone</a>
+                <a href="tel:">phone</a>
               </span>
             </div>
             <div className="col forehead-item custom-tar">
@@ -72,13 +72,21 @@ class Forehead extends React.Component {
                   i18next.language === 'lv'
                     ? (
                       <span>
-                        <img src={ru} alt="Русский язык" className="language-switcher" />
+                        <img
+                          src={ru}
+                          alt="Русский язык"
+                          className="language-switcher"
+                        />
                         <span>по-русски</span>
                       </span>
                     )
                     : (
                       <span>
-                        <img src={lv} alt="Latviešu valoda" className="language-switcher" />
+                        <img
+                          src={lv}
+                          alt="Latviešu valoda"
+                          className="language-switcher"
+                        />
                         <span>latviski</span>
                       </span>
                     )
@@ -93,8 +101,7 @@ class Forehead extends React.Component {
 }
 
 Forehead.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  i18n: PropTypes.object.isRequired,
+  i18n: PropTypes.instanceOf(Object).isRequired,
   parentCallback: PropTypes.func.isRequired
 };
 

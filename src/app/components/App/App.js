@@ -57,7 +57,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  i18n: PropTypes.objectOf(PropTypes.object()).isRequired
+  i18n: PropTypes.instanceOf(Object).isRequired
 };
 
 export default withTranslation()(App);
