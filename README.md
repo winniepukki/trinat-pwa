@@ -39,6 +39,14 @@
 ## Tests
 - [ESLint Check CI](https://github.com/winniepukki/trinat/actions) - a static code analysis tool for identifying problematic patterns found in JavaScript code
 
+## Contribution
+
+We'd love to have your helping hand on `trinat`! Thanks to these **awesome** :heart: people for contribution!
+
+<a href="https://github.com/winniepukki/trinat/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=/winniepukki/trinat" />
+</a>
+
 ## License
 This project is under CreamCamp © All Rights Reserved License
 
