@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Node.js CI
+name: ESLint Check CI
 
 on:
   push:
@@ -21,18 +21,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install Dependencies. Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: | 
+        
+    - name: Install dependencies, copy config file
+      run: | 
         npm install
         cd src/app/util/ && cp config.sample.js config.js
       
     - name: Install ESLint globally
-      uses: actions/setup-node@v1
-    - run: npm i -g eslint
+      run: npm i -g eslint
       
     - name: Perform ESLint check
-      uses: actions/setup-node@v1
-    - run: eslint "**/*.js" --ignore-pattern node_modules/
+      run: eslint "**/*.js" --ignore-pattern node_modules/
