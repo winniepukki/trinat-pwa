@@ -10,8 +10,12 @@ class Blockquote extends React.Component {
 
   renderBlockqouteEntities() {
     const { t } = this.props;
+
     return (
-      Object.entries(t('blockquote', { returnObjects: true })).map((item, index) => <p key={index} className={item[0]}>{ item[1] }</p>)
+      Object.entries(t('blockquote', { returnObjects: true })).map((item) => {
+        const { id } = item;
+        return <p key={id} className={item[0]}>{ item[1] }</p>;
+      })
     );
   }
 

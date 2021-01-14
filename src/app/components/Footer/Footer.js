@@ -81,11 +81,15 @@ class Footer extends React.Component {
   renderFooterMenuItems() {
     const { t } = this.props;
     return (
-      Object.values(t('footer-menu', { returnObjects: true })).map((item, index) => (
-        <li key={index} className="footer-notice-text">
-          <a href="#">{item}</a>
-        </li>
-      ))
+      Object.values(t('footer-menu', { returnObjects: true }))
+        .map((item) => {
+          const { id } = item;
+          return (
+            <li key={id} className="footer-notice-text">
+              <a href="#">{item}</a>
+            </li>
+          );
+        })
     );
   }
 
@@ -96,7 +100,9 @@ class Footer extends React.Component {
         <div className="container">
           <div className="row align-items-center justify-content-center">
             <div className="col-sm-6 custom-flexbox custom-align-ic">
-              <a href="https://cream.camp"><img src={creamcamp} alt="" className="copyright" /></a>
+              <a href="https://cream.camp">
+                <img src={creamcamp} alt="" className="copyright" />
+              </a>
               <span className="footer-notice-text">{t('copyright')}</span>
             </div>
             <div className="col-sm-6">

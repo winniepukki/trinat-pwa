@@ -1,4 +1,8 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable class-methods-use-this */
+/* eslint-disable no-param-reassign */
 import React from 'react';
+import PropTypes from 'prop-types';
 import firebase from '../../util/firebase';
 import Form from '../Form/Form';
 
@@ -6,7 +10,7 @@ class GoogleLogIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: false,
+      isLoggedIn: false
     };
     this.handleSignIn = this.handleSignIn.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
@@ -18,7 +22,7 @@ class GoogleLogIn extends React.Component {
         const { adminAccount } = this.props;
         if (user.email === adminAccount) {
           this.setState({
-            isLoggedIn: true,
+            isLoggedIn: true
           });
         }
       }
@@ -29,7 +33,7 @@ class GoogleLogIn extends React.Component {
     firebase.auth().signOut()
       .then(() => {
         this.setState({
-          isLoggedIn: false,
+          isLoggedIn: false
         });
       })
       .catch(() => {});
@@ -59,8 +63,8 @@ class GoogleLogIn extends React.Component {
   }
 }
 
-GoogleLogIn.defaultProps = {
-  adminAccount: 'shared.solent@gmail.com',
+GoogleLogIn.propTypes = {
+  adminAccount: PropTypes.string.isRequired
 };
 
 export default GoogleLogIn;

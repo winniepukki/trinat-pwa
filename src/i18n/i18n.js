@@ -8,11 +8,11 @@ import translationRU from './locales/ru/translation';
 
 const resources = {
   lv: {
-    translation: translationLV,
+    translation: translationLV
   },
   ru: {
-    translation: translationRU,
-  },
+    translation: translationRU
+  }
 };
 
 i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
@@ -22,11 +22,11 @@ i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
   debug: false,
   detection: {
     order: ['queryString', 'cookie'],
-    cache: ['cookie'],
+    cache: ['cookie']
   },
   interpolation: {
-    escapeValue: false,
-  },
+    escapeValue: false
+  }
 })
   .then(() => {});
 

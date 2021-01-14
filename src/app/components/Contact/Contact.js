@@ -67,7 +67,9 @@ class Contact extends React.Component {
                 onChange={this.handleChange}
                 placeholder={t('contact-form.review')}
               />
-              <button type="button" className="button-default button-dark">{t('send')}</button>
+              <button type="button" className="button-default button-dark">
+                {t('send')}
+              </button>
             </form>
           </div>
         </div>

@@ -43,7 +43,9 @@ class FoodMenu extends React.Component {
                 <div className="row">
                   <div className="col">
                     <p className="starter-title">Lorem ipsum dolor sit amet.</p>
-                    <p className="starter-ingredients">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                    <p className="starter-ingredients">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing.
+                    </p>
                   </div>
                   <div className="col">
                     <p className="custom-tar">3.43&euro;</p>
@@ -54,31 +56,9 @@ class FoodMenu extends React.Component {
                 <div className="row">
                   <div className="col">
                     <p className="starter-title">Lorem ipsum dolor sit amet.</p>
-                    <p className="starter-ingredients">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                  </div>
-                  <div className="col">
-                    <p className="custom-tar">3.43&euro;</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="starter-item col-md-6">
-                <div className="row">
-                  <div className="col">
-                    <p className="starter-title">Lorem ipsum dolor sit amet.</p>
-                    <p className="starter-ingredients">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                  </div>
-                  <div className="col">
-                    <p className="custom-tar">3.43&euro;</p>
-                  </div>
-                </div>
-              </div>
-              <div className="starter-item col-md-6">
-                <div className="row">
-                  <div className="col">
-                    <p className="starter-title">Lorem ipsum dolor sit amet.</p>
-                    <p className="starter-ingredients">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                    <p className="starter-ingredients">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing.
+                    </p>
                   </div>
                   <div className="col">
                     <p className="custom-tar">3.43&euro;</p>
@@ -91,7 +71,9 @@ class FoodMenu extends React.Component {
                 <div className="row">
                   <div className="col">
                     <p className="starter-title">Lorem ipsum dolor sit amet.</p>
-                    <p className="starter-ingredients">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                    <p className="starter-ingredients">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing.
+                    </p>
                   </div>
                   <div className="col">
                     <p className="custom-tar">3.43&euro;</p>
@@ -102,7 +84,37 @@ class FoodMenu extends React.Component {
                 <div className="row">
                   <div className="col">
                     <p className="starter-title">Lorem ipsum dolor sit amet.</p>
-                    <p className="starter-ingredients">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                    <p className="starter-ingredients">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing.
+                    </p>
+                  </div>
+                  <div className="col">
+                    <p className="custom-tar">3.43&euro;</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="starter-item col-md-6">
+                <div className="row">
+                  <div className="col">
+                    <p className="starter-title">Lorem ipsum dolor sit amet.</p>
+                    <p className="starter-ingredients">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing.
+                    </p>
+                  </div>
+                  <div className="col">
+                    <p className="custom-tar">3.43&euro;</p>
+                  </div>
+                </div>
+              </div>
+              <div className="starter-item col-md-6">
+                <div className="row">
+                  <div className="col">
+                    <p className="starter-title">Lorem ipsum dolor sit amet.</p>
+                    <p className="starter-ingredients">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing.
+                    </p>
                   </div>
                   <div className="col">
                     <p className="custom-tar">3.43&euro;</p>

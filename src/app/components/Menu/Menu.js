@@ -63,7 +63,12 @@ class Menu extends React.Component {
               <div className="col-6 col-sm-8">
                 <ul className="nav custom-flexbox custom-justify-spa custom-align-ic">
                   {
-                    Object.values(t('menu', { returnObjects: true })).map((item, index) => <li key={index}><a href="#">{item}</a></li>)
+                    Object.values(t('menu', { returnObjects: true })).map((item) => {
+                      const { id } = item;
+                      return (
+                        <li key={id}><a href="#">{item}</a></li>
+                      );
+                    })
                   }
                   <li>
                     <div className="reservation">
