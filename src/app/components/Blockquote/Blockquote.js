@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 
 class Blockquote extends React.Component {
@@ -10,7 +11,7 @@ class Blockquote extends React.Component {
   renderBlockqouteEntities() {
     const { t } = this.props;
     return (
-      Object.entries(t('blockquote', { returnObjects: true })).map((item, index) => <p key={index} className={item[0]}>{item[1]}</p>)
+      Object.entries(t('blockquote', { returnObjects: true })).map((item, index) => <p key={index} className={item[0]}>{ item[1] }</p>)
     );
   }
 
@@ -24,5 +25,9 @@ class Blockquote extends React.Component {
     );
   }
 }
+
+Blockquote.propTypes = {
+  t: PropTypes.func.isRequired
+};
 
 export default withTranslation()(Blockquote);

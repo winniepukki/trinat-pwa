@@ -2,9 +2,10 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
+  Route
 } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 
 import Forehead from '../Forehead/Forehead';
 import Hero from '../Hero/Hero';
@@ -15,32 +16,48 @@ import Contact from '../Contact/Contact';
 import FoodMenu from '../FoodMenu/FoodMenu';
 import Starters from '../Starters/Starters';
 
-function App() {
-  const { i18n } = useTranslation();
-  const changeLanguage = (language) => {
-    i18n.changeLanguage(language);
-  };
-  const handleCallback = (callbackData) => {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleCallback = this.handleCallback.bind(this);
+    this.changeLanguage = this.changeLanguage.bind(this);
+  }
+
+  handleCallback(callbackData) {
     if (callbackData === undefined) {
       return;
     }
-    changeLanguage(callbackData);
-  };
-  return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Forehead parentCallback={handleCallback} />
-          <Hero />
-          <Blockquote />
-          <Story />
-          <FoodMenu />
-          <Starters />
-          <Contact />
-          <Footer />
-        </Route>
-      </Switch>
-    </Router>
-  );
+    this.changeLanguage(callbackData);
+  }
+
+  changeLanguage(language) {
+    const { i18n } = this.props;
+    i18n.changeLanguage(language);
+  }
+
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Forehead parentCallback={this.handleCallback} />
+            <Hero />
+            <Blockquote />
+            <Story />
+            <FoodMenu />
+            <Starters />
+            <Contact />
+            <Footer />
+          </Route>
+        </Switch>
+      </Router>
+    );
+  }
 }
-export default App;
+
+App.propTypes = {
+  i18n: PropTypes.objectOf(PropTypes.object()).isRequired
+};
+
+export default withTranslation()(App);

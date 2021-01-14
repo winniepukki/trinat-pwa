@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import { withTranslation } from 'react-i18next';
 
 import './reservation.style.scss';
-import { withTranslation } from 'react-i18next';
 
 class Reservation extends React.Component {
   constructor(props) {
@@ -27,7 +29,7 @@ class Reservation extends React.Component {
   }
 
   render() {
-    const { t } = this.props;
+    const { t, handler } = this.props;
     return (
       <div className="reservation-form">
         <div className="reservation-form-wrapper">
@@ -67,13 +69,18 @@ class Reservation extends React.Component {
                 </select>
               </div>
             </div>
-            <button className="button-default button-light" style={{ margin: '0 auto 25px auto' }}>{t('send')}</button>
+            <button type="button" className="button-default button-light" style={{ margin: '0 auto 25px auto' }}>{t('send')}</button>
           </div>
-          <button onClick={this.props.handler} className="reservation-close-btn"><i className="far fa-times-circle" /></button>
+          <button type="button" onClick={handler} className="reservation-close-btn"><i className="far fa-times-circle" /></button>
         </div>
       </div>
     );
   }
 }
+
+Reservation.propTypes = {
+  t: PropTypes.func.isRequired,
+  handler: PropTypes.func.isRequired,
+};
 
 export default withTranslation()(Reservation);

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 
 import './footer.style.scss';
@@ -15,6 +16,7 @@ class Footer extends React.Component {
     super(props);
     this.renderFooter = this.renderFooter.bind(this);
     this.renderFooterNotice = this.renderFooterNotice.bind(this);
+    this.renderFooterMenuItems = this.renderFooterMenuItems.bind(this);
   }
 
   renderFooter() {
@@ -47,32 +49,43 @@ class Footer extends React.Component {
               <h6>{t('footer-contact-info')}</h6>
               <p className="simple-text">
                 <i className="fas fa-map-marker-alt" />
-                <span>{this.props.address.line}</span>
+                <span>address</span>
               </p>
               <p className="simple-text">
                 <i className="fas fa-phone-alt" />
                 <a
-                  href={`tel:${this.props.phone}`}
+                  href="tel:phone"
                 >
-                  {this.props.phone}
+                  phone
                 </a>
               </p>
               <p className="simple-text">
                 <i className="fas fa-at" />
                 <a
-                  href={`mailto:${this.props.mail}`}
+                  href="mailto:email"
                 >
-                  {this.props.mail}
+                  email
                 </a>
               </p>
               <p className="simple-text">
                 <i className="fas fa-globe" />
-                <span>{this.props.web}</span>
+                <span>web</span>
               </p>
             </div>
           </div>
         </div>
       </div>
+    );
+  }
+
+  renderFooterMenuItems() {
+    const { t } = this.props;
+    return (
+      Object.values(t('footer-menu', { returnObjects: true })).map((item, index) => (
+        <li key={index} className="footer-notice-text">
+          <a href="#">{item}</a>
+        </li>
+      ))
     );
   }
 
@@ -88,13 +101,7 @@ class Footer extends React.Component {
             </div>
             <div className="col-sm-6">
               <ul className="footer-links">
-                {
-                    Object.values(t('footer-menu', { returnObjects: true })).map((item, index) => (
-                      <li key={index} className="footer-notice-text">
-                        <a href="#">{item}</a>
-                      </li>
-                    ))
-                  }
+                { this.renderFooterMenuItems() }
               </ul>
             </div>
           </div>
@@ -113,14 +120,8 @@ class Footer extends React.Component {
   }
 }
 
-Footer.defaultProps = {
-  address: {
-    line: 'Kurzemes prospekts 92a, Imanta, Riga, Latvia',
-    url: 'https://goo.gl/maps/fm1VYskY9HckKctq6',
-  },
-  phone: '+371 20000000',
-  mail: 'info@trinat.lv',
-  web: 'trinat.lv',
+Footer.propTypes = {
+  t: PropTypes.func.isRequired
 };
 
 export default withTranslation()(Footer);
