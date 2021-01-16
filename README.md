@@ -48,7 +48,7 @@ We'd love to have your helping hand on `trinat`! Thanks to these **awesome** :he
 </a>
 
 ## License
-This project is under CreamCamp © All Rights Reserved License
+This project is under [MIT License](https://github.com/winniepukki/trinat/blob/main/LICENSE)
 
 ## Learn More
 To learn React, check out the [React documentation](https://reactjs.org/).
