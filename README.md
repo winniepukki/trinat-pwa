@@ -44,7 +44,7 @@
 We'd love to have your helping hand on `trinat`! Thanks to these **awesome** :heart: people for contribution!
 
 <a href="https://github.com/winniepukki/trinat/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=/winniepukki/trinat" />
+  <img src="https://contrib.rocks/image?repo=winniepukki/trinat" />
 </a>
 
 ## License
