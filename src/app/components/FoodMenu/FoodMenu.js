@@ -15,7 +15,7 @@ class FoodMenu extends React.Component {
     const { t } = this.props;
     return (
       <h3>
-        <div className="parallax-headline">Our</div>
+        <div className="parallax-headline">{t('our')}</div>
         <div className="parallax-title">{t('food-menu.title')}</div>
       </h3>
     );

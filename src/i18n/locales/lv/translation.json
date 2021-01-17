@@ -1,5 +1,11 @@
 {
   "add": "pievienot",
+  "address": {
+    "line": "Kurzemes prospekts 92a, Riga, Latvija",
+    "phone": "+371 20000000",
+    "email": "info@trinat.lv",
+    "web": "https://trinat.lv"
+  },
   "blockquote": {
     "blockquote-content": "Ēdienu gatavošana ir valoda, ar kuru pavārs var parādīt pats savu attieksmi",
     "description": "Spāņu šefpavārs",
@@ -36,6 +42,7 @@
     "vakances"
   ],
   "recent-posts": "peidējās publikācijas",
+  "table": "galdu",
   "view-gallery": "apskatīt galēriju",
   "footer-text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nisi obcaecati officiis quo repellat totam.",
   "hero": {
@@ -48,6 +55,7 @@
     "kompleks ēdieni",
     "kontakti"
   ],
+  "our": "наше",
   "reservation": "rezervācija",
   "reservation-items": {
     "email": "e-pasts",
@@ -83,5 +91,6 @@
   },
   "notification": {
     "lang-change": "Jūs veiksmīgi samainījāt valodu uz latviešu"
-  }
+  },
+  "welcome": "Laipni lugti!"
 }

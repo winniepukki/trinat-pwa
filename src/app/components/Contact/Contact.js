@@ -40,7 +40,9 @@ class Contact extends React.Component {
             <h3>
               <p className="parallax-title">{t('contact.title')}</p>
             </h3>
-            <p className="simple-text">+371 20000000 – info@trinat.lv</p>
+            <p className="simple-text">
+              {`${t('address.phone')} - ${t('address.email')}`}
+            </p>
             <p className="simple-text">{t('contact.text')}</p>
             <form autoComplete="off">
               <input

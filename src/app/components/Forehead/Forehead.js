@@ -48,6 +48,7 @@ class Forehead extends React.Component {
 
   render() {
     const { menu } = this.state;
+    const { t } = this.props;
 
     return (
       <div className={menu ? 'forehead' : 'hidden'}>
@@ -57,11 +58,11 @@ class Forehead extends React.Component {
               <span>
                 <i className="fas fa-map-marker-alt" />
                 {' '}
-                <a href="#">address</a>
+                <a href="#">{t('address.line')}</a>
               </span>
               <span>
                 <i className="fas fa-phone-alt" />
-                <a href="tel:">phone</a>
+                <a href="tel:">{t('address.phone')}</a>
               </span>
             </div>
             <div className="col forehead-item custom-tar">
@@ -90,7 +91,7 @@ class Forehead extends React.Component {
                         <span>latviski</span>
                       </span>
                     )
-                        }
+                }
               </a>
             </div>
           </div>
@@ -101,6 +102,7 @@ class Forehead extends React.Component {
 }
 
 Forehead.propTypes = {
+  t: PropTypes.instanceOf(Object).isRequired,
   i18n: PropTypes.instanceOf(Object).isRequired,
   parentCallback: PropTypes.func.isRequired
 };
