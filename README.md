@@ -25,7 +25,7 @@
 2. `git merge upstream/[corresponding_branch]`
 3. `git checkout -b 'TRS–task-short-description'`
 4. Ensure there is no ESLint warnings before PR
-5. Send your PR to the `master`. Await for approval 
+5. Send your PR to the `main` branch. Await for approval 
 
 ## Deployment
 1. `git add .`
