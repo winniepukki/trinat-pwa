@@ -16,6 +16,7 @@ class Contact extends React.Component {
       }
     };
     this.handleChange = this.handleChange.bind(this);
+    this.renderContactForm = this.renderContactForm.bind(this);
   }
 
   handleChange(e) {
@@ -25,14 +26,48 @@ class Contact extends React.Component {
     });
   }
 
-  render() {
+  renderContactForm() {
     const {
       t,
       fullName,
       email,
       review
     } = this.props;
+    return (
+      <form autoComplete="off">
+        <input
+          type="text"
+          className="contact-control"
+          value={fullName}
+          name="fullName"
+          onChange={this.handleChange}
+          placeholder={t('contact-form.fullName')}
+        />
+        <input
+          type="email"
+          className="contact-control"
+          value={email}
+          name="email"
+          onChange={this.handleChange}
+          placeholder={t('contact-form.email')}
+        />
+        <input
+          type="text"
+          className="contact-control"
+          value={review}
+          name="review"
+          onChange={this.handleChange}
+          placeholder={t('contact-form.review')}
+        />
+        <button type="button" className="button-default button-dark">
+          {t('send')}
+        </button>
+      </form>
+    );
+  }
 
+  render() {
+    const { t } = this.props;
     return (
       <div className="container">
         <div className="parallax-section parallax-section-contact">
@@ -44,35 +79,7 @@ class Contact extends React.Component {
               {`${t('address.phone')} - ${t('address.email')}`}
             </p>
             <p className="simple-text">{t('contact.text')}</p>
-            <form autoComplete="off">
-              <input
-                type="text"
-                className="contact-control"
-                value={fullName}
-                name="fullName"
-                onChange={this.handleChange}
-                placeholder={t('contact-form.fullName')}
-              />
-              <input
-                type="email"
-                className="contact-control"
-                value={email}
-                name="email"
-                onChange={this.handleChange}
-                placeholder={t('contact-form.email')}
-              />
-              <input
-                type="text"
-                className="contact-control"
-                value={review}
-                name="review"
-                onChange={this.handleChange}
-                placeholder={t('contact-form.review')}
-              />
-              <button type="button" className="button-default button-dark">
-                {t('send')}
-              </button>
-            </form>
+            { this.renderContactForm() }
           </div>
         </div>
       </div>

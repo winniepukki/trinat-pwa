@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import i18next from 'i18next';
@@ -8,7 +8,7 @@ import './forehead.style.scss';
 import lv from './latvia.svg';
 import ru from './russia.svg';
 
-class Forehead extends React.Component {
+class Forehead extends Component {
   constructor(props) {
     super(props);
     this.state = {

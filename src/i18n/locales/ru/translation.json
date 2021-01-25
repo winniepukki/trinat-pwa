@@ -92,5 +92,10 @@
   "notification": {
     "lang-change": "Вы успешно поменяли язык на русский"
   },
-  "welcome": "добро пожаловать!"
+  "welcome": "добро пожаловать!",
+  "reservation-placeholders": {
+    "email": "ivan.petrovich@trinat.lv",
+    "phone": "+371 20000000",
+    "name": "Иван Петрович"
+  }
 }

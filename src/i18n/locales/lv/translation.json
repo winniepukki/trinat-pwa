@@ -55,7 +55,7 @@
     "kompleks ēdieni",
     "kontakti"
   ],
-  "our": "наше",
+  "our": "Musu",
   "reservation": "rezervācija",
   "reservation-items": {
     "email": "e-pasts",
@@ -92,5 +92,10 @@
   "notification": {
     "lang-change": "Jūs veiksmīgi samainījāt valodu uz latviešu"
   },
-  "welcome": "Laipni lugti!"
+  "welcome": "Laipni lugti!",
+  "reservation-placeholders": {
+    "email": "aldis.berzins@trinat.lv",
+    "phone": "+371 20000000",
+    "name": "Aldis Bērziņš"
+  }
 }

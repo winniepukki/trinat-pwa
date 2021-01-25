@@ -24,11 +24,11 @@ class Reservation extends React.Component {
   handleChange() {
     const formItems = document.querySelectorAll('.form-control');
     formItems.forEach((item) => {
-      item.addEventListener('blur', () => {
-        if (this.value.length > 0) {
-          this.classList.add('has-value');
+      item.addEventListener('blur', (e) => {
+        if (e.target.value.length > 0) {
+          e.target.classList.add('has-value');
         } else {
-          this.classList.remove('has-value');
+          e.target.classList.remove('has-value');
         }
       });
     });
@@ -39,15 +39,30 @@ class Reservation extends React.Component {
     return (
       <div className="row custom-mg-25">
         <div className="col-sm-4">
-          <input id="email" type="email" className="form-control" />
+          <input
+            id="email"
+            type="email"
+            className="form-control"
+            placeholder={t('reservation-placeholders.email')}
+          />
           <label htmlFor="email">{t('reservation-items.email')}</label>
         </div>
         <div className="col-sm-4">
-          <input id="tel" type="tel" className="form-control" />
+          <input
+            id="tel"
+            type="tel"
+            className="form-control"
+            placeholder={t('reservation-placeholders.phone')}
+          />
           <label htmlFor="tel">{t('reservation-items.phone')}</label>
         </div>
         <div className="col-sm-4">
-          <input id="name" type="text" className="form-control" />
+          <input
+            id="name"
+            type="text"
+            className="form-control"
+            placeholder={t('reservation-placeholders.name')}
+          />
           <label htmlFor="name">{t('reservation-items.name')}</label>
         </div>
       </div>
@@ -93,10 +108,10 @@ class Reservation extends React.Component {
 
   renderForm() {
     return (
-      <>
+      <form autoComplete="off">
         { this.renderFormPrimaryRow() }
         { this.renderFormSecondaryRow() }
-      </>
+      </form>
     );
   }
 
@@ -107,7 +122,7 @@ class Reservation extends React.Component {
         <div className="reservation-form-wrapper">
           <h2 className="custom-tac">
             <p className="title-first">{t('table')}</p>
-            <p className="title-caption">Booking</p>
+            <p className="title-caption">{t('reservation')}</p>
           </h2>
           <div className="container">
             { this.renderForm() }
