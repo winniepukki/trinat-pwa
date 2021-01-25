@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
@@ -14,9 +15,21 @@ import Scroll from '../Scroll/Scroll';
 class Footer extends React.Component {
   constructor(props) {
     super(props);
+    this.renderPaymentMethods = this.renderPaymentMethods.bind(this);
     this.renderFooter = this.renderFooter.bind(this);
     this.renderFooterNotice = this.renderFooterNotice.bind(this);
     this.renderFooterMenuItems = this.renderFooterMenuItems.bind(this);
+  }
+
+  renderPaymentMethods() {
+    return (
+      <div className="custom-grid-4">
+        <img src={apple} alt="" />
+        <img src={visa} alt="" />
+        <img src={masterCard} alt="" />
+        <img src={americanExpress} alt="" />
+      </div>
+    );
   }
 
   renderFooter() {
@@ -32,12 +45,7 @@ class Footer extends React.Component {
                 <p>{t('trinat.type')}</p>
               </h5>
               <p className="simple-text">{t('footer-text')}</p>
-              <div className="custom-grid-4">
-                <img src={apple} alt="" />
-                <img src={visa} alt="" />
-                <img src={masterCard} alt="" />
-                <img src={americanExpress} alt="" />
-              </div>
+              { this.renderPaymentMethods() }
             </div>
             <div className="col-sm-3">
               <h6>{t('recent-posts')}</h6>
@@ -49,27 +57,27 @@ class Footer extends React.Component {
               <h6>{t('footer-contact-info')}</h6>
               <p className="simple-text">
                 <i className="fas fa-map-marker-alt" />
-                <span>address</span>
+                <span>{t('address.line')}</span>
               </p>
               <p className="simple-text">
                 <i className="fas fa-phone-alt" />
                 <a
-                  href="tel:phone"
+                  href={`tel:${t('address.phone')}`}
                 >
-                  phone
+                  {t('address.phone')}
                 </a>
               </p>
               <p className="simple-text">
                 <i className="fas fa-at" />
                 <a
-                  href="mailto:email"
+                  href={`tel:${t('address.email')}`}
                 >
-                  email
+                  {t('address.email')}
                 </a>
               </p>
               <p className="simple-text">
                 <i className="fas fa-globe" />
-                <span>web</span>
+                <span>{t('address.web')}</span>
               </p>
             </div>
           </div>

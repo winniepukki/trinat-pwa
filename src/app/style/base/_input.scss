@@ -27,7 +27,7 @@ select {
 
   & + label {
     position: absolute;
-    top: 0;
+    top: -10px;
     left: 15px;
     color: var(--white);
     transition: all .2s ease-out;

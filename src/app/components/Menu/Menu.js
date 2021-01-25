@@ -40,6 +40,32 @@ class Menu extends React.Component {
     });
   }
 
+  renderMenuItems() {
+    const { t } = this.props;
+    return (
+      <ul className="nav custom-flexbox custom-justify-spa custom-align-ic">
+        {
+          Object.values(t('menu', { returnObjects: true })).map((item) => {
+            const { id } = item;
+            return (
+              <li key={id}><a href="#">{item}</a></li>
+            );
+          })
+        }
+        <li>
+          <div className="reservation">
+            <a
+              className="reservation-button"
+              onClick={this.handleReservation}
+            >
+              {t('reservation')}
+            </a>
+          </div>
+        </li>
+      </ul>
+    );
+  }
+
   render() {
     const { t } = this.props;
     const { visible, menu } = this.state;
@@ -61,26 +87,7 @@ class Menu extends React.Component {
                 </a>
               </div>
               <div className="col-6 col-sm-8">
-                <ul className="nav custom-flexbox custom-justify-spa custom-align-ic">
-                  {
-                    Object.values(t('menu', { returnObjects: true })).map((item) => {
-                      const { id } = item;
-                      return (
-                        <li key={id}><a href="#">{item}</a></li>
-                      );
-                    })
-                  }
-                  <li>
-                    <div className="reservation">
-                      <a
-                        className="reservation-button"
-                        onClick={this.handleReservation}
-                      >
-                        {t('reservation')}
-                      </a>
-                    </div>
-                  </li>
-                </ul>
+                { this.renderMenuItems() }
               </div>
             </div>
           </div>

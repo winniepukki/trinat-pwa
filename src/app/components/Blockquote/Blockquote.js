@@ -5,10 +5,10 @@ import { withTranslation } from 'react-i18next';
 class Blockquote extends React.Component {
   constructor(props) {
     super(props);
-    this.renderBlockqouteEntities = this.renderBlockqouteEntities.bind(this);
+    this.renderBlockquoteEntities = this.renderBlockquoteEntities.bind(this);
   }
 
-  renderBlockqouteEntities() {
+  renderBlockquoteEntities() {
     const { t } = this.props;
 
     return (
@@ -23,7 +23,7 @@ class Blockquote extends React.Component {
     return (
       <div className="container">
         <blockquote className="custom-tac">
-          { this.renderBlockqouteEntities() }
+          { this.renderBlockquoteEntities() }
         </blockquote>
       </div>
     );

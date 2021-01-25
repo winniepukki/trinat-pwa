@@ -24,7 +24,7 @@ class Hero extends React.Component {
           <div className="row">
             <div className="col-sm-6">
               <h2 className="parallax-item">
-                <p className="title-first">Welcome to</p>
+                <p className="title-first">{t('welcome')}</p>
                 <p className="title-caption">
                   {t('trinat.title')}
                   <strong>{t('trinat.type')}</strong>

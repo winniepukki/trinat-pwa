@@ -1,5 +1,11 @@
 {
   "add": "добавить",
+  "address": {
+    "line": "Kurzemes prospekts 92a, Riga, Latvija",
+    "phone": "+371 20000000",
+    "email": "info@trinat.lv",
+    "web": "https://trinat.lv"
+  },
   "blockquote": {
     "blockquote-content": "Приготовление пищи – это язык, при помощи которого повар может демонстрировать собственное мироощущение",
     "description": "Испанский шеф повар",
@@ -36,6 +42,7 @@
     "повора"
   ],
   "recent-posts": "последние публикации",
+  "table": "столов",
   "view-gallery": "посмотреть галерею",
   "footer-text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nisi obcaecati officiis quo repellat totam.",
   "hero": {
@@ -48,6 +55,7 @@
     "комплексы",
     "обратная связь"
   ],
+  "our": "наше",
   "reservation": "резервация",
   "reservation-items": {
     "email": "э-почта",
@@ -83,5 +91,11 @@
   },
   "notification": {
     "lang-change": "Вы успешно поменяли язык на русский"
+  },
+  "welcome": "добро пожаловать!",
+  "reservation-placeholders": {
+    "email": "ivan.petrovich@trinat.lv",
+    "phone": "+371 20000000",
+    "name": "Иван Петрович"
   }
 }
