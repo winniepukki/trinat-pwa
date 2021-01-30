@@ -6,13 +6,18 @@
   "scripts": {
     "start": "webpack serve"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://gitlab.com/winniepukki/trinat"
   },
   "keywords": [],
   "author": "Aleksandrs Bogackins",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
@@ -33,6 +38,8 @@
     "file-loader": "^6.2.0",
     "html-loader": "^1.3.2",
     "html-webpack-plugin": "^4.5.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
     "postcss-loader": "^4.0.4",
     "sass": "^1.29.0",
     "sass-loader": "^10.1.0",
@@ -56,5 +63,10 @@
   },
   "eslintConfig": {
     "extends": "winniepukki-guardian"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --cache --no-error-on-unmatched-pattern --ext .js,.ts,.tsx"
+    ]
   }
 }
