@@ -41,7 +41,7 @@
 
 ## Contribution
 
-We'd love to have your helping hand on `trinat`! Thanks to these **awesome** :heart: people for contribution!
+Thanks to these **awesome** 🖤 people for contribution!
 
 <a href="https://github.com/winniepukki/trinat/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=winniepukki/trinat" />
@@ -51,4 +51,4 @@ We'd love to have your helping hand on `trinat`! Thanks to these **awesome** :he
 This project is under [MIT License](https://github.com/winniepukki/trinat/blob/main/LICENSE)
 
 ## Learn More
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn React, check out the [Software documentation](https://docs.cream.camp/).
