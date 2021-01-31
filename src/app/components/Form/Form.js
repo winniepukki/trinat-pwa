@@ -1,77 +1,106 @@
-import React, { useReducer } from 'react';
-import { useTranslation } from 'react-i18next';
+import React from 'react';
+import { withTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 import firebase from '../../util/firebase';
 
-export default function Form() {
-  const { t } = useTranslation();
-  const [userInput, setUserInput] = useReducer(
-    (state, newState) => ({ ...state, ...newState }),
-    {
-      title: '',
-      ingredients: '',
-      price: ''
-    }
-  );
+class Form extends React.Component {
+  constructor(props) {
+    super(props);
 
-  const handleChange = (evt) => {
-    const { name, value } = evt.target;
-    setUserInput({ [name]: value });
-  };
+    this.state = {
+      starter: {
+        title: '',
+        ingredients: '',
+        price: ''
+      }
+    };
 
-  const createStarter = () => {
+    this.createStarter = this.createStarter.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(evt) {
+    const { starter } = this.state;
+
+    this.setState({
+      starter: {
+        ...starter,
+        [evt.target.name]: evt.target.value
+      }
+    });
+  }
+
+  createStarter() {
     const starterRef = firebase.database().ref('Starter');
+    const { starter: { title, ingredients, price } } = this.state;
+
     const starter = {
-      title: userInput.title,
-      ingredients: userInput.ingredients,
-      price: userInput.price
+      title,
+      ingredients,
+      price
     };
     starterRef.push(starter);
-  };
+  }
 
-  return (
-    <div className="container">
-      <h3>
-        <p className="parallax-headline">Administration</p>
-        <p className="parallax-title">{t('admin-zone.starter-add')}</p>
-        <p className="parallax-description">{t('admin-zone.starter-add-description')}</p>
-      </h3>
+  render() {
+    const { t } = this.props;
+    const { starter: { title, ingredients, price } } = this.state;
 
-      <input
-        className="contact-control"
-        type="text"
-        name="title"
-        value={userInput.title}
-        onChange={handleChange}
-        placeholder={t('starter-form.title')}
-      />
+    return (
+      <div className="container">
+        <h3>
+          <p className="parallax-headline">Administration</p>
+          <p className="parallax-title">
+            {t('admin-zone.starter-add')}
+          </p>
+          <p className="parallax-description">
+            {t('admin-zone.starter-add-description')}
+          </p>
+        </h3>
 
-      <input
-        className="contact-control"
-        type="text"
-        name="ingredients"
-        value={userInput.ingredients}
-        onChange={handleChange}
-        placeholder={t('starter-form.ingredients')}
-      />
+        <input
+          className="contact-control"
+          type="text"
+          name="title"
+          value={title}
+          onChange={this.handleChange}
+          placeholder={t('starter-form.title')}
+        />
 
-      <input
-        className="contact-control"
-        type="number"
-        name="price"
-        value={userInput.price}
-        onChange={handleChange}
-        placeholder={t('starter-form.price')}
-      />
+        <input
+          className="contact-control"
+          type="text"
+          name="ingredients"
+          value={ingredients}
+          onChange={this.handleChange}
+          placeholder={t('starter-form.ingredients')}
+        />
 
-      <button
-        type="button"
-        className="button-default button-dark"
-        onClick={createStarter}
-        disabled={!userInput.title || !userInput.ingredients || !userInput.price}
-      >
-        +
-        {t('add')}
-      </button>
-    </div>
-  );
+        <input
+          className="contact-control"
+          type="number"
+          name="price"
+          value={price}
+          onChange={this.handleChange}
+          placeholder={t('starter-form.price')}
+        />
+
+        <button
+          type="button"
+          className="button-default button-dark"
+          onClick={this.createStarter}
+          disabled={!title || !ingredients || !price}
+        >
+          +
+          {t('add')}
+        </button>
+      </div>
+    );
+  }
 }
+
+Form.propTypes = {
+  t: PropTypes.func.isRequired
+};
+
+export default withTranslation()(Form);

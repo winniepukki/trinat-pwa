@@ -21,7 +21,7 @@
     "email": "e-pasts",
     "review": "atsauksme"
   },
-  "copyright": "copyright Trinat SIA © Visas tiesības ir aizsargātas",
+  "copyright": "Autortiesības 2021 © Atsauce uz TRINAT.LV ir obligāta",
   "delete": "nodzēst",
   "delicious": "garšīgi",
   "food-types": {
@@ -41,6 +41,7 @@
     "piegāde",
     "vakances"
   ],
+  "loading": "Notiek datu ielāde...",
   "recent-posts": "peidējās publikācijas",
   "table": "galdu",
   "view-gallery": "apskatīt galēriju",
