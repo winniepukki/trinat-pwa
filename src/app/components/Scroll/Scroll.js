@@ -1,38 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import './scroll.style.scss';
 
-const Scroll = (showBelow) => {
-  const [show, setShow] = useState(!showBelow);
+class Scroll extends React.Component {
+  constructor() {
+    super();
 
-  const handleScroll = () => {
-    if (window.pageYOffset > showBelow) {
-      if (!show) setShow(true);
-    } else if (show) setShow(false);
-  };
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-  useEffect(() => {
-    if (showBelow) {
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
-    }
-    return null;
-  });
-
-  const handleClick = () => {
+  // eslint-disable-next-line class-methods-use-this
+  handleClick() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  }
 
-  return (
-    // eslint-disable-next-line react/jsx-filename-extension
-    <div className="scroll-top">
-      <div className="container">
-        <button type="button" className="scroll-top-button" onClick={handleClick}>
-          <i className="far fa-arrow-alt-circle-up" />
-        </button>
+  render() {
+    return (
+      // eslint-disable-next-line react/jsx-filename-extension
+      <div className="scroll-top">
+        <div className="container">
+          <button type="button" className="scroll-top-button" onClick={this.handleClick}>
+            <i className="far fa-arrow-alt-circle-up" />
+          </button>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Scroll;
