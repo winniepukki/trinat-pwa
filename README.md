@@ -1,7 +1,5 @@
 # CCPS-1411NB/20
 
----
-
 - [Developer guide](https://docs.cream.camp/) - learn how to develop the Software product
 
 ## Table of contents
