@@ -1,5 +1,9 @@
 # CCPS-1411NB/20
 
+---
+
+- [Developer guide](https://docs.cream.camp/) - learn how to develop the Software product
+
 ## Table of contents
 - Prerequisites
 - Installation
@@ -34,7 +38,7 @@
 4. `npm install`
 5. `git push`
 
-[Ensure your pipeline finished with the exit code 0](#)
+Ensure your pipeline finished with the exit code 0
 
 ## Tests
 - [ESLint Check CI](https://github.com/winniepukki/trinat/actions) - a static code analysis tool for identifying problematic patterns found in JavaScript code
@@ -52,4 +56,4 @@ Thanks to these **awesome** 🖤 people for contribution!
 This project is under [MIT License](https://github.com/winniepukki/trinat/blob/main/LICENSE)
 
 ## Learn More
-To learn React, check out the [Software documentation](https://docs.cream.camp/).
+To learn React, check out the [React documentation](https://reactjs.org/).
