@@ -15,6 +15,7 @@ class Contact extends React.Component {
         review: ''
       }
     };
+
     this.handleChange = this.handleChange.bind(this);
     this.renderContactForm = this.renderContactForm.bind(this);
   }
@@ -28,11 +29,15 @@ class Contact extends React.Component {
 
   renderContactForm() {
     const {
-      t,
+      t
+    } = this.props;
+
+    const {
       fullName,
       email,
       review
-    } = this.props;
+    } = this.state;
+
     return (
       <form autoComplete="off">
         <input
@@ -88,10 +93,7 @@ class Contact extends React.Component {
 }
 
 Contact.propTypes = {
-  t: PropTypes.func.isRequired,
-  fullName: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  review: PropTypes.string.isRequired
+  t: PropTypes.func.isRequired
 };
 
 export default withTranslation()(Contact);

@@ -51,8 +51,8 @@ class Starters extends React.Component {
 
     return loading ? (
       startersList.map((starter) => {
-        const { id } = starter;
-        return (<Starter starter={starter} key={id} />);
+        const { title } = starter;
+        return (<Starter starter={starter} key={title} />);
       })
     ) : t('loading');
   }
