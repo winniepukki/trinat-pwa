@@ -90,14 +90,11 @@ class Footer extends React.Component {
     const { t } = this.props;
     return (
       Object.values(t('footer-menu', { returnObjects: true }))
-        .map((item) => {
-          const { id } = item;
-          return (
-            <li key={id} className="footer-notice-text">
-              <a href="#">{item}</a>
-            </li>
-          );
-        })
+        .map((item) => (
+          <li key={item} className="footer-notice-text">
+            <a href="#">{item}</a>
+          </li>
+        ))
     );
   }
 
