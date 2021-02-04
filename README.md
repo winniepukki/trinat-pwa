@@ -54,4 +54,4 @@ Thanks to these **awesome** 🖤 people for contribution!
 This project is under [MIT License](https://github.com/winniepukki/trinat/blob/main/LICENSE)
 
 ## Learn More
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn React, check out the [React documentation](https://reactjs.org/)
