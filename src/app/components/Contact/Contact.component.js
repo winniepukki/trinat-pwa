@@ -4,7 +4,7 @@ import { withTranslation } from 'react-i18next';
 
 import './contact.style.scss';
 
-class Contact extends React.Component {
+class ContactComponent extends React.Component {
   constructor(props) {
     super(props);
 
@@ -92,8 +92,8 @@ class Contact extends React.Component {
   }
 }
 
-Contact.propTypes = {
+ContactComponent.propTypes = {
   t: PropTypes.func.isRequired
 };
 
-export default withTranslation()(Contact);
+export default withTranslation()(ContactComponent);

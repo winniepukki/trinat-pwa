@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 import './hero.style.scss';
 import { withTranslation } from 'react-i18next';
 import logo from '../../../public/assets/images/hero.jpg';
-import Menu from '../Menu/Menu';
+import Menu from '../Menu/Menu.component';
 
-class Hero extends React.Component {
+class HeroComponent extends React.Component {
   constructor(props) {
     super(props);
     this.renderWelcomeMessage = this.renderWelcomeMessage.bind(this);
@@ -17,19 +17,24 @@ class Hero extends React.Component {
   }
 
   renderWelcomeMessage() {
-    const { t } = this.props;
+    const {
+      welcomeMessage,
+      titleCaptionFront,
+      titleCaptionBold,
+      subtitle
+    } = this.props;
     return (
       <div className="caption-title">
         <div className="container">
           <div className="row">
             <div className="col-sm-6">
               <h2 className="parallax-item">
-                <p className="title-first">{t('welcome')}</p>
+                <p className="title-first">{welcomeMessage}</p>
                 <p className="title-caption">
-                  {t('trinat.title')}
-                  <strong>{t('trinat.type')}</strong>
+                  {titleCaptionFront}
+                  <strong>{titleCaptionBold}</strong>
                 </p>
-                <span className="sub-title">{t('hero.title')}</span>
+                <span className="sub-title">{subtitle}</span>
               </h2>
             </div>
           </div>
@@ -59,8 +64,11 @@ class Hero extends React.Component {
   }
 }
 
-Hero.propTypes = {
-  t: PropTypes.func.isRequired
+HeroComponent.propTypes = {
+  welcomeMessage: PropTypes.string.isRequired,
+  titleCaptionFront: PropTypes.string.isRequired,
+  titleCaptionBold: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired
 };
 
-export default withTranslation()(Hero);
+export default withTranslation()(HeroComponent);

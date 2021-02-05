@@ -4,9 +4,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import firebase from '../../util/firebase';
-import Form from '../Form/Form';
+import Form from '../Form/Form.component';
 
-class GoogleLogIn extends React.Component {
+class GoogleLogInComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -63,8 +63,8 @@ class GoogleLogIn extends React.Component {
   }
 }
 
-GoogleLogIn.propTypes = {
+GoogleLogInComponent.propTypes = {
   adminAccount: PropTypes.string.isRequired
 };
 
-export default GoogleLogIn;
+export default GoogleLogInComponent;
