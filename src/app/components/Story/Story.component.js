@@ -6,7 +6,7 @@ import { withTranslation } from 'react-i18next';
 
 import './story.style.scss';
 
-class Story extends React.Component {
+class StoryComponent extends React.Component {
   constructor(props) {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
@@ -30,20 +30,23 @@ class Story extends React.Component {
   }
 
   renderStoryTitle() {
-    const { t } = this.props;
+    const {
+      title,
+      description
+    } = this.props;
     return (
       <h3>
         <p className="parallax-headline">Discover</p>
-        <p className="parallax-title">{ t('story.title') }</p>
-        <p className="parallax-description">{ t('story.description') }</p>
+        <p className="parallax-title">{ title }</p>
+        <p className="parallax-description">{ description }</p>
       </h3>
     );
   }
 
   renderStoryText() {
-    const { t } = this.props;
+    const { storyText } = this.props;
     return (
-      <span className="simple-text">{ t('story.text') }</span>
+      <span className="simple-text">{ storyText }</span>
     );
   }
 
@@ -61,8 +64,10 @@ class Story extends React.Component {
   }
 }
 
-Story.propTypes = {
-  t: PropTypes.func.isRequired
+StoryComponent.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  storyText: PropTypes.string.isRequired
 };
 
-export default withTranslation()(Story);
+export default withTranslation()(StoryComponent);

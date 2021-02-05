@@ -6,7 +6,7 @@ import { withTranslation } from 'react-i18next';
 
 import './reservation.style.scss';
 
-class Reservation extends React.Component {
+class ReservationComponent extends React.Component {
   constructor(props) {
     super(props);
     this.renderFormPrimaryRow = this.renderFormPrimaryRow.bind(this);
@@ -147,9 +147,9 @@ class Reservation extends React.Component {
   }
 }
 
-Reservation.propTypes = {
+ReservationComponent.propTypes = {
   t: PropTypes.func.isRequired,
   handler: PropTypes.func.isRequired
 };
 
-export default withTranslation()(Reservation);
+export default withTranslation()(ReservationComponent);

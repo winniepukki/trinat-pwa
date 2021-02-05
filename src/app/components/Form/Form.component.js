@@ -3,7 +3,7 @@ import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import firebase from '../../util/firebase';
 
-class Form extends React.Component {
+class FormComponent extends React.Component {
   constructor(props) {
     super(props);
 
@@ -99,8 +99,8 @@ class Form extends React.Component {
   }
 }
 
-Form.propTypes = {
+FormComponent.propTypes = {
   t: PropTypes.func.isRequired
 };
 
-export default withTranslation()(Form);
+export default withTranslation()(FormComponent);

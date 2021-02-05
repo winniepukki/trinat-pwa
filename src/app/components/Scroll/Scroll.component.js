@@ -2,7 +2,7 @@ import React from 'react';
 
 import './scroll.style.scss';
 
-class Scroll extends React.Component {
+class ScrollComponent extends React.Component {
   constructor() {
     super();
 
@@ -28,4 +28,4 @@ class Scroll extends React.Component {
   }
 }
 
-export default Scroll;
+export default ScrollComponent;

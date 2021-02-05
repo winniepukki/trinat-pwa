@@ -7,7 +7,7 @@ import firebase from '../../util/firebase';
 
 import './starters.style.scss';
 // eslint-disable-next-line no-unused-vars
-import Starter from './Starter';
+import Starter from '../Starter/Starter';
 
 class Starters extends React.Component {
   constructor() {
