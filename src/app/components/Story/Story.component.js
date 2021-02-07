@@ -1,6 +1,4 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable no-param-reassign */
-import React from 'react';
+import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 
@@ -9,6 +7,8 @@ import './story.style.scss';
 class StoryComponent extends React.Component {
   constructor(props) {
     super(props);
+    this.parallaxItemRef = createRef();
+
     this.handleScroll = this.handleScroll.bind(this);
     this.renderStoryTitle = this.renderStoryTitle.bind(this);
     this.renderStoryText = this.renderStoryText.bind(this);
@@ -20,12 +20,10 @@ class StoryComponent extends React.Component {
 
   handleScroll() {
     const currentScrollPos = window.pageYOffset;
-    const innerContainerStory = document.querySelectorAll('.parallax-item');
+    const node = this.parallaxItemRef.current;
 
     if (window.innerWidth > 700) {
-      innerContainerStory.forEach((item) => {
-        item.style.transform = `translateY(${currentScrollPos / 16}px)`;
-      });
+      node.style.transform = `translateY(${currentScrollPos / 16}px)`;
     }
   }
 
@@ -54,7 +52,10 @@ class StoryComponent extends React.Component {
     return (
       <div className="container">
         <div className="parallax-section parallax-section-story">
-          <div className="inner-container inner-container-story parallax-item">
+          <div
+            className="inner-container inner-container-story"
+            ref={this.parallaxItemRef}
+          >
             { this.renderStoryTitle() }
             { this.renderStoryText() }
           </div>

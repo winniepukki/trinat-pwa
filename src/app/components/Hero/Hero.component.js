@@ -1,5 +1,3 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable no-param-reassign */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -43,10 +41,12 @@ class HeroComponent extends React.Component {
     );
   }
 
+  // eslint-disable-next-line class-methods-use-this
   renderMenu() {
     return <Menu />;
   }
 
+  // eslint-disable-next-line class-methods-use-this
   renderHeroBackground() {
     return (
       <img src={logo} alt="Home hero wallpaper" className="hero-wallpaper" />

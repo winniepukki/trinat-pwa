@@ -9,7 +9,7 @@ import './starters.style.scss';
 // eslint-disable-next-line no-unused-vars
 import Starter from '../Starter/Starter';
 
-class Starters extends React.Component {
+class StartersComponent extends React.Component {
   constructor() {
     super();
 
@@ -42,16 +42,32 @@ class Starters extends React.Component {
     const { t } = this.props;
     const startersList = [];
 
-    // eslint-disable-next-line no-restricted-syntax
-    for (const id in data) {
-      if (data.hasOwnProperty(id)) {
-        startersList.push(data[id]);
-      }
+    if (!Object.keys(data).length) {
+      return null;
     }
+
+    Object.values(data).filter((item) => {
+      if (item === null) {
+        return null;
+      }
+
+      startersList.push(item);
+
+      return startersList;
+    });
 
     return loading ? (
       startersList.map((starter) => {
+        if (starter === null) {
+          return null;
+        }
+
         const { title } = starter;
+
+        if (!title.length) {
+          return null;
+        }
+
         return (<Starter starter={starter} key={title} />);
       })
     ) : t('loading');
@@ -86,8 +102,8 @@ class Starters extends React.Component {
   }
 }
 
-Starters.propTypes = {
+StartersComponent.propTypes = {
   t: PropTypes.func.isRequired
 };
 
-export default withTranslation()(Starters);
+export default withTranslation()(StartersComponent);

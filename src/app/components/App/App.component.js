@@ -14,7 +14,7 @@ import Blockquote from '../Blockquote/Blockquote.component';
 import Story from '../Story/Story.component';
 import Contact from '../Contact/Contact.component';
 import FoodMenu from '../FoodMenu/FoodMenu.component';
-import Starters from '../Starters/Starters';
+import Starters from '../Starters/Starters.component';
 
 class AppComponent extends React.Component {
   constructor(props) {

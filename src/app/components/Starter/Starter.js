@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { withTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 
 class Starter extends React.Component {
   render() {
@@ -31,5 +31,9 @@ class Starter extends React.Component {
     );
   }
 }
+
+Starter.propTypes = {
+  starter: PropTypes.instanceOf(Object).isRequired
+};
 
 export default withTranslation()(Starter);
