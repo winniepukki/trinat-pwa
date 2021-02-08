@@ -15,6 +15,7 @@ import Story from '../Story/Story.component';
 import Contact from '../Contact/Contact.component';
 import FoodMenu from '../FoodMenu/FoodMenu.component';
 import Starters from '../Starters/Starters.component';
+import EmbeddedMapComponent from '../EmbeddedMap/EmbeddedMap.component';
 
 class AppComponent extends React.Component {
   constructor(props) {
@@ -73,6 +74,7 @@ class AppComponent extends React.Component {
               languageCode={this.getCurrentLanguage()}
             />
             <Contact />
+            <EmbeddedMapComponent />
             <Footer />
           </Route>
         </Switch>
