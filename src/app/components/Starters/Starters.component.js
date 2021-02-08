@@ -6,12 +6,11 @@ import PropTypes from 'prop-types';
 import firebase from '../../util/firebase';
 
 import './starters.style.scss';
-// eslint-disable-next-line no-unused-vars
-import Starter from './Starter';
+import Starter from '../Starter/Starter';
 
-class Starters extends React.Component {
-  constructor() {
-    super();
+class StartersComponent extends React.Component {
+  constructor(props) {
+    super(props);
 
     this.state = {
       data: {},
@@ -25,12 +24,30 @@ class Starters extends React.Component {
     this.getStartersFirebaseData();
   }
 
+  componentDidUpdate() {
+    this.getStartersFirebaseData();
+  }
+
   getStartersFirebaseData() {
-    const startersRef = firebase.database().ref('Starter');
+    const { languageCode } = this.props;
+    let startersLang;
+
+    switch (languageCode) {
+      case 'lv':
+        startersLang = 'Starters-LV';
+        break;
+      case 'ru':
+        startersLang = 'Starters-RU';
+        break;
+      default:
+        startersLang = 'Starters-LV';
+        break;
+    }
+
+    const startersRef = firebase.database().ref(startersLang);
     startersRef.once('value').then((dataSnapshot) => {
       this.response = dataSnapshot.val();
       this.setState({
-        // eslint-disable-next-line react/no-unused-state
         data: this.response,
         loading: true
       });
@@ -42,16 +59,32 @@ class Starters extends React.Component {
     const { t } = this.props;
     const startersList = [];
 
-    // eslint-disable-next-line no-restricted-syntax
-    for (const id in data) {
-      if (data.hasOwnProperty(id)) {
-        startersList.push(data[id]);
-      }
+    if (!Object.keys(data).length) {
+      return t('loading');
     }
+
+    Object.values(data).filter((item) => {
+      if (item === null) {
+        return null;
+      }
+
+      startersList.push(item);
+
+      return startersList;
+    });
 
     return loading ? (
       startersList.map((starter) => {
+        if (starter === null) {
+          return null;
+        }
+
         const { title } = starter;
+
+        if (!title.length) {
+          return null;
+        }
+
         return (<Starter starter={starter} key={title} />);
       })
     ) : t('loading');
@@ -86,8 +119,9 @@ class Starters extends React.Component {
   }
 }
 
-Starters.propTypes = {
-  t: PropTypes.func.isRequired
+StartersComponent.propTypes = {
+  t: PropTypes.func.isRequired,
+  languageCode: PropTypes.string.isRequired
 };
 
-export default withTranslation()(Starters);
+export default withTranslation()(StartersComponent);

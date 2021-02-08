@@ -10,7 +10,7 @@ import apple from '../../../public/assets/images/social/apple.svg';
 import visa from '../../../public/assets/images/social/visa.svg';
 import masterCard from '../../../public/assets/images/social/mastercard.svg';
 import americanExpress from '../../../public/assets/images/social/americanexpress.svg';
-import Scroll from '../Scroll/Scroll';
+import ScrollComponent from '../Scroll/Scroll.component';
 
 class Footer extends React.Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class Footer extends React.Component {
     const { t } = this.props;
     return (
       <div className="footer">
-        <Scroll showBelow={250} />
+        <ScrollComponent showBelow={250} />
         <div className="container">
           <div className="row">
             <div className="col-sm-3">

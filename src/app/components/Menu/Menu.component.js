@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import './menu.style.scss';
-import Reservation from '../Reservation/Reservation';
+import Reservation from '../Reservation/Reservation.component';
 
-class Menu extends React.Component {
+class MenuComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -94,8 +94,8 @@ class Menu extends React.Component {
   }
 }
 
-Menu.propTypes = {
+MenuComponent.propTypes = {
   t: PropTypes.func.isRequired
 };
 
-export default withTranslation()(Menu);
+export default withTranslation()(MenuComponent);

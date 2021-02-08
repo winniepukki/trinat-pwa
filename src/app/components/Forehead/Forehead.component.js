@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
-import i18next from 'i18next';
 
 import './forehead.style.scss';
 
 import lv from './latvia.svg';
 import ru from './russia.svg';
 
-class Forehead extends Component {
+class ForeheadComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,13 +36,48 @@ class Forehead extends Component {
   }
 
   handleLanguage() {
-    const { i18n, parentCallback } = this.props;
+    const {
+      i18n: { language },
+      parentCallback
+    } = this.props;
 
-    if (i18n.language === 'lv') {
+    if (language === 'lv') {
       parentCallback('ru');
     } else {
       parentCallback('lv');
     }
+  }
+
+  renderLanguageSwitcher() {
+    const { i18n: { language } } = this.props;
+
+    return (
+      <a onClick={this.handleLanguage}>
+        {
+          language === 'lv'
+            ? (
+              <span>
+                <img
+                  src={ru}
+                  alt="Русский язык"
+                  className="language-switcher"
+                />
+                <span>по-русски</span>
+              </span>
+            )
+            : (
+              <span>
+                <img
+                  src={lv}
+                  alt="Latviešu valoda"
+                  className="language-switcher"
+                />
+                <span>latviski</span>
+              </span>
+            )
+          }
+      </a>
+    );
   }
 
   render() {
@@ -66,33 +100,9 @@ class Forehead extends Component {
               </span>
             </div>
             <div className="col forehead-item custom-tar">
-              <a href="#"><i className="fab fa-facebook-square" /></a>
+              <a href="#"><i className="fab fa-facebook-f" /></a>
               <a href="#"><i className="fab fa-instagram" /></a>
-              <a onClick={this.handleLanguage}>
-                {
-                  i18next.language === 'lv'
-                    ? (
-                      <span>
-                        <img
-                          src={ru}
-                          alt="Русский язык"
-                          className="language-switcher"
-                        />
-                        <span>по-русски</span>
-                      </span>
-                    )
-                    : (
-                      <span>
-                        <img
-                          src={lv}
-                          alt="Latviešu valoda"
-                          className="language-switcher"
-                        />
-                        <span>latviski</span>
-                      </span>
-                    )
-                }
-              </a>
+              { this.renderLanguageSwitcher() }
             </div>
           </div>
         </div>
@@ -101,10 +111,10 @@ class Forehead extends Component {
   }
 }
 
-Forehead.propTypes = {
+ForeheadComponent.propTypes = {
   t: PropTypes.instanceOf(Object).isRequired,
   i18n: PropTypes.instanceOf(Object).isRequired,
   parentCallback: PropTypes.func.isRequired
 };
 
-export default withTranslation()(Forehead);
+export default withTranslation()(ForeheadComponent);

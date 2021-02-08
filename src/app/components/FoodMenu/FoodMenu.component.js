@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './foodMenu.style.scss';
 import { withTranslation } from 'react-i18next';
 
-class FoodMenu extends React.Component {
+class FoodMenuComponent extends React.Component {
   constructor(props) {
     super(props);
 
@@ -25,7 +25,7 @@ class FoodMenu extends React.Component {
     const { t } = this.props;
 
     this.tabMap = {
-      // TO-DO: Implement tabmap for the FoodMenu
+      // TO-DO: Implement tabmap for the FoodMenuComponent
     };
 
     return (
@@ -130,8 +130,8 @@ class FoodMenu extends React.Component {
   }
 }
 
-FoodMenu.propTypes = {
+FoodMenuComponent.propTypes = {
   t: PropTypes.func.isRequired
 };
 
-export default withTranslation()(FoodMenu);
+export default withTranslation()(FoodMenuComponent);
