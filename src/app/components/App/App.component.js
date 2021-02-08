@@ -15,6 +15,7 @@ import Story from '../Story/Story.component';
 import Contact from '../Contact/Contact.component';
 import FoodMenu from '../FoodMenu/FoodMenu.component';
 import Starters from '../Starters/Starters.component';
+import GoogleLogInComponent from '../GoogleLogIn/GoogleLogIn.component';
 
 class AppComponent extends React.Component {
   constructor(props) {
@@ -69,6 +70,7 @@ class AppComponent extends React.Component {
             <FoodMenu
               languageCode={this.getCurrentLanguage()}
             />
+            <GoogleLogInComponent adminAccount="justtotestifworks@doesntexist.com" />
             <Starters
               languageCode={this.getCurrentLanguage()}
             />
