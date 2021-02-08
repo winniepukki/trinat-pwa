@@ -100,7 +100,7 @@ class ForeheadComponent extends Component {
               </span>
             </div>
             <div className="col forehead-item custom-tar">
-              <a href="#"><i className="fab fa-facebook-square" /></a>
+              <a href="#"><i className="fab fa-facebook-f" /></a>
               <a href="#"><i className="fab fa-instagram" /></a>
               { this.renderLanguageSwitcher() }
             </div>

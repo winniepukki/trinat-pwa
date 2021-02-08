@@ -21,9 +21,10 @@ class StoryComponent extends React.Component {
   handleScroll() {
     const currentScrollPos = window.pageYOffset;
     const node = this.parallaxItemRef.current;
+    const DIVIDER = 13;
 
     if (window.innerWidth > 700) {
-      node.style.transform = `translateY(${currentScrollPos / 16}px)`;
+      node.style.transform = `translateY(${currentScrollPos / DIVIDER}px)`;
     }
   }
 
