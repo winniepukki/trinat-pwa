@@ -6,6 +6,8 @@ import {
 } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
+import { Provider } from 'react-redux';
+import store from '../../store/store';
 
 import Forehead from '../Forehead/Forehead.component';
 import Hero from '../Hero/Hero.component';
@@ -50,32 +52,34 @@ class AppComponent extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Forehead parentCallback={this.handleCallback} />
-            <Hero
-              welcomeMessage={t('welcome')}
-              titleCaptionFront={t('trinat.title')}
-              titleCaptionBold={t('trinat.type')}
-              subtitle={t('hero.title')}
-            />
-            <Blockquote
-              content={t('blockquote.blockquote-content')}
-              author={t('blockquote.author')}
-              description={t('blockquote.description')}
-            />
-            <Story
-              title={t('story.title')}
-              description={t('story.description')}
-              storyText={t('story.text')}
-            />
-            <FoodMenu
-              languageCode={this.getCurrentLanguage()}
-            />
-            <Starters
-              languageCode={this.getCurrentLanguage()}
-            />
-            <Contact />
-            <EmbeddedMapComponent />
-            <Footer />
+            <Provider store={store}>
+              <Forehead parentCallback={this.handleCallback} />
+              <Hero
+                welcomeMessage={t('welcome')}
+                titleCaptionFront={t('trinat.title')}
+                titleCaptionBold={t('trinat.type')}
+                subtitle={t('hero.title')}
+              />
+              <Blockquote
+                content={t('blockquote.blockquote-content')}
+                author={t('blockquote.author')}
+                description={t('blockquote.description')}
+              />
+              <Story
+                title={t('story.title')}
+                description={t('story.description')}
+                storyText={t('story.text')}
+              />
+              <FoodMenu
+                languageCode={this.getCurrentLanguage()}
+              />
+              <Starters
+                languageCode={this.getCurrentLanguage()}
+              />
+              <Contact />
+              <EmbeddedMapComponent />
+              <Footer />
+            </Provider>
           </Route>
         </Switch>
       </Router>
