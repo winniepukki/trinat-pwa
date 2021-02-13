@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 
 import './footer.style.scss';
-import creamcamp from './creamcamp.svg';
+import creamcamp from '../../../public/assets/images/social/creamcamp.svg';
 
 import apple from '../../../public/assets/images/social/apple.svg';
 import visa from '../../../public/assets/images/social/visa.svg';
