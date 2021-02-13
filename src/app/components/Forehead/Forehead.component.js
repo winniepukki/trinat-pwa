@@ -4,8 +4,8 @@ import { withTranslation } from 'react-i18next';
 
 import './forehead.style.scss';
 
-import lv from './latvia.svg';
-import ru from './russia.svg';
+import lv from '../../../public/assets/images/icons/latvia.svg';
+import ru from '../../../public/assets/images/icons/russia.svg';
 
 class ForeheadComponent extends Component {
   constructor(props) {
