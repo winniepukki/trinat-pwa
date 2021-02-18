@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 
 import './contact.style.scss';
+import firebase from '../../util/firebase';
 
 class ContactComponent extends React.Component {
   constructor(props) {
@@ -17,7 +18,20 @@ class ContactComponent extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.resetAllFields = this.resetAllFields.bind(this);
     this.renderContactForm = this.renderContactForm.bind(this);
+  }
+
+  // eslint-disable-next-line react/sort-comp
+  resetAllFields() {
+    this.setState({
+      values: {
+        fullName: '',
+        email: '',
+        review: ''
+      }
+    });
   }
 
   handleChange(e) {
@@ -25,6 +39,26 @@ class ContactComponent extends React.Component {
     this.setState({
       values: { ...values, [e.target.name]: e.target.value }
     });
+  }
+
+  handleSubmit() {
+    const starterRef = firebase.database().ref('Reviews');
+    const {
+      values: {
+        fullName,
+        email,
+        review
+      }
+    } = this.state;
+
+    const preparedReview = {
+      fullName,
+      email,
+      review
+    };
+
+    starterRef.push(preparedReview);
+    this.resetAllFields();
   }
 
   renderContactForm() {
@@ -64,7 +98,11 @@ class ContactComponent extends React.Component {
           onChange={this.handleChange}
           placeholder={t('contact-form.review')}
         />
-        <button type="button" className="button-default button-dark">
+        <button
+          type="button"
+          className="button-default button-dark"
+          onClick={this.handleSubmit}
+        >
           {t('send')}
         </button>
       </form>
