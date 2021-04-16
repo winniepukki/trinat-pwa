@@ -1,6 +1,6 @@
 # CCPS-1411NB/20
 
-- [Developer guide](https://docs.cream.camp/) - learn how to develop the Software product
+- [Developer guide](https://docs.cream.camp/) - learn how to develop the Software product with the official Winniepukki Docs documentation
 
 ## Table of contents
 - Prerequisites
@@ -40,7 +40,7 @@ Ensure your pipeline finished with the exit code 0
 
 ## Tests
 - [ESLint Check CI](https://github.com/winniepukki/trinat/actions) - a static code analysis tool for identifying problematic patterns found in JavaScript code
-- [AWS Amplify - master](https://main.d2ph7v6ys3icx.amplifyapp.com/) - hosts a static Git main branch workflow
+- [AWS Amplify - master](https://main.dcazqrdd9crta.amplifyapp.com/) - hosts a static Git main branch workflow
 
 ## Contribution
 

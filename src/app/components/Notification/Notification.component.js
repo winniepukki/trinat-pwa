@@ -1,59 +1,65 @@
+/**
+* SIA Trinat restaurant project
+* Copyright © winniepukki. All rights reserved.
+*
+* @license MIT
+*/
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import './Notification.style.scss';
 
-class NotificationComponent extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      // eslint-disable-next-line react/no-unused-state
-      notificationShown: false
+class Notification extends React.Component {
+    static propTypes = {
+        title: PropTypes.string.isRequired,
+        message: PropTypes.string.isRequired
     };
 
-    this.renderNotification = this.renderNotification.bind(this);
-  }
+    constructor() {
+        super();
 
-  componentDidMount() {
-    this.setState({
-      notificationShown: true
-    });
-  }
+        this.state = {
+            notificationShown: false
+        };
 
-  renderNotification() {
-    const { title, message } = this.props;
-    const { notificationShown } = this.state;
+        this.renderNotification = this.renderNotification.bind(this);
+    }
 
-    const timeOut = setTimeout(() => {
-      clearTimeout(timeOut);
-      this.setState({
-        notificationShown: false
-      });
-    }, 4000);
+    componentDidMount() {
+        this.setState({
+            notificationShown: true
+        });
+    }
 
-    return (
+    renderNotification() {
+        const { title, message } = this.props;
+        const { notificationShown } = this.state;
+        const timeoutTime = 4000;
+
+        const timeOut = setTimeout(() => {
+            clearTimeout(timeOut);
+            this.setState({
+                notificationShown: false
+            });
+        }, timeoutTime);
+
+        return (
       <div
-        className={notificationShown
-          ? 'Notification fireNotification' : 'Notification hideNotification'}
-        style={{ background: 'var(--notification-info)' }}
+        className={ notificationShown
+            ? 'Notification fireNotification' : 'Notification hideNotification' }
+        style={ { background: 'var(--notification-info)' } }
       >
         <p>{ title }</p>
         <p>{ message }</p>
       </div>
-    );
-  }
+        );
+    }
 
-  render() {
-    return (
-      this.renderNotification()
-    );
-  }
+    render() {
+        return (
+            this.renderNotification()
+        );
+    }
 }
 
-NotificationComponent.propTypes = {
-  title: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired
-};
-
-export default NotificationComponent;
+export default Notification;
