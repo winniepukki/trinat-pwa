@@ -40,7 +40,7 @@ Ensure your pipeline finished with the exit code 0
 
 ## Tests
 - [ESLint Check CI](https://github.com/winniepukki/trinat/actions) - a static code analysis tool for identifying problematic patterns found in JavaScript code
-- [AWS Amplify - master](https://main.d2ph7v6ys3icx.amplifyapp.com/) - hosts a static Git main branch workflow
+- [AWS Amplify - master](https://main.dcazqrdd9crta.amplifyapp.com/) - hosts a static Git main branch workflow
 
 ## Contribution
 
