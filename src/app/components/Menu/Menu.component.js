@@ -8,7 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import './menu.style.scss';
-import Reservation from '../Reservation/Reservation.component';
+import Reservation from '@components/Reservation/Reservation.component';
 
 class Menu extends React.Component {
   static propTypes = {

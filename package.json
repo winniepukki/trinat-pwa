@@ -70,5 +70,12 @@
     "**/*.js": [
       "eslint --cache --no-error-on-unmatched-pattern --ext .js,.ts,.tsx"
     ]
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^@components(.*)$": "<rootDir>/src/app/components$1",
+      "^@store(.*)$": "<rootDir>/src/app/store$1",
+      "^@util(.*)$": "<rootDir>/src/app/util$1"
+    }
   }
 }

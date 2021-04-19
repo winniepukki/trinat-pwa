@@ -9,7 +9,7 @@
 */
 import React from 'react';
 import PropTypes from 'prop-types';
-import firebase from '../../util/firebase';
+import firebase from '@util/firebase';
 import Form from '../Form/Form.component';
 
 class GoogleLogIn extends React.Component {
