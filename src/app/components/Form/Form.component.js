@@ -7,7 +7,7 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
-import firebase from '../../util/firebase';
+import firebase from '@util/firebase';
 
 class Form extends React.Component {
   static propTypes = {

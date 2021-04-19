@@ -8,11 +8,15 @@ const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const PORT = 4000;
 const paths = {
     src: path.join(__dirname, './src'),
     dist: path.join(__dirname, './dist'),
     public: path.join(__dirname, './src/public'),
-    assets: path.join(__dirname, './src/public/assets')
+    assets: path.join(__dirname, './src/public/assets'),
+    components: path.resolve(__dirname, './src/app/components'),
+    store: path.resolve(__dirname, './src/app/store'),
+    util: path.resolve(__dirname, './src/app/util')
 };
 
 module.exports = {
@@ -22,12 +26,19 @@ module.exports = {
         paths
     },
     devServer: {
-        port: 4000,
+        port: PORT,
         contentBase: paths.dist,
         open: true
     },
     output: {
         path: path.resolve(__dirname, 'dist')
+    },
+    resolve: {
+        alias: {
+            '@components': paths.components,
+            '@store': paths.store,
+            '@util': paths.util
+        }
     },
     plugins: [
         new HTMLWebpackPlugin({

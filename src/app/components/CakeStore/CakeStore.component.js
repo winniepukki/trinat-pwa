@@ -9,7 +9,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { buyCake } from '../../store';
+import { buyCake } from '@store/store';
 
 export const mapStateToProps = (state) => ({
     numOfCakes: state.cakeList.numOfCakes

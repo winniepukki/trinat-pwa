@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 
 import './contact.style.scss';
-import firebase from '../../util/firebase';
+import firebase from '@util/firebase';
 
 class Contact extends React.Component {
   static propTypes = {

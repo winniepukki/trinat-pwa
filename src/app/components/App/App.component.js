@@ -13,17 +13,17 @@ import {
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import store from '../../store/store';
+import store from '@store/store';
 
-import Forehead from '../Forehead/Forehead.component';
-import Hero from '../Hero/Hero.component';
-import Footer from '../Footer/Footer';
-import Blockquote from '../Blockquote/Blockquote.component';
-import Story from '../Story/Story.component';
-import Contact from '../Contact/Contact.component';
-import FoodMenu from '../FoodMenu/FoodMenu.component';
-import Starters from '../Starters/Starters.component';
-import EmbeddedMapComponent from '../EmbeddedMap/EmbeddedMap.component';
+import Forehead from '@components/Forehead/Forehead.component';
+import Hero from '@components/Hero/Hero.component';
+import Footer from '@components/Footer/Footer';
+import Blockquote from '@components/Blockquote/Blockquote.component';
+import Story from '@components/Story/Story.component';
+import Contact from '@components/Contact/Contact.component';
+import FoodMenu from '@components/FoodMenu/FoodMenu.component';
+import Starters from '@components/Starters/Starters.component';
+import EmbeddedMapComponent from '@components/EmbeddedMap/EmbeddedMap.component';
 
 class App extends React.Component {
     static propTypes = {
