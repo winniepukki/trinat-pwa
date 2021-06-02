@@ -24,7 +24,6 @@ import Contact from '@components/Contact/Contact.component';
 import FoodMenu from '@components/FoodMenu/FoodMenu.component';
 import Starters from '@components/Starters/Starters.component';
 import EmbeddedMapComponent from '@components/EmbeddedMap/EmbeddedMap.component';
-import CakeStore from '@components/CakeStore/CakeStore.component';
 
 class App extends React.Component {
     static propTypes = {
@@ -82,7 +81,6 @@ class App extends React.Component {
                     author={ t('blockquote.author') }
                     description={ t('blockquote.description') }
                   />
-                  <CakeStore />
                   <Story
                     title={ t('story.title') }
                     description={ t('story.description') }

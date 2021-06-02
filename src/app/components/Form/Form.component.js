@@ -6,8 +6,13 @@
 */
 import React from 'react';
 import { withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import firebase from '@util/firebase';
+
+export const mapStateToProps = (state) => ({
+    currentAccount: state.account.currentAccount
+});
 
 class Form extends React.Component {
   static propTypes = {
@@ -114,4 +119,5 @@ class Form extends React.Component {
   }
 }
 
-export default withTranslation()(Form);
+export default
+connect(mapStateToProps)(withTranslation()(Form));
