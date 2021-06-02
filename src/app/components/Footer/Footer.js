@@ -17,10 +17,12 @@ import visa from '../../../public/assets/images/social/visa.svg';
 import masterCard from '../../../public/assets/images/social/mastercard.svg';
 import americanExpress from '../../../public/assets/images/social/americanexpress.svg';
 import ScrollComponent from '../Scroll/Scroll.component';
+import GoogleLogIn from '@components/GoogleLogIn/GoogleLogIn.component';
 
 class Footer extends React.Component {
   static propTypes = {
-      t: PropTypes.func.isRequired
+      t: PropTypes.func.isRequired,
+      lang: PropTypes.string.isRequired
   };
 
   constructor(props) {
@@ -97,13 +99,21 @@ class Footer extends React.Component {
   }
 
   renderFooterMenuItems() {
-      const { t } = this.props;
+      const {
+          t,
+          lang: currentLanguage = ''
+      } = this.props;
+
       return (
-          Object.values(t('footer-menu', { returnObjects: true })).map((item) => (
-              <li key={ item } className="footer-notice-text">
-                <a href="#">{ item }</a>
-              </li>
-          ))
+          <>
+              { Object.values(t('footer-menu', { returnObjects: true }))
+                  .map((item) => (
+                      <li key={ item } className="footer-notice-text">
+                          <a href="#">{ item }</a>
+                      </li>
+                  )) }
+              <GoogleLogIn lang={ currentLanguage } />
+          </>
       );
   }
 

@@ -93,10 +93,11 @@ class App extends React.Component {
                   <Starters
                     languageCode={ this.getCurrentLanguage() }
                   />
-                  <GoogleLogIn lang={ currentLanguage } />
                   <Contact />
                   <EmbeddedMapComponent />
-                  <Footer />
+                  <Footer
+                    lang={ currentLanguage }
+                  />
                 </Provider>
               </Route>
             </Switch>
