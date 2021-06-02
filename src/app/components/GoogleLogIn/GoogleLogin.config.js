@@ -5,4 +5,4 @@
 *
 * @license MIT
 */
-const adminAccount = '';
+const adminAccounts = [];

@@ -24,6 +24,7 @@ import Contact from '@components/Contact/Contact.component';
 import FoodMenu from '@components/FoodMenu/FoodMenu.component';
 import Starters from '@components/Starters/Starters.component';
 import EmbeddedMapComponent from '@components/EmbeddedMap/EmbeddedMap.component';
+import GoogleLogIn from '@components/GoogleLogIn/GoogleLogIn.component';
 
 class App extends React.Component {
     static propTypes = {
@@ -46,8 +47,11 @@ class App extends React.Component {
     }
 
     getCurrentLanguage() {
-        const { i18n } = this.props;
-        const { language } = i18n;
+        const {
+            i18n: {
+                language
+            } = {}
+        } = this.props;
 
         return language;
     }
@@ -59,6 +63,8 @@ class App extends React.Component {
 
     render() {
         const { t } = this.props;
+        const currentLanguage = this.getCurrentLanguage().toUpperCase();
+
         return (
           <Router>
             <Switch>
@@ -87,6 +93,7 @@ class App extends React.Component {
                   <Starters
                     languageCode={ this.getCurrentLanguage() }
                   />
+                  <GoogleLogIn lang={ currentLanguage } />
                   <Contact />
                   <EmbeddedMapComponent />
                   <Footer />

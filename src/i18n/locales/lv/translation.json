@@ -2,7 +2,7 @@
   "add": "pievienot",
   "address": {
     "line": "Kurzemes prospekts 92a, Riga, Latvija",
-    "phone": "+371 20000000",
+    "phone": "+371 29740898",
     "email": "info@trinat.lv",
     "web": "https://trinat.lv"
   },
@@ -97,7 +97,7 @@
   "welcome": "Laipni lugti!",
   "reservation-placeholders": {
     "email": "aldis.berzins@trinat.lv",
-    "phone": "+371 20000000",
+    "phone": "+371 29740898",
     "name": "Aldis Bērziņš"
   }
 }

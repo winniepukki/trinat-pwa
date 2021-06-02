@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable class-methods-use-this */
-/* eslint-disable no-param-reassign */
 /**
 * SIA Trinat restaurant project
 * Copyright © winniepukki. All rights reserved.
@@ -14,7 +11,7 @@ import Form from '../Form/Form.component';
 
 class GoogleLogIn extends React.Component {
     static propTypes = {
-        adminAccount: PropTypes.string.isRequired
+        lang: PropTypes.string.isRequired
     };
 
     constructor(props) {
@@ -29,7 +26,7 @@ class GoogleLogIn extends React.Component {
     componentDidMount() {
         firebase.auth().onAuthStateChanged((user) => {
             if (user !== null) {
-                const { adminAccount } = this.props;
+                const adminAccount = '';
                 if (user.email === adminAccount) {
                     this.setState({
                         isLoggedIn: true
@@ -53,17 +50,23 @@ class GoogleLogIn extends React.Component {
         const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider)
             .then((result) => {
-                const token = result.credential.accessToken;
-                const { user } = result;
+                const {
+                    user: {
+                        email = ''
+                    } = {}
+                } = result;
+
+                console.log(email);
             })
             .catch(() => {});
     }
 
     render() {
         const { isLoggedIn } = this.state;
+        const { lang: currentLanguage } = this.props;
         return (
           <div>
-            { isLoggedIn ? <Form /> : '' }
+            { isLoggedIn ? <Form lang={ currentLanguage } /> : '' }
             <button
               type="button"
               onClick={ this.handleSignIn }
