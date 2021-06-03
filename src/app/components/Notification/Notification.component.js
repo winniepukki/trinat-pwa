@@ -44,14 +44,14 @@ class Notification extends React.Component {
         }, timeoutTime);
 
         return (
-      <div
-        className={ notificationShown
-            ? 'Notification fireNotification' : 'Notification hideNotification' }
-        style={ { background: 'var(--notification-info)' } }
-      >
-        <p>{ title }</p>
-        <p>{ message }</p>
-      </div>
+          <div
+            className={ notificationShown
+                ? 'Notification fireNotification' : 'Notification hideNotification' }
+            style={ { background: 'var(--notification-info)' } }
+          >
+            <p>{ title }</p>
+            <p>{ message }</p>
+          </div>
         );
     }
 

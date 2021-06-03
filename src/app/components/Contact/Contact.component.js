@@ -7,6 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
+import { MIN_LENGTH, MIN_SHORT_LENGTH } from '@components/Contact/Contact.config';
 
 import './contact.style.scss';
 import firebase from '@util/firebase';
@@ -51,7 +52,6 @@ class Contact extends React.Component {
   }
 
   handleSubmit() {
-      const starterRef = firebase.database().ref('Reviews');
       const {
           values: {
               fullName,
@@ -60,6 +60,13 @@ class Contact extends React.Component {
           }
       } = this.state;
 
+      if (fullName.length < MIN_SHORT_LENGTH
+          || email.length < MIN_LENGTH
+          || review.length < MIN_LENGTH) {
+          return;
+      }
+
+      const starterRef = firebase.database().ref('Reviews');
       const preparedReview = {
           fullName,
           email,

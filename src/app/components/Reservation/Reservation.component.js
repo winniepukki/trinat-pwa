@@ -19,6 +19,7 @@ class Reservation extends React.Component {
 
   constructor(props) {
       super(props);
+      this.renderReservationNotice = this.renderReservationNotice.bind(this);
       this.renderFormPrimaryRow = this.renderFormPrimaryRow.bind(this);
       this.renderFormSecondaryRow = this.renderFormSecondaryRow.bind(this);
       this.renderFormSelectItems = this.renderFormSelectItems.bind(this);
@@ -122,6 +123,13 @@ class Reservation extends React.Component {
       );
   }
 
+  renderReservationNotice() {
+      const { t } = this.props;
+      return (
+          <div>{ t('reservation-notice') }</div>
+      );
+  }
+
   render() {
       const { t, handler } = this.props;
       return (
@@ -132,14 +140,7 @@ class Reservation extends React.Component {
                 <p className="title-caption">{ t('reservation') }</p>
               </h2>
               <div className="container">
-                { this.renderForm() }
-                <button
-                  type="button"
-                  className="button-default button-light"
-                  style={ { margin: '0 auto 25px auto' } }
-                >
-                  { t('send') }
-                </button>
+                { this.renderReservationNotice() }
               </div>
               <button
                 type="button"

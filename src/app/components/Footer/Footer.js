@@ -82,7 +82,7 @@ class Footer extends React.Component {
                   <p className="simple-text">
                     <i className="fas fa-at" />
                     <a
-                      href={ `tel:${t('address.email')}` }
+                      href={ `mailto:${t('address.email')}` }
                     >
                       { t('address.email') }
                     </a>

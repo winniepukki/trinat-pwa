@@ -35,7 +35,7 @@ class Forehead extends Component {
 
   handleScroll() {
       const currentScrollPos = window.pageYOffset;
-      const heroFrame = document.getElementById('hero').offsetHeight;
+      const heroFrame = document.getElementById('hero').offsetHeight / 2;
       if (currentScrollPos > heroFrame) {
           this.setState({
               menu: false
