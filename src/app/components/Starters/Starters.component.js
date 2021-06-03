@@ -68,7 +68,7 @@ class Starters extends React.Component {
         const { t } = this.props;
         const startersList = [];
 
-        if (!Object.keys(data).length) {
+        if (!data || !Object.keys(data).length) {
             return t('loading');
         }
 

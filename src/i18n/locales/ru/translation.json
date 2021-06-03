@@ -1,8 +1,8 @@
 {
   "add": "добавить",
   "address": {
-    "line": "Kurzemes prospekts 92a, Riga, Latvija",
-    "phone": "+371 20000000",
+    "line": "Kurzemes prospekts 92a",
+    "phone": "+371 29740898",
     "email": "info@trinat.lv",
     "web": "https://trinat.lv"
   },
@@ -69,6 +69,7 @@
       "1 персона", "2 персоны", "3 персоны", "4 персоны", "5 персон", "Более 5 персон"
     ]
   },
+  "reservation-notice": "Резервация банкетов и поминальных обедов по тел. 29 740 898 и 29 672 165",
   "send": "отправить",
   "starter-form": {
     "ingredients": "ингредиенты",
@@ -97,7 +98,7 @@
   "welcome": "добро пожаловать!",
   "reservation-placeholders": {
     "email": "ivan.petrovich@trinat.lv",
-    "phone": "+371 20000000",
+    "phone": "+371 29740898",
     "name": "Иван Петрович"
   }
 }

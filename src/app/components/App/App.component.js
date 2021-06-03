@@ -46,8 +46,11 @@ class App extends React.Component {
     }
 
     getCurrentLanguage() {
-        const { i18n } = this.props;
-        const { language } = i18n;
+        const {
+            i18n: {
+                language
+            } = {}
+        } = this.props;
 
         return language;
     }
@@ -59,6 +62,8 @@ class App extends React.Component {
 
     render() {
         const { t } = this.props;
+        const currentLanguage = this.getCurrentLanguage().toUpperCase();
+
         return (
           <Router>
             <Switch>
@@ -89,7 +94,9 @@ class App extends React.Component {
                   />
                   <Contact />
                   <EmbeddedMapComponent />
-                  <Footer />
+                  <Footer
+                    lang={ currentLanguage }
+                  />
                 </Provider>
               </Route>
             </Switch>

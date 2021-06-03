@@ -68,6 +68,7 @@ h5 {
     font-size: 30px; }
   p:nth-child(2) {
     font-weight: 100;
+    padding-left: .55rem;
     letter-spacing: 3px; }}
 
 h6 {
@@ -92,7 +93,7 @@ strong {
     color: var(--white); }}
 
 .language-switcher {
-  height: 9px;
+  height: 16px;
   margin-right: 5px; }
 
 blockquote {

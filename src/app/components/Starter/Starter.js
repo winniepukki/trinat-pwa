@@ -17,10 +17,10 @@ class Starter extends React.Component {
       const {
           starter: {
               id,
-              title,
-              ingredients,
-              price
-          }
+              title = '',
+              ingredients = '',
+              price = ''
+          } = {}
       } = this.props;
 
       return (

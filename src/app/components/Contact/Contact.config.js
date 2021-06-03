@@ -1,8 +1,8 @@
-/* eslint-disable no-unused-vars */
 /**
 * SIA Trinat restaurant project
 * Copyright © winniepukki. All rights reserved.
 *
 * @license MIT
 */
-const adminAccounts = [];
+export const MIN_LENGTH = 8;
+export const MIN_SHORT_LENGTH = 4;

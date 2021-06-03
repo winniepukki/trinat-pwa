@@ -6,12 +6,18 @@
 */
 import React from 'react';
 import { withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import firebase from '@util/firebase';
 
+export const mapStateToProps = (state) => ({
+    currentAccount: state.account.currentAccount
+});
+
 class Form extends React.Component {
   static propTypes = {
-      t: PropTypes.func.isRequired
+      t: PropTypes.func.isRequired,
+      lang: PropTypes.string.isRequired
   };
 
   constructor(props) {
@@ -41,8 +47,11 @@ class Form extends React.Component {
   }
 
   createStarter() {
-      const starterRef = firebase.database().ref('Starter');
+      const { lang } = this.props;
       const { starter: { title, ingredients, price } } = this.state;
+
+      const firebaseRef = `Starters-${lang}`;
+      const starterRef = firebase.database().ref(firebaseRef);
 
       const starter = {
           title,
@@ -110,4 +119,5 @@ class Form extends React.Component {
   }
 }
 
-export default withTranslation()(Form);
+export default
+connect(mapStateToProps)(withTranslation()(Form));
