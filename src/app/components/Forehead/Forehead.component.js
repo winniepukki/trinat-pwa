@@ -73,7 +73,6 @@ class Forehead extends Component {
                       alt="Русский язык"
                       className="language-switcher"
                     />
-                    <span>по-русски</span>
                   </span>
                 )
                 : (
@@ -83,7 +82,6 @@ class Forehead extends Component {
                       alt="Latviešu valoda"
                       className="language-switcher"
                     />
-                    <span>latviski</span>
                   </span>
                 ) }
           </a>
@@ -99,10 +97,10 @@ class Forehead extends Component {
             <div className="container">
               <div className="row justify-content-center align-items-center">
                 <div className="col forehead-item">
-                  <span>
+                  <span className="forehead-venue-address">
                     <i className="fas fa-map-marker-alt" />
                     { ' ' }
-                    <a href="#">{ t('address.line') }</a>
+                    <a href="https://www.waze.com/en/live-map/directions/latvia/riga/trinat?place=ChIJuR9jcTbF7kYREaS40W3ryts">{ t('address.line') }</a>
                   </span>
                   <span>
                     <i className="fas fa-phone-alt" />
@@ -110,8 +108,18 @@ class Forehead extends Component {
                   </span>
                 </div>
                 <div className="col forehead-item custom-tar">
-                  <a href="#"><i className="fab fa-facebook-f" /></a>
-                  <a href="#"><i className="fab fa-instagram" /></a>
+                  <a
+                    href="#"
+                    className="forehead-social-network"
+                  >
+                      <i className="fab fa-facebook-f" />
+                  </a>
+                  <a
+                    href="#"
+                    className="forehead-social-network"
+                  >
+                      <i className="fab fa-instagram" />
+                  </a>
                   { this.renderLanguageSwitcher() }
                 </div>
               </div>

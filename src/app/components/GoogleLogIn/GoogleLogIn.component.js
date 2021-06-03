@@ -7,16 +7,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import firebase from '@util/firebase';
-import Form from '../Form/Form.component';
 import { connect } from 'react-redux';
 import {
     subscribeAccount,
     unsubscribeAccount
 } from '../../store/index';
-
-export const mapStateToProps = (state) => ({
-    currentAccount: state.account.currentAccount
-});
 
 export const mapDispatchToProps = (dispatch) => ({
     subscribeAccount: (account) => dispatch(subscribeAccount(account)),
@@ -25,40 +20,21 @@ export const mapDispatchToProps = (dispatch) => ({
 
 class GoogleLogIn extends React.Component {
     static propTypes = {
-        lang: PropTypes.string.isRequired,
         subscribeAccount: PropTypes.func.isRequired,
         unsubscribeAccount: PropTypes.func.isRequired
     };
 
     constructor(props) {
         super(props);
-        this.state = {
-            isLoggedIn: false
-        };
+
         this.handleSignIn = this.handleSignIn.bind(this);
         this.handleSignOut = this.handleSignOut.bind(this);
-    }
-
-    componentDidMount() {
-        firebase.auth().onAuthStateChanged((user) => {
-            if (user !== null) {
-                const adminAccount = '';
-                if (user.email === adminAccount) {
-                    this.setState({
-                        isLoggedIn: true
-                    });
-                }
-            }
-        });
     }
 
     handleSignOut() {
         firebase.auth().signOut()
             .then(() => {
                 const { unsubscribeAccount } = this.props;
-                this.setState({
-                    isLoggedIn: false
-                });
                 unsubscribeAccount();
             })
             .catch(() => {});
@@ -75,28 +51,34 @@ class GoogleLogIn extends React.Component {
                     } = {}
                 } = result;
 
-                subscribeAccount(email);
+                if (email.length) {
+                    subscribeAccount(email);
+                }
             })
             .catch(() => {});
     }
 
     render() {
-        const { isLoggedIn } = this.state;
-        const { lang: currentLanguage } = this.props;
         return (
           <div>
-            { isLoggedIn ? <Form lang={ currentLanguage } /> : '' }
             <button
               type="button"
+              className="button-auth"
               onClick={ this.handleSignIn }
             >
-                Log in with google
+                <i className="fas fa-user-lock" />
             </button>
-            <button type="button" onClick={ this.handleSignOut }>Sign out</button>
+            <button
+              type="button"
+              onClick={ this.handleSignOut }
+              className="button-auth"
+            >
+                <i className="fas fa-sign-out-alt" />
+            </button>
           </div>
         );
     }
 }
 
 export default
-connect(mapStateToProps, mapDispatchToProps)(GoogleLogIn);
+connect(mapDispatchToProps)(GoogleLogIn);
