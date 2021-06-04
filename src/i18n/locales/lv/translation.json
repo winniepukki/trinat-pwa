@@ -94,7 +94,8 @@
   },
   "notification": {
     "form-success": "Jūs veiksmīgi iesniedzāt atsauksmi! Paldies, ka palīdzat mums augt!",
-    "form-error": "Lūdzam, aizpildiet visus laukus vai pievienojiet informāciju!",
+    "form-error": "Lūdzam pievienot simbolus laukos!",
+    "form-error-empty": "Lūdzam aizpildīt visus laukus!",
     "lang-change": "Jūs veiksmīgi samainījāt valodu uz latviešu"
   },
   "welcome": "Laipni lugti!",

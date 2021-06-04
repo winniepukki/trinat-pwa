@@ -10,6 +10,11 @@ button {
   position: relative;
   cursor: pointer; }
 
+.button-close {
+  float: right;
+  color: var(--white);
+  background: transparent; }
+
 .reservation-button {
   border: 1px solid var(--white);
   text-decoration: none;

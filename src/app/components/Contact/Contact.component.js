@@ -7,7 +7,11 @@
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
-import { MIN_LENGTH, MIN_SHORT_LENGTH } from '@components/Contact/Contact.config';
+import {
+    MIN_LENGTH,
+    MIN_SHORT_LENGTH,
+    HIDE_NOTIFICATION_TIMEOUT
+} from '@components/Contact/Contact.config';
 
 import './contact.style.scss';
 import firebase from '@util/firebase';
@@ -35,6 +39,7 @@ class Contact extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this);
       this.resetAllFields = this.resetAllFields.bind(this);
       this.renderContactForm = this.renderContactForm.bind(this);
+      this.closeContactNotification = this.closeContactNotification.bind(this);
   }
 
   resetAllFields() {
@@ -64,6 +69,17 @@ class Contact extends React.Component {
       } = this.state;
       const { t } = this.props;
 
+      if (!fullName.length
+          && !email.length
+          && !review.length) {
+          this.notificationRef.current.className = 'contact-notification error';
+          this.setState({
+              message: t('notification.form-error-empty')
+          });
+
+          return;
+      }
+
       if (fullName.length < MIN_SHORT_LENGTH
           || email.length < MIN_LENGTH
           || review.length < MIN_LENGTH) {
@@ -89,6 +105,10 @@ class Contact extends React.Component {
       this.notificationRef.current.className = 'contact-notification success';
       starterRef.push(preparedReview);
       this.resetAllFields();
+
+      setTimeout(() => {
+          this.notificationRef.current.className = 'hidden';
+      }, HIDE_NOTIFICATION_TIMEOUT);
   }
 
   renderContactForm() {
@@ -141,6 +161,10 @@ class Contact extends React.Component {
       );
   }
 
+  closeContactNotification() {
+      this.notificationRef.current.className = 'hidden';
+  }
+
   render() {
       const { t } = this.props;
       const { message = '' } = this.state;
@@ -160,6 +184,12 @@ class Contact extends React.Component {
                   ref={ this.notificationRef }
                 >
                     { message }
+                    <button
+                      className="button-close"
+                      onClick={ this.closeContactNotification }
+                    >
+                        <i className="far fa-times-circle" />
+                    </button>
                 </p>
                 { this.renderContactForm() }
               </div>
