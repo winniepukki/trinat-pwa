@@ -83,7 +83,7 @@ class Contact extends React.Component {
       };
 
       this.setState({
-          message: t('notification.form-success'),
+          message: t('notification.form-success')
       });
 
       this.notificationRef.current.className = 'contact-notification success';
