@@ -1,5 +1,25 @@
+@import '../../style/abstract/variables';
+@import '../../style/abstract/helpers';
+
+:root {
+  --notification-success: var(--imported-notification-success, #{$notification-success}); }
+
 .parallax-section-contact {
   background: url('./contact.jpg') no-repeat right;
+  .hidden {
+    display: none; }
   .inner-container-contact {
     padding: 40px !important;
-    float: left; }}
+    float: left;
+    .contact-notification {
+      display: flex;
+      @include justify-content(space-between);
+      padding: 10px 10px;
+      font-size: 12px;
+      color: #fff; }
+
+    .error {
+      background: var(--notification-alert); }
+
+    .success {
+      background: var(--notification-success); }}}

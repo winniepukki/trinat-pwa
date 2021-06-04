@@ -47,7 +47,7 @@
   "view-gallery": "apskatīt galēriju",
   "footer-text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nisi obcaecati officiis quo repellat totam.",
   "hero": {
-    "title": "gatavojam ekskluzīvu ēdienu, kurš ir Garšīgs Un, No 2017 Nodrosējiet Vai Zvaniet 371 26715053"
+    "title": "gatavojam ekskluzīvu ēdienu, kurš ir Garšīgs Un, No 2017 Nodrosējiet Vai Zvaniet +371 29740898"
   },
   "lang": "lv",
   "loading-fail": "Neizdevās ielādēt datus. Sazinieties ar vietnes administrāciju",
@@ -93,6 +93,9 @@
     "starter-add-description": "izmantojiet visus laukus, lai pieviejot jaunu kompleksu"
   },
   "notification": {
+    "form-success": "Jūs veiksmīgi iesniedzāt atsauksmi! Paldies, ka palīdzat mums augt!",
+    "form-error": "Lūdzam pievienot simbolus laukos!",
+    "form-error-empty": "Lūdzam aizpildīt visus laukus!",
     "lang-change": "Jūs veiksmīgi samainījāt valodu uz latviešu"
   },
   "welcome": "Laipni lugti!",

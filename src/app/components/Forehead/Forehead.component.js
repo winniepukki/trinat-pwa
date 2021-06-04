@@ -109,7 +109,7 @@ class Forehead extends Component {
                 </div>
                 <div className="col forehead-item custom-tar">
                   <a
-                    href="#"
+                    href="http://bit.ly/3nataly"
                     className="forehead-social-network"
                   >
                       <i className="fab fa-facebook-f" />

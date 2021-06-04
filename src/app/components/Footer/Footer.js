@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 /**
 * SIA Trinat restaurant project
 * Copyright © winniepukki. All rights reserved.

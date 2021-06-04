@@ -10,6 +10,11 @@ button {
   position: relative;
   cursor: pointer; }
 
+.button-close {
+  float: right;
+  color: var(--white);
+  background: transparent; }
+
 .reservation-button {
   border: 1px solid var(--white);
   text-decoration: none;
@@ -74,6 +79,8 @@ button {
 
 .button-dark {
   background: rgb(var(--black));
+  &:disabled {
+    background: var(--button-disabled-color); }
   &:hover {
     border: 1px solid rgb(var(--black));
     color: rgb(var(--black));

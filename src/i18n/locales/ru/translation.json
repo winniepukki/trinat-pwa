@@ -47,7 +47,7 @@
   "view-gallery": "посмотреть галерею",
   "footer-text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nisi obcaecati officiis quo repellat totam.",
   "hero": {
-    "title": "ГОТОВИМ ВКУСНУЮ И ЭКСКЛЮЗИВНУЮ ЕДУ С 2017 БРОНИРУЙТЕ ИЛИ ЗВОНИТЕ +371 26715053"
+    "title": "ГОТОВИМ ВКУСНУЮ И ЭКСКЛЮЗИВНУЮ ЕДУ С 2017 БРОНИРУЙТЕ ИЛИ ЗВОНИТЕ +371 29740898"
   },
   "lang": "ru",
   "loading-fail": "Не удалось загрузить данные. Свяжитесь с администрацией сайта",
@@ -93,9 +93,12 @@
     "starter-add-description": "подставьте все здачения для добавления нового комплекса"
   },
   "notification": {
+    "form-success": "Вы успешно оставили отзыв! Спасибо что помогаете нам расти!",
+    "form-error": "Пожалуйста добавьте информации!",
+    "form-error-empty": "Пожалуйста заполните все поля!",
     "lang-change": "Вы успешно поменяли язык на русский"
   },
-  "welcome": "добро пожаловать!",
+  "welcome": "warm welcome!",
   "reservation-placeholders": {
     "email": "ivan.petrovich@trinat.lv",
     "phone": "+371 29740898",
