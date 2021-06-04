@@ -4,7 +4,7 @@
 *
 * @license MIT
 */
-import React from 'react';
+import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import { MIN_LENGTH, MIN_SHORT_LENGTH } from '@components/Contact/Contact.config';
@@ -21,12 +21,15 @@ class Contact extends React.Component {
       super(props);
 
       this.state = {
+          message: '',
           values: {
               fullName: '',
               email: '',
               review: ''
           }
       };
+
+      this.notificationRef = createRef();
 
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -59,10 +62,16 @@ class Contact extends React.Component {
               review
           }
       } = this.state;
+      const { t } = this.props;
 
       if (fullName.length < MIN_SHORT_LENGTH
           || email.length < MIN_LENGTH
           || review.length < MIN_LENGTH) {
+          this.notificationRef.current.className = 'contact-notification error';
+          this.setState({
+              message: t('notification.form-error')
+          });
+
           return;
       }
 
@@ -73,6 +82,11 @@ class Contact extends React.Component {
           review
       };
 
+      this.setState({
+          message: t('notification.form-success'),
+      });
+
+      this.notificationRef.current.className = 'contact-notification success';
       starterRef.push(preparedReview);
       this.resetAllFields();
   }
@@ -83,9 +97,11 @@ class Contact extends React.Component {
       } = this.props;
 
       const {
-          fullName,
-          email,
-          review
+          values: {
+              fullName = '',
+              email = '',
+              review = ''
+          } = {}
       } = this.state;
 
       return (
@@ -127,6 +143,7 @@ class Contact extends React.Component {
 
   render() {
       const { t } = this.props;
+      const { message = '' } = this.state;
       return (
           <div className="container">
             <div className="parallax-section parallax-section-contact">
@@ -138,6 +155,12 @@ class Contact extends React.Component {
                   { `${t('address.phone')} - ${t('address.email')}` }
                 </p>
                 <p className="simple-text">{ t('contact.text') }</p>
+                <p
+                  className="hidden"
+                  ref={ this.notificationRef }
+                >
+                    { message }
+                </p>
                 { this.renderContactForm() }
               </div>
             </div>

@@ -8,6 +8,12 @@
   --secondary-dark-color: var(--imported-secondary-dark-color, #{$secondary-dark-color});
   --secondary-light-color: var(--imported-secondary-light-color, #{$secondary-light-color});
 
+  --notification-success: var(--imported-notification-success, #{$notification-success});
+  --notification-alert: var(--imported-notification-alert, #{$notification-alert});
+  --notification-info: var(--import-notification-info, #{$notification-info});
+
+  --button-disabled-color: var(--imported-button-disabled-color, #{$button-disabled-color});
+
   --auxiliary-color-lightener: var(--auxiliary-color-lightener, #{$auxiliary-color-lightener});
 
   --white: var(--imported-white-color, #{$white});

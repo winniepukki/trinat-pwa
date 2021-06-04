@@ -1,5 +1,24 @@
+@import '../../style/abstract/variables';
+
+:root {
+  --notification-success: var(--imported-notification-success, #{$notification-success}); }
+
 .parallax-section-contact {
   background: url('./contact.jpg') no-repeat right;
+  .hidden {
+    display: none; }
   .inner-container-contact {
     padding: 40px !important;
-    float: left; }}
+    float: left;
+    .contact-notification {
+      display: block !important;
+      padding: 10px 10px;
+      font-size: 12px;
+      color: #fff; }
+
+    .error {
+      display: block !important;
+      background: var(--notification-alert); }
+
+    .success {
+      background: var(--notification-success); }}}

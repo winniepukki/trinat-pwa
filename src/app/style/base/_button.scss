@@ -74,6 +74,8 @@ button {
 
 .button-dark {
   background: rgb(var(--black));
+  &:disabled {
+    background: var(--button-disabled-color); }
   &:hover {
     border: 1px solid rgb(var(--black));
     color: rgb(var(--black));
