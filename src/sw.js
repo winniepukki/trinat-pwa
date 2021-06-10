@@ -5,22 +5,21 @@
 * @license MIT
 */
 
-const cacheName = 'v2';
-// eslint-disable-next-line no-unused-vars
+const cacheName = 'v1';
 const assets = [
     'index.html',
     'main.js'
 ];
 
-self.addEventListener('install', (e) => {
-    e.waitUntil(
-        caches
-            .open(cacheName)
-            .then((cache) => {
-                cache.addAll(assets);
-            })
-            .then(() => self.skipWaiting())
-    );
+async function cacheFirst(request) {
+    const cached = await caches.match(request);
+    // eslint-disable-next-line no-return-await
+    return cached ?? await fetch(request);
+}
+
+self.addEventListener('install', async (e) => {
+    const cache = await caches.open(cacheName);
+    await cache.addAll(assets);
 });
 
 self.addEventListener('activate', (e) => {
@@ -39,9 +38,5 @@ self.addEventListener('activate', (e) => {
 });
 
 self.addEventListener('fetch', (e) => {
-    e.respondWith(
-        fetch(e.request).catch(() => {
-            caches.match(e.request);
-        })
-    );
+    e.respondWith(cacheFirst(e.request));
 });
