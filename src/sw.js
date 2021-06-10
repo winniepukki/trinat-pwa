@@ -6,6 +6,7 @@
 */
 
 const cacheName = 'v1';
+// eslint-disable-next-line no-unused-vars
 const assets = [
     'index.html',
     'main.js'
@@ -50,7 +51,7 @@ self.addEventListener('fetch', (e) => {
 
                 return res;
             })
-            .catch((err) => {
+            .catch(() => {
                 caches.match(e.request)
                     .then((res) => res);
             })
