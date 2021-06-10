@@ -5,23 +5,23 @@
 * @license MIT
 */
 
-const cacheName = 'v1';
+const cacheName = 'v2';
 // eslint-disable-next-line no-unused-vars
 const assets = [
     'index.html',
     'main.js'
 ];
 
-// self.addEventListener('install', (e) => {
-//     e.waitUntil(
-//         caches
-//             .open(cacheName)
-//             .then((cache) => {
-//                 cache.addAll(assets);
-//             })
-//             .then(() => self.skipWaiting())
-//     );
-// });
+self.addEventListener('install', (e) => {
+    e.waitUntil(
+        caches
+            .open(cacheName)
+            .then((cache) => {
+                cache.addAll(assets);
+            })
+            .then(() => self.skipWaiting())
+    );
+});
 
 self.addEventListener('activate', (e) => {
     e.waitUntil(
@@ -40,20 +40,8 @@ self.addEventListener('activate', (e) => {
 
 self.addEventListener('fetch', (e) => {
     e.respondWith(
-        fetch(e.request)
-            .then((res) => {
-                const resClone = res.clone();
-                caches
-                    .open(cacheName)
-                    .then((cache) => {
-                        cache.put(e.request, resClone);
-                    });
-
-                return res;
-            })
-            .catch(() => {
-                caches.match(e.request)
-                    .then((res) => res);
-            })
+        fetch(e.request).catch(() => {
+            caches.match(e.request);
+        })
     );
 });
