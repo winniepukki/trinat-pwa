@@ -49,7 +49,8 @@ module.exports = {
             patterns: [
                 { from: './src/public/assets/images/', to: 'assets/img' },
                 { from: './src/public/assets/font/', to: 'assets/font' },
-                { from: './src/public/assets/favicon', to: 'assets/favicon' }
+                { from: './src/public/assets/favicon', to: 'assets/favicon' },
+                { from: './src/sw.js', to: './[name].js' }
             ]
         })
     ],
