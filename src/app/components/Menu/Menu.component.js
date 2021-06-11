@@ -88,7 +88,7 @@ class Menu extends React.Component {
       const { visible, menu } = this.state;
 
       return (
-          <div>
+          <div className="Menu">
             { visible ? <Reservation handler={ this.handleReservation } /> : '' }
             <div className={ menu ? 'menu' : 'menu test-menu' }>
               <div className="container">

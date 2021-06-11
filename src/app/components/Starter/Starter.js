@@ -8,6 +8,8 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
+import './Starter.style.scss';
+
 class Starter extends React.Component {
   static propTypes = {
       starter: PropTypes.instanceOf(Object).isRequired
@@ -24,7 +26,7 @@ class Starter extends React.Component {
       } = this.props;
 
       return (
-          <div className="starter-item" key={ id }>
+          <div className="Starter" key={ id }>
             <div className="row">
               <div className="col">
                 <p className="starter-title">{ title }</p>

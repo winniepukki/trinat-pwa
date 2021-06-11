@@ -81,54 +81,56 @@ class Form extends React.Component {
       } = this.state;
 
       return (
-          <div className="container">
-            <h3>
-              <p className="parallax-headline">Administration</p>
-              <p className="parallax-title">
-                { t('admin-zone.starter-add') }
-              </p>
-              <p className="parallax-description">
-                { t('admin-zone.starter-add-description') }
-              </p>
-            </h3>
+          <div className="Form">
+              <div className="container">
+                  <h3>
+                      <p className="parallax-headline">Administration</p>
+                      <p className="parallax-title">
+                          { t('admin-zone.starter-add') }
+                      </p>
+                      <p className="parallax-description">
+                          { t('admin-zone.starter-add-description') }
+                      </p>
+                  </h3>
 
-            <input
-              className="contact-control"
-              type="text"
-              name="title"
-              value={ title }
-              onChange={ this.handleChange }
-              placeholder={ t('starter-form.title') }
-            />
+                  <input
+                    className="contact-control"
+                    type="text"
+                    name="title"
+                    value={ title }
+                    onChange={ this.handleChange }
+                    placeholder={ t('starter-form.title') }
+                  />
 
-            <input
-              className="contact-control"
-              type="text"
-              name="ingredients"
-              value={ ingredients }
-              onChange={ this.handleChange }
-              placeholder={ t('starter-form.ingredients') }
-            />
+                  <input
+                    className="contact-control"
+                    type="text"
+                    name="ingredients"
+                    value={ ingredients }
+                    onChange={ this.handleChange }
+                    placeholder={ t('starter-form.ingredients') }
+                  />
 
-            <input
-              className="contact-control"
-              type="number"
-              name="price"
-              value={ price }
-              onChange={ this.handleChange }
-              placeholder={ t('starter-form.price') }
-            />
+                  <input
+                    className="contact-control"
+                    type="number"
+                    name="price"
+                    value={ price }
+                    onChange={ this.handleChange }
+                    placeholder={ t('starter-form.price') }
+                  />
 
-            <button
-              type="button"
-              className="button-default button-dark"
-              onClick={ this.createStarter }
-              disabled={ !title || !ingredients || !price }
-              aria-label="Create starter button"
-            >
-              +
-              { t('add') }
-            </button>
+                  <button
+                    type="button"
+                    className="button-default button-dark"
+                    onClick={ this.createStarter }
+                    disabled={ !title || !ingredients || !price }
+                    aria-label="Create starter button"
+                  >
+                      +
+                      { t('add') }
+                  </button>
+              </div>
           </div>
       );
   }

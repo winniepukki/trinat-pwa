@@ -21,7 +21,7 @@ class Scroll extends React.Component {
 
     render() {
         return (
-          <div className="scroll-top">
+          <div className="Scroll-Top">
             <div className="container">
                 <button
                   type="button"

@@ -104,6 +104,8 @@ module.exports = {
                 test: /\.(png|jpg|gif)$/,
                 loader: 'file-loader',
                 options: {
+                    publicPath: path.resolve(__dirname, '/assets/img'),
+                    outputPath: 'assets/img',
                     name: '[name].[ext]'
                 }
             },

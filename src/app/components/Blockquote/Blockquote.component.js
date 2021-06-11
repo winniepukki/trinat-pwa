@@ -28,11 +28,11 @@ class Blockquote extends React.Component {
         } = this.props;
 
         return (
-            <>
+            <div className="Blockquote">
               <p className="blockquote-content">{ content }</p>
               <p className="description">{ description }</p>
               <p className="author">{ author }</p>
-            </>
+            </div>
         );
     }
 

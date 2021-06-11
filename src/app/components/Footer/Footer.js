@@ -41,7 +41,7 @@ class Footer extends React.Component {
   renderFooter() {
       const { t } = this.props;
       return (
-          <div className="footer">
+          <div className="Footer">
             <ScrollComponent showBelow={ 250 } />
             <div className="container">
               <div className="row">
@@ -132,7 +132,7 @@ class Footer extends React.Component {
   renderFooterNotice() {
       const { t } = this.props;
       return (
-          <div className="footer-notice">
+          <div className="Footer-Notice">
             <div className="container">
               <div className="row align-items-center justify-content-center">
                 <div className="col-sm-6 custom-flexbox custom-align-ic">
@@ -146,7 +146,7 @@ class Footer extends React.Component {
                   <span className="footer-notice-text">{ t('copyright') }</span>
                 </div>
                 <div className="col-sm-6">
-                  <ul className="footer-links">
+                  <ul className="Footer-Links">
                     { this.renderFooterMenuItems() }
                   </ul>
                 </div>

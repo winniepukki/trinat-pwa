@@ -35,7 +35,7 @@ class FoodMenu extends React.Component {
       const { t } = this.props;
 
       return (
-          <div>
+          <div className="FoodMenu">
             <section className="food-menu">
               <div className="section-title">
                 { this.renderTitle() }

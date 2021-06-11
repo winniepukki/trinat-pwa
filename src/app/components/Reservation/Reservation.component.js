@@ -133,8 +133,8 @@ class Reservation extends React.Component {
   render() {
       const { t, handler } = this.props;
       return (
-          <div className="reservation-form">
-            <div className="reservation-form-wrapper">
+          <div className="Reservation-Form">
+            <div className="Reservation-Form-Wrapper">
               <h2 className="custom-tac">
                 <p className="title-first">{ t('table') }</p>
                 <p className="title-caption">{ t('reservation') }</p>

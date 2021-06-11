@@ -111,7 +111,7 @@ class Starters extends React.Component {
         const { t } = this.props;
 
         return (
-            <div>
+            <div className="Starters">
                 <section className="starters-menu" style={ { marginBottom: '60px' } }>
                 <div className="section-title">
                     <h3>

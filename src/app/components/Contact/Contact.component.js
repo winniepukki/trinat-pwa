@@ -170,32 +170,34 @@ class Contact extends React.Component {
       const { t } = this.props;
       const { message = '' } = this.state;
       return (
-          <div className="container">
-            <div className="parallax-section parallax-section-contact">
-              <div className="inner-container inner-container-contact">
-                <h3>
-                  <p className="parallax-title">{ t('contact.title') }</p>
-                </h3>
-                <p className="simple-text">
-                  { `${t('address.phone')} - ${t('address.email')}` }
-                </p>
-                <p className="simple-text">{ t('contact.text') }</p>
-                <p
-                  className="hidden"
-                  ref={ this.notificationRef }
-                >
-                    { message }
-                    <button
-                      className="button-close"
-                      onClick={ this.closeContactNotification }
-                      aria-label="Close contact form notification"
+          <div className="Contact">
+              <div className="container">
+                <div className="parallax-section parallax-section-contact">
+                  <div className="inner-container inner-container-contact">
+                    <h3>
+                      <p className="parallax-title">{ t('contact.title') }</p>
+                    </h3>
+                    <p className="simple-text">
+                      { `${t('address.phone')} - ${t('address.email')}` }
+                    </p>
+                    <p className="simple-text">{ t('contact.text') }</p>
+                    <p
+                      className="hidden"
+                      ref={ this.notificationRef }
                     >
-                        <i className="far fa-times-circle" />
-                    </button>
-                </p>
-                { this.renderContactForm() }
+                        { message }
+                        <button
+                          className="button-close"
+                          onClick={ this.closeContactNotification }
+                          aria-label="Close contact form notification"
+                        >
+                            <i className="far fa-times-circle" />
+                        </button>
+                    </p>
+                    { this.renderContactForm() }
+                  </div>
+                </div>
               </div>
-            </div>
           </div>
       );
   }

@@ -101,7 +101,7 @@ class Header extends Component {
       const { t } = this.props;
 
       return (
-          <div className={ menu ? 'header' : 'hidden' }>
+          <div className={ menu ? 'Header' : 'hidden' }>
             <div className="container">
               <div className="row justify-content-center align-items-center">
                 <div className="col header-item">

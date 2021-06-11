@@ -70,7 +70,7 @@ class Hero extends React.Component {
 
     render() {
         return (
-          <div className="hero" id="hero">
+          <div className="Hero" id="hero">
             { this.renderWelcomeMessage() }
             { this.renderMenu() }
             { this.renderHeroBackground() }

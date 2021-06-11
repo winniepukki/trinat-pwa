@@ -68,16 +68,18 @@ class Story extends React.Component {
 
   render() {
       return (
-          <div className="container">
-            <div className="parallax-section parallax-section-story">
-              <div
-                className="inner-container inner-container-story"
-                ref={ this.parallaxItemRef }
-              >
-                { this.renderStoryTitle() }
-                { this.renderStoryText() }
+          <div className="Story">
+              <div className="container">
+                  <div className="parallax-section parallax-section-story">
+                      <div
+                        className="inner-container inner-container-story"
+                        ref={ this.parallaxItemRef }
+                      >
+                          { this.renderStoryTitle() }
+                          { this.renderStoryText() }
+                      </div>
+                  </div>
               </div>
-            </div>
           </div>
       );
   }

@@ -60,7 +60,7 @@ class GoogleLogIn extends React.Component {
 
     render() {
         return (
-          <div>
+          <div className="GoogleLogIn">
             <button
               type="button"
               className="button-auth"
