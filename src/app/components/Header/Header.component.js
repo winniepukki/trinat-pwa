@@ -13,7 +13,7 @@ import {
     LANG_CODE_RU
 } from '@components/Starters/Starters.config';
 
-import './header.style.scss';
+import './Header.style.scss';
 
 class Header extends Component {
   static propTypes = {
