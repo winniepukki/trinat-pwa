@@ -11,6 +11,7 @@ import { initReactI18next } from 'react-i18next';
 
 import translationLV from './locales/lv/translation';
 import translationRU from './locales/ru/translation';
+import { LANG_CODE_LV } from '@components/Starters/Starters.config';
 
 const resources = {
     lv: {
@@ -23,7 +24,7 @@ const resources = {
 
 i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
     resources,
-    fallbackLng: 'lv',
+    fallbackLng: LANG_CODE_LV,
     // Ensure the debugging mode is set to *false* in production
     debug: false,
     detection: {

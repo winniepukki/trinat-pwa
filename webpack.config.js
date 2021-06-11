@@ -7,6 +7,7 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const PORT = 4000;
 const paths = {
@@ -21,6 +22,10 @@ const paths = {
 
 module.exports = {
     entry: './src/index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].[hash].js'
+    },
     mode: 'development',
     externals: {
         paths
@@ -30,8 +35,17 @@ module.exports = {
         contentBase: paths.dist,
         open: true
     },
-    output: {
-        path: path.resolve(__dirname, 'dist')
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    name: 'vendors',
+                    test: /node_modules/,
+                    chunks: 'all',
+                    enforce: true
+                }
+            }
+        }
     },
     resolve: {
         alias: {
@@ -41,6 +55,9 @@ module.exports = {
         }
     },
     plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'css/[name].[contenthash].css'
+        }),
         new HTMLWebpackPlugin({
             template: './src/public/index.html',
             filename: './index.html'
@@ -48,8 +65,8 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 { from: './src/public/assets/images/', to: 'assets/img' },
-                { from: './src/public/assets/font/', to: 'assets/font' },
-                { from: './src/public/assets/favicon', to: 'assets/favicon' }
+                { from: './src/public/assets/favicon', to: 'assets/favicon' },
+                { from: './src/public/manifest.json', to: './[name].[ext]' }
             ]
         })
     ],
@@ -66,6 +83,12 @@ module.exports = {
                 test: /\.(scss|css)$/,
                 use: [
                     'style-loader',
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            esModule: false
+                        }
+                    },
                     'css-loader',
                     'sass-loader'
                 ]

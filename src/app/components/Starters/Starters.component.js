@@ -8,8 +8,14 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import firebase from '@util/firebase';
+import {
+    STARTER_LANG_LV,
+    STARTER_LANG_RU,
+    LANG_CODE_LV,
+    LANG_CODE_RU
+} from './Starters.config';
 
-import './starters.style.scss';
+import './Starters.style.scss';
 import Starter from '../Starter/Starter';
 
 class Starters extends React.Component {
@@ -38,18 +44,20 @@ class Starters extends React.Component {
     }
 
     getStartersFirebaseData() {
-        const { languageCode } = this.props;
+        const {
+            languageCode = ''
+        } = this.props;
         let startersLang;
 
         switch (languageCode) {
-        case 'lv':
-            startersLang = 'Starters-LV';
+        case LANG_CODE_LV:
+            startersLang = STARTER_LANG_LV;
             break;
-        case 'ru':
-            startersLang = 'Starters-RU';
+        case LANG_CODE_RU:
+            startersLang = STARTER_LANG_RU;
             break;
         default:
-            startersLang = 'Starters-LV';
+            startersLang = STARTER_LANG_LV;
             break;
         }
 
@@ -73,7 +81,7 @@ class Starters extends React.Component {
         }
 
         Object.values(data).filter((item) => {
-            if (item === null) {
+            if (!item) {
                 return null;
             }
 
@@ -84,7 +92,7 @@ class Starters extends React.Component {
 
         return loading ? (
             startersList.map((starter) => {
-                if (starter === null) {
+                if (!starter) {
                     return null;
                 }
 
@@ -107,8 +115,8 @@ class Starters extends React.Component {
                 <section className="starters-menu" style={ { marginBottom: '60px' } }>
                 <div className="section-title">
                     <h3>
-                    <div className="parallax-headline">Amazing</div>
-                    <div className="parallax-title">{ t('delicious') }</div>
+                        <div className="parallax-headline">Amazing</div>
+                        <div className="parallax-title">{ t('delicious') }</div>
                     </h3>
                 </div>
                 </section>

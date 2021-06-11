@@ -13,7 +13,7 @@ import {
     HIDE_NOTIFICATION_TIMEOUT
 } from '@components/Contact/Contact.config';
 
-import './contact.style.scss';
+import './Contact.style.scss';
 import firebase from '@util/firebase';
 
 class Contact extends React.Component {
@@ -62,9 +62,9 @@ class Contact extends React.Component {
   handleSubmit() {
       const {
           values: {
-              fullName,
-              email,
-              review
+              fullName = '',
+              email = '',
+              review = ''
           }
       } = this.state;
       const { t } = this.props;
@@ -154,6 +154,7 @@ class Contact extends React.Component {
           type="button"
           className="button-default button-dark"
           onClick={ this.handleSubmit }
+          aria-label="Submit contact form"
         >
           { t('send') }
         </button>
@@ -187,6 +188,7 @@ class Contact extends React.Component {
                     <button
                       className="button-close"
                       onClick={ this.closeContactNotification }
+                      aria-label="Close contact form notification"
                     >
                         <i className="far fa-times-circle" />
                     </button>

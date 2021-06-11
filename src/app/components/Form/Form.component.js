@@ -47,8 +47,16 @@ class Form extends React.Component {
   }
 
   createStarter() {
-      const { lang } = this.props;
-      const { starter: { title, ingredients, price } } = this.state;
+      const {
+          lang = ''
+      } = this.props;
+      const {
+          starter: {
+              title = '',
+              ingredients = '',
+              price = ''
+          } = {}
+      } = this.state;
 
       const firebaseRef = `Starters-${lang}`;
       const starterRef = firebase.database().ref(firebaseRef);
@@ -64,7 +72,13 @@ class Form extends React.Component {
 
   render() {
       const { t } = this.props;
-      const { starter: { title, ingredients, price } } = this.state;
+      const {
+          starter: {
+              title = '',
+              ingredients = '',
+              price = ''
+          } = {}
+      } = this.state;
 
       return (
           <div className="container">
@@ -110,6 +124,7 @@ class Form extends React.Component {
               className="button-default button-dark"
               onClick={ this.createStarter }
               disabled={ !title || !ingredients || !price }
+              aria-label="Create starter button"
             >
               +
               { t('add') }

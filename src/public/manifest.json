@@ -1,0 +1,17 @@
+{
+  "name": "Trinat Caffee",
+  "short_name": "TrinatCaffee",
+  "description": "Trinat Caffee official website",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#333",
+  "theme_color": "#cfa670",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "",
+      "type": "",
+      "sizes": ""
+    }
+  ]
+}

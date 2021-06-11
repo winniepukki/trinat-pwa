@@ -7,9 +7,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './hero.style.scss';
+import './Hero.style.scss';
 import { withTranslation } from 'react-i18next';
-import logo from '../../../public/assets/images/hero.jpg';
 import Menu from '../Menu/Menu.component';
 
 class Hero extends React.Component {
@@ -29,10 +28,10 @@ class Hero extends React.Component {
 
     renderWelcomeMessage() {
         const {
-            welcomeMessage,
-            titleCaptionFront,
-            titleCaptionBold,
-            subtitle
+            welcomeMessage = '',
+            titleCaptionFront = '',
+            titleCaptionBold = '',
+            subtitle = ''
         } = this.props;
 
         return (
@@ -61,7 +60,11 @@ class Hero extends React.Component {
 
     renderHeroBackground() {
         return (
-          <img src={ logo } alt="Home hero wallpaper" className="hero-wallpaper" />
+          <img
+            src="assets/img/section/hero.jpg"
+            alt="Home hero wallpaper"
+            className="hero-wallpaper"
+          />
         );
     }
 

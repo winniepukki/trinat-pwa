@@ -22,9 +22,9 @@ class Blockquote extends React.Component {
 
     renderBlockquoteEntities() {
         const {
-            content,
-            description,
-            author
+            content = '',
+            description = '',
+            author = ''
         } = this.props;
 
         return (
