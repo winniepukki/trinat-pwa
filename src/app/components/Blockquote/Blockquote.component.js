@@ -28,7 +28,7 @@ class Blockquote extends React.Component {
         } = this.props;
 
         return (
-            <div className="Blockquote">
+            <div className="container">
               <p className="blockquote-content">{ content }</p>
               <p className="description">{ description }</p>
               <p className="author">{ author }</p>
@@ -38,7 +38,7 @@ class Blockquote extends React.Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="Blockquote">
               <blockquote className="custom-tac">
                 { this.renderBlockquoteEntities() }
               </blockquote>

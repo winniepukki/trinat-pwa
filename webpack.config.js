@@ -17,19 +17,21 @@ const paths = {
     assets: path.join(__dirname, './src/public/assets'),
     components: path.resolve(__dirname, './src/app/components'),
     store: path.resolve(__dirname, './src/app/store'),
+    type: path.resolve(__dirname, './src/app/type'),
     util: path.resolve(__dirname, './src/app/util')
 };
 
 module.exports = {
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[hash].js'
+        path: paths.dist,
+        filename: '[name].[contenthash].js'
     },
     mode: 'development',
     externals: {
         paths
     },
+    devtool: 'source-map',
     devServer: {
         port: PORT,
         contentBase: paths.dist,
@@ -65,6 +67,7 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 { from: './src/public/assets/images/', to: 'assets/img' },
+                { from: './src/public/assets/icons/', to: 'assets/icons' },
                 { from: './src/public/assets/favicon', to: 'assets/favicon' },
                 { from: './src/public/manifest.json', to: './[name].[ext]' }
             ]

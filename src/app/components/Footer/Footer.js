@@ -24,12 +24,11 @@ class Footer extends React.Component {
       this.renderPaymentMethods = this.renderPaymentMethods.bind(this);
       this.renderFooter = this.renderFooter.bind(this);
       this.renderFooterNotice = this.renderFooterNotice.bind(this);
-      this.renderFooterMenuItems = this.renderFooterMenuItems.bind(this);
   }
 
   renderPaymentMethods() {
       return (
-          <div className="custom-grid-4">
+          <div className="payment-methods custom-grid-4">
             <img src="assets/img/social/apple.svg" alt="Apple pay icon" />
             <img src="assets/img/social/visa.svg" alt="Visa icon" />
             <img src="assets/img/social/mastercard.svg" alt="Mastercard icon" />
@@ -92,45 +91,12 @@ class Footer extends React.Component {
       );
   }
 
-  renderFooterMenuItems() {
+  renderFooterNotice() {
       const {
           t,
           lang: currentLanguage = ''
       } = this.props;
 
-      return (
-          <>
-              <li className="footer-notice-text">
-                  <a
-                    href="#"
-                    aria-label="Footer link to about us page"
-                  >
-                      { t('footer-menu.about') }
-                  </a>
-              </li>
-              <li className="footer-notice-text">
-                  <a
-                    href="#"
-                    aria-label="Footer link to careers page"
-                  >
-                      { t('footer-menu.careers') }
-                  </a>
-              </li>
-              <li className="footer-notice-text">
-                  <a
-                    href="#"
-                    aria-label="Footer link to the delivery page"
-                  >
-                      { t('footer-menu.delivery') }
-                  </a>
-              </li>
-              <GoogleLogIn lang={ currentLanguage } />
-          </>
-      );
-  }
-
-  renderFooterNotice() {
-      const { t } = this.props;
       return (
           <div className="Footer-Notice">
             <div className="container">
@@ -147,7 +113,31 @@ class Footer extends React.Component {
                 </div>
                 <div className="col-sm-6">
                   <ul className="Footer-Links">
-                    { this.renderFooterMenuItems() }
+                      <li className="footer-notice-text">
+                          <a
+                            href="#"
+                            aria-label="Footer link to about us page"
+                          >
+                              { t('footer-menu.about') }
+                          </a>
+                      </li>
+                      <li className="footer-notice-text">
+                          <a
+                            href="#"
+                            aria-label="Footer link to careers page"
+                          >
+                              { t('footer-menu.careers') }
+                          </a>
+                      </li>
+                      <li className="footer-notice-text">
+                          <a
+                            href="#"
+                            aria-label="Footer link to the delivery page"
+                          >
+                              { t('footer-menu.delivery') }
+                          </a>
+                      </li>
+                      <GoogleLogIn lang={ currentLanguage } />
                   </ul>
                 </div>
               </div>

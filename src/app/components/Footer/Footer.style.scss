@@ -4,7 +4,11 @@
   padding: 35px 0;
   color: var(--white);
   background: var(--secondary-dark-color);
-  border-bottom: 1px solid var(--primary-dark-color); }
+  border-bottom: 1px solid var(--primary-dark-color);
+
+.payment-methods img {
+  height: 28px;
+  width: 46px; }}
 
 .Footer-Notice {
   padding: 10px 0;
@@ -23,5 +27,6 @@
 
 .copyright {
   width: 100px;
+  max-height: 44px;
   clear: both;
   display: inline-block; }
