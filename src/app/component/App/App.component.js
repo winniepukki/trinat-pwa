@@ -15,14 +15,14 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import store from '@store/store';
 
-import Header from '@components/Header/Header.component';
-import Hero from '@components/Hero/Hero.component';
-import Footer from '@components/Footer/Footer';
-import Blockquote from '@components/Blockquote/Blockquote.component';
-import Story from '@components/Story/Story.component';
-import Contact from '@components/Contact/Contact.component';
-import FoodMenu from '@components/FoodMenu/FoodMenu.component';
-import Starters from '@components/Starters/Starters.component';
+import Header from '@component/Header/Header.component';
+import Hero from '@component/Hero/Hero.component';
+import Footer from '@component/Footer/Footer';
+import Blockquote from '@component/Blockquote/Blockquote.component';
+import Story from '@component/Story/Story.component';
+import Contact from '@component/Contact/Contact.component';
+import FoodMenu from '@component/FoodMenu/FoodMenu.component';
+import Starters from '@component/Starters/Starters.component';
 
 class App extends React.Component {
     static propTypes = {
@@ -65,7 +65,7 @@ class App extends React.Component {
     render() {
         const { t } = this.props;
         const currentLanguage = this.getCurrentLanguage().toUpperCase();
-        const Map = lazy(() => import('@components/EmbeddedMap/EmbeddedMap.component'));
+        const Map = lazy(() => import('../EmbeddedMap/EmbeddedMap.component'));
 
         return (
           <Router>

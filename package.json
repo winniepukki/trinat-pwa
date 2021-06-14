@@ -51,7 +51,7 @@
     "svg-url-loader": "^6.0.0",
     "webpack": "^5.4.0",
     "webpack-cli": "^4.2.0",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
@@ -74,9 +74,10 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "^@components(.*)$": "<rootDir>/src/app/components$1",
+      "^@components(.*)$": "<rootDir>/src/app/component$1",
       "^@store(.*)$": "<rootDir>/src/app/store$1",
-      "^@util(.*)$": "<rootDir>/src/app/util$1"
+      "^@util(.*)$": "<rootDir>/src/app/util$1",
+      "^@type(.*)$": "<rootDir>/src/app/type$1"
     }
   }
 }

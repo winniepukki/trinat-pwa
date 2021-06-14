@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 import './Hero.style.scss';
 import { withTranslation } from 'react-i18next';
-import Menu from '../Menu/Menu.component';
+import Menu from '@component/Menu/Menu.component';
 
 class Hero extends React.Component {
     static propTypes = {

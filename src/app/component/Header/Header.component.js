@@ -11,7 +11,7 @@ import { DIVIDER } from './Header.config';
 import {
     LANG_CODE_LV,
     LANG_CODE_RU
-} from '@components/Starters/Starters.config';
+} from '@component/Starters/Starters.config';
 
 import './Header.style.scss';
 

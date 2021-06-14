@@ -10,7 +10,7 @@ import { withTranslation } from 'react-i18next';
 import {
     DIVIDER,
     SCROLL_FRAME
-} from '@components/Story/Story.config';
+} from './Story.config';
 
 import './Story.style.scss';
 

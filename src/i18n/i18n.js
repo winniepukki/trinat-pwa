@@ -11,7 +11,7 @@ import { initReactI18next } from 'react-i18next';
 
 import translationLV from './locales/lv/translation';
 import translationRU from './locales/ru/translation';
-import { LANG_CODE_LV } from '@components/Starters/Starters.config';
+import { LANG_CODE_LV } from '@component/Starters/Starters.config';
 
 const resources = {
     lv: {

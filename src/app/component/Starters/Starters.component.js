@@ -16,7 +16,7 @@ import {
 } from './Starters.config';
 
 import './Starters.style.scss';
-import Starter from '../Starter/Starter';
+import Starter from '@component/Starter/Starter';
 
 class Starters extends React.Component {
     static propTypes = {

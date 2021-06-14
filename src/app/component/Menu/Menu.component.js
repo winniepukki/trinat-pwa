@@ -7,8 +7,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
-import Reservation from '@components/Reservation/Reservation.component';
-import { DIVIDER } from '@components/Header/Header.config';
+import Reservation from '@component/Reservation/Reservation.component';
+import { DIVIDER } from '@component/Header/Header.config';
 
 import './Menu.style.scss';
 

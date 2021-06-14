@@ -22,6 +22,7 @@ module.exports = {
     ],
     rules: {
         'winniepukki-guidelines/derived-class-names': ['error'],
+        'winniepukki-guidelines/file-structure': ['error'],
         'winniepukki-guidelines/use-license': ['error', {
             author: 'winniepukki',
             description: 'SIA Trinat restaurant project',

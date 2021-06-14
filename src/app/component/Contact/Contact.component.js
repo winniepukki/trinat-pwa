@@ -11,7 +11,7 @@ import {
     MIN_LENGTH,
     MIN_SHORT_LENGTH,
     HIDE_NOTIFICATION_TIMEOUT
-} from '@components/Contact/Contact.config';
+} from '@component/Contact/Contact.config';
 
 import './Contact.style.scss';
 import firebase from '@util/firebase';

@@ -10,8 +10,8 @@ import { withTranslation } from 'react-i18next';
 
 import './Footer.style.scss';
 
-import ScrollComponent from '../Scroll/Scroll.component';
-import GoogleLogIn from '@components/GoogleLogIn/GoogleLogIn.component';
+import ScrollComponent from '@component/Scroll/Scroll.component';
+import GoogleLogIn from '@component/GoogleLogIn/GoogleLogIn.component';
 
 class Footer extends React.Component {
   static propTypes = {
