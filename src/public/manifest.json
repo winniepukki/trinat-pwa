@@ -2,7 +2,7 @@
   "name": "Trinat Caffe",
   "short_name": "TrinatCaffe",
   "description": "Trinat Caffe official website",
-  "start_url": "./index.html",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#333",
   "theme_color": "#cfa670",

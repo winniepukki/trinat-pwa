@@ -53,7 +53,8 @@ module.exports = {
         alias: {
             '@components': paths.components,
             '@store': paths.store,
-            '@util': paths.util
+            '@util': paths.util,
+            '@type': paths.type
         }
     },
     plugins: [
