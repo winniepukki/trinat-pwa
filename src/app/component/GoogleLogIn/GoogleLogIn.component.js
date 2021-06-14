@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import {
     subscribeAccount,
     unsubscribeAccount
-} from '../../store/index';
+} from '@store/Account/Account.action';
 
 export const mapDispatchToProps = (dispatch) => ({
     subscribeAccount: (account) => dispatch(subscribeAccount(account)),

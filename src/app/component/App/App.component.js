@@ -13,11 +13,11 @@ import {
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import store from '@store/store';
+import store from '@store/index';
 
 import Header from '@component/Header/Header.component';
 import Hero from '@component/Hero/Hero.component';
-import Footer from '@component/Footer/Footer';
+import Footer from '@component/Footer/Footer.component';
 import Blockquote from '@component/Blockquote/Blockquote.component';
 import Story from '@component/Story/Story.component';
 import Contact from '@component/Contact/Contact.component';
