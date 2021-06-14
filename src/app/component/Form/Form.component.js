@@ -54,12 +54,13 @@ class Form extends React.Component {
           starter: {
               title = '',
               ingredients = '',
-              price = ''
+              price: unformattedPrice = ''
           } = {}
       } = this.state;
 
       const firebaseRef = `Starters-${lang}`;
       const starterRef = firebase.database().ref(firebaseRef);
+      const price = parseFloat(unformattedPrice);
 
       const starter = {
           title,
