@@ -7,8 +7,12 @@
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
+import {
+    DIVIDER,
+    SCROLL_FRAME
+} from '@components/Story/Story.config';
 
-import './story.style.scss';
+import './Story.style.scss';
 
 class Story extends React.Component {
   static propTypes = {
@@ -33,8 +37,6 @@ class Story extends React.Component {
   handleScroll() {
       const currentScrollPos = window.pageYOffset;
       const node = this.parallaxItemRef.current;
-      const DIVIDER = 13;
-      const SCROLL_FRAME = 700;
 
       if (window.innerWidth > SCROLL_FRAME) {
           node.style.transform = `translateY(${currentScrollPos / DIVIDER}px)`;
@@ -43,8 +45,8 @@ class Story extends React.Component {
 
   renderStoryTitle() {
       const {
-          title,
-          description
+          title = '',
+          description = ''
       } = this.props;
 
       return (
@@ -57,22 +59,27 @@ class Story extends React.Component {
   }
 
   renderStoryText() {
-      const { storyText } = this.props;
+      const {
+          storyText = ''
+      } = this.props;
+
       return (<span className="simple-text">{ storyText }</span>);
   }
 
   render() {
       return (
-          <div className="container">
-            <div className="parallax-section parallax-section-story">
-              <div
-                className="inner-container inner-container-story"
-                ref={ this.parallaxItemRef }
-              >
-                { this.renderStoryTitle() }
-                { this.renderStoryText() }
+          <div className="Story">
+              <div className="container">
+                  <div className="parallax-section parallax-section-story">
+                      <div
+                        className="inner-container inner-container-story"
+                        ref={ this.parallaxItemRef }
+                      >
+                          { this.renderStoryTitle() }
+                          { this.renderStoryText() }
+                      </div>
+                  </div>
               </div>
-            </div>
           </div>
       );
   }

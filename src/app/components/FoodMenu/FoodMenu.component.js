@@ -7,7 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './foodMenu.style.scss';
+import './FoodMenu.style.scss';
 import { withTranslation } from 'react-i18next';
 
 class FoodMenu extends React.Component {
@@ -34,12 +34,8 @@ class FoodMenu extends React.Component {
   render() {
       const { t } = this.props;
 
-      this.tabMap = {
-          // TO-DO: Implement tabmap for the FoodMenuComponent
-      };
-
       return (
-          <div>
+          <div className="FoodMenu">
             <section className="food-menu">
               <div className="section-title">
                 { this.renderTitle() }

@@ -35,12 +35,11 @@
     "title": "menu"
   },
   "footer-contact-info": "Kontakt informācija",
-  "footer-menu": [
-    "par mums",
-    "pavāri",
-    "piegāde",
-    "vakances"
-  ],
+  "footer-menu": {
+    "about": "par mums",
+    "careers": "vakances",
+    "delivery": "piegāde"
+  },
   "loading": "Notiek datu ielāde...",
   "recent-posts": "peidējās publikācijas",
   "table": "galdu",
@@ -51,12 +50,12 @@
   },
   "lang": "lv",
   "loading-fail": "Neizdevās ielādēt datus. Sazinieties ar vietnes administrāciju",
-  "menu": [
-    "musu vēsture",
-    "menu",
-    "kompleks ēdieni",
-    "kontakti"
-  ],
+  "menu": {
+    "story": "musu vēsture",
+    "menu": "menu",
+    "starters": "kompleks ēdieni",
+    "contact": "kontakti"
+  },
   "our": "Musu",
   "reservation": "rezervācija",
   "reservation-items": {

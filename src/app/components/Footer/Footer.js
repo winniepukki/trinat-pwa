@@ -8,13 +8,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 
-import './footer.style.scss';
-import creamcamp from '../../../public/assets/images/social/creamcamp.svg';
+import './Footer.style.scss';
 
-import apple from '../../../public/assets/images/social/apple.svg';
-import visa from '../../../public/assets/images/social/visa.svg';
-import masterCard from '../../../public/assets/images/social/mastercard.svg';
-import americanExpress from '../../../public/assets/images/social/americanexpress.svg';
 import ScrollComponent from '../Scroll/Scroll.component';
 import GoogleLogIn from '@components/GoogleLogIn/GoogleLogIn.component';
 
@@ -29,16 +24,15 @@ class Footer extends React.Component {
       this.renderPaymentMethods = this.renderPaymentMethods.bind(this);
       this.renderFooter = this.renderFooter.bind(this);
       this.renderFooterNotice = this.renderFooterNotice.bind(this);
-      this.renderFooterMenuItems = this.renderFooterMenuItems.bind(this);
   }
 
   renderPaymentMethods() {
       return (
-          <div className="custom-grid-4">
-            <img src={ apple } alt="" />
-            <img src={ visa } alt="" />
-            <img src={ masterCard } alt="" />
-            <img src={ americanExpress } alt="" />
+          <div className="payment-methods custom-grid-4">
+            <img src="assets/img/social/apple.svg" alt="Apple pay icon" />
+            <img src="assets/img/social/visa.svg" alt="Visa icon" />
+            <img src="assets/img/social/mastercard.svg" alt="Mastercard icon" />
+            <img src="assets/img/social/americanexpress.svg" alt="AmericanExpress icon" />
           </div>
       );
   }
@@ -46,7 +40,7 @@ class Footer extends React.Component {
   renderFooter() {
       const { t } = this.props;
       return (
-          <div className="footer">
+          <div className="Footer">
             <ScrollComponent showBelow={ 250 } />
             <div className="container">
               <div className="row">
@@ -97,40 +91,53 @@ class Footer extends React.Component {
       );
   }
 
-  renderFooterMenuItems() {
+  renderFooterNotice() {
       const {
           t,
           lang: currentLanguage = ''
       } = this.props;
 
       return (
-          <>
-              { Object.values(t('footer-menu', { returnObjects: true }))
-                  .map((item) => (
-                      <li key={ item } className="footer-notice-text">
-                          <a href="#">{ item }</a>
-                      </li>
-                  )) }
-              <GoogleLogIn lang={ currentLanguage } />
-          </>
-      );
-  }
-
-  renderFooterNotice() {
-      const { t } = this.props;
-      return (
-          <div className="footer-notice">
+          <div className="Footer-Notice">
             <div className="container">
               <div className="row align-items-center justify-content-center">
                 <div className="col-sm-6 custom-flexbox custom-align-ic">
-                  <a href="https://cream.camp">
-                    <img src={ creamcamp } alt="" className="copyright" />
+                  <a href="https://cream.camp" aria-label="This website developers' copyright notice">
+                    <img
+                      src="assets/img/social/creamcamp.svg"
+                      alt=""
+                      className="copyright"
+                    />
                   </a>
                   <span className="footer-notice-text">{ t('copyright') }</span>
                 </div>
                 <div className="col-sm-6">
-                  <ul className="footer-links">
-                    { this.renderFooterMenuItems() }
+                  <ul className="Footer-Links">
+                      <li className="footer-notice-text">
+                          <a
+                            href="#"
+                            aria-label="Footer link to about us page"
+                          >
+                              { t('footer-menu.about') }
+                          </a>
+                      </li>
+                      <li className="footer-notice-text">
+                          <a
+                            href="#"
+                            aria-label="Footer link to careers page"
+                          >
+                              { t('footer-menu.careers') }
+                          </a>
+                      </li>
+                      <li className="footer-notice-text">
+                          <a
+                            href="#"
+                            aria-label="Footer link to the delivery page"
+                          >
+                              { t('footer-menu.delivery') }
+                          </a>
+                      </li>
+                      <GoogleLogIn lang={ currentLanguage } />
                   </ul>
                 </div>
               </div>

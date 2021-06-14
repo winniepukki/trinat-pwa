@@ -13,7 +13,7 @@ import {
     HIDE_NOTIFICATION_TIMEOUT
 } from '@components/Contact/Contact.config';
 
-import './contact.style.scss';
+import './Contact.style.scss';
 import firebase from '@util/firebase';
 
 class Contact extends React.Component {
@@ -62,9 +62,9 @@ class Contact extends React.Component {
   handleSubmit() {
       const {
           values: {
-              fullName,
-              email,
-              review
+              fullName = '',
+              email = '',
+              review = ''
           }
       } = this.state;
       const { t } = this.props;
@@ -154,6 +154,7 @@ class Contact extends React.Component {
           type="button"
           className="button-default button-dark"
           onClick={ this.handleSubmit }
+          aria-label="Submit contact form"
         >
           { t('send') }
         </button>
@@ -169,31 +170,34 @@ class Contact extends React.Component {
       const { t } = this.props;
       const { message = '' } = this.state;
       return (
-          <div className="container">
-            <div className="parallax-section parallax-section-contact">
-              <div className="inner-container inner-container-contact">
-                <h3>
-                  <p className="parallax-title">{ t('contact.title') }</p>
-                </h3>
-                <p className="simple-text">
-                  { `${t('address.phone')} - ${t('address.email')}` }
-                </p>
-                <p className="simple-text">{ t('contact.text') }</p>
-                <p
-                  className="hidden"
-                  ref={ this.notificationRef }
-                >
-                    { message }
-                    <button
-                      className="button-close"
-                      onClick={ this.closeContactNotification }
+          <div className="Contact">
+              <div className="container">
+                <div className="parallax-section parallax-section-contact">
+                  <div className="inner-container inner-container-contact">
+                    <h3>
+                      <p className="parallax-title">{ t('contact.title') }</p>
+                    </h3>
+                    <p className="simple-text">
+                      { `${t('address.phone')} - ${t('address.email')}` }
+                    </p>
+                    <p className="simple-text">{ t('contact.text') }</p>
+                    <p
+                      className="hidden"
+                      ref={ this.notificationRef }
                     >
-                        <i className="far fa-times-circle" />
-                    </button>
-                </p>
-                { this.renderContactForm() }
+                        { message }
+                        <button
+                          className="button-close"
+                          onClick={ this.closeContactNotification }
+                          aria-label="Close contact form notification"
+                        >
+                            <i className="far fa-times-circle" />
+                        </button>
+                    </p>
+                    { this.renderContactForm() }
+                  </div>
+                </div>
               </div>
-            </div>
           </div>
       );
   }

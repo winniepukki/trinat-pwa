@@ -7,8 +7,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
-import './menu.style.scss';
 import Reservation from '@components/Reservation/Reservation.component';
+import { DIVIDER } from '@components/Header/Header.config';
+
+import './Menu.style.scss';
 
 class Menu extends React.Component {
   static propTypes = {
@@ -31,7 +33,7 @@ class Menu extends React.Component {
 
   handleScroll() {
       const currentScrollPos = window.pageYOffset;
-      const heroFrame = document.getElementById('hero').offsetHeight / 2;
+      const heroFrame = document.getElementById('hero').offsetHeight / DIVIDER;
       if (currentScrollPos > heroFrame) {
           this.setState({
               menu: false
@@ -54,18 +56,28 @@ class Menu extends React.Component {
       const { t } = this.props;
       return (
           <ul className="nav custom-flexbox custom-justify-spa custom-align-ic">
-            { Object.values(t('menu', { returnObjects: true })).map((item) => (
-            <li key={ item }><a href="#">{ item }</a></li>
-            )) }
+            <li><a href="#" aria-label="Header story link">{ t('menu.story') }</a></li>
+            <li><a href="#" aria-label="Header meny link">{ t('menu.menu') }</a></li>
             <li>
-            <div className="reservation">
-              <a
-                className="reservation-button"
-                onClick={ this.handleReservation }
-              >
-                { t('reservation') }
-              </a>
-            </div>
+                <a href="#" aria-label="Header starters link">
+                    { t('menu.starters') }
+                </a>
+            </li>
+            <li>
+                <a href="#" aria-label="Header contact link">
+                    { t('menu.contact') }
+                </a>
+            </li>
+            <li>
+                <div className="reservation">
+                  <a
+                    className="reservation-button"
+                    onClick={ this.handleReservation }
+                    aria-label="Table reservation button"
+                  >
+                    { t('reservation') }
+                  </a>
+                </div>
             </li>
           </ul>
       );
@@ -76,13 +88,13 @@ class Menu extends React.Component {
       const { visible, menu } = this.state;
 
       return (
-          <div>
+          <div className="Menu">
             { visible ? <Reservation handler={ this.handleReservation } /> : '' }
             <div className={ menu ? 'menu' : 'menu test-menu' }>
               <div className="container">
                 <div className="row justify-content-center align-items-center">
                   <div className="col-6 col-sm-4">
-                    <a href="/" className="homepage-uri">
+                    <a href="/" className="homepage-uri" aria-label="Go home button">
                       <h5>
                         <p>{ t('trinat.title') }</p>
                         <p>

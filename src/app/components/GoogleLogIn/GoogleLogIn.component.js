@@ -60,11 +60,12 @@ class GoogleLogIn extends React.Component {
 
     render() {
         return (
-          <div>
+          <div className="GoogleLogIn">
             <button
               type="button"
               className="button-auth"
               onClick={ this.handleSignIn }
+              aria-label="Authenticate through Google"
             >
                 <i className="fas fa-user-lock" />
             </button>
@@ -72,6 +73,7 @@ class GoogleLogIn extends React.Component {
               type="button"
               onClick={ this.handleSignOut }
               className="button-auth"
+              aria-label="Sign out through Google"
             >
                 <i className="fas fa-sign-out-alt" />
             </button>

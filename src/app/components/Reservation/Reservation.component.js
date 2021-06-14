@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 import { withTranslation } from 'react-i18next';
 
-import './reservation.style.scss';
+import './Reservation.style.scss';
 
 class Reservation extends React.Component {
   static propTypes = {
@@ -133,8 +133,8 @@ class Reservation extends React.Component {
   render() {
       const { t, handler } = this.props;
       return (
-          <div className="reservation-form">
-            <div className="reservation-form-wrapper">
+          <div className="Reservation-Form">
+            <div className="Reservation-Form-Wrapper">
               <h2 className="custom-tac">
                 <p className="title-first">{ t('table') }</p>
                 <p className="title-caption">{ t('reservation') }</p>
@@ -146,6 +146,7 @@ class Reservation extends React.Component {
                 type="button"
                 onClick={ handler }
                 className="reservation-close-btn"
+                aria-label="Close reservation button"
               >
                 <i className="far fa-times-circle" />
               </button>

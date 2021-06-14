@@ -6,11 +6,11 @@
 */
 import React from 'react';
 
-import './scroll.style.scss';
+import './Scroll.style.scss';
 
 class Scroll extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.handleClick = this.handleClick.bind(this);
     }
@@ -21,12 +21,13 @@ class Scroll extends React.Component {
 
     render() {
         return (
-          <div className="scroll-top">
+          <div className="Scroll-Top">
             <div className="container">
                 <button
                   type="button"
                   className="scroll-top-button"
                   onClick={ this.handleClick }
+                  aria-label="Scroll to top button"
                 >
                   <i className="far fa-arrow-alt-circle-up" />
                 </button>

@@ -22,23 +22,23 @@ class Blockquote extends React.Component {
 
     renderBlockquoteEntities() {
         const {
-            content,
-            description,
-            author
+            content = '',
+            description = '',
+            author = ''
         } = this.props;
 
         return (
-            <>
+            <div className="container">
               <p className="blockquote-content">{ content }</p>
               <p className="description">{ description }</p>
               <p className="author">{ author }</p>
-            </>
+            </div>
         );
     }
 
     render() {
         return (
-            <div className="container">
+            <div className="Blockquote">
               <blockquote className="custom-tac">
                 { this.renderBlockquoteEntities() }
               </blockquote>

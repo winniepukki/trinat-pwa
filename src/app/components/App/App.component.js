@@ -4,7 +4,7 @@
 *
 * @license MIT
 */
-import React from 'react';
+import React, { lazy } from 'react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -15,7 +15,7 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import store from '@store/store';
 
-import Forehead from '@components/Forehead/Forehead.component';
+import Header from '@components/Header/Header.component';
 import Hero from '@components/Hero/Hero.component';
 import Footer from '@components/Footer/Footer';
 import Blockquote from '@components/Blockquote/Blockquote.component';
@@ -23,7 +23,6 @@ import Story from '@components/Story/Story.component';
 import Contact from '@components/Contact/Contact.component';
 import FoodMenu from '@components/FoodMenu/FoodMenu.component';
 import Starters from '@components/Starters/Starters.component';
-import EmbeddedMapComponent from '@components/EmbeddedMap/EmbeddedMap.component';
 
 class App extends React.Component {
     static propTypes = {
@@ -48,7 +47,7 @@ class App extends React.Component {
     getCurrentLanguage() {
         const {
             i18n: {
-                language
+                language = ''
             } = {}
         } = this.props;
 
@@ -56,20 +55,24 @@ class App extends React.Component {
     }
 
     changeLanguage(language) {
-        const { i18n } = this.props;
+        const {
+            i18n = {}
+        } = this.props;
+
         i18n.changeLanguage(language);
     }
 
     render() {
         const { t } = this.props;
         const currentLanguage = this.getCurrentLanguage().toUpperCase();
+        const Map = lazy(() => import('@components/EmbeddedMap/EmbeddedMap.component'));
 
         return (
           <Router>
             <Switch>
               <Route exact path="/">
                 <Provider store={ store }>
-                  <Forehead parentCallback={ this.handleCallback } />
+                  <Header parentCallback={ this.handleCallback } />
                   <Hero
                     welcomeMessage={ t('welcome') }
                     titleCaptionFront={ t('trinat.title') }
@@ -93,7 +96,7 @@ class App extends React.Component {
                     languageCode={ this.getCurrentLanguage() }
                   />
                   <Contact />
-                  <EmbeddedMapComponent />
+                  <Map />
                   <Footer
                     lang={ currentLanguage }
                   />

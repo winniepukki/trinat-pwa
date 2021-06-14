@@ -1,0 +1,32 @@
+.Footer {
+  position: relative;
+  width: 100%;
+  padding: 35px 0;
+  color: var(--white);
+  background: var(--secondary-dark-color);
+  border-bottom: 1px solid var(--primary-dark-color);
+
+.payment-methods img {
+  height: 28px;
+  width: 46px; }}
+
+.Footer-Notice {
+  padding: 10px 0;
+  color: var(--primary-dark-color);
+  background: var(--secondary-base-color);
+
+  .Footer-Links {
+    color: var(--white);
+    display: flex;
+    padding: 0 0;
+    justify-content: space-evenly; }
+
+  .footer-notice-text {
+    font-size: 12px;
+    text-transform: capitalize; }}
+
+.copyright {
+  width: 100px;
+  max-height: 44px;
+  clear: both;
+  display: inline-block; }
