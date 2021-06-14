@@ -70,7 +70,8 @@ module.exports = {
                 { from: './src/public/assets/images/', to: 'assets/img' },
                 { from: './src/public/assets/icons/', to: 'assets/icons' },
                 { from: './src/public/assets/favicon', to: 'assets/favicon' },
-                { from: './src/public/manifest.json', to: './[name].[ext]' }
+                { from: './src/public/manifest.json', to: './[name].[ext]' },
+                { from: './src/sw.js', to: './[name].[ext]' }
             ]
         })
     ],
