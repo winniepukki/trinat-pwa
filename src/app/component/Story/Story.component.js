@@ -34,6 +34,10 @@ class Story extends React.Component {
       window.addEventListener('scroll', this.handleScroll);
   }
 
+  /**
+   * Add parallax effect to our story
+   * on the page scroll
+   */
   handleScroll() {
       const currentScrollPos = window.pageYOffset;
       const node = this.parallaxItemRef.current;

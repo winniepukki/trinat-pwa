@@ -31,6 +31,10 @@ class Menu extends React.Component {
       window.addEventListener('scroll', this.handleScroll);
   }
 
+  /**
+   * Change menu class upon reaching 50%
+   * of the Hero components height
+   */
   handleScroll() {
       const currentScrollPos = window.pageYOffset;
       const heroFrame = document.getElementById('hero').offsetHeight / DIVIDER;

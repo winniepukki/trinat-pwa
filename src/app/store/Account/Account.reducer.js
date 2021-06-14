@@ -4,7 +4,10 @@
  *
  * @license MIT
  */
-import { SUBSCRIBE_ACCOUNT, UNSUBSCRIBE_ACCOUNT } from './Account.action';
+import {
+    SUBSCRIBE_ACCOUNT,
+    UNSUBSCRIBE_ACCOUNT
+} from './Account.action';
 
 const initialState = {
     currentAccount: ''

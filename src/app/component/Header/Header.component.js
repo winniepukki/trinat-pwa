@@ -35,6 +35,10 @@ class Header extends Component {
       window.addEventListener('scroll', this.handleScroll);
   }
 
+  /**
+   * Show/ hide header upon reaching 50%
+   * of the Hero components height
+   */
   handleScroll() {
       const currentScrollPos = window.pageYOffset;
       const heroFrame = document.getElementById('hero').offsetHeight / DIVIDER;
@@ -57,6 +61,10 @@ class Header extends Component {
           parentCallback
       } = this.props;
 
+      /**
+       * Change PWA language on the
+       * language selection
+       */
       if (language === LANG_CODE_LV) {
           parentCallback(LANG_CODE_RU);
       } else {

@@ -69,6 +69,9 @@ class Contact extends React.Component {
       } = this.state;
       const { t } = this.props;
 
+      /**
+       * Ensure values are not empty
+       */
       if (!fullName.length
           && !email.length
           && !review.length) {
@@ -80,6 +83,10 @@ class Contact extends React.Component {
           return;
       }
 
+      /**
+       * Ensure values are over the
+       * pre-defined min application length
+       */
       if (fullName.length < MIN_SHORT_LENGTH
           || email.length < MIN_LENGTH
           || review.length < MIN_LENGTH) {
@@ -102,6 +109,11 @@ class Contact extends React.Component {
           message: t('notification.form-success')
       });
 
+      /**
+       * Prompt a success notification
+       * and push the review to the DB amongst
+       * resetting fields and hiding the message
+       */
       this.notificationRef.current.className = 'contact-notification success';
       starterRef.push(preparedReview);
       this.resetAllFields();
@@ -162,6 +174,10 @@ class Contact extends React.Component {
       );
   }
 
+  /**
+   * Allow users to personally hide
+   * the notification message
+   */
   closeContactNotification() {
       this.notificationRef.current.className = 'hidden';
   }
