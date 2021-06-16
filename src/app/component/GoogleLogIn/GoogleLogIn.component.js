@@ -31,6 +31,10 @@ class GoogleLogIn extends React.Component {
         this.handleSignOut = this.handleSignOut.bind(this);
     }
 
+    /**
+     * Sign the account out and
+     * remove it from the redux storage
+     */
     handleSignOut() {
         firebase.auth().signOut()
             .then(() => {
@@ -40,6 +44,10 @@ class GoogleLogIn extends React.Component {
             .catch(() => {});
     }
 
+    /**
+     * Sign the account in and
+     * add it from the redux storage
+     */
     handleSignIn() {
         const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider)

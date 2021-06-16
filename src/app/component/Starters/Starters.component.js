@@ -61,6 +61,10 @@ class Starters extends React.Component {
             break;
         }
 
+        /**
+         * Load starters based on the
+         * current language selection
+         */
         const startersRef = firebase.database().ref(startersLang);
         startersRef.once('value').then((dataSnapshot) => {
             this.response = dataSnapshot.val();
@@ -71,6 +75,10 @@ class Starters extends React.Component {
         });
     }
 
+    /**
+     * Fetch, validate and then
+     * render Starters on success
+     */
     renderStartersFirebaseData() {
         const { loading, data } = this.state;
         const { t } = this.props;

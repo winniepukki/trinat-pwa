@@ -6,13 +6,13 @@
 */
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import PropTypes from 'prop-types';
+import { StarterType } from '@type/Starter';
 
 import './Starter.style.scss';
 
 class Starter extends React.Component {
   static propTypes = {
-      starter: PropTypes.instanceOf(Object).isRequired
+      starter: StarterType.isRequired
   };
 
   render() {
