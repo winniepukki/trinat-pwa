@@ -14,7 +14,7 @@ import {
 } from '@component/Contact/Contact.config';
 
 import './Contact.style.scss';
-import firebase from '@util/firebase';
+import firebase from '@util/Firebase/firebase';
 
 class Contact extends React.Component {
   static propTypes = {

@@ -6,7 +6,7 @@
 */
 import React from 'react';
 import PropTypes from 'prop-types';
-import firebase from '@util/firebase';
+import firebase from '@util/Firebase/firebase';
 import { connect } from 'react-redux';
 import {
     subscribeAccount,

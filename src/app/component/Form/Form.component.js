@@ -8,7 +8,7 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import firebase from '@util/firebase';
+import firebase from '@util/Firebase/firebase';
 
 export const mapStateToProps = (state) => ({
     currentAccount: state.account.currentAccount

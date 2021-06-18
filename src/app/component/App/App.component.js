@@ -21,7 +21,7 @@ import Footer from '@component/Footer/Footer.component';
 import Blockquote from '@component/Blockquote/Blockquote.component';
 import Story from '@component/Story/Story.component';
 import Contact from '@component/Contact/Contact.component';
-import FoodMenu from '@component/FoodMenu/FoodMenu.component';
+import ProductList from '@component/ProductList/ProductList.component';
 import Starters from '@component/Starters/Starters.component';
 
 class App extends React.Component {
@@ -89,7 +89,7 @@ class App extends React.Component {
                     description={ t('story.description') }
                     storyText={ t('story.text') }
                   />
-                  <FoodMenu
+                  <ProductList
                     languageCode={ this.getCurrentLanguage() }
                   />
                   <Starters

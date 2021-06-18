@@ -4,9 +4,11 @@
       "baseUrl": "./",
       "allowSyntheticDefaultImports": false,
       "paths": {
-        "@components/*": ["./src/app/components/*"],
+        "@component/*": ["./src/app/components/*"],
         "@store/*": ["./src/app/store/*"],
-        "@util/*": ["./src/app/util/*"]
+        "@util/*": ["./src/app/util/*"],
+        "@type/*": ["./src/app/type/*"],
+        "@query/*": ["./src/app/query/*"]
       }
     },
     "exclude": ["node_modules", "dist"]

@@ -12,8 +12,12 @@ import './Starter.style.scss';
 
 class Starter extends React.Component {
   static propTypes = {
-      starter: StarterType.isRequired
+      starter: StarterType
   };
+
+  static defaultProps = {
+      starter: {}
+  }
 
   render() {
       const {

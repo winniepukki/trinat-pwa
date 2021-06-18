@@ -7,7 +7,7 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
-import firebase from '@util/firebase';
+import firebase from '@util/Firebase/firebase';
 import {
     STARTER_LANG_LV,
     STARTER_LANG_RU,

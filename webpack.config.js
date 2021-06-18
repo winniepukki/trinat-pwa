@@ -18,7 +18,8 @@ const paths = {
     component: path.resolve(__dirname, './src/app/component'),
     store: path.resolve(__dirname, './src/app/store'),
     type: path.resolve(__dirname, './src/app/type'),
-    util: path.resolve(__dirname, './src/app/util')
+    util: path.resolve(__dirname, './src/app/util'),
+    query: path.resolve(__dirname, './src/app/query')
 };
 
 module.exports = {
@@ -54,7 +55,8 @@ module.exports = {
             '@component': paths.component,
             '@store': paths.store,
             '@util': paths.util,
-            '@type': paths.type
+            '@type': paths.type,
+            '@query': paths.query
         }
     },
     plugins: [
