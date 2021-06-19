@@ -41,6 +41,11 @@
     "delivery": "piegāde"
   },
   "loading": "Notiek datu ielāde...",
+  "load-message": {
+    "pouring-coffee": "Taisam tavu kafiju. Uzgaidi",
+    "making-cocktail": "Taisam aperoli! Gaidam!",
+    "preparing-food": "Pavars jau sagatavo tavu edienu!"
+  },
   "recent-posts": "peidējās publikācijas",
   "table": "galdu",
   "view-gallery": "apskatīt galēriju",

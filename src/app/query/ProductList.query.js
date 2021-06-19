@@ -1,3 +1,4 @@
+/* eslint-disable no-return-await */
 /**
 * SIA Trinat restaurant project
 * Copyright © winniepukki. All rights reserved.
@@ -37,8 +38,7 @@ export class ProductListQuery {
         };
 
         async function fetchProducts() {
-            // eslint-disable-next-line no-return-await
-            return await fetch('http://winniepukki.ddns.net', {
+            return await fetch('https://winniepukki.ddns.net', {
                 method: 'POST',
                 body: JSON.stringify(request),
                 headers: {
