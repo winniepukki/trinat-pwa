@@ -28,7 +28,7 @@ class Footer extends React.Component {
 
   renderPaymentMethods() {
       return (
-          <div className="payment-methods custom-grid-4">
+          <div className="payment-methods custom-grid-4-fixed">
             <img src="assets/img/social/apple.svg" alt="Apple pay icon" />
             <img src="assets/img/social/visa.svg" alt="Visa icon" />
             <img src="assets/img/social/mastercard.svg" alt="Mastercard icon" />

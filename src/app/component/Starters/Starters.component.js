@@ -132,7 +132,7 @@ class Starters extends React.Component {
                 <div className="parallax-section parallax-section-starters">
                     <div className="inner-container inner-container-starters">
                     <h3>
-                        <p className="parallax-title">{ t('starters') }</p>
+                        <p className="parallax-title">{ t('menu.new') }</p>
                     </h3>
                     <p className="simple-text">{ t('starters-info') }</p>
                     { this.renderStartersFirebaseData() }

@@ -64,7 +64,7 @@ class Menu extends React.Component {
             <li><a href="#" aria-label="Header meny link">{ t('menu.menu') }</a></li>
             <li>
                 <a href="#" aria-label="Header starters link">
-                    { t('menu.starters') }
+                    { t('menu.new') }
                 </a>
             </li>
             <li>

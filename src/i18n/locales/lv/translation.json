@@ -57,7 +57,7 @@
   "loading-fail": "Neizdevās ielādēt datus. Sazinieties ar vietnes administrāciju",
   "menu": {
     "story": "musu vēsture",
-    "menu": "menu",
+    "new": "jaunumi",
     "starters": "kompleks ēdieni",
     "contact": "kontakti"
   },
@@ -90,7 +90,7 @@
   "title": "trinat",
   "trinat": {
     "title": "Trinat",
-    "type": "Kafeinīca"
+    "type": "Kafejnīca"
   },
   "admin-zone": {
     "starter-add": "kompleksu pievienošana",
