@@ -57,10 +57,12 @@
   "loading-fail": "Neizdevās ielādēt datus. Sazinieties ar vietnes administrāciju",
   "menu": {
     "story": "musu vēsture",
+    "menu": "menu",
     "new": "jaunumi",
     "starters": "kompleks ēdieni",
     "contact": "kontakti"
   },
+  "prod-not-found": "Produkti nav atrasti",
   "our": "Musu",
   "reservation": "rezervācija",
   "reservation-items": {

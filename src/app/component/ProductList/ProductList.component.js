@@ -5,17 +5,30 @@
 * @license MIT
 */
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
+import { withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
 import ProductListQuery from '@query/ProductList.query';
 
-import './FoodMenu.style.scss';
+import {
+    fetchMenuSuccess,
+    fetchMenuFail
+} from '@store/MenuList/MenuList.action';
+
+import './ProductList.style.scss';
 import Product from '@util/Product/Product';
+
+export const mapDispatchToProps = (dispatch) => ({
+    fetchMenuSuccess: (foodMenu) => dispatch(fetchMenuSuccess(foodMenu)),
+    fetchMenuFail: (error) => dispatch(fetchMenuFail(error))
+});
 
 class ProductList extends React.Component {
   static propTypes = {
       t: PropTypes.func.isRequired,
-      languageCode: PropTypes.string.isRequired
+      languageCode: PropTypes.string.isRequired,
+      fetchMenuSuccess: PropTypes.func.isRequired,
+      fetchMenuFail: PropTypes.func.isRequired
   };
 
   constructor(props) {
@@ -32,20 +45,29 @@ class ProductList extends React.Component {
   componentDidMount() {
       this.getProductList()
           .then((response) => {
+              const { fetchMenuSuccess } = this.props;
               const {
                   data: {
                       products = []
                   } = {}
               } = response;
 
+              fetchMenuSuccess(products);
               this.setState({
                   products
               });
           })
-          .catch();
+          .catch((error) => {
+              const { fetchMenuFail } = this.props;
+              fetchMenuFail(error);
+          });
   }
 
   componentDidUpdate(_, prevState) {
+      /**
+       * Get the ProductList and add it to both
+       * state and store
+       */
       this.getProductList()
           .then((response) => {
               const {
@@ -58,12 +80,18 @@ class ProductList extends React.Component {
               } = prevState;
 
               if (prevProducts.length && prevProducts !== products) {
+                  const { fetchMenuSuccess } = this.props;
+
+                  fetchMenuSuccess(products);
                   this.setState({
                       products
                   });
               }
           })
-          .catch();
+          .catch((error) => {
+              const fetchMenuFail = this.props;
+              fetchMenuFail(error);
+          });
   }
 
   getProductList() {
@@ -133,4 +161,5 @@ class ProductList extends React.Component {
   }
 }
 
-export default withTranslation()(ProductList);
+export default
+connect(null, mapDispatchToProps)(withTranslation()(ProductList));

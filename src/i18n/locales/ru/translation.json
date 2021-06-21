@@ -61,6 +61,7 @@
     "new": "новинки",
     "contact": "обратная связь"
   },
+  "prod-not-found": "Товары не найдены!",
   "our": "наше",
   "reservation": "резервация",
   "reservation-items": {
