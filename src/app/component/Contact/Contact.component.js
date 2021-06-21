@@ -194,7 +194,21 @@ class Contact extends React.Component {
                       <p className="parallax-title">{ t('contact.title') }</p>
                     </h3>
                     <p className="simple-text">
-                      { `${t('address.phone')} - ${t('address.email')}` }
+                      <a
+                        href={ `tel:${ t('address.phone')} ` }
+                        className="business-contacts"
+                        aria-label="Business phone"
+                      >
+                        { t('address.phone') }
+                      </a>
+                        &nbsp; – &nbsp;
+                      <a
+                        href={ `mailto:${ t('address.email')} ` }
+                        className="business-contacts"
+                        aria-label="Business email"
+                      >
+                        { t('address.email') }
+                      </a>
                     </p>
                     <p className="simple-text">{ t('contact.text') }</p>
                     <p

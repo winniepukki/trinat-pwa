@@ -61,7 +61,7 @@ class Menu extends React.Component {
       return (
           <ul className="nav custom-flexbox custom-justify-spa custom-align-ic">
             <li><a href="#" aria-label="Header story link">{ t('menu.story') }</a></li>
-            <li><a href="#" aria-label="Header meny link">{ t('menu.menu') }</a></li>
+            <li><a href="#" aria-label="Header menu link">{ t('menu.menu') }</a></li>
             <li>
                 <a href="#" aria-label="Header starters link">
                     { t('menu.new') }

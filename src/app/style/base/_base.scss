@@ -87,6 +87,9 @@ strong {
   font-weight: 300;
   color: var(--primary-light-color);
   line-height: 20px;
+  .business-contacts {
+    padding: 0 0;
+    color: inherit; }
   span {
     padding: 0 10px; }
   a {

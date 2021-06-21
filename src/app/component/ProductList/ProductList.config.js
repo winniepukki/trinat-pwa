@@ -12,6 +12,8 @@ export const BREAKFAST = 'breakfast';
 export const SNACKS = 'snacks';
 export const SALADS = 'salads';
 export const SOUPS = 'soups';
+export const SPECIAL = 'special';
+export const KIDS = 'kids';
 
 export const STATUS_OK = 200;
 export const STATUS_CREATED = 201;

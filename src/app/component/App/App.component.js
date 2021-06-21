@@ -22,8 +22,8 @@ import Blockquote from '@component/Blockquote/Blockquote.component';
 import Story from '@component/Story/Story.component';
 import Contact from '@component/Contact/Contact.component';
 import ProductList from '@component/ProductList/ProductList.component';
-import Starters from '@component/Starters/Starters.component';
-import EmbeddedMap from '../EmbeddedMap/EmbeddedMap.component';
+import EmbeddedMap from '@component/EmbeddedMap/EmbeddedMap.component';
+import Special from '@component/Special/Special.component';
 
 class App extends React.Component {
     static propTypes = {
@@ -92,7 +92,7 @@ class App extends React.Component {
                   <ProductList
                     languageCode={ this.getCurrentLanguage() }
                   />
-                  <Starters
+                  <Special
                     languageCode={ this.getCurrentLanguage() }
                   />
                   <Contact />
