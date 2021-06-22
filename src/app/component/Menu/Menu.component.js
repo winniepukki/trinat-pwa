@@ -14,7 +14,8 @@ import './Menu.style.scss';
 
 class Menu extends React.Component {
   static propTypes = {
-      t: PropTypes.func.isRequired
+      t: PropTypes.func.isRequired,
+      lang: PropTypes.string.isRequired
   };
 
   constructor(props) {
@@ -88,12 +89,14 @@ class Menu extends React.Component {
   }
 
   render() {
-      const { t } = this.props;
+      const { t, lang } = this.props;
       const { visible, menu } = this.state;
 
       return (
           <div className="Menu">
-            { visible ? <Reservation handler={ this.handleReservation } /> : '' }
+            { visible ? (
+                <Reservation lang={ lang } handler={ this.handleReservation } />
+            ) : '' }
             <div className={ menu ? 'menu' : 'menu test-menu' }>
               <div className="container">
                 <div className="row justify-content-center align-items-center">

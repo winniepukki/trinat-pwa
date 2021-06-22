@@ -12,10 +12,24 @@
     top: 50%;
     transform: translate(50%, -50%);
     border: 1px solid var(--white);
+
+    .reservation-notice {
+      line-height: 2;
+      text-align: center;
+      font-weight: 300;
+      padding: 25px 20px; }
+
     .container .row {
       margin: 0 0; }
+
     @media screen and (max-width: 1000px) {
       h2 {
         margin: 25px 0; }
-      height: auto;
-      width: 80%; }}}
+        height: auto;
+        width: 80%; }
+
+    .reservation-notice {
+      line-height: 2;
+      text-align: center;
+      font-weight: 300;
+      padding: unset !important; }}}

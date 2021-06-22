@@ -16,7 +16,8 @@ class Hero extends React.Component {
         welcomeMessage: PropTypes.string.isRequired,
         titleCaptionFront: PropTypes.string.isRequired,
         titleCaptionBold: PropTypes.string.isRequired,
-        subtitle: PropTypes.string.isRequired
+        subtitle: PropTypes.string.isRequired,
+        languageCode: PropTypes.string.isRequired
     };
 
     constructor(props) {
@@ -55,7 +56,8 @@ class Hero extends React.Component {
     }
 
     renderMenu() {
-        return <Menu />;
+        const { languageCode } = this.props;
+        return <Menu lang={ languageCode } />;
     }
 
     renderHeroBackground() {

@@ -6,56 +6,78 @@
 */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+import { withTranslation } from 'react-i18next';
+
+import { ProductType } from '@type/Product';
+import Product from '@util/Product/Product';
 import ProductListQuery from '@query/ProductList.query';
 
+import { LANG_CODE_LV } from '@component/Starters/Starters.config';
+
 import {
+    fetchMenuRequest,
     fetchMenuSuccess,
     fetchMenuFail
 } from '@store/MenuList/MenuList.action';
 
 import './ProductList.style.scss';
-import Product from '@util/Product/Product';
+
+export const mapStateToProps = (state) => ({
+    loading: state.menuList.loading,
+    foodMenu: state.menuList.foodMenu
+});
 
 export const mapDispatchToProps = (dispatch) => ({
+    fetchMenuRequest: () => dispatch(fetchMenuRequest()),
     fetchMenuSuccess: (foodMenu) => dispatch(fetchMenuSuccess(foodMenu)),
     fetchMenuFail: (error) => dispatch(fetchMenuFail(error))
 });
 
 class ProductList extends React.Component {
   static propTypes = {
+      loading: PropTypes.bool,
       t: PropTypes.func.isRequired,
       languageCode: PropTypes.string.isRequired,
+      foodMenu: PropTypes.arrayOf(ProductType),
+      fetchMenuRequest: PropTypes.func.isRequired,
       fetchMenuSuccess: PropTypes.func.isRequired,
       fetchMenuFail: PropTypes.func.isRequired
   };
 
+  static defaultProps = {
+      loading: true,
+      foodMenu: []
+  }
+
   constructor(props) {
       super(props);
 
-      this.state = {
-          products: []
-      };
-
+      this.getProductList = this.getProductList.bind(this);
       this.renderTitle = this.renderTitle.bind(this);
       this.renderProducts = this.renderProducts.bind(this);
   }
 
   componentDidMount() {
+      const { fetchMenuRequest } = this.props;
+      fetchMenuRequest();
+
       this.getProductList()
           .then((response) => {
-              const { fetchMenuSuccess } = this.props;
+              const {
+                  fetchMenuSuccess
+              } = this.props;
               const {
                   data: {
                       products = []
                   } = {}
               } = response;
 
+              if (!products || !products.length) {
+                  return;
+              }
+
               fetchMenuSuccess(products);
-              this.setState({
-                  products
-              });
           })
           .catch((error) => {
               const { fetchMenuFail } = this.props;
@@ -63,35 +85,34 @@ class ProductList extends React.Component {
           });
   }
 
-  componentDidUpdate(_, prevState) {
-      /**
-       * Get the ProductList and add it to both
-       * state and store
-       */
-      this.getProductList()
-          .then((response) => {
-              const {
-                  data: {
-                      products = []
-                  } = {}
-              } = response;
-              const {
-                  products: prevProducts = {}
-              } = prevState;
+  componentDidUpdate(prevProps) {
+      const {
+          languageCode: prevLanguageCode = ''
+      } = prevProps;
+      const {
+          loading,
+          languageCode
+      } = this.props;
 
-              if (prevProducts.length && prevProducts !== products) {
-                  const { fetchMenuSuccess } = this.props;
+      if (prevLanguageCode !== languageCode) {
+          if (!loading) {
+              this.getProductList()
+                  .then((response) => {
+                      const {
+                          data: {
+                              products = []
+                          } = {}
+                      } = response;
 
-                  fetchMenuSuccess(products);
-                  this.setState({
-                      products
+                      const { fetchMenuSuccess } = this.props;
+                      fetchMenuSuccess(products);
+                  })
+                  .catch((error) => {
+                      const fetchMenuFail = this.props;
+                      fetchMenuFail(error);
                   });
-              }
-          })
-          .catch((error) => {
-              const fetchMenuFail = this.props;
-              fetchMenuFail(error);
-          });
+          }
+      }
   }
 
   getProductList() {
@@ -104,18 +125,17 @@ class ProductList extends React.Component {
 
   renderProducts() {
       const {
-          products = []
-      } = this.state;
-      const {
           t,
-          languageCode
+          languageCode,
+          loading,
+          foodMenu
       } = this.props;
 
-      if (!products || !products.length) {
+      if (loading) {
           return t('loading');
       }
 
-      return products.map((product) => {
+      return foodMenu.map((product) => {
           const {
               _id = '',
               language = ''
@@ -130,10 +150,16 @@ class ProductList extends React.Component {
   }
 
   renderTitle() {
-      const { t } = this.props;
+      const {
+          t,
+          languageCode
+      } = this.props;
+
       return (
           <h3>
-            <div className="parallax-headline">{ t('our') }</div>
+            { languageCode === LANG_CODE_LV ? (
+                <div className="parallax-headline">{ t('our') }</div>
+            ) : null }
             <div className="parallax-title">{ t('food-menu.title') }</div>
           </h3>
       );
@@ -162,4 +188,4 @@ class ProductList extends React.Component {
 }
 
 export default
-connect(null, mapDispatchToProps)(withTranslation()(ProductList));
+connect(mapStateToProps, mapDispatchToProps)(withTranslation()(ProductList));

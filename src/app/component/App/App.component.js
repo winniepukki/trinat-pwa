@@ -78,6 +78,7 @@ class App extends React.Component {
                     titleCaptionFront={ t('trinat.title') }
                     titleCaptionBold={ t('trinat.type') }
                     subtitle={ t('hero.title') }
+                    languageCode={ this.getCurrentLanguage() }
                   />
                   <Blockquote
                     content={ t('blockquote.blockquote-content') }
