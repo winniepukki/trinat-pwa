@@ -6,13 +6,13 @@
 	<style>
 		tspan { white-space:pre }
 		.txt0 { font-size: 35px;fill: #ffffff;font-weight: 400;font-family: "Ubuntu-Regular", "Ubuntu" } 
-		.txt1 { font-size: 125px;fill: #ffffff;font-weight: 700;font-family: "Ubuntu-Bold", "Ubuntu" } 
+		.txt1 { font-size: 120px;fill: #ffffff;font-weight: 700;font-family: "Ubuntu-Bold", "Ubuntu" } 
 	</style>
-	<use id="Layer 1" href="#img1" x="58" y="122" />
+	<use id="Layer 1" href="#img1" x="18" y="122" />
 	<text id="Designed with love by " style="transform: matrix(1,0,0,1,582,298)" >
 		<tspan x="0" y="0" class="txt0">Designed with love by</tspan>
 	</text>
-	<text id="winniepukki " style="transform: matrix(1,0,0,1,545,426)" >
+	<text id="winniepukki " style="transform: matrix(1,0,0,1,562,426)" >
 		<tspan x="0" y="0" class="txt1">winniepukki</tspan>
 	</text>
 </svg>
