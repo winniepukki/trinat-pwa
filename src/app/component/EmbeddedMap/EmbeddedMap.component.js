@@ -15,9 +15,9 @@ import './EmbeddedMap.style.scss';
 class EmbeddedMap extends React.Component {
     render() {
         return (
-          <div className="EmbeddedMap-Component">
+          <div className="EmbeddedMap">
             <iframe
-              title="EmbeddedMapComponent"
+              title="EmbeddedMap"
               src={ MAP_SRC }
               width={ MAP_WIDTH }
               height={ MAP_HEIGHT }
