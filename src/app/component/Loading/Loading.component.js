@@ -33,7 +33,7 @@ class Loading extends React.Component {
 
     render() {
         return (
-            <div className="Loading">
+            <div className="Loading custom-justify-cc custom-align-ic custom-flex-dir-column">
                 <svg
                   className="tea"
                   width="37"

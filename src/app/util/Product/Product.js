@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
 /**
 * SIA Trinat restaurant project
 * Copyright © winniepukki. All rights reserved.

@@ -112,7 +112,7 @@ class Footer extends React.Component {
                   <span className="footer-notice-text">{ t('copyright') }</span>
                 </div>
                 <div className="col-sm-6">
-                  <ul className="Footer-Links">
+                  <ul className="Footer-Links custom-justify-spe">
                       <li className="footer-notice-text">
                           <a
                             href="#"

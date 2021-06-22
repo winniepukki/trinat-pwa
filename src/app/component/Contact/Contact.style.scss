@@ -1,8 +1,4 @@
-@import '../../style/abstract/variables';
 @import '../../style/abstract/helpers';
-
-:root {
-  --notification-success: var(--imported-notification-success, #{$notification-success}); }
 
 .parallax-section-contact {
   background: url('./contact.jpg') no-repeat right;

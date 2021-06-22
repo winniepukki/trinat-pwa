@@ -1,10 +1,4 @@
-@import '../../style/abstract/variables';
 @import '../../style/base/keyframes';
-
-:root {
-  --loading-background: var(--imported-loading-background, #{$secondary-light-color});
-  --loading-icon-color: var(--imported-loading-icon-color, #{$button-disabled-color})}
-
 
 .Loading {
   position: fixed;
@@ -15,10 +9,7 @@
   width: 100%;
   background: var(--loading-background);
   color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; }
+  display: flex; }
 
 .tea {
   --tea-color: var(--loading-icon-color);
