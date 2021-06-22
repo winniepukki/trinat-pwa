@@ -1,9 +1,19 @@
-
 .Product {
+  &-Title {
+    text-transform: uppercase;
+    font-weight: 500; }
+
+  &-Description {
+    font-size: 13px;
+    color: var(--auxiliary-color-lightener); }
+
   &-Image {
     height: 55px;
     width: 55px;
     border-radius: 50% 50%;
     margin-right: 15px;
-  }
-}
+
+    &-Layout {
+      display: flex;
+      justify-content: center;
+      align-items: center; }}}

@@ -14,6 +14,7 @@ import Product from '@util/Product/Product';
 import ProductListQuery from '@query/ProductList.query';
 
 import { LANG_CODE_LV } from '@component/Starters/Starters.config';
+import { SPECIAL } from './ProductList.config';
 
 import {
     fetchMenuRequest,
@@ -138,10 +139,11 @@ class ProductList extends React.Component {
       return foodMenu.map((product) => {
           const {
               _id = '',
-              language = ''
+              language = '',
+              category = ''
           } = product;
 
-          if (languageCode !== language) {
+          if (languageCode !== language || category === SPECIAL) {
               return null;
           }
 

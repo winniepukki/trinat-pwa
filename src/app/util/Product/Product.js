@@ -24,7 +24,6 @@ class Product extends React.Component {
             product: {
                 title = '',
                 description = '',
-                image_url = '',
                 price = 0
             } = {}
         } = this.props;
@@ -32,16 +31,9 @@ class Product extends React.Component {
         return (
             <div className="Product">
                 <div className="row">
-                    <div className="row">
-                        <img
-                          src={ image_url }
-                          alt={ `${title} product image` }
-                          className="Product-Image"
-                        />
-                    </div>
                     <div className="col">
-                        <p className="starter-title">{ title }</p>
-                        <p className="starter-ingredients">{ description }</p>
+                        <p className="Product-Title">{ title }</p>
+                        <p className="Product-Description">{ description }</p>
                     </div>
                     <div className="col">
                         <p className="custom-tar">

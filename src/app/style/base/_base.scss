@@ -102,7 +102,7 @@ strong {
 
 blockquote {
   padding: 0 0;
-  margin: 60px auto;
+  margin: 20px auto;
   @media screen and (max-width: 600px) {
     margin: 0 auto; }
   max-width: 800px;
@@ -119,7 +119,8 @@ blockquote {
   .author {
     font-family: 'Kristi', Arial, sans-serif;
     text-transform: capitalize;
-    font-size: 25px; }}
+    font-size: 25px;
+    margin: 0 0; }}
 
 .parallax-section {
   background-size: 70%;
@@ -144,7 +145,8 @@ blockquote {
 @media screen and (max-width: 600px) {
   .parallax-section {
     padding: 0;
-    .inner-container{
+    .inner-container {
+      transform: unset !important;
       padding: 0 40px !important; }}}
 
 section {

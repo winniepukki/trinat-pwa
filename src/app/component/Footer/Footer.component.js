@@ -102,9 +102,9 @@ class Footer extends React.Component {
             <div className="container">
               <div className="row align-items-center justify-content-center">
                 <div className="col-sm-6 custom-flexbox custom-align-ic">
-                  <a href="https://cream.camp" aria-label="This website developers' copyright notice">
+                  <a href="https://twitter.com/winniepukki" aria-label="This website developers' copyright notice">
                     <img
-                      src="assets/img/social/creamcamp.svg"
+                      src="assets/img/social/winniepukki.svg"
                       alt=""
                       className="copyright"
                     />
