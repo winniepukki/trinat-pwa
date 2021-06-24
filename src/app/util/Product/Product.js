@@ -23,23 +23,33 @@ class Product extends React.Component {
             product: {
                 title = '',
                 description = '',
+                image_url = '',
                 price = 0
             } = {}
         } = this.props;
 
         return (
             <div className="Product">
-                <div className="row">
-                    <div className="col">
-                        <p className="Product-Title">{ title }</p>
-                        <p className="Product-Description">{ description }</p>
+                <div className="Product-Headline">
+                    <img
+                      className="Product-Image"
+                      src={ image_url }
+                      alt={ title }
+                    />
+                </div>
+                <div className="Product-Information">
+                    <div className="Product-Title">
+                        { title }
                     </div>
-                    <div className="col">
-                        <p className="custom-tar">
-                            { price }
-                            &euro;
-                        </p>
+                    <div className="Product-Description">
+                        { description }
                     </div>
+                </div>
+                <div className="Product-Price">
+                    <p>
+                      { price }
+                      &euro;
+                    </p>
                 </div>
             </div>
         );

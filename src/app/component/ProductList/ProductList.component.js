@@ -132,7 +132,7 @@ class ProductList extends React.Component {
           foodMenu
       } = this.props;
 
-      if (loading) {
+      if (loading || !foodMenu.length) {
           return t('loading');
       }
 

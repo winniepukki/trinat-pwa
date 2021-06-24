@@ -1,4 +1,10 @@
 .Product {
+  display: grid;
+  grid-template-columns: auto 2fr auto;
+  gap: 0 10px;
+  justify-items: stretch;
+  align-items: center;
+
   &-Title {
     text-transform: uppercase;
     font-weight: 500; }
@@ -8,7 +14,10 @@
     color: var(--auxiliary-color-lightener); }
 
   &-Image {
-    height: 55px;
-    width: 55px;
-    border-radius: 50% 50%;
-    margin-right: 15px; }}
+    height: 60px;
+    width: 60px;
+    max-width: 60px;
+    min-height: 60px;
+    font-size: 13px;
+    box-shadow: 1px 1px 15px rgba(0,0,0,.7);
+    overflow: hidden; }}
