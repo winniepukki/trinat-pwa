@@ -39,12 +39,6 @@
     "title": "меню"
   },
   "footer-contact-info": "Наши контакты",
-  "food-types": {
-    "desserts": "десерты",
-    "meals": "горячее",
-    "kids": "детское меню",
-    "alcohol": "алкоголь"
-  },
   "footer-menu": {
     "about": "о нас",
     "careers": "вакансии",
@@ -59,7 +53,7 @@
   "recent-posts": "последние публикации",
   "table": "столов",
   "view-gallery": "посмотреть галерею",
-  "footer-text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nisi obcaecati officiis quo repellat totam.",
+  "footer-text": "Что-то не работает? Напиши разработчику a.bogackins@gmail.com. Версия сайта: 1.1.0",
   "hero": {
     "title": "Домашняя кухня не оставит равнодушным никого, особенно, когда это приготовлено с любовью от наших поваров. Кафе Тринат всегда Вас встретит с теплом и особым уютом."
   },
@@ -101,7 +95,7 @@
   "title": "trinat",
   "trinat": {
     "title": "Trinat",
-    "type": "Кафетерий"
+    "type": "Кафе"
   },
   "admin-zone": {
     "starter-add": "добавить комплекс",
@@ -113,10 +107,5 @@
     "form-error-empty": "Пожалуйста заполните все поля!",
     "lang-change": "Вы успешно поменяли язык на русский"
   },
-  "welcome": "warm welcome!",
-  "reservation-placeholders": {
-    "email": "ivan.petrovich@trinat.lv",
-    "phone": "+371 29740898",
-    "name": "Иван Петрович"
-  }
+  "welcome": "warm welcome!"
 }

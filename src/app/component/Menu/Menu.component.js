@@ -11,6 +11,7 @@ import Reservation from '@component/Reservation/Reservation.component';
 import { DIVIDER } from '@component/Header/Header.config';
 
 import './Menu.style.scss';
+import { LANG_CODE_LV } from '@component/Starters/Starters.config';
 
 class Menu extends React.Component {
   static propTypes = {
@@ -104,7 +105,7 @@ class Menu extends React.Component {
                     <a href="/" className="homepage-uri" aria-label="Go home button">
                       <h5>
                         <p>{ t('trinat.title') }</p>
-                        <p>
+                        <p className={ (lang === LANG_CODE_LV ? '' : 'type-sm') }>
                           { t('trinat.type') }
                         </p>
                       </h5>

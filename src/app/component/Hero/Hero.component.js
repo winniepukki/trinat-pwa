@@ -7,9 +7,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Hero.style.scss';
 import { withTranslation } from 'react-i18next';
 import Menu from '@component/Menu/Menu.component';
+
+import './Hero.style.scss';
 
 class Hero extends React.Component {
     static propTypes = {

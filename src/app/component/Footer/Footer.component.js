@@ -7,6 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
+import { LANG_CODE_LV } from '@component/Starters/Starters.config';
 
 import './Footer.style.scss';
 
@@ -38,7 +39,7 @@ class Footer extends React.Component {
   }
 
   renderFooter() {
-      const { t } = this.props;
+      const { t, lang } = this.props;
       return (
           <div className="Footer">
             <ScrollComponent showBelow={ 250 } />
@@ -47,7 +48,12 @@ class Footer extends React.Component {
                 <div className="col-sm-3">
                   <h5>
                     <p>{ t('trinat.title') }</p>
-                    <p>{ t('trinat.type') }</p>
+                    <p className={ (lang.toLowerCase() === LANG_CODE_LV
+                        ? ''
+                        : 'type-sm') }
+                    >
+                        { t('trinat.type') }
+                    </p>
                   </h5>
                   <p className="simple-text">{ t('footer-text') }</p>
                   { this.renderPaymentMethods() }
