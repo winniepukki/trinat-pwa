@@ -29,6 +29,7 @@ jobs:
     - name: Install dependencies, copy config file
       run: |
         npm install
+        cd src/app/util/Firebase && cp config.sample.js config.js
 
     - name: Install ESLint globally
       run: npm i -g eslint
