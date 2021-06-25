@@ -1,3 +1,4 @@
+/* eslint-disable max-len,array-callback-return */
 /**
 * SIA Trinat restaurant project
 * Copyright © winniepukki. All rights reserved.
@@ -17,12 +18,13 @@ import { LANG_CODE_LV } from '@component/Starters/Starters.config';
 import { SPECIAL } from './ProductList.config';
 
 import {
+    fetchMenuFail,
     fetchMenuRequest,
-    fetchMenuSuccess,
-    fetchMenuFail
+    fetchMenuSuccess
 } from '@store/MenuList/MenuList.action';
 
 import './ProductList.style.scss';
+import Category from '@util/Category/Category';
 
 export const mapStateToProps = (state) => ({
     loading: state.menuList.loading,
@@ -124,6 +126,45 @@ class ProductList extends React.Component {
       return ProductListQuery.getProductList(languageCode) || {};
   }
 
+  getProductCategories() {
+      const {
+          foodMenu = []
+      } = this.props;
+
+      /**
+       * Get all categories
+       */
+      const listOfCategories = foodMenu?.map((item) => {
+          const { category } = item;
+          return category;
+      });
+
+      /**
+       * Sort and remove duplicates
+       */
+      return listOfCategories.sort().filter((v, i) => listOfCategories.indexOf(v) === i);
+  }
+
+  renderProductsWithCategories() {
+      return this.getProductCategories().map((category) => {
+          if (category === SPECIAL) {
+              return null;
+          }
+
+          return (
+              <div className="Product-Category">
+                  <Category key={ category } title={ category } />
+                  <div className="Product-List-Container container">
+                      { this.renderProducts().filter((product) => product.category === category).map((product) => {
+                          const { _id } = product;
+                          return <Product key={ _id } product={ product } />;
+                      }) }
+                  </div>
+              </div>
+          );
+      });
+  }
+
   renderProducts() {
       const {
           t,
@@ -136,9 +177,8 @@ class ProductList extends React.Component {
           return t('loading');
       }
 
-      return foodMenu.map((product) => {
+      const products = foodMenu.map((product) => {
           const {
-              _id = '',
               language = '',
               category = ''
           } = product;
@@ -147,8 +187,10 @@ class ProductList extends React.Component {
               return null;
           }
 
-          return <Product key={ _id } product={ product } />;
+          return product;
       });
+
+      return products.filter((x) => !!x);
   }
 
   renderTitle() {
@@ -179,10 +221,8 @@ class ProductList extends React.Component {
             </section>
             <div className="container">
               <h4 className="custom-tac">{ t('food-menu.day-menus') }</h4>
-              <div className="container">
-                  { this.renderProducts() }
-                <div className="row justify-content-between custom-mg-25" />
-              </div>
+                { this.renderProductsWithCategories() }
+                <div className="custom-mg-25" />
             </div>
           </div>
       );

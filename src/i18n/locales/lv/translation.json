@@ -16,6 +16,16 @@
     "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias dicta, nihil odit quam reiciendis repellendus repudiandae saepe tempora ut? Aliquam dicta ipsa odio rem.",
     "title": "Kontakti"
   },
+  "category": {
+    "hot_dishes": "Karstie ēdieni",
+    "desserts": "Deserti",
+    "breakfast": "Brokasti",
+    "snacks": "Uzkodas",
+    "salads": "Salāti",
+    "soups": "Zupas",
+    "special": "Speciālie piedāvājumi",
+    "kids": "Bērniem"
+  },
   "contact-form": {
     "fullName": "vārds uzvārds",
     "email": "e-pasts",
