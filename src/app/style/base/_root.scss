@@ -23,4 +23,6 @@
   --black: var(--imported-black-color, #{$black});
 
   --secondary-font-family: var(--imported-secondary-font-family, #{$secondary-font-family});
+
+  --primary-width: var(--imported-primary-width, #{$primary-width});
 }

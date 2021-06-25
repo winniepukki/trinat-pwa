@@ -146,13 +146,23 @@ class ProductList extends React.Component {
   }
 
   renderProductsWithCategories() {
+      const {
+          t,
+          loading,
+          foodMenu
+      } = this.props;
+
+      if (loading || !foodMenu.length) {
+          return t('loading');
+      }
+
       return this.getProductCategories().map((category) => {
           if (category === SPECIAL) {
               return null;
           }
 
           return (
-              <div className="Product-Category">
+              <div key={ category } className="Product-Category">
                   <Category key={ category } title={ category } />
                   <div className="Product-List-Container container">
                       { this.renderProducts().filter((product) => product.category === category).map((product) => {

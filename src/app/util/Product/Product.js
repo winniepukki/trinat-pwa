@@ -28,12 +28,16 @@ class Product extends React.Component {
             } = {}
         } = this.props;
 
+        const productImage = (image_url.length)
+            ? image_url
+            : '/assets/img/icons/no-image.svg';
+
         return (
             <div className="Product">
                 <div className="Product-Headline">
                     <img
                       className="Product-Image"
-                      src={ image_url }
+                      src={ productImage }
                       alt={ title }
                     />
                 </div>
