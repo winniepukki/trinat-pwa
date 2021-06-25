@@ -14,7 +14,7 @@ import {
 } from '@component/Contact/Contact.config';
 
 import './Contact.style.scss';
-import firebase from '@util/Firebase/firebase';
+import ReviewQuery from '@query/Review.query';
 
 class Contact extends React.Component {
   static propTypes = {
@@ -98,12 +98,7 @@ class Contact extends React.Component {
           return;
       }
 
-      const starterRef = firebase.database().ref('Reviews');
-      const preparedReview = {
-          fullName,
-          email,
-          review
-      };
+      ReviewQuery.createReview(fullName, email, review);
 
       this.setState({
           message: t('notification.form-success')
@@ -115,7 +110,6 @@ class Contact extends React.Component {
        * resetting fields and hiding the message
        */
       this.notificationRef.current.className = 'contact-notification success';
-      starterRef.push(preparedReview);
       this.resetAllFields();
 
       setTimeout(() => {

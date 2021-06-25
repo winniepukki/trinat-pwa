@@ -13,7 +13,7 @@
   },
   "booking": "rezervācija",
   "contact": {
-    "text": "Jūsu rīcībā mēs piedāvājam galda rezervācijas, banketus un sēru mielastus. Par visiem jautājumiem varat sazināties ar mums pa tālruņa numuriem: 29740898 un 29672165.",
+    "text": "Jūsu rīcība mēs piedāvājam galda rezervācijas, banketus un sēru mielastus. Par visiem jautājumiem varat sazināties ar mums pa tālruņa numuriem: 29740898 un 29672165.",
     "title": "Kontakti"
   },
   "category": {
@@ -55,7 +55,7 @@
   "view-gallery": "apskatīt galēriju",
   "footer-text": " Kaut kas nedarbojas tā, kā vajadzētu? Nosūti izstrādātājam e-pastu a.bogackins@gmail.com. Vietnes versija: 1.1.0",
   "hero": {
-    "title": "Mājas virtuve neatstās vienaldzīgu nevienu, it īpaši, ja to gatavo ar mīlestību kā mūsu pavāri. Kafejnīca Trinat vienmēr sagaidīs jūs ar siltumu un īpašu komfortu."
+    "title": "Mājas virtuve neatstās vienaldzīgu nevienu, it īpaši, ja to gatavo ar mīlestību kā mūsu pavāri. Kafeinīca Trinat vienmēr sagaidīs jūs ar siltumu un īpašu komfortu."
   },
   "lang": "lv",
   "loading-fail": "Neizdevās ielādēt datus. Sazinieties ar vietnes administrāciju",
@@ -90,7 +90,7 @@
   "starters-info": "Kompleksi ir pieejami no 11 līdz 14:00",
   "story": {
     "description": "VISPĀRĒJĀ ĒDINĀŠANAS PIEREDZE NEVIS PATĪK",
-    "text": "Kafejnīca Trinat 2017. gada 7. janvārī atvēra savas durvis apmeklētājiem un šī iemesla dēļ ieguva savu nosaukumu. Uzņēmuma dibinātājas bija trīs brīnišķīgas sievietes, kuras vieno viens kopīgs mērķis - iepriecināt cilvēkus ar gardu virtuvi un sniegt brīnišķīgu noskaņojumu katru dienu. pēc kafejnīcas apmeklējuma. Kafejnīcas TRINAT nosaukuma atšifrēšana ir ļoti vienkārša - trīs saimnieces - trīs Natālijas.",
+    "text": "Kafejnīca Trinat 2017. gada 7. janvārī atvēra savas durvis apmeklētājiem un šī iemesla dēļ ieguva savu nosaukumu. Uzņēmuma dibinātājas bija trīs brīnišķīgas sievietes, kuras vieno viens kopīgs mērķis - iepriecināt cilvēkus ar gardu virtuvi un sniegt brīnišķīgu noskaņojumu katru dienu pēc kafeinīcas apmeklējuma. Kafeinīcas TRINAT nosaukuma atšifrēšana ir ļoti vienkārša - trīs saimnieces - trīs Natālijas.",
     "title": "Mūsu vēsture"
   },
   "title": "trinat",
