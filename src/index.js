@@ -7,6 +7,7 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import App from './app/component/App/App.component';
+import Loading from './app/component/Loading/Loading.component';
 
 import 'bootstrap/dist/css/bootstrap-grid.css';
 import './app/style/main.scss';
@@ -21,7 +22,7 @@ if ('serviceWorker' in navigator) {
 
 ReactDOM.render(
   <React.StrictMode>
-    <Suspense fallback={ <div>Fetching the DeathStar plans...</div> }>
+    <Suspense fallback={ <Loading /> }>
       <App />
     </Suspense>
   </React.StrictMode>,

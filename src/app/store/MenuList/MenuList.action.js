@@ -12,12 +12,12 @@ export const fetchMenuRequest = () => ({
     type: FETCH_MENU_REQUEST
 });
 
-export const fetchMenuSuccess = (foodMenu) => ({
+export const fetchMenuSuccess = (foodMenu = []) => ({
     type: FETCH_MENU_SUCCESS,
     payload: foodMenu
 });
 
-export const fetchMenuFail = (error) => ({
+export const fetchMenuFail = (error = '') => ({
     type: FETCH_MENU_FAIL,
     payload: error
 });

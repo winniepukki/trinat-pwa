@@ -7,9 +7,11 @@
 import PropTypes from 'prop-types';
 
 // eslint-disable-next-line import/prefer-default-export
-export const Product = PropTypes.shape({
+export const ProductType = PropTypes.shape({
     id: PropTypes.number,
+    category: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string,
-    price: PropTypes.string
+    price: PropTypes.number,
+    image_url: PropTypes.string
 });

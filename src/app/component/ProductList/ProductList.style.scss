@@ -5,3 +5,9 @@
     margin-top: 10px; }
   background: {
     image: url('./foodMenu.jpg'); }}
+
+.Product-List-Container {
+  @media screen and (min-width: 1050px) {
+    columns: 2 auto;
+  }
+}

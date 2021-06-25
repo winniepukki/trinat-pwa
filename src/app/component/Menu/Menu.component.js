@@ -11,10 +11,12 @@ import Reservation from '@component/Reservation/Reservation.component';
 import { DIVIDER } from '@component/Header/Header.config';
 
 import './Menu.style.scss';
+import { LANG_CODE_LV } from '@component/Starters/Starters.config';
 
 class Menu extends React.Component {
   static propTypes = {
-      t: PropTypes.func.isRequired
+      t: PropTypes.func.isRequired,
+      lang: PropTypes.string.isRequired
   };
 
   constructor(props) {
@@ -61,10 +63,10 @@ class Menu extends React.Component {
       return (
           <ul className="nav custom-flexbox custom-justify-spa custom-align-ic">
             <li><a href="#" aria-label="Header story link">{ t('menu.story') }</a></li>
-            <li><a href="#" aria-label="Header meny link">{ t('menu.menu') }</a></li>
+            <li><a href="#" aria-label="Header menu link">{ t('menu.menu') }</a></li>
             <li>
                 <a href="#" aria-label="Header starters link">
-                    { t('menu.starters') }
+                    { t('menu.new') }
                 </a>
             </li>
             <li>
@@ -88,12 +90,14 @@ class Menu extends React.Component {
   }
 
   render() {
-      const { t } = this.props;
+      const { t, lang } = this.props;
       const { visible, menu } = this.state;
 
       return (
           <div className="Menu">
-            { visible ? <Reservation handler={ this.handleReservation } /> : '' }
+            { visible ? (
+                <Reservation lang={ lang } handler={ this.handleReservation } />
+            ) : '' }
             <div className={ menu ? 'menu' : 'menu test-menu' }>
               <div className="container">
                 <div className="row justify-content-center align-items-center">
@@ -101,7 +105,7 @@ class Menu extends React.Component {
                     <a href="/" className="homepage-uri" aria-label="Go home button">
                       <h5>
                         <p>{ t('trinat.title') }</p>
-                        <p>
+                        <p className={ (lang === LANG_CODE_LV ? '' : 'type-sm') }>
                           { t('trinat.type') }
                         </p>
                       </h5>

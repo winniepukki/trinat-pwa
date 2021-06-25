@@ -13,8 +13,18 @@
   },
   "booking": "rezervācija",
   "contact": {
-    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias dicta, nihil odit quam reiciendis repellendus repudiandae saepe tempora ut? Aliquam dicta ipsa odio rem.",
+    "text": "Jūsu rīcība mēs piedāvājam galda rezervācijas, banketus un sēru mielastus. Par visiem jautājumiem varat sazināties ar mums pa tālruņa numuriem: 29740898 un 29672165.",
     "title": "Kontakti"
+  },
+  "category": {
+    "hot_dishes": "Karstie ēdieni",
+    "desserts": "Deserti",
+    "breakfast": "Brokasti",
+    "snacks": "Uzkodas",
+    "salads": "Salāti",
+    "soups": "Zupas",
+    "special": "Speciālie piedāvājumi",
+    "kids": "Bērniem"
   },
   "contact-form": {
     "fullName": "vārds uzvārds",
@@ -24,12 +34,6 @@
   "copyright": "Autortiesības 2021 © Atsauce uz TRINAT.LV ir obligāta",
   "delete": "nodzēst",
   "delicious": "garšīgi",
-  "food-types": {
-    "desserts": "deserti",
-    "meals": "karstie ēdieni",
-    "kids": "bērniem",
-    "alcohol": "alkohols"
-  },
   "food-menu": {
     "day-menus": "dienas izvēlnes",
     "title": "menu"
@@ -41,21 +45,28 @@
     "delivery": "piegāde"
   },
   "loading": "Notiek datu ielāde...",
+  "load-message": {
+    "pouring-coffee": "Taisam tavu kafiju. Uzgaidi",
+    "making-cocktail": "Taisam aperoli! Gaidam!",
+    "preparing-food": "Pavars jau sagatavo tavu edienu!"
+  },
   "recent-posts": "peidējās publikācijas",
   "table": "galdu",
   "view-gallery": "apskatīt galēriju",
-  "footer-text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nisi obcaecati officiis quo repellat totam.",
+  "footer-text": " Kaut kas nedarbojas tā, kā vajadzētu? Nosūti izstrādātājam e-pastu a.bogackins@gmail.com. Vietnes versija: 1.1.0",
   "hero": {
-    "title": "gatavojam ekskluzīvu ēdienu, kurš ir Garšīgs Un, No 2017 Nodrosējiet Vai Zvaniet +371 29740898"
+    "title": "Mājas virtuve neatstās vienaldzīgu nevienu, it īpaši, ja to gatavo ar mīlestību kā mūsu pavāri. Kafeinīca Trinat vienmēr sagaidīs jūs ar siltumu un īpašu komfortu."
   },
   "lang": "lv",
   "loading-fail": "Neizdevās ielādēt datus. Sazinieties ar vietnes administrāciju",
   "menu": {
     "story": "musu vēsture",
     "menu": "menu",
+    "new": "jaunumi",
     "starters": "kompleks ēdieni",
     "contact": "kontakti"
   },
+  "prod-not-found": "Produkti nav atrasti",
   "our": "Musu",
   "reservation": "rezervācija",
   "reservation-items": {
@@ -79,13 +90,13 @@
   "starters-info": "Kompleksi ir pieejami no 11 līdz 14:00",
   "story": {
     "description": "VISPĀRĒJĀ ĒDINĀŠANAS PIEREDZE NEVIS PATĪK",
-    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.",
+    "text": "Kafejnīca Trinat 2017. gada 7. janvārī atvēra savas durvis apmeklētājiem un šī iemesla dēļ ieguva savu nosaukumu. Uzņēmuma dibinātājas bija trīs brīnišķīgas sievietes, kuras vieno viens kopīgs mērķis - iepriecināt cilvēkus ar gardu virtuvi un sniegt brīnišķīgu noskaņojumu katru dienu pēc kafeinīcas apmeklējuma. Kafeinīcas TRINAT nosaukuma atšifrēšana ir ļoti vienkārša - trīs saimnieces - trīs Natālijas.",
     "title": "Mūsu vēsture"
   },
   "title": "trinat",
   "trinat": {
     "title": "Trinat",
-    "type": "Kafeinīca"
+    "type": "Kafejnīca"
   },
   "admin-zone": {
     "starter-add": "kompleksu pievienošana",
@@ -97,10 +108,5 @@
     "form-error-empty": "Lūdzam aizpildīt visus laukus!",
     "lang-change": "Jūs veiksmīgi samainījāt valodu uz latviešu"
   },
-  "welcome": "Laipni lugti!",
-  "reservation-placeholders": {
-    "email": "aldis.berzins@trinat.lv",
-    "phone": "+371 29740898",
-    "name": "Aldis Bērziņš"
-  }
+  "welcome": "Laipni lugti!"
 }

@@ -1,0 +1,29 @@
+.Product {
+  display: grid;
+  grid-template-columns: auto 2fr auto;
+  gap: 0 10px;
+  justify-items: stretch;
+  align-items: center;
+
+  @media screen and (max-width: 1000px) {
+    margin-bottom: 20px; }
+
+  &-Title {
+    text-transform: uppercase;
+    font-weight: 500; }
+
+  &-Description {
+    display: inline;
+    font-size: 13px;
+    color: var(--auxiliary-color-lightener); }
+
+  &-Image {
+    height: 60px;
+    width: 60px;
+    max-width: 60px;
+    min-height: 60px;
+    font-size: 13px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, .5);
+    border-radius: 50% 50%;
+    object-fit: cover;
+    overflow: hidden; }}

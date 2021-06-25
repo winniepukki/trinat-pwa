@@ -4,7 +4,7 @@
 *
 * @license MIT
 */
-import React, { lazy } from 'react';
+import React from 'react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -21,8 +21,9 @@ import Footer from '@component/Footer/Footer.component';
 import Blockquote from '@component/Blockquote/Blockquote.component';
 import Story from '@component/Story/Story.component';
 import Contact from '@component/Contact/Contact.component';
-import FoodMenu from '@component/FoodMenu/FoodMenu.component';
-import Starters from '@component/Starters/Starters.component';
+import ProductList from '@component/ProductList/ProductList.component';
+import EmbeddedMap from '@component/EmbeddedMap/EmbeddedMap.component';
+import Special from '@component/Special/Special.component';
 
 class App extends React.Component {
     static propTypes = {
@@ -65,7 +66,6 @@ class App extends React.Component {
     render() {
         const { t } = this.props;
         const currentLanguage = this.getCurrentLanguage().toUpperCase();
-        const Map = lazy(() => import('../EmbeddedMap/EmbeddedMap.component'));
 
         return (
           <Router>
@@ -78,6 +78,7 @@ class App extends React.Component {
                     titleCaptionFront={ t('trinat.title') }
                     titleCaptionBold={ t('trinat.type') }
                     subtitle={ t('hero.title') }
+                    languageCode={ this.getCurrentLanguage() }
                   />
                   <Blockquote
                     content={ t('blockquote.blockquote-content') }
@@ -89,14 +90,14 @@ class App extends React.Component {
                     description={ t('story.description') }
                     storyText={ t('story.text') }
                   />
-                  <FoodMenu
+                  <ProductList
                     languageCode={ this.getCurrentLanguage() }
                   />
-                  <Starters
+                  <Special
                     languageCode={ this.getCurrentLanguage() }
                   />
                   <Contact />
-                  <Map />
+                  <EmbeddedMap />
                   <Footer
                     lang={ currentLanguage }
                   />

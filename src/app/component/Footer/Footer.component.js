@@ -7,6 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
+import { LANG_CODE_LV } from '@component/Starters/Starters.config';
 
 import './Footer.style.scss';
 
@@ -28,7 +29,7 @@ class Footer extends React.Component {
 
   renderPaymentMethods() {
       return (
-          <div className="payment-methods custom-grid-4">
+          <div className="payment-methods custom-grid-4-fixed">
             <img src="assets/img/social/apple.svg" alt="Apple pay icon" />
             <img src="assets/img/social/visa.svg" alt="Visa icon" />
             <img src="assets/img/social/mastercard.svg" alt="Mastercard icon" />
@@ -38,7 +39,7 @@ class Footer extends React.Component {
   }
 
   renderFooter() {
-      const { t } = this.props;
+      const { t, lang } = this.props;
       return (
           <div className="Footer">
             <ScrollComponent showBelow={ 250 } />
@@ -47,7 +48,12 @@ class Footer extends React.Component {
                 <div className="col-sm-3">
                   <h5>
                     <p>{ t('trinat.title') }</p>
-                    <p>{ t('trinat.type') }</p>
+                    <p className={ (lang.toLowerCase() === LANG_CODE_LV
+                        ? ''
+                        : 'type-sm') }
+                    >
+                        { t('trinat.type') }
+                    </p>
                   </h5>
                   <p className="simple-text">{ t('footer-text') }</p>
                   { this.renderPaymentMethods() }
@@ -102,9 +108,9 @@ class Footer extends React.Component {
             <div className="container">
               <div className="row align-items-center justify-content-center">
                 <div className="col-sm-6 custom-flexbox custom-align-ic">
-                  <a href="https://cream.camp" aria-label="This website developers' copyright notice">
+                  <a href="https://twitter.com/winniepukki" aria-label="This website developers' copyright notice">
                     <img
-                      src="assets/img/social/creamcamp.svg"
+                      src="assets/img/social/winniepukki.svg"
                       alt=""
                       className="copyright"
                     />
@@ -112,7 +118,7 @@ class Footer extends React.Component {
                   <span className="footer-notice-text">{ t('copyright') }</span>
                 </div>
                 <div className="col-sm-6">
-                  <ul className="Footer-Links">
+                  <ul className="Footer-Links custom-justify-spe">
                       <li className="footer-notice-text">
                           <a
                             href="#"

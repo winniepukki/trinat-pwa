@@ -16,8 +16,13 @@
 
   --auxiliary-color-lightener: var(--auxiliary-color-lightener, #{$auxiliary-color-lightener});
 
+  --loading-background: var(--imported-loading-background, #{$secondary-light-color});
+  --loading-icon-color: var(--imported-loading-icon-color, #{$button-disabled-color});
+
   --white: var(--imported-white-color, #{$white});
   --black: var(--imported-black-color, #{$black});
 
   --secondary-font-family: var(--imported-secondary-font-family, #{$secondary-font-family});
+
+  --primary-width: var(--imported-primary-width, #{$primary-width});
 }

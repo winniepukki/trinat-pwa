@@ -120,9 +120,16 @@
 .custom-align-ic {
   @include align-items(center); }
 
+.custom-flex-dir-column {
+  @include flex-direction(column); }
+
 .custom-grid-4 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+.custom-grid-4-fixed {
+  display: grid;
+  grid-template-columns: 50px 50px 50px 50px; }
 
 .custom-mg-25 {
   margin: 25px 0; }

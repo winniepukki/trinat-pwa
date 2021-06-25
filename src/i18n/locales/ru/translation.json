@@ -13,8 +13,18 @@
   },
   "booking": "резервация",
   "contact": {
-    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias dicta, nihil odit quam reiciendis repellendus repudiandae saepe tempora ut? Aliquam dicta ipsa odio rem.",
+    "text": "К Вашим услугам мы предлагаем предварительные резервации столиков, банкеты и поминальные обеды. По всем вопросам с нами можно связаться по номерам телефонов: 29740898 и 29672165.",
     "title": "обратная связь"
+  },
+  "category": {
+    "hot_dishes": "Горячее",
+    "desserts": "Десерты",
+    "breakfast": "Завтрак",
+    "snacks": "Закуски",
+    "salads": "Салаты",
+    "soups": "Супы",
+    "special": "Специальные предложения",
+    "kids": "Для детей"
   },
   "contact-form": {
     "fullName": "имя фамилия",
@@ -29,33 +39,33 @@
     "title": "меню"
   },
   "footer-contact-info": "Наши контакты",
-  "food-types": {
-    "desserts": "десерты",
-    "meals": "горячее",
-    "kids": "детское меню",
-    "alcohol": "алкоголь"
-  },
   "footer-menu": {
     "about": "о нас",
     "careers": "вакансии",
     "delivery": "доставка"
   },
   "loading": "Загрузка данных...",
+  "load-message": {
+    "pouring-coffee": "Наливаем ваш кофейный напиток!",
+    "making-cocktail": "Апероль-шприц готовится, подождите!",
+    "preparing-food": "Повар готовит ваш заказ!"
+  },
   "recent-posts": "последние публикации",
   "table": "столов",
   "view-gallery": "посмотреть галерею",
-  "footer-text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nisi obcaecati officiis quo repellat totam.",
+  "footer-text": "Что-то не работает? Напиши разработчику a.bogackins@gmail.com. Версия сайта: 1.1.0",
   "hero": {
-    "title": "ГОТОВИМ ВКУСНУЮ И ЭКСКЛЮЗИВНУЮ ЕДУ С 2017 БРОНИРУЙТЕ ИЛИ ЗВОНИТЕ +371 29740898"
+    "title": "Домашняя кухня не оставит равнодушным никого, особенно, когда это приготовлено с любовью от наших поваров. Кафе Тринат всегда Вас встретит с теплом и особым уютом."
   },
   "lang": "ru",
   "loading-fail": "Не удалось загрузить данные. Свяжитесь с администрацией сайта",
   "menu": {
     "story": "наша история",
     "menu": "меню",
-    "starters": "комплексы",
+    "new": "новинки",
     "contact": "обратная связь"
   },
+  "prod-not-found": "Товары не найдены!",
   "our": "наше",
   "reservation": "резервация",
   "reservation-items": {
@@ -68,7 +78,7 @@
       "1 персона", "2 персоны", "3 персоны", "4 персоны", "5 персон", "Более 5 персон"
     ]
   },
-  "reservation-notice": "Резервация банкетов и поминальных обедов по тел. 29 740 898 и 29 672 165",
+  "reservation-notice": "К Вашим услугам мы предлагаем предварительные резервации столиков, банкеты и поминальные обеды. По всем вопросам с нами можно связаться по номерам телефонов: 29740898 и 29672165.",
   "send": "отправить",
   "starter-form": {
     "ingredients": "ингредиенты",
@@ -79,13 +89,13 @@
   "starters-info": "Комплексы доступны с 11 – 14.00",
   "story": {
     "description": "непревзайденный опыт приема, как нигде до нас",
-    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.",
+    "text": "Кафе Тринат открыло свои двери для посетителей в 2017 году 7 января. Общепит получило свое название неспроста, основательницами предприятия стали три замечательные женщины, которых объединяла одна общая цель - радовать людей вкусной кухней и дарить замечательное настроение на каждый день после посещения кафе. Расшифровка названия кафе ТРИНАТ очень проста - три хозяйки - три Натальи.",
     "title": "Нашу историю"
   },
   "title": "trinat",
   "trinat": {
     "title": "Trinat",
-    "type": "Кафетерия"
+    "type": "Кафе"
   },
   "admin-zone": {
     "starter-add": "добавить комплекс",
@@ -97,10 +107,5 @@
     "form-error-empty": "Пожалуйста заполните все поля!",
     "lang-change": "Вы успешно поменяли язык на русский"
   },
-  "welcome": "warm welcome!",
-  "reservation-placeholders": {
-    "email": "ivan.petrovich@trinat.lv",
-    "phone": "+371 29740898",
-    "name": "Иван Петрович"
-  }
+  "welcome": "warm welcome!"
 }

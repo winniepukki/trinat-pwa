@@ -7,16 +7,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Hero.style.scss';
 import { withTranslation } from 'react-i18next';
 import Menu from '@component/Menu/Menu.component';
+
+import './Hero.style.scss';
 
 class Hero extends React.Component {
     static propTypes = {
         welcomeMessage: PropTypes.string.isRequired,
         titleCaptionFront: PropTypes.string.isRequired,
         titleCaptionBold: PropTypes.string.isRequired,
-        subtitle: PropTypes.string.isRequired
+        subtitle: PropTypes.string.isRequired,
+        languageCode: PropTypes.string.isRequired
     };
 
     constructor(props) {
@@ -55,7 +57,8 @@ class Hero extends React.Component {
     }
 
     renderMenu() {
-        return <Menu />;
+        const { languageCode } = this.props;
+        return <Menu lang={ languageCode } />;
     }
 
     renderHeroBackground() {
