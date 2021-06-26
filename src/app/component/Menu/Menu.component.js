@@ -62,16 +62,19 @@ class Menu extends React.Component {
       const { t } = this.props;
       return (
           <ul className="nav custom-flexbox custom-justify-spa custom-align-ic">
-            <li><a href="#" aria-label="Header story link">{ t('menu.story') }</a></li>
-            <li><a href="#" aria-label="Header menu link">{ t('menu.menu') }</a></li>
             <li>
-                <a href="#" aria-label="Header starters link">
-                    { t('menu.new') }
+                <a href="https://www.flickr.com/photos/3nataly/" aria-label="Header gallery link">
+                    { t('gallery') }
                 </a>
             </li>
             <li>
-                <a href="#" aria-label="Header contact link">
-                    { t('menu.contact') }
+                <a href="https://www.facebook.com/3nataly/jobs" aria-label="Header careers link">
+                    { t('careers') }
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/3nataly/reviews/" aria-label="Header reviews link">
+                    { t('reviews') }
                 </a>
             </li>
             <li>

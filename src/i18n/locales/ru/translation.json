@@ -32,7 +32,7 @@
     "email": "электронная почта",
     "review": "отзыв"
   },
-  "copyright": "copyright Trinat SIA © Все права защищены",
+  "copyright": "Авторское право Trinat SIA © Все права защищены",
   "delete": "удалить",
   "delicious": "вкусные",
   "food-menu": {
@@ -40,11 +40,9 @@
     "title": "меню"
   },
   "footer-contact-info": "Наши контакты",
-  "footer-menu": {
-    "about": "о нас",
-    "careers": "вакансии",
-    "delivery": "доставка"
-  },
+  "gallery": "наша галерея",
+  "careers": "вакансии",
+  "reviews": "отзывы",
   "loading": "Загрузка данных...",
   "load-message": {
     "pouring-coffee": "Наливаем ваш кофейный напиток!",

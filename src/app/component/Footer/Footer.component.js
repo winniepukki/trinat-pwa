@@ -121,26 +121,26 @@ class Footer extends React.Component {
                   <ul className="Footer-Links custom-justify-spe">
                       <li className="footer-notice-text">
                           <a
-                            href="#"
-                            aria-label="Footer link to about us page"
+                            href="https://www.flickr.com/photos/3nataly/"
+                            aria-label="Footer link to our gallery"
                           >
-                              { t('footer-menu.about') }
+                              { t('gallery') }
                           </a>
                       </li>
                       <li className="footer-notice-text">
                           <a
-                            href="#"
+                            href="https://www.facebook.com/3nataly/jobs"
                             aria-label="Footer link to careers page"
                           >
-                              { t('footer-menu.careers') }
+                              { t('careers') }
                           </a>
                       </li>
                       <li className="footer-notice-text">
                           <a
-                            href="#"
-                            aria-label="Footer link to the delivery page"
+                            href="https://www.facebook.com/3nataly/reviews/"
+                            aria-label="Footer link to the reviews page"
                           >
-                              { t('footer-menu.delivery') }
+                              { t('reviews') }
                           </a>
                       </li>
                       <GoogleLogIn lang={ currentLanguage } />

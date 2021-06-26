@@ -40,11 +40,9 @@
     "title": "menu"
   },
   "footer-contact-info": "Kontakt informācija",
-  "footer-menu": {
-    "about": "par mums",
-    "careers": "vakances",
-    "delivery": "piegāde"
-  },
+  "gallery": "mūsu galerija",
+  "careers": "vakances",
+  "reviews": "atsauksmes",
   "loading": "Notiek datu ielāde...",
   "load-message": {
     "pouring-coffee": "Taisam tavu kafiju. Uzgaidi",

@@ -15,6 +15,10 @@
       width: 200px; }}
 
   @media screen and (max-width: 600px) {
+    .language-button {
+      width: 1px;
+      display: inline-block; }
+
     .header-venue-address {
       float: left; }}
 

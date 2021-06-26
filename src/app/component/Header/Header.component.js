@@ -80,7 +80,7 @@ class Header extends Component {
       } = this.props;
 
       return (
-          <a onClick={ this.handleLanguage }>
+          <a className="language-button" onClick={ this.handleLanguage }>
             { language === LANG_CODE_LV
                 ? (
                   <span>
@@ -127,16 +127,16 @@ class Header extends Component {
                   <a
                     href="http://bit.ly/3nataly"
                     className="header-social-network"
-                    aria-label="Visit us on facebook button"
+                    aria-label="Visit us on Facebook button"
                   >
                       <i className="fab fa-facebook-f" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.flickr.com/photos/3nataly/"
                     className="header-social-network"
-                    aria-label="Visit us on the instagram button"
+                    aria-label="Visit us on Flickr button"
                   >
-                      <i className="fab fa-instagram" />
+                      <i className="fab fa-flickr" />
                   </a>
                   { this.renderLanguageSwitcher() }
                 </div>
