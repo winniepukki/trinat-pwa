@@ -231,6 +231,7 @@ class ProductList extends React.Component {
             </section>
             <div className="container">
               <h4 className="custom-tac">{ t('food-menu.day-menus') }</h4>
+                <p className="allergy-notice">{ t('allergy-notice') }</p>
                 { this.renderProductsWithCategories() }
                 <div className="custom-mg-25" />
             </div>
