@@ -23,17 +23,20 @@ export class ProductListQuery {
 
         const request = {
             query: `
-                query {
-                    products {
-                        _id
+            query {
+                products {
+                    _id
+                    title
+                    category {
                         title
-                        category
-                        description
-                        image_url
-                        price
-                        language
-                    }
+                        priority
+                    }    
+                    description
+                    image_url
+                    price
+                    language
                 }
+            }
             `
         };
 

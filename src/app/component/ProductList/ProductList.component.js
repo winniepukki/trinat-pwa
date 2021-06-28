@@ -142,7 +142,9 @@ class ProductList extends React.Component {
       /**
        * Sort and remove duplicates
        */
-      return listOfCategories.sort().filter((v, i) => listOfCategories.indexOf(v) === i);
+      return listOfCategories
+          .sort((a, b) => parseFloat(a.priority) - parseFloat(b.priority))
+          .filter((v, i, a) => a.findIndex((t) => (t.title === v.title)) === i);
   }
 
   renderProductsWithCategories() {
@@ -157,15 +159,19 @@ class ProductList extends React.Component {
       }
 
       return this.getProductCategories().map((category) => {
-          if (category === SPECIAL) {
+          const {
+              title
+          } = category;
+
+          if (title === SPECIAL) {
               return null;
           }
 
           return (
-              <div key={ category } className="Product-Category">
-                  <Category key={ category } title={ category } />
+              <div key={ title } className="Product-Category">
+                  <Category key={ title } title={ title } />
                   <div className="Product-List-Container container">
-                      { this.renderProducts().filter((product) => product.category === category).map((product) => {
+                      { this.renderProducts().filter((product) => product.category.title === title).map((product) => {
                           const { _id } = product;
                           return <Product key={ _id } product={ product } />;
                       }) }
@@ -190,10 +196,12 @@ class ProductList extends React.Component {
       const products = foodMenu.map((product) => {
           const {
               language = '',
-              category = ''
+              category: {
+                  title = ''
+              } = {}
           } = product;
 
-          if (languageCode !== language || category === SPECIAL) {
+          if (languageCode !== language || title === SPECIAL) {
               return null;
           }
 

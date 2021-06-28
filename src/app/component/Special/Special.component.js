@@ -56,11 +56,13 @@ class Special extends React.Component {
         return foodMenu.map((product) => {
             const {
                 _id = '',
-                category,
-                language
+                category: {
+                    title
+                } = {},
+                language = ''
             } = product;
 
-            if (category !== SPECIAL || languageCode !== language) {
+            if (title !== SPECIAL || languageCode !== language) {
                 return null;
             }
 
