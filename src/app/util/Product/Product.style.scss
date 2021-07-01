@@ -13,11 +13,12 @@
     font-weight: 500; }
 
   &-Description {
-    // display: inline;
     font-size: 13px;
     color: var(--auxiliary-color-lightener); }
 
   &-Image {
+    // To-Do: Remove 0 opacity on real images are added
+    opacity: 0;
     height: 60px;
     width: 60px;
     max-width: 60px;

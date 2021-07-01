@@ -29,13 +29,6 @@
 </head>
 <body>
     <div id="root"></div>
-    <div id="fb-root"></div>
-    <div class="fb-customerchat"
-         attribution=setup_tool
-         page_id="1208947662491740"
-         logged_in_greeting="Здравствуйте! Чем мы можем вам помочь?"
-         logged_out_greeting="Здравствуйте! Чем мы можем вам помочь?">
-    </div>
 
     <!-- Font awesome -->
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-a11y="true"></script>
@@ -48,24 +41,6 @@
         gtag('js', new Date());
 
         gtag('config', 'G-9VHZCCXJS9');
-    </script>
-
-    <!-- Facebook Messenger SDK -->
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                xfbml: true,
-                version: 'v9.0'
-            });
-        };
-
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/ru_RU/sdk/xfbml.customerchat.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
     </script>
 </body>
 </html>
