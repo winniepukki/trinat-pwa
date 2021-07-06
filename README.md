@@ -7,6 +7,7 @@
 - Installation
 - Updating
 - Deployment
+- Contribution
 - Tests
 - License
 - Learn more
