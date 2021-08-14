@@ -45,6 +45,7 @@ export class ReviewQuery {
 
                     return response.json();
                 })
+                .then((data) => data)
                 .catch((error) => error);
         }
 

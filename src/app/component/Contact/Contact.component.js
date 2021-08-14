@@ -98,23 +98,38 @@ class Contact extends React.Component {
           return;
       }
 
-      ReviewQuery.createReview(fullName, email, review);
+      ReviewQuery
+          .createReview(fullName, email, review)
+          .then((response) => {
+              const { errors = [] } = response;
 
-      this.setState({
-          message: t('notification.form-success')
-      });
+              if (errors.length) {
+                  const [{ message }] = errors;
 
-      /**
-       * Prompt a success notification
-       * and push the review to the DB amongst
-       * resetting fields and hiding the message
-       */
-      this.notificationRef.current.className = 'contact-notification success';
-      this.resetAllFields();
+                  this.notificationRef.current.className = 'contact-notification error';
+                  this.setState({
+                      message: t(message)
+                  });
 
-      setTimeout(() => {
-          this.notificationRef.current.className = 'hidden';
-      }, HIDE_NOTIFICATION_TIMEOUT);
+                  return;
+              }
+
+              this.setState({
+                  message: t('notification.form-success')
+              });
+
+              /**
+               * Prompt a success notification
+               * and push the review to the DB amongst
+               * resetting fields and hiding the message
+               */
+              this.notificationRef.current.className = 'contact-notification success';
+              this.resetAllFields();
+
+              setTimeout(() => {
+                  this.notificationRef.current.className = 'hidden';
+              }, HIDE_NOTIFICATION_TIMEOUT);
+          });
   }
 
   renderContactForm() {
