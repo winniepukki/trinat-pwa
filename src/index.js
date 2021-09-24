@@ -6,7 +6,7 @@
 */
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import App from './app/component/App/App.component';
+import App from './app/component/App/App';
 import Loading from './app/component/Loading/Loading.component';
 
 import 'bootstrap/dist/css/bootstrap-grid.css';

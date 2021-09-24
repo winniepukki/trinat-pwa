@@ -18,7 +18,7 @@
 ## Installation
 1. Fork this project
 2. Navigate to the directory
-3. `cd src/app/util/ && cp config.sample.js config.js`
+3. `cd src/app/util/Firebase && cp config.sample.js config.js`
 4. Fill copied config with your own firebase credentials
 3. Run `npm install`
 

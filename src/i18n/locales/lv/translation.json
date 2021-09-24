@@ -53,7 +53,7 @@
   "recent-posts": "peidējās publikācijas",
   "table": "galdu",
   "view-gallery": "apskatīt galēriju",
-  "footer-text": " Kaut kas nedarbojas tā, kā vajadzētu? Nosūti izstrādātājam e-pastu a.bogackins@gmail.com. Vietnes versija: 2.0.0",
+  "footer-text": " Kaut kas nedarbojas tā, kā vajadzētu? Nosūti izstrādātājam e-pastu a.bogackins@gmail.com. Vietnes versija: {{version}}",
   "hero": {
     "title": "Mājas virtuve neatstās vienaldzīgu nevienu, it īpaši, ja to gatavo ar mīlestību kā mūsu pavāri. Kafejnīca Trinat vienmēr sagaidīs jūs ar siltumu un īpašu komfortu."
   },

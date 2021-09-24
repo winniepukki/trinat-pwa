@@ -1,7 +1,13 @@
 .special-menu {
-  background: {
-    image: url('special.jpg'); };}
+    background: {
+        image: url('special.jpg');
+    };
+}
+
 .parallax-section-special {
-  background: url('./special.jpg') no-repeat left;
-  .inner-container-special {
-    float: right; }}
+    background: url('./special.jpg') no-repeat left;
+
+    .inner-container-special {
+        float: right;
+    }
+}

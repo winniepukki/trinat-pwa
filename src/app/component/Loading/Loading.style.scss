@@ -1,30 +1,35 @@
 @import '../../style/base/keyframes';
 
 .Loading {
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: var(--loading-background);
-  color: #000;
-  display: flex; }
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--loading-background);
+    color: #000;
+    display: flex;
+}
 
 .tea {
-  --tea-color: var(--loading-icon-color);
+    --tea-color: var(--loading-icon-color);
 
-  .teabag {
-    transform-origin: top center;
-    transform: rotate(3deg);
-    animation: swing 2s infinite; }
+    .teabag {
+        transform-origin: top center;
+        transform: rotate(3deg);
+        animation: swing 2s infinite;
+    }
 
-  .steamL {
-    stroke-dasharray: 13;
-    stroke-dashoffset: 13;
-    animation: steamLarge 2s infinite; }
+    .steamL {
+        stroke-dasharray: 13;
+        stroke-dashoffset: 13;
+        animation: steamLarge 2s infinite;
+    }
 
-  .steamR {
-    stroke-dasharray: 9;
-    stroke-dashoffset: 9;
-    animation: steamSmall 2s infinite; }}
+    .steamR {
+        stroke-dasharray: 9;
+        stroke-dashoffset: 9;
+        animation: steamSmall 2s infinite;
+    }
+}
