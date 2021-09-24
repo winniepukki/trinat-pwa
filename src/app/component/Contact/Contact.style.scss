@@ -3,6 +3,10 @@
 .parallax-section-contact {
     background: url('./contact.jpg') no-repeat right;
 
+    @media screen and (min-width: 999px) and (max-width: 1199px) {
+        padding: 0 40px !important;
+    }
+
     .hidden {
         display: none;
     }
