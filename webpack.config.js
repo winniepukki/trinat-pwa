@@ -35,7 +35,9 @@ module.exports = {
     devtool: 'source-map',
     devServer: {
         port: PORT,
-        contentBase: paths.dist,
+        watchFiles: {
+            paths: ['src/**/*']
+        },
         open: true
     },
     optimization: {
