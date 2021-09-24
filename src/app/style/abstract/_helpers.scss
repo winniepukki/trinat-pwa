@@ -1,135 +1,159 @@
 @mixin box-sizing($type) {
-  -webkit-box-sizing:$type;
-  -moz-box-sizing:$type;
-  box-sizing:$type; }
+    -webkit-box-sizing: $type;
+    -moz-box-sizing: $type;
+    box-sizing: $type;
+}
 
 @mixin flexbox {
-  // @include flexbox()
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex; }
+    // @include flexbox()
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
 
 @mixin inline-flex {
-  // @include inline-flex()
-  display: -webkit-inline-box;
-  display: -moz-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex; }
+    // @include inline-flex()
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
 
 @mixin flex-direction($direction) {
-  // @include flex-direction(column);
-  @if $direction == column {
-    -webkit-flex-direction: vertical;
-    -moz-flex-direction: vertical;
-    -ms-flex-direction: column;
-    -webkit-flex-direction: column;
-    flex-direction: column; }
-  @else {
-    -webkit-flex-direction: horizontal;
-    -moz-flex-direction: horizontal;
-    -ms-flex-direction: row;
-    -webkit-flex-direction: row;
-    flex-direction: row; }}
+    // @include flex-direction(column);
+    @if $direction == column {
+        -moz-flex-direction: vertical;
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+    @else {
+        -moz-flex-direction: horizontal;
+        -ms-flex-direction: row;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+    }
+}
 
 @mixin justify-content($justify) {
-  // @include justify-content(center);
-  -webkit-justify-content: $justify;
-  -moz-justify-content: $justify;
-  -ms-justify-content: $justify;
-  justify-content: $justify;
-  -ms-flex-pack: $justify; }
+    // @include justify-content(center);
+    -webkit-justify-content: $justify;
+    -moz-justify-content: $justify;
+    -ms-justify-content: $justify;
+    justify-content: $justify;
+    -ms-flex-pack: $justify;
+}
 
 @mixin align-items($align: stretch) {
-  @if $align == flex-start {
-    -webkit-box-align: start;
-    -moz-box-align: start;
-    -ms-flex-align: start;
-  } @else if $align == flex-end {
-    -webkit-box-align: end;
-    -moz-box-align: end;
-    -ms-flex-align: end;
-  } @else {
-    -webkit-box-align: $align;
-    -moz-box-align: $align;
-    -ms-flex-align: $align;
-  }
-  -webkit-align-items: $align;
-  align-items: $align;
+    @if $align == flex-start {
+        -webkit-box-align: start;
+        -moz-box-align: start;
+        -ms-flex-align: start;
+    }
+    @else if $align == flex-end {
+        -webkit-box-align: end;
+        -moz-box-align: end;
+        -ms-flex-align: end;
+    }
+    @else {
+        -webkit-box-align: $align;
+        -moz-box-align: $align;
+        -ms-flex-align: $align;
+    }
+    -webkit-align-items: $align;
+    align-items: $align;
 }
 
 @mixin gradient($start-color, $end-color, $orientation) {
-  // @include gradient(#ff00ff, #ff00cc, vertical);
-  background: $start-color;
-  @if $orientation == vertical {
-    // vertical
-    background: -moz-linear-gradient(top,  $start-color 0%, $end-color 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start-color), color-stop(100%,$end-color));
-    background: -webkit-linear-gradient(top,  $start-color 0%,$end-color 100%);
-    background: -o-linear-gradient(top,  $start-color 0%,$end-color 100%);
-    background: -ms-linear-gradient(top,  $start-color 0%,$end-color 100%);
-    background: linear-gradient(to bottom,  $start-color 0%,$end-color 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=0 ); }
+    // @include gradient(#ff00ff, #ff00cc, vertical);
+    background: $start-color;
+    @if $orientation == vertical {
+        // vertical
+        background: -moz-linear-gradient(top, $start-color 0%, $end-color 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $start-color), color-stop(100%, $end-color));
+        background: -webkit-linear-gradient(top, $start-color 0%, $end-color 100%);
+        background: -o-linear-gradient(top, $start-color 0%, $end-color 100%);
+        background: -ms-linear-gradient(top, $start-color 0%, $end-color 100%);
+        background: linear-gradient(to bottom, $start-color 0%, $end-color 100%);
+        filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$start-color', endcolorstr='$end-color', gradienttype=0);
+    }
 
-  @else if $orientation == horizontal {
-    // horizontal
-    background: -moz-linear-gradient(left,  $start-color 0%, $end-color 100%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,$start-color), color-stop(100%,$end-color));
-    background: -webkit-linear-gradient(left,  $start-color 0%,$end-color 100%);
-    background: -o-linear-gradient(left,  $start-color 0%,$end-color 100%);
-    background: -ms-linear-gradient(left,  $start-color 0%,$end-color 100%);
-    background: linear-gradient(to right,  $start-color 0%,$end-color 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 ); }
+    @else if $orientation == horizontal {
+        // horizontal
+        background: -moz-linear-gradient(left, $start-color 0%, $end-color 100%);
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%, $start-color), color-stop(100%, $end-color));
+        background: -webkit-linear-gradient(left, $start-color 0%, $end-color 100%);
+        background: -o-linear-gradient(left, $start-color 0%, $end-color 100%);
+        background: -ms-linear-gradient(left, $start-color 0%, $end-color 100%);
+        background: linear-gradient(to right, $start-color 0%, $end-color 100%);
+        filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$start-color', endcolorstr='$end-color', gradienttype=1);
+    }
 
-  @else {
-    // radial
-    background: -moz-radial-gradient(center, ellipse cover,  $start-color 0%, $end-color 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$start-color), color-stop(100%,$end-color));
-    background: -webkit-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
-    background: -o-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
-    background: -ms-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
-    background: radial-gradient(ellipse at center,  $start-color 0%,$end-color 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 ); }}
+    @else {
+        // radial
+        background: -moz-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%);
+        background: -webkit-gradient(radial, center center, 0, center center, 100%, color-stop(0%, $start-color), color-stop(100%, $end-color));
+        background: -webkit-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%);
+        background: -o-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%);
+        background: -ms-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%);
+        background: radial-gradient(ellipse at center, $start-color 0%, $end-color 100%);
+        filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$start-color', endcolorstr='$end-color', gradienttype=1);
+    }
+}
 
 .custom-tal {
-  text-align: left !important; }
+    text-align: left !important;
+}
 
 .custom-tac {
-  text-align: center !important; }
+    text-align: center !important;
+}
 
 .custom-tar {
-  text-align: right !important; }
+    text-align: right !important;
+}
 
 .custom-flexbox {
-  @include flexbox(); }
+    @include flexbox();
+}
 
 .custom-justify-cc {
-  @include justify-content(center); }
+    @include justify-content(center);
+}
 
 .custom-justify-spb {
-  @include justify-content(space-between); }
+    @include justify-content(space-between);
+}
 
 .custom-justify-spa {
-  @include justify-content(space-around); }
+    @include justify-content(space-around);
+}
 
 .custom-justify-spe {
-  @include justify-content(space-evenly); }
+    @include justify-content(space-evenly);
+}
 
 .custom-align-ic {
-  @include align-items(center); }
+    @include align-items(center);
+}
 
 .custom-flex-dir-column {
-  @include flex-direction(column); }
+    @include flex-direction(column);
+}
 
 .custom-grid-4 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr; }
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 
 .custom-grid-4-fixed {
-  display: grid;
-  grid-template-columns: 50px 50px 50px 50px; }
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px;
+}
 
 .custom-mg-25 {
-  margin: 25px 0; }
+    margin: 25px 0;
+}
