@@ -8,7 +8,9 @@
 
     .nav {
         text-transform: capitalize;
-        @media screen and (max-width: 500px) {
+        @media screen and (max-width: 770px) {
+            justify-content: end;
+
             li:not(:last-child) {
                 display: none;
             }
