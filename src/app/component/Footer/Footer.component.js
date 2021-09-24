@@ -9,6 +9,10 @@ import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import { LANG_CODE_LV } from '@component/Starters/Starters.config';
 
+import {
+    CURRENT_VERSION
+} from './Footer.config';
+
 import './Footer.style.scss';
 
 import ScrollComponent from '@component/Scroll/Scroll.component';
@@ -55,7 +59,9 @@ class Footer extends React.Component {
                         { t('trinat.type') }
                     </p>
                   </h5>
-                  <p className="simple-text">{ t('footer-text') }</p>
+                  <p className="simple-text">
+                    { t('footer-text', { version: CURRENT_VERSION }) }
+                  </p>
                   { this.renderPaymentMethods() }
                 </div>
                 <div className="col-sm-3">
