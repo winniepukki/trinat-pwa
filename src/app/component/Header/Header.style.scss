@@ -1,34 +1,43 @@
 .Header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  z-index: 9999;
-  min-height: 40px;
-  font-size: 14px;
-  color: var(--white);
-  background: rgba(var(--primary-base-color), 0.85);
-  @media screen and (max-width: 1300px) {
-    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+    min-height: 40px;
+    font-size: 14px;
+    color: var(--white);
+    background: rgba(var(--primary-base-color), .85);
+    @media screen and (max-width: 1300px) {
+        padding: 10px 0;
 
-    .header-venue-address {
-      width: 200px; }}
+        .header-venue-address {
+            width: 200px;
+        }
+    }
 
-  @media screen and (max-width: 600px) {
-    .language-button {
-      width: 1px;
-      display: inline-block; }
+    @media screen and (max-width: 600px) {
+        .language-button {
+            width: 1px;
+            display: inline-block;
+        }
 
-    .header-venue-address {
-      float: left; }}
+        .header-venue-address {
+            float: left;
+        }
+    }
 
-  .language-switcher,
-  & span {
-    cursor: pointer; }
+    .language-switcher,
+    span {
+        cursor: pointer;
+    }
 
-  .container,
-  .row {
-    min-height: inherit; }}
+    .container,
+    .row {
+        min-height: inherit;
+    }
+}
 
 .header-social-network {
-  font-size: 19px; }
+    font-size: 19px;
+}

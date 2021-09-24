@@ -6,7 +6,10 @@
   "scripts": {
     "start": "webpack serve --open --config webpack.config.js",
     "build": "webpack --config webpack.prod.js",
-    "test": "eslint \"**/*.js\" --ignore-pattern node_modules/"
+    "eslint": "eslint \"**/*.js\" --ignore-pattern node_modules/",
+    "stylelint": "npx stylelint \"./src/app/**/**.scss\"",
+    "stylelint:fix": "npx stylelint \"./src/app/**/**.scss\" --fix",
+    "test": "npm run eslint ; npm run stylelint"
   },
   "husky": {
     "hooks": {
@@ -49,6 +52,10 @@
     "sass": "^1.29.0",
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.21.0",
     "svg-url-loader": "^6.0.0",
     "webpack": "^5.4.0",
     "webpack-cli": "^4.2.0",

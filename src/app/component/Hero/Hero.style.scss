@@ -1,24 +1,30 @@
 .Hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  color: var(--white);
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: rgba(var(--black), 0.5); }
-  .hero-wallpaper {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; }
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    color: var(--white);
 
-  .caption-title {
-    position: absolute;
-    z-index: 2;
-    bottom: 20%;
-    width: 100%; }}
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: rgba(var(--black), .5);
+    }
+
+    .hero-wallpaper {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .caption-title {
+        position: absolute;
+        z-index: 2;
+        bottom: 20%;
+        width: 100%;
+    }
+}
