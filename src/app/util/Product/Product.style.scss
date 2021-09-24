@@ -20,10 +20,9 @@
     }
 
     &-Image {
-        // To-Do: Remove 0 opacity on real images are added
-        opacity: 0;
+        // To-Do: Remove 0 width on real images are added
         height: 60px;
-        width: 60px;
+        width: 0;
         max-width: 60px;
         min-height: 60px;
         font-size: 13px;
