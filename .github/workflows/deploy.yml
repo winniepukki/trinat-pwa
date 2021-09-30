@@ -1,0 +1,57 @@
+name: 🚀 Deploy
+on:
+  release:
+    types:
+      - created
+jobs:
+  run-tests:
+    name: 👷🏻 Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 12
+        uses: actions/setup-node@v2.4.1
+        with:
+          node-version: '12'
+
+      - name: 🔥 Install project dependencies
+        run: npm install
+
+      - name: 🚧 Run code smoke tests
+        run: npm run eslint
+
+      - name: 🧑🏻‍🎨 Run style smoke tests
+        run: npm run stylelint
+
+  web-deploy:
+    name: 🎉 Deploy
+    needs: [run-tests]
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 12
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+
+      - name: 🔨 Build Project
+        run: |
+          npm install
+          npm run build
+
+      - name: List output files
+        run: |
+          find dist/ -print
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_DIR }}
+          local-dir: dist/
