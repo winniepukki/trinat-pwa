@@ -28,7 +28,6 @@ module.exports = {
         path: paths.dist,
         filename: '[name].[contenthash].js'
     },
-    mode: 'development',
     externals: {
         paths
     },
