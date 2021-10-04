@@ -11,19 +11,12 @@ const assets = [
     'manifest.json'
 ];
 
+const PRODUCTS_DB = 'products';
+
 const STATUS_OK = 200;
 const STATUS_CREATED = 201;
 
-async function cacheFirst(request) {
-    const cached = await caches.match(request);
-    // eslint-disable-next-line no-return-await
-    return cached ?? await fetch(request);
-}
-
-self.addEventListener('install', async () => {
-    const cache = await caches.open(cacheName);
-    await cache.addAll(assets);
-
+async function putProductListToIndexedDb() {
     const request = {
         query: `
             query {
@@ -66,11 +59,11 @@ self.addEventListener('install', async () => {
                 } = {}
             } = data;
 
-            const request = indexedDB.open('products', 2);
+            const request = indexedDB.open(PRODUCTS_DB, 2);
             request.onupgradeneeded = (event) => {
                 const db = event.target.result;
 
-                const objectStore = db.createObjectStore('products', {
+                const objectStore = db.createObjectStore(PRODUCTS_DB, {
                     keyPath: 'title'
                 });
 
@@ -78,8 +71,8 @@ self.addEventListener('install', async () => {
 
                 objectStore.transaction.oncomplete = () => {
                     const customerObjectStore = db
-                        .transaction('products', 'readwrite')
-                        .objectStore('products');
+                        .transaction(PRODUCTS_DB, 'readwrite')
+                        .objectStore(PRODUCTS_DB);
 
                     products.forEach((product) => {
                         customerObjectStore.add(product);
@@ -88,6 +81,19 @@ self.addEventListener('install', async () => {
             };
         })
         .catch(() => {});
+}
+
+async function cacheFirst(request) {
+    const cached = await caches.match(request);
+    // eslint-disable-next-line no-return-await
+    return cached ?? await fetch(request);
+}
+
+self.addEventListener('install', async () => {
+    const cache = await caches.open(cacheName);
+    await cache.addAll(assets);
+
+    await putProductListToIndexedDb();
 });
 
 self.addEventListener('fetch', (e) => {
