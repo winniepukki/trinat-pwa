@@ -59,9 +59,45 @@ class ProductList extends React.Component {
       this.getProductList = this.getProductList.bind(this);
       this.renderTitle = this.renderTitle.bind(this);
       this.renderProducts = this.renderProducts.bind(this);
+      this.getProductListFromIndexedDb = this.getProductListFromIndexedDb.bind(this);
   }
 
   componentDidMount() {
+      this.getProductListFromIndexedDb();
+  }
+
+  getProductListFromIndexedDb() {
+      const {
+          fetchMenuRequest,
+          fetchMenuSuccess,
+          fetchMenuFail
+      } = this.props;
+
+      const request = window.indexedDB.open('products', 2);
+      request.onsuccess = (event) => {
+          const db = event.target.result;
+          const transaction = db.transaction('products');
+          const objectStore = transaction.objectStore('products');
+          const request = objectStore.getAll();
+
+          request.onsuccess = () => {
+              fetchMenuRequest();
+              const { result: products = [] } = request;
+
+              if (!products || !products.length) {
+                  this.getProductListFromQuery();
+              }
+
+              fetchMenuSuccess(products);
+          };
+
+          request.onerror = () => {
+              fetchMenuFail();
+          };
+      };
+  }
+
+  getProductListFromQuery() {
       const { fetchMenuRequest } = this.props;
       fetchMenuRequest();
 
@@ -86,36 +122,6 @@ class ProductList extends React.Component {
               const { fetchMenuFail } = this.props;
               fetchMenuFail(error);
           });
-  }
-
-  componentDidUpdate(prevProps) {
-      const {
-          languageCode: prevLanguageCode = ''
-      } = prevProps;
-      const {
-          loading,
-          languageCode
-      } = this.props;
-
-      if (prevLanguageCode !== languageCode) {
-          if (!loading) {
-              this.getProductList()
-                  .then((response) => {
-                      const {
-                          data: {
-                              products = []
-                          } = {}
-                      } = response;
-
-                      const { fetchMenuSuccess } = this.props;
-                      fetchMenuSuccess(products);
-                  })
-                  .catch((error) => {
-                      const fetchMenuFail = this.props;
-                      fetchMenuFail(error);
-                  });
-          }
-      }
   }
 
   getProductList() {
