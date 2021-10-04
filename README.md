@@ -20,7 +20,8 @@
 2. Navigate to the directory
 3. `cd src/app/util/Firebase && cp config.sample.js config.js`
 4. Fill copied config with your own firebase credentials
-3. Run `npm install`
+5. Run `npm install`
+6. Start the project `npm run start --open`
 
 ## Updating
 0. `git remote add upstream git@github.com:winniepukki/trinat.git`
