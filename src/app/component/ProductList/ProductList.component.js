@@ -63,7 +63,7 @@ class ProductList extends React.Component {
   }
 
   componentDidMount() {
-      this.getProductListFromIndexedDb();
+      this.getProductListFromQuery();
   }
 
   getProductListFromIndexedDb() {
