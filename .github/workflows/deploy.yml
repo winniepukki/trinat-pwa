@@ -1,5 +1,8 @@
 name: 🚀 Deploy
-on: push
+on:
+  release:
+    types:
+      - created
 jobs:
   run-tests:
     name: 👷🏻 Test
