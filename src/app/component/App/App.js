@@ -25,6 +25,9 @@ import ProductList from '@component/ProductList/ProductList.component';
 import EmbeddedMap from '@component/EmbeddedMap/EmbeddedMap.component';
 import Special from '@component/Special/Special.component';
 
+import useScript from '@util/Script/useScript';
+import useGA from '@util/Script/useGA';
+
 class App extends React.Component {
     static propTypes = {
         t: PropTypes.func.isRequired,
@@ -36,6 +39,15 @@ class App extends React.Component {
 
         this.handleCallback = this.handleCallback.bind(this);
         this.changeLanguage = this.changeLanguage.bind(this);
+    }
+
+    componentDidMount() {
+        /* Google Analytics */
+        useScript('https://www.googletagmanager.com/gtag/js?id=G-9VHZCCXJS9', true);
+        useGA('G-9VHZCCXJS9');
+
+        /* Font Awesome */
+        useScript('https://use.fontawesome.com/releases/v5.15.1/js/all.js');
     }
 
     handleCallback(callbackData) {

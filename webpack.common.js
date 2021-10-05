@@ -1,15 +1,15 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /**
-* SIA Trinat restaurant project
-* Copyright © winniepukki. All rights reserved.
-*
-* @license MIT
-*/
+ * SIA Trinat restaurant project
+ * Copyright © winniepukki. All rights reserved.
+ *
+ * @license MIT
+ */
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const PORT = 4000;
 const paths = {
     src: path.join(__dirname, './src'),
     dist: path.join(__dirname, './dist'),
@@ -28,18 +28,10 @@ module.exports = {
         path: paths.dist,
         filename: '[name].[contenthash].js'
     },
-    mode: 'development',
     externals: {
         paths
     },
     devtool: 'source-map',
-    devServer: {
-        port: PORT,
-        watchFiles: {
-            paths: ['src/**/*']
-        },
-        open: true
-    },
     optimization: {
         splitChunks: {
             cacheGroups: {
