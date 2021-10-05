@@ -127,10 +127,10 @@ class Footer extends React.Component {
                   <ul className="Footer-Links custom-justify-spe">
                       <li className="footer-notice-text">
                           <a
-                            href="https://www.flickr.com/photos/3nataly/"
-                            aria-label="Footer link to our gallery"
+                            href="https://bit.ly/3Bequ7s"
+                            aria-label="Footer link to our privacy policy"
                           >
-                              { t('gallery') }
+                              { t('privacy-policy') }
                           </a>
                       </li>
                       <li className="footer-notice-text">
