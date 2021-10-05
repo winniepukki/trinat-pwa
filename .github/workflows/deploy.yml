@@ -41,6 +41,7 @@ jobs:
           cd src/app/util/Firebase && cp config.sample.js config.js
           echo "/* eslint-disable */ " >> config.js
           echo ${{ secrets.FIREBASE_CONFIG }} >> config.js
+          cat config.js
           npm run build
 
       - name: List output files
