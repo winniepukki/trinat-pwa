@@ -59,6 +59,7 @@ class ProductList extends React.Component {
       this.getProductList = this.getProductList.bind(this);
       this.renderTitle = this.renderTitle.bind(this);
       this.renderProducts = this.renderProducts.bind(this);
+      this.getProductListFromQuery = this.getProductListFromQuery.bind(this);
       this.getProductListFromIndexedDb = this.getProductListFromIndexedDb.bind(this);
   }
 
