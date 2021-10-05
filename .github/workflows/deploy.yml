@@ -40,7 +40,7 @@ jobs:
           npm install
           cd src/app/util/Firebase && touch config.js
           echo "/* eslint-disable */ " >> config.js
-          echo "module.exports = { apiKey: 'AIzaSyCZvo2Tqo7frO6NJdlW1okkHCYix36du_4', authDomain: 'trinatprod.firebaseapp.com', databaseURL: 'https://trinatprod-default-rtdb.europe-west1.firebasedatabase.app', projectId: 'trinatprod', storageBucket: 'trinatprod.appspot.com', messagingSenderId: '709179660491', appId: '1:709179660491:web:3eb96efcb924ce2ddca34e', measurementId: 'G-0YXKKCGH2P' };" >> config.js
+          echo ${{ secrets.FIREBASE_CONFIG }} >> config.js
           npm run build
 
       - name: List output files
