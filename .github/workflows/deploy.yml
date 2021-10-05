@@ -38,10 +38,9 @@ jobs:
       - name: 🔨 Build Project
         run: |
           npm install
-          cd src/app/util/Firebase && cp config.sample.js config.js
+          cd src/app/util/Firebase && touch config.js
           echo "/* eslint-disable */ " >> config.js
-          echo ${{ secrets.FIREBASE_CONFIG }} >> config.js
-          cat config.js
+          'echo ${{ secrets.FIREBASE_CONFIG }} >> config.js'
           npm run build
 
       - name: List output files
