@@ -31,6 +31,10 @@ class Reservation extends React.Component {
       );
   }
 
+  handleInsideElementClick(e) {
+      e.stopPropagation();
+  }
+
   render() {
       const {
           t,
@@ -39,8 +43,11 @@ class Reservation extends React.Component {
       } = this.props;
 
       return (
-          <div className="Reservation-Form">
-            <div className="Reservation-Form-Wrapper">
+          <div className="Reservation-Form" onClick={ handler }>
+            <div
+              className="Reservation-Form-Wrapper"
+              onClick={ this.handleInsideElementClick }
+            >
               <h2 className="custom-tac">
                 { lang === LANG_CODE_LV ? (
                     <p className="title-first">{ t('table') }</p>
