@@ -12,7 +12,7 @@ import { withTranslation } from 'react-i18next';
 
 import { ProductType } from '@type/Product';
 import Product from '@util/Product/Product';
-import ProductListQuery from '@query/ProductList.query';
+import fetchProductList from '@query/ProductList.query';
 
 import { LANG_CODE_LV } from '@component/Starters/Starters.config';
 import { SPECIAL } from './ProductList.config';
@@ -126,11 +126,8 @@ class ProductList extends React.Component {
   }
 
   getProductList() {
-      const {
-          languageCode = ''
-      } = this.props;
-
-      return ProductListQuery.getProductList(languageCode) || {};
+      const data = fetchProductList();
+      return data || {};
   }
 
   getProductCategories() {
