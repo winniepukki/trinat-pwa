@@ -80,7 +80,7 @@
       "1 persona", "2 personas", "3 personas", "4 personas", "5 personas", "Vairāk par 5 personām"
     ]
   },
-  "reservation-notice": "Banketu un piemiņas vakariņu rezervēšana pa tālr. 29 740 898 un 29 672 165",
+  "reservation-notice": "Banketu un piemiņas vakariņu rezervēšana pa tālr. <1>{{reservation}}</1> un <2>{{reservation_sec}}</2>.",
   "send": "nosūtīt",
   "starter-form": {
     "ingredients": "ingredienti",
