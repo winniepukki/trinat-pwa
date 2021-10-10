@@ -12,7 +12,7 @@ import {
     RESERVATION_PHONE_SECONDARY
 } from './Reservation.config';
 
-import { withTranslation } from 'react-i18next';
+import { Trans, withTranslation } from 'react-i18next';
 
 import './Reservation.style.scss';
 
@@ -29,13 +29,21 @@ class Reservation extends React.Component {
   }
 
   renderReservationNotice() {
-      const { t } = this.props;
+      const reservation = RESERVATION_PHONE_PRIMARY;
+      const reservation_sec = RESERVATION_PHONE_SECONDARY;
+
       return (
           <p className="reservation-notice">
-              { t('reservation-notice', {
-                  reservation: RESERVATION_PHONE_PRIMARY,
-                  reservation_sec: RESERVATION_PHONE_SECONDARY
-              }) }
+              <Trans
+                i18nKey="reservation-notice"
+              >
+                  <a href={ `tel:${reservation}` }>
+                    { { reservation } }
+                  </a>
+                  <a href={ `tel:${reservation_sec}` }>
+                      { { reservation_sec } }
+                  </a>
+              </Trans>
           </p>
       );
   }
