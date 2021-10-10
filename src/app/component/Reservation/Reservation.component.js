@@ -7,6 +7,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { LANG_CODE_LV } from '@component/Starters/Starters.config';
+import {
+    RESERVATION_PHONE_PRIMARY,
+    RESERVATION_PHONE_SECONDARY
+} from './Reservation.config';
 
 import { withTranslation } from 'react-i18next';
 
@@ -27,7 +31,12 @@ class Reservation extends React.Component {
   renderReservationNotice() {
       const { t } = this.props;
       return (
-          <p className="reservation-notice">{ t('reservation-notice') }</p>
+          <p className="reservation-notice">
+              { t('reservation-notice', {
+                  reservation: RESERVATION_PHONE_PRIMARY,
+                  reservation_sec: RESERVATION_PHONE_SECONDARY
+              }) }
+          </p>
       );
   }
 
