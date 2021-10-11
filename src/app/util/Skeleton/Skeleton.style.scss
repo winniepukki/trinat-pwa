@@ -1,7 +1,7 @@
 .skeleton-heading {
-    width: 50% !important;
+    width: 30% !important;
     height: 1rem !important;
-    margin: 0 auto;
+    margin: 25px auto 35px auto !important;
 }
 
 .skeleton {
@@ -24,6 +24,7 @@
 }
 
 .skeleton-price {
-    width: .8rem !important;
+    width: 2rem !important;
     height: .8rem;
+    align-self: baseline;
 }

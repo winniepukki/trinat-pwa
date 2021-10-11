@@ -166,7 +166,7 @@ class ProductList extends React.Component {
               >
                   <p className="skeleton skeleton-text skeleton-heading" />
                   <div
-                    className="Skeleton-Wrapper"
+                    className="Skeleton-Wrapper Skeleton-Wrapper-Product"
                   >
                       <Skeleton />
                       <Skeleton />
