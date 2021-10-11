@@ -1,0 +1,29 @@
+.skeleton-heading {
+    width: 50% !important;
+    height: 1rem !important;
+    margin: 0 auto;
+}
+
+.skeleton {
+    width: 60px;
+    opacity: .7;
+    box-shadow: unset;
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.skeleton-text {
+    width: 100%;
+    height: .5rem;
+    margin-bottom: .25rem;
+    border-radius: .125rem;
+
+    &:last-child {
+        margin-bottom: 0;
+        width: 80%;
+    }
+}
+
+.skeleton-price {
+    width: .8rem !important;
+    height: .8rem;
+}
