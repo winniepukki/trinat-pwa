@@ -18,3 +18,14 @@
 .allergy-notice {
     text-align: center;
 }
+
+.Skeleton-Wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+
+    @media screen and (max-width: 900px) {
+        grid-template-columns: 1fr;
+    }
+}

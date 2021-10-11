@@ -15,6 +15,7 @@ import { SPECIAL } from '../ProductList/ProductList.config';
 import Product from '@util/Product/Product';
 
 import './Special.style.scss';
+import Skeleton from '@util/Skeleton/Skeleton';
 
 export const mapStateToProps = (state) => ({
     foodMenu: state.menuList.foodMenu,
@@ -44,13 +45,19 @@ class Special extends React.Component {
      */
     renderSpecialProducts() {
         const {
-            t,
             foodMenu,
             languageCode
         } = this.props;
 
         if (!foodMenu || !foodMenu.length) {
-            return t('loading');
+            return (
+                <div
+                  className="Skeleton-Wrapper"
+                >
+                    <Skeleton />
+                    <Skeleton />
+                </div>
+            );
         }
 
         return foodMenu.map((product) => {
