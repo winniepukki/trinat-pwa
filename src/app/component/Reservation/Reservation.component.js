@@ -6,7 +6,7 @@
 */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { LANG_CODE_LV } from '@component/Starters/Starters.config';
+import { LANG_CODE_LV } from '@component/App/App.config';
 import {
     RESERVATION_PHONE_PRIMARY,
     RESERVATION_PHONE_SECONDARY

@@ -7,11 +7,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
-import Reservation from '@component/Reservation/Reservation.component';
+import Reservation from '@component/Reservation';
 import { DIVIDER } from '@component/Header/Header.config';
 
 import './Menu.style.scss';
-import { LANG_CODE_LV } from '@component/Starters/Starters.config';
+import { LANG_CODE_LV } from '@component/App/App.config';
 
 class Menu extends React.Component {
   static propTypes = {

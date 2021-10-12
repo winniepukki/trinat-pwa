@@ -13,7 +13,7 @@ import { withTranslation } from 'react-i18next';
 import { ProductType } from '@type/Product';
 import fetchProductList from '@query/ProductList.query';
 
-import { LANG_CODE_LV } from '@component/Starters/Starters.config';
+import { LANG_CODE_LV } from '@component/App/App.config';
 import { SPECIAL } from './ProductList.config';
 
 import {
