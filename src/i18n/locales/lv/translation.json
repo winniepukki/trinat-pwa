@@ -44,6 +44,11 @@
   "gallery": "mūsu galerija",
   "careers": "vakances",
   "privacy-policy": "Privātums",
+  "promotion": {
+    "title": "Nepaladiet",
+    "subtitle": "Garam iespeju",
+    "text": "Pasūtot divas alus krūzes 0,5l, saņem ķiploku grauzdiņus ar siera mērci bezmaksas! Akcija spēka katru nedēļu no piektdienas līdz svētdienai. Gaidām ciemos!"
+  },
   "reviews": "atsauksmes",
   "loading": "Notiek datu ielāde...",
   "load-message": {
