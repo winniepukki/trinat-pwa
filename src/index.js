@@ -6,8 +6,8 @@
 */
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import App from './app/component/App/App';
-import Loading from './app/component/Loading/Loading.component';
+import App from './app/component/App';
+import Loading from './app/component/Loading';
 
 import 'bootstrap/dist/css/bootstrap-grid.css';
 import './app/style/main.scss';

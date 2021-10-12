@@ -44,6 +44,11 @@
   "gallery": "mūsu galerija",
   "careers": "vakances",
   "privacy-policy": "Privātums",
+  "promotion": {
+    "title": "Nepaladiet",
+    "subtitle": "Garam iespeju",
+    "text": "Pasūtot divas alus krūzes 0,5l, saņem ķiploku grauzdiņus ar siera mērci bezmaksas! Akcija spēka katru nedēļu no piektdienas līdz svētdienai. Gaidām ciemos!"
+  },
   "reviews": "atsauksmes",
   "loading": "Notiek datu ielāde...",
   "load-message": {
@@ -80,7 +85,7 @@
       "1 persona", "2 personas", "3 personas", "4 personas", "5 personas", "Vairāk par 5 personām"
     ]
   },
-  "reservation-notice": "Banketu un piemiņas vakariņu rezervēšana pa tālr. 29 740 898 un 29 672 165",
+  "reservation-notice": "Banketu un piemiņas vakariņu rezervēšana pa tālr. <1>{{reservation}}</1> un <2>{{reservation_sec}}</2>.",
   "send": "nosūtīt",
   "starter-form": {
     "ingredients": "ingredienti",

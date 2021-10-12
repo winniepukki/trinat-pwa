@@ -14,7 +14,7 @@ import {
 } from '@component/Contact/Contact.config';
 
 import './Contact.style.scss';
-import ReviewQuery from '@query/Review.query';
+import createReview from '@query/Review.query';
 
 class Contact extends React.Component {
   static propTypes = {
@@ -98,8 +98,7 @@ class Contact extends React.Component {
           return;
       }
 
-      ReviewQuery
-          .createReview(fullName, email, review)
+      createReview(fullName, email, review)
           .then((response) => {
               const { errors = [] } = response;
 

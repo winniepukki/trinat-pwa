@@ -4,6 +4,5 @@
  *
  * @license MIT
  */
-module.exports = [
-    ''
-];
+
+export { default } from './ProductList.component';

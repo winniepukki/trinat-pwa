@@ -1,4 +1,3 @@
-/* eslint-disable no-return-await */
 /**
 * SIA Trinat restaurant project
 * Copyright © winniepukki. All rights reserved.
@@ -6,61 +5,33 @@
 * @license MIT
 */
 
-import {
-    STATUS_CREATED,
-    STATUS_OK
-} from '@component/ProductList/ProductList.config';
-import {
-    LANG_CODE_LV,
-    LANG_CODE_RU
-} from '@component/Starters/Starters.config';
-
-export class ProductListQuery {
-    getProductList(lang) {
-        if (lang !== LANG_CODE_LV && lang !== LANG_CODE_RU) {
-            return {};
+const query = `query {
+    products {
+        _id
+        title
+        category {
+            title
+            priority
         }
-
-        const request = {
-            query: `
-            query {
-                products {
-                    _id
-                    title
-                    category {
-                        title
-                        priority
-                    }    
-                    description
-                    image_url
-                    price
-                    language
-                }
-            }
-            `
-        };
-
-        async function fetchProducts() {
-            return await fetch('https://winniepukki.ddns.net', {
-                method: 'POST',
-                body: JSON.stringify(request),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-                .then((response) => {
-                    const { status } = response;
-                    if (status !== STATUS_OK && status !== STATUS_CREATED) {
-                        throw new Error('Unable to process your request!');
-                    }
-
-                    return response.json();
-                })
-                .catch(() => {});
-        }
-
-        return fetchProducts();
+        description
+        image_url
+        price
+        language
     }
 }
+`;
 
-export default new ProductListQuery();
+export const fetchProductList = async () => fetch('https://winniepukki.ddns.net', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+    },
+    body: JSON.stringify({
+        query
+    })
+})
+    .then((response) => response.json())
+    .then((data) => data);
+
+export default fetchProductList;

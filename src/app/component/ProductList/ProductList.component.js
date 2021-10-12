@@ -11,10 +11,9 @@ import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
 
 import { ProductType } from '@type/Product';
-import Product from '@util/Product/Product';
-import ProductListQuery from '@query/ProductList.query';
+import fetchProductList from '@query/ProductList.query';
 
-import { LANG_CODE_LV } from '@component/Starters/Starters.config';
+import { LANG_CODE_LV } from '@component/App/App.config';
 import { SPECIAL } from './ProductList.config';
 
 import {
@@ -23,8 +22,11 @@ import {
     fetchMenuSuccess
 } from '@store/MenuList/MenuList.action';
 
-import './ProductList.style.scss';
+import Product from '@util/Product/Product';
 import Category from '@util/Category/Category';
+import Skeleton from '@util/Skeleton/Skeleton';
+
+import './ProductList.style.scss';
 
 export const mapStateToProps = (state) => ({
     loading: state.menuList.loading,
@@ -126,11 +128,8 @@ class ProductList extends React.Component {
   }
 
   getProductList() {
-      const {
-          languageCode = ''
-      } = this.props;
-
-      return ProductListQuery.getProductList(languageCode) || {};
+      const data = fetchProductList();
+      return data || {};
   }
 
   getProductCategories() {
@@ -156,13 +155,29 @@ class ProductList extends React.Component {
 
   renderProductsWithCategories() {
       const {
-          t,
           loading,
           foodMenu
       } = this.props;
 
       if (loading || !foodMenu.length) {
-          return t('loading');
+          return (
+              <div
+                className="Skeleton"
+              >
+                  <p className="skeleton skeleton-text skeleton-heading" />
+                  <div
+                    className="Skeleton-Wrapper Skeleton-Wrapper-Product"
+                  >
+                      <Skeleton />
+                      <Skeleton />
+                      <Skeleton />
+                      <Skeleton />
+                      <Skeleton />
+                      <Skeleton />
+                      <Skeleton />
+                  </div>
+              </div>
+          );
       }
 
       return this.getProductCategories().map((category) => {

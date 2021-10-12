@@ -1,4 +1,3 @@
-/* eslint-disable no-return-await */
 /**
  * SIA Trinat restaurant project
  * Copyright © winniepukki. All rights reserved.
@@ -6,51 +5,31 @@
  * @license MIT
  */
 
-import {
-    STATUS_CREATED,
-    STATUS_OK
-} from '@component/ProductList/ProductList.config';
-
-export class ReviewQuery {
-    createReview(fullName, email, review) {
-        const request = {
-            query: `
-                mutation {
-                    createReview(reviewInput: {
-                        fullName: "${fullName}"
-                        email: "${email}"
-                        review: "${review}"
-                    }) {
-                        fullName
-                        email
-                        review
-                    }
-                }
-            `
-        };
-
-        async function fetchProducts() {
-            return await fetch('https://winniepukki.ddns.net', {
-                method: 'POST',
-                body: JSON.stringify(request),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-                .then((response) => {
-                    const { status } = response;
-                    if (status !== STATUS_OK && status !== STATUS_CREATED) {
-                        throw new Error('Unable to process your request!');
-                    }
-
-                    return response.json();
-                })
-                .then((data) => data)
-                .catch((error) => error);
-        }
-
-        return fetchProducts();
-    }
+const query = `mutation($fullName: String! $email: String! $review: String!) {
+  createReview(reviewInput: {
+    fullName: $fullName
+    email: $email
+    review: $review
+  }) {
+    fullName
+    email
+    review
+  }
 }
+`;
 
-export default new ReviewQuery();
+export const createReview = async (fullName, email, review) => fetch('https://winniepukki.ddns.net', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+    },
+    body: JSON.stringify({
+        query,
+        variables: { fullName, email, review }
+    })
+})
+    .then((response) => response.json())
+    .then((data) => data);
+
+export default createReview;
