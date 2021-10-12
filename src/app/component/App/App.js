@@ -21,6 +21,7 @@ import Footer from '@component/Footer';
 import Blockquote from '@component/Blockquote';
 import Story from '@component/Story';
 import Contact from '@component/Contact';
+import Promotion from '@component/Promotion';
 import ProductList from '@component/ProductList';
 import EmbeddedMap from '@component/EmbeddedMap';
 import Special from '@component/Special';
@@ -102,6 +103,7 @@ class App extends React.Component {
                     description={ t('story.description') }
                     storyText={ t('story.text') }
                   />
+                  <Promotion />
                   <ProductList
                     languageCode={ this.getCurrentLanguage() }
                   />
