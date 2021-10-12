@@ -15,15 +15,15 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import store from '@store/index';
 
-import Header from '@component/Header/Header.component';
-import Hero from '@component/Hero/Hero.component';
-import Footer from '@component/Footer/Footer.component';
-import Blockquote from '@component/Blockquote/Blockquote.component';
-import Story from '@component/Story/Story.component';
-import Contact from '@component/Contact/Contact.component';
-import ProductList from '@component/ProductList/ProductList.component';
-import EmbeddedMap from '@component/EmbeddedMap/EmbeddedMap.component';
-import Special from '@component/Special/Special.component';
+import Header from '@component/Header';
+import Hero from '@component/Hero';
+import Footer from '@component/Footer';
+import Blockquote from '@component/Blockquote';
+import Story from '@component/Story';
+import Contact from '@component/Contact';
+import ProductList from '@component/ProductList';
+import EmbeddedMap from '@component/EmbeddedMap';
+import Special from '@component/Special';
 
 import useScript from '@util/Script/useScript';
 import useGA from '@util/Script/useGA';
@@ -77,7 +77,7 @@ class App extends React.Component {
 
     render() {
         const { t } = this.props;
-        const currentLanguage = this.getCurrentLanguage().toUpperCase();
+        const currentLanguage = this.getCurrentLanguage();
 
         return (
           <Router>

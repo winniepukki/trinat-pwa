@@ -7,7 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
-import { LANG_CODE_LV } from '@component/Starters/Starters.config';
+import { LANG_CODE_LV } from '@component/App/App.config';
 
 import {
     CURRENT_VERSION
@@ -15,8 +15,8 @@ import {
 
 import './Footer.style.scss';
 
-import ScrollComponent from '@component/Scroll/Scroll.component';
-import GoogleLogIn from '@component/GoogleLogIn/GoogleLogIn.component';
+import ScrollComponent from '@component/Scroll';
+import GoogleLogIn from '@component/GoogleLogIn';
 
 class Footer extends React.Component {
   static propTypes = {
@@ -52,7 +52,7 @@ class Footer extends React.Component {
                 <div className="col-sm-3">
                   <h5>
                     <p>{ t('trinat.title') }</p>
-                    <p className={ (lang.toLowerCase() === LANG_CODE_LV
+                    <p className={ (lang === LANG_CODE_LV
                         ? ''
                         : 'type-sm') }
                     >
