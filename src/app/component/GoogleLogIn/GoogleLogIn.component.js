@@ -59,8 +59,6 @@ class GoogleLogIn extends React.Component {
                     } = {}
                 } = result;
 
-                console.log(email);
-
                 if (email.length) {
                     subscribeAccount(email);
                 }
