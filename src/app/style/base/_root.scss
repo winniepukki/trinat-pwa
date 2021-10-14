@@ -1,8 +1,8 @@
-
 :root {
     --primary-base-color: var(--imported-primary-base-color, #{$primary-base-color});
     --primary-dark-color: var(--imported-primary-dark-color, #{$primary-dark-color});
     --primary-light-color: var(--imported-primary-light-color, #{$primary-light-color});
+    --bs-black: var(--imported-bs-black, #{$bs-black});
     --secondary-base-color: var(--imported-secondary-base-color, #{$secondary-base-color});
     --secondary-dark-color: var(--imported-secondary-dark-color, #{$secondary-dark-color});
     --secondary-light-color: var(--imported-secondary-light-color, #{$secondary-light-color});
@@ -10,11 +10,9 @@
     --notification-alert: var(--imported-notification-alert, #{$notification-alert});
     --notification-info: var(--import-notification-info, #{$notification-info});
     --button-disabled-color: var(--imported-button-disabled-color, #{$button-disabled-color});
-    --auxiliary-color-lightener: var(--auxiliary-color-lightener, #{$auxiliary-color-lightener});
+    --auxiliary-color-lightener: var(--imported-auxiliary-color-lightener, #{$auxiliary-color-lightener});
     --loading-background: var(--imported-loading-background, #{$secondary-light-color});
     --loading-icon-color: var(--imported-loading-icon-color, #{$button-disabled-color});
-    --white: var(--imported-white-color, #{$white});
-    --black: var(--imported-black-color, #{$black});
+    --primary-font-family: var(--imported-primary-font-family, #{$primary-font-family});
     --secondary-font-family: var(--imported-secondary-font-family, #{$secondary-font-family});
-    --primary-width: var(--imported-primary-width, #{$primary-width});
 }

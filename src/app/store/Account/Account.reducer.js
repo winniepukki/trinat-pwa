@@ -1,9 +1,10 @@
 /**
- * SIA Trinat restaurant project
- * Copyright © winniepukki. All rights reserved.
- *
- * @license MIT
- */
+* SIA Trinat restaurant project
+* Copyright © winniepukki. All rights reserved.
+*
+* @license MIT
+*/
+
 import {
     SUBSCRIBE_ACCOUNT,
     UNSUBSCRIBE_ACCOUNT

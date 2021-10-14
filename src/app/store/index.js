@@ -10,11 +10,9 @@ import {
     createStore
 } from 'redux';
 
-import menuListReducer from './MenuList/MenuList.reducer';
 import accountReducer from './Account/Account.reducer';
 
 const rootReducer = combineReducers({
-    menuList: menuListReducer,
     account: accountReducer
 });
 

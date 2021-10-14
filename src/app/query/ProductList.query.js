@@ -1,5 +1,5 @@
 /**
-* SIA Trinat restaurant project
+* Immersive Technologies project
 * Copyright © winniepukki. All rights reserved.
 *
 * @license MIT

@@ -4,90 +4,48 @@
 *
 * @license MIT
 */
-import React from 'react';
-import PropTypes from 'prop-types';
-import { LANG_CODE_LV } from '@component/App/App.config';
-import {
-    RESERVATION_PHONE_PRIMARY,
-    RESERVATION_PHONE_SECONDARY
-} from './Reservation.config';
 
-import { Trans, withTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 import './Reservation.style.scss';
 
-class Reservation extends React.Component {
-  static propTypes = {
-      t: PropTypes.func.isRequired,
-      handler: PropTypes.func.isRequired,
-      lang: PropTypes.string.isRequired
-  };
+export class Reservation extends React.Component {
+    static propTypes = {
+        open: PropTypes.bool.isRequired,
+        onClose: PropTypes.func.isRequired
+    }
 
-  constructor(props) {
-      super(props);
-      this.renderReservationNotice = this.renderReservationNotice.bind(this);
-  }
+    render() {
+        const {
+            open = false,
+            onClose
+        } = this.props;
 
-  renderReservationNotice() {
-      const { t } = this.props;
-      const reservation = RESERVATION_PHONE_PRIMARY;
-      const reservation_sec = RESERVATION_PHONE_SECONDARY;
+        if (!open) {
+            return null;
+        }
 
-      return (
-          <p className="reservation-notice">
-              <Trans
-                i18nKey="reservation-notice"
-              >
-                  { t('reservation-notice') }
-                  <a href={ `tel:${reservation}` }>
-                    { { reservation } }
-                  </a>
-                  <a href={ `tel:${reservation_sec}` }>
-                    { { reservation_sec } }
-                  </a>
-              </Trans>
-          </p>
-      );
-  }
-
-  handleInsideElementClick(e) {
-      e.stopPropagation();
-  }
-
-  render() {
-      const {
-          t,
-          handler,
-          lang
-      } = this.props;
-
-      return (
-          <div className="Reservation-Form" onClick={ handler }>
-            <div
-              className="Reservation-Form-Wrapper"
-              onClick={ this.handleInsideElementClick }
+        return ReactDOM.createPortal(
+            <section
+              className="Reservation"
             >
-              <h2 className="custom-tac">
-                { lang === LANG_CODE_LV ? (
-                    <p className="title-first">{ t('table') }</p>
-                ) : <p className="title-first" style={ { marginTop: '72px' } } /> }
-                <p className="title-caption">{ t('reservation') }</p>
-              </h2>
-              <div className="container">
-                { this.renderReservationNotice() }
-              </div>
-              <button
-                type="button"
-                onClick={ handler }
-                className="reservation-close-btn"
-                aria-label="Close reservation button"
-              >
-                <i className="far fa-times-circle" />
-              </button>
-            </div>
-          </div>
-      );
-  }
+                <div
+                  className="Reservation-Box"
+                >
+                    <h2>
+                        <p className="Subtitle">Warm Welcome!</p>
+                        <p className="Headline-Strong">
+                            Our Story
+                        </p>
+                    </h2>
+                    <button onClick={ onClose() }>click me!</button>
+                </div>
+            </section>,
+            document.getElementById('modal-root')
+        );
+    }
 }
 
-export default withTranslation()(Reservation);
+export default Reservation;

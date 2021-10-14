@@ -4,7 +4,8 @@
       "baseUrl": "./",
       "allowSyntheticDefaultImports": false,
       "paths": {
-        "@component/*": ["./src/app/components/*"],
+        "@component/*": ["./src/app/component/*"],
+        "@pages/*": ["./src/app/pages/*"],
         "@store/*": ["./src/app/store/*"],
         "@util/*": ["./src/app/util/*"],
         "@type/*": ["./src/app/type/*"],

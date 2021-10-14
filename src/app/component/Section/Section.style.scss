@@ -1,0 +1,41 @@
+.Section {
+    &-Contents {
+        box-shadow: 0px 2px 60px 0px rgb(0 0 0 / 10%);
+        margin: 120px 0px 0px 0px;
+        padding: 60px 60px 65px 60px;
+        border-radius: 5px 5px 5px 5px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            line-height: 1;
+            text-align: center;
+
+            p {
+                margin: 0;
+                padding: 0;
+            }
+
+            .Subtitle {
+                font-size: .5em;
+            }
+
+            .Headline-Strong {
+                font-size: .8em !important;
+            }
+        }
+    }
+
+    &-Gallery {
+        display: flex;
+
+        &-Item {
+            float: left;
+            max-width: 300px;
+            border-radius: 1em;
+            margin-right: 1em;
+        }
+    }
+}

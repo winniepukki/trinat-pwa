@@ -1,10 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /**
- * SIA Trinat restaurant project
- * Copyright © winniepukki. All rights reserved.
- *
- * @license MIT
- */
+* SIA Trinat restaurant project
+* Copyright © winniepukki. All rights reserved.
+*
+* @license MIT
+*/
+
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -16,6 +17,7 @@ const paths = {
     public: path.join(__dirname, './src/public'),
     assets: path.join(__dirname, './src/public/assets'),
     component: path.resolve(__dirname, './src/app/component'),
+    pages: path.resolve(__dirname, './src/app/pages'),
     store: path.resolve(__dirname, './src/app/store'),
     type: path.resolve(__dirname, './src/app/type'),
     util: path.resolve(__dirname, './src/app/util'),
@@ -36,10 +38,14 @@ module.exports = {
         splitChunks: {
             cacheGroups: {
                 vendor: {
-                    name: 'vendors',
+                    name: 'vendor',
                     test: /node_modules/,
                     chunks: 'all',
                     enforce: true
+                },
+                default: {
+                    minChunks: 2,
+                    reuseExistingChunk: true
                 }
             }
         }
@@ -47,6 +53,7 @@ module.exports = {
     resolve: {
         alias: {
             '@component': paths.component,
+            '@pages': paths.pages,
             '@store': paths.store,
             '@util': paths.util,
             '@type': paths.type,
@@ -63,11 +70,11 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: './src/public/assets/images/', to: 'assets/img' },
+                { from: './src/public/assets/img/', to: 'assets/img' },
                 { from: './src/public/assets/icons/', to: 'assets/icons' },
                 { from: './src/public/assets/favicon', to: 'assets/favicon' },
-                { from: './src/public/manifest.json', to: './[name].[ext]' },
-                { from: './src/sw.js', to: './[name].[ext]' }
+                { from: './src/public/manifest.json', to: './[name].[ext]' }
+                // { from: './src/sw.js', to: './[name].[ext]' }
             ]
         })
     ],

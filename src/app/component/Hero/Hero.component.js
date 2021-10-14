@@ -4,82 +4,45 @@
 *
 * @license MIT
 */
-import React from 'react';
-import PropTypes from 'prop-types';
 
-import { withTranslation } from 'react-i18next';
-import Menu from '@component/Menu';
+import React from 'react';
 
 import './Hero.style.scss';
 
-class Hero extends React.Component {
-    static propTypes = {
-        welcomeMessage: PropTypes.string.isRequired,
-        titleCaptionFront: PropTypes.string.isRequired,
-        titleCaptionBold: PropTypes.string.isRequired,
-        subtitle: PropTypes.string.isRequired,
-        languageCode: PropTypes.string.isRequired
-    };
-
-    constructor(props) {
-        super(props);
-        this.renderWelcomeMessage = this.renderWelcomeMessage.bind(this);
-        this.renderMenu = this.renderMenu.bind(this);
-        this.renderHeroBackground = this.renderHeroBackground.bind(this);
-    }
-
-    renderWelcomeMessage() {
-        const {
-            welcomeMessage = '',
-            titleCaptionFront = '',
-            titleCaptionBold = '',
-            subtitle = ''
-        } = this.props;
-
-        return (
-          <div className="caption-title">
-            <div className="container">
-              <div className="row">
-                <div className="col-sm-6">
-                  <h2 className="parallax-item">
-                    <p className="title-first">{ welcomeMessage }</p>
-                    <p className="title-caption">
-                      { titleCaptionFront }
-                      <strong>{ titleCaptionBold }</strong>
-                    </p>
-                    <span className="sub-title">{ subtitle }</span>
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
-    }
-
-    renderMenu() {
-        const { languageCode } = this.props;
-        return <Menu lang={ languageCode } />;
-    }
-
-    renderHeroBackground() {
-        return (
-          <img
-            src="assets/img/section/hero.jpg"
-            alt="Home hero wallpaper"
-            className="hero-wallpaper"
-          />
-        );
-    }
-
+export class Hero extends React.Component {
     render() {
         return (
-          <div className="Hero" id="hero">
-            { this.renderWelcomeMessage() }
-            { this.renderMenu() }
-            { this.renderHeroBackground() }
-          </div>
+            <section
+              className="Hero Main-Section"
+            >
+                <div className="Hero-Caption">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-sm-6">
+                                <h2>
+                                    <p className="Subtitle">Warm Welcome!</p>
+                                    <p className="Headline">
+                                        Trinat
+                                        <strong>Kafeinica</strong>
+                                    </p>
+                                </h2>
+                                <p className="Hero-Text">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Delectus dolores, illum itaque
+                                    illum itaque
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img
+                  className="Hero-Image"
+                  src="/assets/img/section/hero.jpg"
+                  alt=""
+                />
+            </section>
         );
     }
 }
 
-export default withTranslation()(Hero);
+export default Hero;

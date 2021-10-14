@@ -1,229 +1,84 @@
+@import '../abstract/media';
+
 html,
 body {
     margin: 0;
     padding: 0;
-    font-size: 16px;
-    overflow-x: hidden;
-    font-family: 'Roboto', Arial, sans-serif;
     scroll-behavior: smooth;
+    font-family: var(--primary-font-family);
+    overflow-x: hidden;
     @include box-sizing(border-box);
 }
 
+.container {
+    box-sizing: border-box;
+}
+
 a {
+    color: var(--bs-white);
     text-decoration: none;
-    color: inherit;
-    padding: 0 10px;
-}
-
-h2 {
-    text-transform: uppercase;
-    font-size: 3.3em;
-    font-weight: 100;
-    line-height: .5;
-
-    .title-first {
-        text-transform: lowercase;
-        font-weight: 100;
-        font-family: 'Kristi', Arial, sans-serif;
-        color: rgba(var(--primary-base-color), 1);
-    }
-    @media screen and (max-width: 400px) {
-        font-size: 2.3em;
-    }
-
-    p {
-        margin: 0 0;
-        line-height: 1;
-    }
-
-    span {
-        font-size: 13px;
-        font-weight: 400;
-    }
-}
-
-h3 {
-    line-height: 0;
-    font-size: 2.3em;
-    @media screen and (max-width: 400px) {
-        line-height: unset !important;
-
-        &,
-        p {
-            margin: 10px 0;
-        }
-    }
-
-    .parallax-headline {
-        font-family: 'Kristi', Arial, sans-serif;
-        color: rgba(var(--primary-base-color), 1);
-        font-weight: 100;
-    }
-
-    .parallax-title {
-        text-transform: uppercase;
-        font-weight: 100;
-    }
-
-    .parallax-description {
-        text-transform: uppercase;
-        font-weight: 400;
-        letter-spacing: 3px;
-        @media screen and (max-width: 1200px) {
-            letter-spacing: unset !important;
-        }
-        font-size: 10px;
-    }
-}
-
-h4 {
-    color: var(--primary-dark-color);
-    font-size: 30px;
-    font-weight: 300;
-    text-transform: uppercase;
-}
-
-h5 {
-    text-transform: uppercase;
-    line-height: 0;
-
-    p:nth-child(1) {
-        font-weight: 800;
-        font-size: 30px;
-    }
-
-    p:nth-child(2) {
-        font-weight: 100;
-        padding-left: .55rem;
-        letter-spacing: 3px;
-    }
-}
-
-h6 {
-    text-transform: uppercase;
-    font-weight: 400;
-    color: var(--white);
-}
-
-ul li {
-    list-style-type: none;
-}
-
-strong {
-    font-weight: 700;
-}
-
-.simple-text {
-    font-size: 12px;
-    font-weight: 300;
-    color: var(--primary-light-color);
-    line-height: 20px;
-
-    .business-contacts {
-        padding: 0 0;
-        color: inherit;
-    }
-
-    span {
-        padding: 0 10px;
-    }
-
-    a {
-        color: var(--white);
-    }
-}
-
-.language-switcher {
-    height: 16px;
-    width: 16px;
-    margin-right: 5px;
 }
 
 blockquote {
-    padding: 0 0;
-    margin: 20px auto;
-    @media screen and (max-width: 600px) {
-        margin: 0 auto;
-    }
-    max-width: 800px;
-    text-transform: uppercase;
-
-    .blockquote-content {
-        font-weight: 100;
-        font-size: 35px;
-        @media screen and (max-width: 600px) {
-            font-size: 25px;
-        }
-    }
-
-    .description {
-        font-weight: 400;
-        letter-spacing: 3px;
-        font-size: 10px;
-    }
-
-    .author {
-        font-family: 'Kristi', Arial, sans-serif;
-        text-transform: capitalize;
-        font-size: 25px;
-        margin: 0 0;
-    }
-}
-
-.parallax-section {
-    background-size: 70%;
-    overflow: hidden;
-    padding: 100px 0;
-
-    .inner-container {
-        width: 50%;
-        background-color: var(--white);
-        padding: 50px;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .inner-container {
-        padding: 50px;
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    .parallax-section {
-        background-size: 100%;
-        padding: 0 40px;
-
-        .inner-container {
-            width: 100%;
-        }
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .parallax-section {
-        padding: 0;
-
-        .inner-container {
-            transform: unset !important;
-            padding: 0 40px !important;
-        }
-    }
-}
-
-section {
-    position: relative;
-    width: 100%;
-    height: 40vh;
+    margin: 2em auto 0 auto;
+    padding: 0;
     text-align: center;
-    background: {
-        size: cover;
-        position: center;
-        repeat: no-repeat;
-        attachment: fixed;
-    };
-    @media screen and (max-width: 1000px) {
-        background-attachment: scroll !important;
+    max-width: 60em;
+
+    div {
+        margin-bottom: 25px;
     }
+
+    .Blockquote-Content {
+        font-weight: 700;
+        font-size: 2em;
+    }
+
+    .Blockquote-Description {
+        letter-spacing: .5em;
+        font-size: .7em;
+    }
+
+    .Blockquote-Author {
+        font-size: 1.3em;
+        font-family: var(--secondary-font-family);
+    }
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 3.4rem;
+    line-height: 0;
+
+    @include mobile {
+        font-size: 2.5em;
+    }
+
+    .Subtitle {
+        font-family: var(--secondary-font-family);
+        color: var(--primary-base-color);
+    }
+
+    .Headline {
+        font-weight: 100;
+        text-transform: uppercase;
+        color: var(--bs-white);
+
+        strong {
+            font-weight: 800;
+        }
+    }
+
+    .Headline-Strong {
+        font-weight: 800;
+        text-transform: uppercase;
+        color: var(--bs-black);
+    }
+}
+
+.Main-Section {
+    height: 100vh;
 
     &::after {
         content: '';
@@ -232,22 +87,15 @@ section {
         right: 0;
         width: 100%;
         height: 100%;
-        background: rgba(var(--black), .5);
+        z-index: 1;
+        background: rgba(0, 0, 0, .3);
     }
+}
 
-    .section-title {
-        position: absolute;
-        text-align: center;
-        width: 100%;
-        z-index: 11;
-        bottom: 0;
-    }
-
-    .section-title h3 {
-        line-height: unset !important;
-
-        .parallax-title {
-            color: var(--white);
-        }
-    }
+.Leaf-Delimiter {
+    height: 1.5rem;
+    width: 1.5rem;
+    object-fit: contain;
+    opacity: .3;
+    margin: .8rem 0;
 }

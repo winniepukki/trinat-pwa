@@ -1,0 +1,66 @@
+// stylelint-disable unit-allowed-list
+
+@mixin desktop {
+    @media (min-width: 811px) {
+        @content;
+    }
+}
+
+@mixin ultra-narrow-desktop {
+    @media (min-width: 810px)
+        and (max-width: 1160px) {
+        @content;
+    }
+}
+
+@mixin narrow-desktop {
+    @media (min-width: 1024px)
+        and (max-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin wide-desktop {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 811px)
+        and (max-width: 1024px)
+        and (-webkit-min-device-pixel-ratio: 1) {
+        @content;
+    }
+}
+
+@mixin tablet-portrait {
+    @media (min-width: 811px)
+        and (max-width: 1023px)
+        and (-webkit-min-device-pixel-ratio: 1)
+        and (orientation: portrait) {
+        @content;
+    }
+}
+
+@mixin tablet-landscape {
+    @media(min-width: 811px)
+        and (max-width: 1023px)
+        and (-webkit-min-device-pixel-ratio: 1)
+        and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 810px) {
+        @content;
+    }
+}
+
+@mixin standalone {
+    /* stylelint-disable-next-line media-feature-name-no-unknown */
+    @media all and (display-mode: standalone) {
+        @content;
+    }
+}
