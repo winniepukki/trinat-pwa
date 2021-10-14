@@ -10,10 +10,6 @@
     background: var(--primary-base-color);
     color: var(--bs-white);
 
-    &-Details {
-
-    }
-
     &-Social {
         @include mobile {
             width: 100% !important;
