@@ -5,7 +5,7 @@
       "allowSyntheticDefaultImports": false,
       "paths": {
         "@component/*": ["./src/app/component/*"],
-        "@pages/*": ["./src/app/pages/*"],
+        "@route/*": ["./src/app/route/*"],
         "@store/*": ["./src/app/store/*"],
         "@util/*": ["./src/app/util/*"],
         "@type/*": ["./src/app/type/*"],

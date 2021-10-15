@@ -40,7 +40,7 @@ export class Reservation extends React.Component {
                             Our Story
                         </p>
                     </h2>
-                    <button onClick={ onClose() }>click me!</button>
+                    <button onClick={ onClose }>click me!</button>
                 </div>
             </section>,
             document.getElementById('modal-root')

@@ -13,11 +13,12 @@
   "copyright": "",
   "trinat": {
     "title": "Trinat",
-    "type": "Kafeinica"
+    "type": "Kafejnica"
   },
   "hero": {
     "text": "Mājas virtuve neatstās vienaldzīgu nevienu, it īpaši, ja to gatavo ar mīlestību kā mūsu pavāri. Kafejnīca Trinat vienmēr sagaidīs jūs ar siltumu un īpašu komfortu."
   },
+  "reservation": "Rezervācija",
   "story": {
     "title": "",
     "description": "",

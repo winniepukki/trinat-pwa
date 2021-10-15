@@ -1,20 +1,18 @@
 @import '../../style/abstract/media';
 
 .Header {
-    position: fixed;
+    position: relative;
     top: 0;
     right: 0;
     width: 100%;
     z-index: 1111;
-    min-height: 3em;
+    min-height: 60px;
     background: var(--primary-base-color);
     color: var(--bs-white);
     display: flex;
     align-items: center;
 
     &-Social {
-        position: relative;
-
         @include mobile {
             text-align: center;
             display: none;

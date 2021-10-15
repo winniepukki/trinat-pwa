@@ -9,7 +9,7 @@
 import React, { lazy } from 'react';
 import { Provider } from 'react-redux';
 import {
-    BrowserRouter as Router,
+    BrowserRouter,
     Switch,
     Route,
     withRouter
@@ -19,26 +19,22 @@ import store from '@store/index';
 
 const App = lazy(() => import('@component/App'));
 
-export class Home extends React.Component {
+export class Router extends React.Component {
     render() {
         return (
             <section
-              className="Home"
+              className="Router"
             >
-              <div
-                className="Home-Wrapper"
-              >
-                  <Router>
-                      <Provider store={ store }>
-                          <Switch>
-                              <Route path="/" component={ App } exact />
-                          </Switch>
-                      </Provider>
-                  </Router>
-              </div>
+              <BrowserRouter>
+                  <Provider store={ store }>
+                      <Switch>
+                          <Route path="/" component={ App } exact />
+                      </Switch>
+                  </Provider>
+              </BrowserRouter>
             </section>
         );
     }
 }
 
-export default withRouter(Home);
+export default withRouter(Router);

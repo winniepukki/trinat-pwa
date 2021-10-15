@@ -17,7 +17,7 @@ const paths = {
     public: path.join(__dirname, './src/public'),
     assets: path.join(__dirname, './src/public/assets'),
     component: path.resolve(__dirname, './src/app/component'),
-    pages: path.resolve(__dirname, './src/app/pages'),
+    route: path.resolve(__dirname, './src/app/route'),
     store: path.resolve(__dirname, './src/app/store'),
     type: path.resolve(__dirname, './src/app/type'),
     util: path.resolve(__dirname, './src/app/util'),
@@ -53,7 +53,7 @@ module.exports = {
     resolve: {
         alias: {
             '@component': paths.component,
-            '@pages': paths.pages,
+            '@route': paths.route,
             '@store': paths.store,
             '@util': paths.util,
             '@type': paths.type,

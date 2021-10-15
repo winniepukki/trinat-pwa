@@ -1,0 +1,29 @@
+@import '../../style/abstract/media';
+
+.Delimiter {
+    max-height: 60vh;
+    overflow: hidden;
+    position: relative;
+
+    &-Content {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    &-Title {
+        font-size: 3.6rem;
+
+        @include mobile {
+            font-size: 2rem;
+        }
+    }
+
+    &-Image {
+        height: auto;
+    }
+}

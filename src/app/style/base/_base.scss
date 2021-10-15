@@ -10,7 +10,7 @@ body {
 }
 
 a {
-    color: var(--bs-white);
+    color: inherit;
     text-decoration: none;
 }
 
@@ -41,6 +41,10 @@ blockquote {
     }
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 h2 {
     margin: 0;
     padding: 0;
@@ -49,6 +53,7 @@ h2 {
 
     @include mobile {
         font-size: 2.5em;
+        line-height: unset;
     }
 
     .Subtitle {
@@ -63,6 +68,21 @@ h2 {
 
         strong {
             font-weight: 800;
+        }
+
+        @include mobile {
+            font-size: 1.5em;
+
+            strong {
+                display: block;
+            }
+        }
+    }
+
+    .Headline,
+    .Subtitle {
+        @include mobile {
+            margin: 0;
         }
     }
 

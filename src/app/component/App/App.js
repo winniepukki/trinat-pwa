@@ -7,8 +7,7 @@
 
 import React from 'react';
 
-import Header from '@component/Header';
-
+import Navigation from '@component/Navigation';
 import AppContents from '@component/AppContents';
 
 import ErrorBoundary from '@util/ErrorBoundary/ErrorBoundary';
@@ -25,7 +24,7 @@ export class App extends React.Component {
               className="App"
             >
                 <ErrorBoundary>
-                    <Header />
+                    <Navigation />
                     <AppContents />
                 </ErrorBoundary>
             </section>
