@@ -6,15 +6,19 @@
 */
 
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 
 import Header from '@component/Header';
 
-import ErrorBoundary from '@util/ErrorBoundary/ErrorBoundary';
 import AppContents from '@component/AppContents';
-import Reservation from '@component/Reservation';
+
+import ErrorBoundary from '@util/ErrorBoundary/ErrorBoundary';
+import useScript from '@util/Script/useScript';
 
 export class App extends React.Component {
+    componentDidMount() {
+        useScript('https://use.fontawesome.com/releases/v5.15.1/js/all.js');
+    }
+
     render() {
         return (
             <section
@@ -23,11 +27,10 @@ export class App extends React.Component {
                 <ErrorBoundary>
                     <Header />
                     <AppContents />
-                    <Reservation />
                 </ErrorBoundary>
             </section>
         );
     }
 }
 
-export default withTranslation()(App);
+export default App;

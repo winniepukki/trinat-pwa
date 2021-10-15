@@ -5,12 +5,19 @@
 * @license MIT
 */
 
+import PropTypes from 'prop-types';
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 
 import './Hero.style.scss';
 
 export class Hero extends React.Component {
+    static propTypes = {
+        t: PropTypes.func.isRequired
+    }
+
     render() {
+        const { t } = this.props;
         return (
             <section
               className="Hero Main-Section"
@@ -22,19 +29,22 @@ export class Hero extends React.Component {
                                 <h2>
                                     <p className="Subtitle">Warm Welcome!</p>
                                     <p className="Headline">
-                                        Trinat
-                                        <strong>Kafeinica</strong>
+                                        { t('trinat.title') }
+                                        <strong>{ t('trinat.type') }</strong>
                                     </p>
                                 </h2>
                                 <p className="Hero-Text">
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Delectus dolores, illum itaque
-                                    illum itaque
+                                    { t('hero.text') }
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
+                <img
+                  className="Elementor Elementor-Bottom"
+                  src="/assets/img/icons/elementor.svg"
+                  alt=""
+                />
                 <img
                   className="Hero-Image"
                   src="/assets/img/section/hero.jpg"
@@ -45,4 +55,4 @@ export class Hero extends React.Component {
     }
 }
 
-export default Hero;
+export default withTranslation()(Hero);

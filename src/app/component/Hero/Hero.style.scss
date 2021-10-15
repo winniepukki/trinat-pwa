@@ -5,8 +5,9 @@
     &-Caption {
         position: absolute;
         z-index: 2;
-        bottom: 20%;
+        bottom: 50%;
         width: 100%;
+        transform: translateY(50%);
     }
 
     &-Image {
@@ -16,7 +17,6 @@
     }
 
     &-Text {
-        font-weight: 300;
         line-height: 2.3;
         text-transform: uppercase;
     }

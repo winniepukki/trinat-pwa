@@ -1,3 +1,27 @@
 {
-  "app": "aplikācija"
+  "address": {
+    "line": "Kurzemes prospekts 92a",
+    "phone": "+371 29740898",
+    "email": "info@trinat.lv",
+    "web": "https://trinat.lv"
+  },
+  "blockquote": {
+    "blockquote-content": "",
+    "description": "",
+    "author": ""
+  },
+  "copyright": "",
+  "trinat": {
+    "title": "Trinat",
+    "type": "Kafeinica"
+  },
+  "hero": {
+    "text": "Mājas virtuve neatstās vienaldzīgu nevienu, it īpaši, ja to gatavo ar mīlestību kā mūsu pavāri. Kafejnīca Trinat vienmēr sagaidīs jūs ar siltumu un īpašu komfortu."
+  },
+  "story": {
+    "title": "",
+    "description": "",
+    "text": ""
+  },
+  "welcome": "sveiki"
 }

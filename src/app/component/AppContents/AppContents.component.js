@@ -9,7 +9,6 @@ import React from 'react';
 
 import Hero from '@component/Hero';
 import Blockquote from '@component/Blockquote';
-import Section from '@component/Section';
 
 export class AppContents extends React.Component {
     render() {
@@ -19,11 +18,6 @@ export class AppContents extends React.Component {
             >
                 <Hero />
                 <Blockquote />
-                <Section gallery={ [
-                    '/assets/img/section/section-food.jpg',
-                    '/assets/img/section/section-plate.jpg'
-                ] }
-                />
             </section>
         );
     }

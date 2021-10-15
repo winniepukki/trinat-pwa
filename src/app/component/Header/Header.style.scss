@@ -9,14 +9,27 @@
     min-height: 3em;
     background: var(--primary-base-color);
     color: var(--bs-white);
+    display: flex;
+    align-items: center;
 
     &-Social {
+        position: relative;
+
         @include mobile {
-            width: 100% !important;
-            padding: 0 !important;
-            margin: 0 !important;
             text-align: center;
             display: none;
         }
+    }
+
+    &-Details-Link {
+        @include mobile {
+            display: block;
+            text-align: center;
+            padding: .4rem 0;
+        }
+    }
+
+    &-Details-Text {
+        margin-left: 1rem;
     }
 }

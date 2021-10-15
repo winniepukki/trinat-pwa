@@ -6,12 +6,7 @@ body {
     padding: 0;
     scroll-behavior: smooth;
     font-family: var(--primary-font-family);
-    overflow-x: hidden;
     @include box-sizing(border-box);
-}
-
-.container {
-    box-sizing: border-box;
 }
 
 a {
@@ -23,24 +18,25 @@ blockquote {
     margin: 2em auto 0 auto;
     padding: 0;
     text-align: center;
-    max-width: 60em;
+    max-width: 45em;
 
     div {
         margin-bottom: 25px;
     }
 
     .Blockquote-Content {
+        line-height: 1.7;
         font-weight: 700;
         font-size: 2em;
     }
 
     .Blockquote-Description {
-        letter-spacing: .5em;
+        letter-spacing: .3em;
         font-size: .7em;
     }
 
     .Blockquote-Author {
-        font-size: 1.3em;
+        font-size: 1.8em;
         font-family: var(--secondary-font-family);
     }
 }
@@ -48,7 +44,7 @@ blockquote {
 h2 {
     margin: 0;
     padding: 0;
-    font-size: 3.4rem;
+    font-size: 4.4rem;
     line-height: 0;
 
     @include mobile {
@@ -98,4 +94,21 @@ h2 {
     object-fit: contain;
     opacity: .3;
     margin: .8rem 0;
+}
+
+.Elementor {
+    position: absolute;
+    right: 0;
+    z-index: 1111;
+    width: 100%;
+    height: 20px;
+
+    &-Top {
+        top: 0;
+    }
+
+    &-Bottom {
+        transform: rotate(180deg);
+        bottom: 0;
+    }
 }
