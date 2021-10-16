@@ -1,1 +1,59 @@
-/* stylelint-disable no-empty-source */
+.Button {
+    background: transparent;
+    border: transparent;
+
+    &-Light {
+        color: var(--bs-white);
+    }
+
+    &-Close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 1rem;
+    }
+
+    &-Language-Switcher {
+        .Current-Language {
+            margin-left: .5rem;
+            text-transform: uppercase;
+        }
+    }
+
+    &-Language-Option {
+        display: block;
+        font-size: 1rem;
+        color: var(--bs-black);
+        padding: 10px 0;
+
+        &:hover {
+            color: var(--primary-base-color);
+        }
+    }
+
+    &-Reservation {
+        margin: auto 0;
+        justify-self: end;
+        display: inline-block;
+        line-height: 1;
+        padding: 12px 24px;
+        text-align: center;
+        max-width: 150px;
+        font-size: 15px;
+        font-weight: 900;
+        text-transform: capitalize;
+        letter-spacing: 0;
+        background-color: #02010100;
+        border-style: solid;
+        border-width: 2px 2px 2px 2px;
+        border-color: var(--bs-white);
+        border-radius: 5px 5px 5px 5px;
+        transition: all 300ms;
+
+        &:hover {
+            transition: all 300ms;
+            background: var(--primary-base-color);
+            border-color: var(--primary-base-color);
+        }
+    }
+}

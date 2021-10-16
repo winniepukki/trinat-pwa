@@ -9,11 +9,6 @@ body {
     @include box-sizing(border-box);
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
 blockquote {
     margin: 2em auto 0 auto;
     padding: 0;

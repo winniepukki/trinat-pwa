@@ -67,7 +67,7 @@ export class Header extends React.Component {
                                 <i className="fab fa-instagram" />
                             </a>
                             <button
-                              className="Language-Switcher"
+                              className="Button Button-Language-Switcher Button-Light"
                               onClick={ handleOpenState }
                             >
                                 <i className="fas fa-chevron-down" />

@@ -1,1 +1,26 @@
-/* stylelint-disable no-empty-source */
+label {
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 10px;
+    display: block;
+    font-family: var(--primary-font-family);
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.Input-Dark {
+    font-family: var(--primary-font-family);
+    font-size: 100%;
+    padding: 13px 10px;
+    background: 0 0 !important;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    width: 100%;
+    border-radius: 0;
+    outline: none;
+}

@@ -22,38 +22,4 @@
         position: absolute;
         top: -10px;
     }
-
-    &-Switcher {
-        color: var(--bs-white);
-
-        .Current-Language {
-            margin-left: .5rem;
-            text-transform: uppercase;
-        }
-    }
-
-    &-Switcher,
-    &-Button,
-    &-Close {
-        background: transparent;
-        border: transparent;
-    }
-
-    &-Button {
-        display: block;
-        font-size: 1rem;
-        color: var(--bs-black);
-        padding: 10px 0;
-
-        &:hover {
-            color: var(--primary-base-color);
-        }
-    }
-
-    &-Close {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        font-size: 1rem;
-    }
 }

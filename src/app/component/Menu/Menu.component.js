@@ -42,7 +42,7 @@ export class Menu extends React.Component {
                         </div>
                         <div className="Menu-Links col">
                             <button
-                              className="Reservation-Button"
+                              className="Button Button-Reservation Button-Light"
                               onClick={ handleOpenState }
                             >
                                 { t('reservation') }
