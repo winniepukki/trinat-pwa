@@ -10,6 +10,7 @@ import { withTranslation } from 'react-i18next';
 
 import Navigation from '@component/Navigation';
 import AppContents from '@component/AppContents';
+import Footer from '@component/Footer';
 
 import ErrorBoundary from '@util/ErrorBoundary/ErrorBoundary';
 import useScript from '@util/Script/useScript';
@@ -33,6 +34,7 @@ export class App extends React.Component {
                 <ErrorBoundary>
                     <Navigation />
                     <AppContents />
+                    <Footer />
                 </ErrorBoundary>
             </section>
         );

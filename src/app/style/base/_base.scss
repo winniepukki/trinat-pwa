@@ -88,6 +88,17 @@ h2 {
     }
 }
 
+h3 {
+    color: var(--bs-white);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
 .Main-Section {
     height: 100vh;
 
@@ -126,4 +137,12 @@ h2 {
         transform: rotate(180deg);
         bottom: 0;
     }
+}
+
+.Simple-Text {
+    color: var(--primary-light-color);
+    font-size: 1.2em;
+    line-height: 1.8;
+    font-weight: 300;
+    word-wrap: break-word;
 }

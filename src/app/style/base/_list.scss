@@ -1,1 +1,33 @@
-/* stylelint-disable no-empty-source */
+.List {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    &-Footer {
+        display: flex;
+        justify-content: end;
+
+        @include mobile {
+            justify-content: center;
+            align-items: center;
+        }
+
+        &-Item {
+            padding: 0 8px;
+        }
+    }
+
+    &-Elementor,
+    &-Light {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0 0 0;
+    }
+
+    &-Elementor-Item,
+    &-Light-Item {
+        font-size: 1rem;
+        margin-top: calc(15px / 2);
+        padding-bottom: calc(15px / 2);
+    }
+}

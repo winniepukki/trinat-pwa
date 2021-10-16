@@ -2,3 +2,24 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
+.Footer-Link {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    flex-direction: row;
+
+    .Elementor-Text {
+        line-height: 1.8;
+        word-wrap: break-word;
+        align-self: center;
+        padding-left: 10px;
+        font-weight: 300;
+        color: var(--primary-light-color);
+
+        &::first-line {
+            line-height: 1;
+            text-indent: 20px;
+        }
+    }
+}

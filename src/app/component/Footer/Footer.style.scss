@@ -1,13 +1,32 @@
+@import '../../style/abstract/media';
+
 .Footer {
+    position: relative;
     color: var(--bs-white);
+    font-size: 13px;
 
     &-Block {
+        padding: 60px 0 60px 0;
         background: var(--secondary-dark-color);
-        //noinspection Stylelint
         border-bottom: 1px solid var(--primary-dark-color);
+
+        &-Item {
+            @include mobile {
+                margin-top: 20px;
+            }
+        }
     }
 
     &-Notice {
+        padding: 15px 0 15px 0;
         background: var(--secondary-base-color);
+
+        @include mobile {
+            text-align: center;
+        }
+
+        .Copyright-Notice {
+            color: var(--primary-dark-color);
+        }
     }
 }
