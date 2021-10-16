@@ -12,20 +12,20 @@
     display: flex;
     align-items: center;
 
-    //&-Details {
-    //    @include mobile {
-    //        flex: unset !important;
-    //        max-width: unset !important;
-    //    }
-    //}
+    @include mobile {
+        padding: 5px 0;
+    }
 
     &-Social {
         display: flex;
         justify-content: flex-end;
+        align-items: center;
 
         @include mobile {
+            width: unset;
+            margin: 0 auto;
+            // justify-content: center;
             text-align: center;
-            display: none;
         }
 
         &-Link {
