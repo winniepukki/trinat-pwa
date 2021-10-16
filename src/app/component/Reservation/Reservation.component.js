@@ -27,7 +27,7 @@ export class Reservation extends React.Component {
             onClose
         } = this.props;
 
-        if (open) {
+        if (!open) {
             return null;
         }
 
