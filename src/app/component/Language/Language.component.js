@@ -27,7 +27,8 @@ export class Language extends React.Component {
 
     changeLanguage(event) {
         const {
-            i18n = {}
+            i18n = {},
+            handleOpenState
         } = this.props;
 
         const {
@@ -39,6 +40,7 @@ export class Language extends React.Component {
         } = event;
 
         i18n.changeLanguage(language);
+        handleOpenState();
     }
 
     render() {
