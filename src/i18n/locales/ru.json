@@ -8,20 +8,21 @@
   "blockquote": {
     "blockquote-content": "",
     "description": "",
-    "author": ""
+    "author": "Александр Богачкин"
   },
   "copyright": "",
   "trinat": {
     "title": "Trinat",
-    "type": "Kafeinica"
+    "type": "Кафе"
   },
   "hero": {
-    "text": ""
+    "text": "Готовим эксклюзивную домашнюю еду с 2017. Бронируйте онлайн или по телефону +371 29740898"
   },
+  "reservation": "Резервация",
   "story": {
     "title": "",
     "description": "",
     "text": ""
   },
-  "welcome": "sveiki"
+  "welcome": "добро пожаловать!"
 }

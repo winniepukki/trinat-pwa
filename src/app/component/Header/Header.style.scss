@@ -6,24 +6,41 @@
     right: 0;
     width: 100%;
     z-index: 1111;
-    min-height: 60px;
+    min-height: 40px;
     background: var(--primary-base-color);
     color: var(--bs-white);
     display: flex;
     align-items: center;
 
+    //&-Details {
+    //    @include mobile {
+    //        flex: unset !important;
+    //        max-width: unset !important;
+    //    }
+    //}
+
     &-Social {
+        display: flex;
+        justify-content: flex-end;
+
         @include mobile {
             text-align: center;
             display: none;
         }
+
+        &-Link {
+            padding: 0 10px;
+        }
     }
 
     &-Details-Link {
+        margin-right: 1rem;
+
         @include mobile {
             display: block;
             text-align: center;
             padding: .4rem 0;
+            margin-right: 0;
         }
     }
 

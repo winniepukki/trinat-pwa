@@ -1,6 +1,7 @@
 .Language {
     position: absolute;
-    left: 0;
+    right: 0;
+    top: 100%;
     background: #fff;
     box-shadow: 0 0 40px rgb(0 0 0 / 25%);
     box-sizing: border-box;
@@ -17,7 +18,7 @@
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         display: block;
-        left: 20px;
+        right: 20px;
         position: absolute;
         top: -10px;
     }

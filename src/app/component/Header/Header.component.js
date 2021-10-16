@@ -35,7 +35,7 @@ export class Header extends React.Component {
             >
                 <div className="container">
                     <div className="row">
-                        <div className="Header-Details col">
+                        <div className="Header-Details col-sm-7">
                             <a
                               href="https://www.waze.com/en/live-map/directions/latvia/riga/trinat?place=ChIJuR9jcTbF7kYREaS40W3ryts"
                               className="Header-Details-Link"
@@ -59,7 +59,13 @@ export class Header extends React.Component {
                                 </span>
                             </a>
                         </div>
-                        <div className="Header-Social col">
+                        <div className="Header-Social col-sm-5">
+                            <a className="Header-Social-Link" href="#">
+                                <i className="fab fa-facebook" />
+                            </a>
+                            <a className="Header-Social-Link" href="#">
+                                <i className="fab fa-instagram" />
+                            </a>
                             <button
                               className="Language-Switcher"
                               onClick={ handleOpenState }

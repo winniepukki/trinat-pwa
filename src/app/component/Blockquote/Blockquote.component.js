@@ -5,10 +5,18 @@
 * @license MIT
 */
 
+import PropTypes from 'prop-types';
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 
 export class Blockquote extends React.Component {
+    static propTypes = {
+        t: PropTypes.func.isRequired
+    }
+
     render() {
+        const { t } = this.props;
+
         return (
             <blockquote
               className="Blockquote"
@@ -21,11 +29,11 @@ export class Blockquote extends React.Component {
                     OUR FOUNDER JOHN PHILLIPE
                 </div>
                 <div className="Blockquote-Author">
-                    Aleksandrs Bogackins
+                    { t('blockquote.author') }
                 </div>
             </blockquote>
         );
     }
 }
 
-export default Blockquote;
+export default withTranslation()(Blockquote);
