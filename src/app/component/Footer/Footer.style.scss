@@ -11,7 +11,7 @@
         border-bottom: 1px solid var(--primary-dark-color);
 
         &-Item {
-            @include mobile {
+            @include media(mobile, tablet) {
                 margin-top: 20px;
             }
         }
@@ -21,7 +21,7 @@
         padding: 15px 0 15px 0;
         background: var(--secondary-base-color);
 
-        @include mobile {
+        @include media(mobile, tablet) {
             text-align: center;
         }
 

@@ -46,9 +46,16 @@ h2 {
     font-size: 4.4rem;
     line-height: 0;
 
+    @include media(mobile, tablet) {
+        line-height: unset;
+    }
+
     @include mobile {
         font-size: 2.5em;
-        line-height: unset;
+    }
+
+    @include tablet {
+        font-size: 3.5em;
     }
 
     .Subtitle {
@@ -76,7 +83,7 @@ h2 {
 
     .Headline,
     .Subtitle {
-        @include mobile {
+        @include media(mobile, tablet) {
             margin: 0;
         }
     }

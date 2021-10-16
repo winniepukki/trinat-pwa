@@ -15,7 +15,7 @@
         justify-content: center;
         align-items: center;
 
-        @include mobile {
+        @include media(mobile, tablet) {
             overflow-y: scroll;
             overflow-x: hidden;
             width: 100%;
@@ -40,7 +40,7 @@
             }
         }
 
-        @include mobile {
+        @include media(mobile, tablet) {
             overflow-y: scroll;
             overflow-x: hidden;
             height: 100%;
@@ -66,7 +66,7 @@
         position: relative;
         box-sizing: border-box;
 
-        @include mobile {
+        @include media(mobile, tablet) {
             width: 100%;
             margin-bottom: 3%;
             margin-right: 0;
@@ -78,7 +78,7 @@
         float: right;
         width: 30.66%;
 
-        @include mobile {
+        @include media(mobile, tablet) {
             width: 100%;
             margin-bottom: 3%;
         }

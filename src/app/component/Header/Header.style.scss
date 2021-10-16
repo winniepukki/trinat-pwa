@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
 
-    @include mobile {
+    @include media(mobile, tablet) {
         padding: 5px 0;
     }
 
@@ -24,8 +24,9 @@
         @include mobile {
             width: unset;
             margin: 0 auto;
-            // justify-content: center;
             text-align: center;
+            padding-top: .4rem;
+            padding-bottom: .4rem;
         }
 
         &-Link {
@@ -36,7 +37,7 @@
     &-Details-Link {
         margin-right: 1rem;
 
-        @include mobile {
+        @include media(mobile, tablet) {
             display: block;
             text-align: center;
             padding: .4rem 0;
