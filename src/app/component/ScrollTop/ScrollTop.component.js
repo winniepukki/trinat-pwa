@@ -16,7 +16,7 @@ export class ScrollTop extends React.Component {
         return (
             <button
               type="button"
-              className="Button Button-Scroll-Top"
+              className="Button Button-Scroll-Top Text-Dark"
               onClick={ this.handleClick }
               aria-label="Scroll to top button"
             >
