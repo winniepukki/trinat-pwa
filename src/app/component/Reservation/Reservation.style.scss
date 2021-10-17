@@ -16,8 +16,6 @@
         align-items: center;
 
         @include media(mobile, tablet) {
-            overflow-y: scroll;
-            overflow-x: hidden;
             width: 100%;
             height: 100%;
         }

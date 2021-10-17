@@ -10,6 +10,7 @@ import { withTranslation } from 'react-i18next';
 
 import Navigation from '@component/Navigation';
 import AppContents from '@component/AppContents';
+import ScrollTop from '@component/ScrollTop';
 import Footer from '@component/Footer';
 
 import ErrorBoundary from '@util/ErrorBoundary/ErrorBoundary';
@@ -34,6 +35,7 @@ export class App extends React.Component {
                 <ErrorBoundary>
                     <Navigation />
                     <AppContents />
+                    <ScrollTop />
                     <Footer />
                 </ErrorBoundary>
             </section>

@@ -59,6 +59,7 @@ export class Language extends React.Component {
                   data-language="lv"
                   onClick={ this.changeLanguage }
                   className="Button Button-Language-Option"
+                  aria-label="Change language to Latvian"
                 >
                   Latviski
                 </button>
@@ -66,10 +67,15 @@ export class Language extends React.Component {
                   data-language="ru"
                   onClick={ this.changeLanguage }
                   className="Button Button-Language-Option"
+                  aria-label="Change language to Russian"
                 >
                   По-русски
                 </button>
-                <button onClick={ handleOpenState } className="Button Button-Close">
+                <button
+                  onClick={ handleOpenState }
+                  className="Button Button-Close Text-Dark"
+                  aria-label="Close language switcher"
+                >
                     <i className="far fa-times-circle" />
                 </button>
             </div>

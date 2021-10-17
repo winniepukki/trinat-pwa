@@ -56,4 +56,24 @@
             border-color: var(--primary-base-color);
         }
     }
+
+    &-Scroll-Top {
+        background: #eee;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 17px;
+        right: 17px;
+        cursor: pointer;
+        transition: color .3s, background-color .3s, opacity .3s;
+        -moz-transition: color .3s, background-color .3s, opacity .3s;
+        -o-transition: color .3s, background-color .3s, opacity .3s;
+        -webkit-transition: color .3s, background-color .3s, opacity .3s;
+        z-index: 9999;
+        opacity: .5;
+        display: block;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        box-shadow: 5px 5px 15px rgb(0 0 0 / 30%);
+    }
 }

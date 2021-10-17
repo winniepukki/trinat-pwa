@@ -2,7 +2,7 @@
     position: absolute;
     right: 0;
     top: 100%;
-    background: #fff;
+    background: var(--bs-white);
     box-shadow: 0 0 40px rgb(0 0 0 / 25%);
     box-sizing: border-box;
     margin-top: 12px;
@@ -14,7 +14,7 @@
 
     &::before {
         content: '';
-        border-bottom: 10px solid #fff;
+        border-bottom: 10px solid var(--bs-white);
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         display: block;

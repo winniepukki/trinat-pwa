@@ -44,6 +44,7 @@ export class Menu extends React.Component {
                             <button
                               className="Button Button-Reservation Button-Light"
                               onClick={ handleOpenState }
+                              aria-label="Open the reservation form"
                             >
                                 { t('reservation') }
                             </button>

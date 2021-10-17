@@ -148,3 +148,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+.Text-Dark {
+    color: var(--bs-black);
+}
+
+.Text-Light {
+    color: var(--bs-white);
+}

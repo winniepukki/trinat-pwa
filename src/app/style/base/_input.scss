@@ -12,15 +12,46 @@ label {
     text-align: left;
 }
 
-.Input-Dark {
+input[type='text'],
+input[type='email'],
+input[type='date'],
+input[type='time'] {
     font-family: var(--primary-font-family);
     font-size: 100%;
     padding: 13px 10px;
     background: 0 0 !important;
     border: 0;
-    border-bottom: 1px solid #fff;
-    color: #fff;
+    border-bottom: 1px solid var(--bs-white);
+    color: var(--bs-white);
     width: 100%;
     border-radius: 0;
     outline: none;
+
+    &:focus {
+        border-bottom: 1px solid var(--primary-base-color);
+    }
+
+    &:focus ~ label {
+        color: var(--primary-base-color);
+    }
+}
+
+select {
+    margin: 0;
+    padding: 13px 10px;
+    color: var(--bs-white);
+    background: 0 0;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid var(--bs-white);
+    width: 100%;
+    font-size: 100%;
+    font-family: var(--primary-font-family);
+    outline: none;
+    -webkit-transition: border-color linear .3s;
+    -moz-transition: border-color linear .3s;
+    -o-transition: border-color linear .3s;
+    transition: border-color linear .3s;
+    box-sizing: border-box;
+    -webkit-appearance: none;
 }

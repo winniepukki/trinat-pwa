@@ -52,49 +52,63 @@ export class Reservation extends React.Component {
                                 { t('name') }
                                 *
                             </label>
-                            <input className="Input-Dark" id="name" name="name" type="text" />
+                            <input id="name" name="name" type="text" />
                         </div>
                         <div className="Reservation-Group">
                             <label htmlFor="email">
                                 { t('surname') }
                                 *
                             </label>
-                            <input className="Input-Dark" id="email" name="email" type="email" />
+                            <input id="email" name="email" type="email" />
                         </div>
                         <div className="Reservation-Group Input-Last">
                             <label htmlFor="phone">
                                 { t('phone') }
                                 *
                             </label>
-                            <input className="Input-Dark" id="phone" name="phone" type="text" />
+                            <input id="phone" name="phone" type="text" />
                         </div>
                         <div className="Reservation-Group">
                             <label htmlFor="date">
                                 { t('date') }
                                 *
                             </label>
-                            <input className="Input-Dark" id="date" name="date" type="date" />
+                            <input id="date" name="date" type="date" />
                         </div>
                         <div className="Reservation-Group">
                             <label htmlFor="time">
                                 { t('time') }
                                 *
                             </label>
-                            <input className="Input-Dark" id="time" name="time" type="time" />
+                            <input id="time" name="time" type="time" />
                         </div>
                         <div className="Reservation-Group Input-Last">
                             <label htmlFor="seats">
                                 { t('seats') }
                                 *
                             </label>
-                            <input className="Input-Dark" id="seats" name="seats" type="text" />
+                            <select name="seats">
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5">5 People</option>
+                                <option value="more">5+ People</option>
+                            </select>
                         </div>
                         <div className="Reservation-Box-Submit">
-                            <button className="Button Button-Reservation Button-Light">
+                            <button
+                              className="Button Button-Reservation Button-Light"
+                              aria-label="Submit the reservation form"
+                            >
                                 { t('submit') }
                             </button>
                         </div>
-                        <button onClick={ onClose } className="Button Button-Close Button-Light">
+                        <button
+                          onClick={ onClose }
+                          className="Button Button-Close Button-Light"
+                          aria-label="Close the reservation form"
+                        >
                             <i className="far fa-times-circle" />
                         </button>
                     </div>
