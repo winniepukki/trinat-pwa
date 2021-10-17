@@ -30,9 +30,7 @@ export class Header extends React.Component {
         const { language } = getI18n();
 
         return (
-            <section
-              className="Header"
-            >
+            <section className="Header">
                 <div className="container">
                     <div className="row">
                         <div className="Header-Details col-sm-7">
@@ -60,10 +58,10 @@ export class Header extends React.Component {
                             </a>
                         </div>
                         <div className="Header-Social col-sm-5">
-                            <a className="Header-Social-Link" href="#">
+                            <a className="Header-Social-Link" href="https://www.facebook.com/3nataly">
                                 <i className="fab fa-facebook" />
                             </a>
-                            <a className="Header-Social-Link" href="#">
+                            <a className="Header-Social-Link" href="https://www.instagram.com/siatrinat/">
                                 <i className="fab fa-instagram" />
                             </a>
                             <button

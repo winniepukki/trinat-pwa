@@ -1,10 +1,16 @@
 {
   "address": {
     "line": "Kurzemes prospekts 92a",
-    "phone": "+371 29740898",
+    "line-full": "Kurzemes pr. 92a, Imanta, Riga, Latvia",
+    "phone": "29740898",
+    "phone-full": "+371 29740898",
     "email": "info@trinat.lv",
     "web": "https://trinat.lv"
   },
+  "guest_one": "{{count}} гость",
+  "guest_few": "{{count}} гостя",
+  "guest_many": "{{count}} гостей",
+  "guest-over": "Больше 5",
   "blockquote": {
     "blockquote-content": "",
     "description": "",

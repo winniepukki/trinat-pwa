@@ -88,12 +88,12 @@ export class Reservation extends React.Component {
                                 *
                             </label>
                             <select name="seats">
-                                <option value="1">1 Person</option>
-                                <option value="2">2 People</option>
-                                <option value="3">3 People</option>
-                                <option value="4">4 People</option>
-                                <option value="5">5 People</option>
-                                <option value="more">5+ People</option>
+                                <option value="1">{ t('guest', { count: 1 }) }</option>
+                                <option value="2">{ t('guest', { count: 2 }) }</option>
+                                <option value="3">{ t('guest', { count: 3 }) }</option>
+                                <option value="4">{ t('guest', { count: 4 }) }</option>
+                                <option value="5">{ t('guest', { count: 5 }) }</option>
+                                <option value="more">{ t('guest-over') }</option>
                             </select>
                         </div>
                         <div className="Reservation-Box-Submit">

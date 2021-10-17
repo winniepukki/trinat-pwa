@@ -5,12 +5,20 @@
 * @license MIT
 */
 
+import PropTypes from 'prop-types';
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 
 import './Footer.style.scss';
 
 export class Footer extends React.Component {
+    static propTypes = {
+        t: PropTypes.func.isRequired
+    }
+
     render() {
+        const { t } = this.props;
+
         return (
             <section className="Footer">
                 <img
@@ -51,32 +59,32 @@ export class Footer extends React.Component {
                                     <li className="List-Light-Item">About us</li>
                                 </ul>
                             </div>
-                            <div className="Footer-Block-Item col-sm-3">
+                            <div className="Footer-Block-Item col-sm-2">
                                 <h3>Contact info</h3>
                                 <ul className="List List-Elementor">
                                     <li className="List-Elementor-Item">
                                         <a
-                                          href="#"
+                                          href={ `tel:${ t('address.phone') }` }
                                           className="Footer-Link"
                                         >
                                             <span>
                                                 <i className="fas fa-phone-alt" />
                                             </span>
                                             <span className="Elementor-Text">
-                                                +371 20000000
+                                                { t('address.phone') }
                                             </span>
                                         </a>
                                     </li>
                                     <li className="List-Elementor-Item">
                                         <a
-                                          href="#"
+                                          href={ `mailto:${ t('address.email') }` }
                                           className="Footer-Link"
                                         >
                                             <span>
                                                 <i className="far fa-envelope" />
                                             </span>
                                             <span className="Elementor-Text">
-                                                office@trinat.lv
+                                                { t('address.email') }
                                             </span>
                                         </a>
                                     </li>
@@ -89,13 +97,13 @@ export class Footer extends React.Component {
                                                 <i className="fas fa-link" />
                                             </span>
                                             <span className="Elementor-Text">
-                                                https://trinat.lv/
+                                                { t('address.web') }
                                             </span>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
-                            <div className="Footer-Block-Item col-sm-2">
+                            <div className="Footer-Block-Item col-sm-3">
                                 <h3>Location</h3>
                                 <ul className="List List-Elementor">
                                     <li className="List-Elementor-Item">
@@ -107,8 +115,7 @@ export class Footer extends React.Component {
                                                 <i className="fas fa-map-marker-alt" />
                                             </span>
                                             <span className="Elementor-Text">
-                                                Kurzemes pr. 92a, Imanta,
-                                                Riga, Latvia
+                                                { t('address.line-full') }
                                             </span>
                                         </a>
                                     </li>
@@ -122,7 +129,7 @@ export class Footer extends React.Component {
                         <div className="row">
                             <div className="col-sm-6">
                                 <span className="Copyright-Notice">
-                                    Autortiesības 2021 © Atsauce Uz TRINAT.LV Ir Obligāta
+                                    { t('copyright') }
                                 </span>
                             </div>
                             <div className="col-sm-6">
@@ -142,4 +149,4 @@ export class Footer extends React.Component {
     }
 }
 
-export default Footer;
+export default withTranslation()(Footer);
