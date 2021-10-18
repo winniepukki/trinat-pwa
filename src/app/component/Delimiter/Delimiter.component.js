@@ -19,11 +19,13 @@ export class Delimiter extends React.Component {
     static propTypes = {
         headline: PropTypes.string.isRequired,
         subtitle: PropTypes.string.isRequired,
-        positionDefault: PropTypes.bool
+        positionDefault: PropTypes.bool,
+        imgIndex: PropTypes.number
     }
 
     static defaultProps = {
-        positionDefault: true
+        positionDefault: true,
+        imgIndex: 1
     }
 
     getAccuratePosition() {
@@ -39,7 +41,8 @@ export class Delimiter extends React.Component {
     render() {
         const {
             headline = '',
-            subtitle = ''
+            subtitle = '',
+            imgIndex
         } = this.props;
 
         const accuratePosition = this.getAccuratePosition();
@@ -49,9 +52,7 @@ export class Delimiter extends React.Component {
               className="Delimiter"
             >
                 <div className="Delimiter-Content">
-                    <h2
-                      className="Delimiter-Title"
-                    >
+                    <h2 className="Delimiter-Title">
                         <p className="Subtitle">
                             { subtitle }
                         </p>
@@ -63,12 +64,12 @@ export class Delimiter extends React.Component {
                 <img
                   className={ `Elementor Elementor-${accuratePosition}` }
                   src="/assets/img/icons/elementor.svg"
-                  alt=""
+                  alt="Section delimiter boundary"
                 />
                 <img
                   className="Delimiter-Image"
-                  src="/assets/img/section/section-delimiter-1.jpg"
-                  alt=""
+                  src={ `/assets/img/section/section-delimiter-${imgIndex}.jpg` }
+                  alt="Section delimiter background"
                 />
             </section>
         );

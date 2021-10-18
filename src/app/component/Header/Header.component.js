@@ -58,15 +58,24 @@ export class Header extends React.Component {
                             </a>
                         </div>
                         <div className="Header-Social col-sm-5">
-                            <a className="Header-Social-Link" href="https://www.facebook.com/3nataly">
+                            <a
+                              className="Header-Social-Link"
+                              href="https://www.facebook.com/3nataly"
+                              aria-label="External link to Facebook page"
+                            >
                                 <i className="fab fa-facebook" />
                             </a>
-                            <a className="Header-Social-Link" href="https://www.instagram.com/siatrinat/">
+                            <a
+                              className="Header-Social-Link"
+                              href="https://www.instagram.com/siatrinat/"
+                              aria-label="External link to Instagram page"
+                            >
                                 <i className="fab fa-instagram" />
                             </a>
                             <button
                               className="Button Button-Language-Switcher Button-Light"
                               onClick={ handleOpenState }
+                              aria-label="Open language switcher"
                             >
                                 <i className="fas fa-chevron-down" />
                                 <span className="Current-Language">{ language }</span>

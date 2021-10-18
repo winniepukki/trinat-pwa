@@ -43,12 +43,12 @@ export class Hero extends React.Component {
                 <img
                   className="Elementor Elementor-Bottom"
                   src="/assets/img/icons/elementor.svg"
-                  alt=""
+                  alt="Hero section end boundary"
                 />
                 <img
                   className="Hero-Image"
                   src="/assets/img/section/hero.jpg"
-                  alt=""
+                  alt="Hero section background"
                 />
             </section>
         );

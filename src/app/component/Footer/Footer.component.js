@@ -18,13 +18,14 @@ export class Footer extends React.Component {
 
     render() {
         const { t } = this.props;
+        const year = new Date().getFullYear();
 
         return (
             <section className="Footer">
                 <img
                   className="Elementor Elementor-Top"
                   src="/assets/img/icons/elementor.svg"
-                  alt=""
+                  alt="Footer section start boundary"
                 />
                 <div className="Footer-Block">
                     <div className="container">
@@ -108,7 +109,7 @@ export class Footer extends React.Component {
                                 <ul className="List List-Elementor">
                                     <li className="List-Elementor-Item">
                                         <a
-                                          href="#"
+                                          href="https://goo.gl/maps/2erjPnp65Ksf3DVy5"
                                           className="Footer-Link"
                                         >
                                             <span>
@@ -129,7 +130,7 @@ export class Footer extends React.Component {
                         <div className="row">
                             <div className="col-sm-6">
                                 <span className="Copyright-Notice">
-                                    { t('copyright') }
+                                    { t('copyright', { year }) }
                                 </span>
                             </div>
                             <div className="col-sm-6">

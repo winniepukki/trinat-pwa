@@ -11,25 +11,32 @@ import { withTranslation } from 'react-i18next';
 
 export class Blockquote extends React.Component {
     static propTypes = {
-        t: PropTypes.func.isRequired
+        t: PropTypes.func.isRequired,
+        contentKey: PropTypes.string.isRequired,
+        descriptionKey: PropTypes.string.isRequired,
+        authorKey: PropTypes.string.isRequired
     }
 
     render() {
-        const { t } = this.props;
+        const {
+            t,
+            contentKey = '',
+            descriptionKey = '',
+            authorKey = ''
+        } = this.props;
 
         return (
             <blockquote
               className="Blockquote"
             >
                 <div className="Blockquote-Content">
-                    UNTIL I DISCOVERED COOKING I WAS NEVER
-                    REALLY INTERESTED IN ANYTHING
+                    { t(contentKey) }
                 </div>
                 <div className="Blockquote-Description">
-                    OUR FOUNDER JOHN PHILLIPE
+                    { t(descriptionKey) }
                 </div>
                 <div className="Blockquote-Author">
-                    { t('blockquote.author') }
+                    { t(authorKey) }
                 </div>
             </blockquote>
         );

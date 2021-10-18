@@ -5,4 +5,4 @@
 * @license MIT
 */
 
-export { default } from './Reservation.component';
+export { default } from './Reservation.container';

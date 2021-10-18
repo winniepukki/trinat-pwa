@@ -11,11 +11,11 @@
   "guest_other": "{{count}} viesi",
   "guest-over": "Vairāk par 5",
   "blockquote": {
-    "blockquote-content": "",
-    "description": "",
-    "author": "Aleksandrs Bogackins"
+    "content": "Until i discovered cooking i was never really interested in anything",
+    "description": "our founder john phillipe",
+    "author": "John Phillipe"
   },
-  "copyright": "Autortiesības 2021 © Atsauce Uz TRINAT.LV Ir Obligāta",
+  "copyright": "Autortiesības {{year}} © Atsauce uz TRINAT.LV ir obligāta",
   "trinat": {
     "title": "Trinat",
     "type": "Kafejnīca"

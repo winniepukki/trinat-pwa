@@ -17,7 +17,11 @@ export class AppContents extends React.Component {
               className="AppContents"
             >
                 <Hero />
-                <Blockquote />
+                <Blockquote
+                  contentKey="blockquote.content"
+                  descriptionKey="blockquote.description"
+                  authorKey="blockquote.author"
+                />
             </section>
         );
     }
