@@ -10,6 +10,16 @@ import React from 'react';
 
 import Reservation from './Reservation.component';
 
+import {
+    MIN_INPUT_LENGTH,
+    MAX_INPUT_LENGTH
+} from '@util/Validator/Validator.config';
+import {
+    dateInPast,
+    validateInputLength,
+    validatePhoneNumber
+} from '@util/Validator';
+
 import createReservation from '@query/Reservation.query';
 
 export class ReservationContainer extends React.Component {
@@ -27,30 +37,33 @@ export class ReservationContainer extends React.Component {
         super(props);
 
         this.state = {
+            message: '',
             values: {
                 name: '',
                 surname: '',
                 phone: '',
                 date: '',
                 time: '',
-                guests: 0
+                guests: 1
             }
         };
     }
 
     containerProps() {
         const {
+            message,
             values: {
                 name = '',
                 surname = '',
                 phone = '',
                 date = '',
                 time = '',
-                guests = 0
+                guests = 1
             } = {}
         } = this.state;
 
         return {
+            message,
             values: {
                 name,
                 surname,
@@ -69,6 +82,19 @@ export class ReservationContainer extends React.Component {
         });
     }
 
+    handleFieldReset() {
+        this.setState({
+            values: {
+                name: '',
+                surname: '',
+                phone: '',
+                date: '',
+                time: '',
+                guests: 1
+            }
+        });
+    }
+
     handleSubmit() {
         const {
             values: {
@@ -77,9 +103,40 @@ export class ReservationContainer extends React.Component {
                 phone = '',
                 date = '',
                 time = '',
-                guests = ''
+                guests = 1
             } = {}
         } = this.state;
+
+        if (!validateInputLength(
+            MIN_INPUT_LENGTH,
+            MAX_INPUT_LENGTH,
+            name,
+            surname,
+            date,
+            time
+        )) {
+            this.setState({
+                message: 'Input length!'
+            });
+
+            return;
+        }
+
+        if (!validatePhoneNumber(phone)) {
+            this.setState({
+                message: 'Phone error!'
+            });
+
+            return;
+        }
+
+        if (dateInPast(date)) {
+            this.setState({
+                message: 'Date in past!'
+            });
+
+            return;
+        }
 
         createReservation(
             name,
@@ -87,10 +144,11 @@ export class ReservationContainer extends React.Component {
             phone,
             date,
             time,
-            parseInt(guests, 10)
+            +guests
         )
             .then((response) => {
                 console.log(response);
+                this.handleFieldReset();
             })
             .catch((error) => {
                 console.log(error);

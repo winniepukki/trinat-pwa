@@ -15,6 +15,14 @@
                 margin-top: 20px;
             }
 
+            @include mobile {
+                &:nth-child(2),
+                &:nth-child(3) {
+                    max-width: 50%;
+                    flex: 0 0 50%;
+                }
+            }
+
             @include tablet {
                 &:first-child {
                     flex: 0 0 40%;

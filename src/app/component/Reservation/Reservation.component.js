@@ -151,6 +151,7 @@ export class Reservation extends React.Component {
                               className="Button Button-Reservation Button-Light"
                               aria-label="Submit the reservation form"
                               onClick={ handleSubmit }
+                              disabled={ !name.length || !surname.length || !phone.length || !date.length || !time.length }
                             >
                                 { t('submit') }
                             </button>
