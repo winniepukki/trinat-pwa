@@ -37,6 +37,7 @@ export class ReservationContainer extends React.Component {
         super(props);
 
         this.state = {
+            status: false,
             message: '',
             values: {
                 name: '',
@@ -52,6 +53,7 @@ export class ReservationContainer extends React.Component {
     containerProps() {
         const {
             message,
+            status,
             values: {
                 name = '',
                 surname = '',
@@ -64,6 +66,7 @@ export class ReservationContainer extends React.Component {
 
         return {
             message,
+            status,
             values: {
                 name,
                 surname,
@@ -116,7 +119,7 @@ export class ReservationContainer extends React.Component {
             time
         )) {
             this.setState({
-                message: 'Input length!'
+                message: 'error.length'
             });
 
             return;
@@ -124,7 +127,7 @@ export class ReservationContainer extends React.Component {
 
         if (!validatePhoneNumber(phone)) {
             this.setState({
-                message: 'Phone error!'
+                message: 'error.phone'
             });
 
             return;
@@ -132,7 +135,7 @@ export class ReservationContainer extends React.Component {
 
         if (dateInPast(date)) {
             this.setState({
-                message: 'Date in past!'
+                message: 'error.date'
             });
 
             return;
@@ -146,8 +149,11 @@ export class ReservationContainer extends React.Component {
             time,
             +guests
         )
-            .then((response) => {
-                console.log(response);
+            .then(() => {
+                this.setState({
+                    message: 'reservation-success',
+                    status: true
+                });
                 this.handleFieldReset();
             })
             .catch((error) => {

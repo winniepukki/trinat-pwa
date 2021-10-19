@@ -22,6 +22,8 @@ export class Reservation extends React.Component {
         onClose: PropTypes.func.isRequired,
         handleChange: PropTypes.func.isRequired,
         handleSubmit: PropTypes.func.isRequired,
+        message: PropTypes.string.isRequired,
+        status: PropTypes.bool.isRequired,
         values: ReservationType.isRequired
     }
 
@@ -30,6 +32,7 @@ export class Reservation extends React.Component {
             t,
             open = false,
             onClose,
+            status,
             values: {
                 name = '',
                 surname = '',
@@ -39,12 +42,15 @@ export class Reservation extends React.Component {
                 guests = 0
             } = {},
             handleChange,
-            handleSubmit
+            handleSubmit,
+            message
         } = this.props;
 
         if (!open) {
             return null;
         }
+
+        const reservationClass = status ? 'Success' : 'Error';
 
         return ReactDOM.createPortal(
             <section
@@ -62,6 +68,7 @@ export class Reservation extends React.Component {
                                 { t('reservation') }
                             </p>
                         </h2>
+                        <p className={ `Reservation-Message-${reservationClass}` }>{ t(message) }</p>
                         <div className="Reservation-Group">
                             <label htmlFor="name">
                                 { t('name') }

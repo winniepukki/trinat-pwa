@@ -16,6 +16,11 @@
   "contact": "kontakti",
   "copyright": "Autortiesības {{year}} © Atsauce uz TRINAT.LV ir obligāta",
   "date": "datums",
+  "error": {
+    "length": "Lūdzu aizpildiet visus laukus",
+    "phone": "Lūdzu ievadiet Latvijas mobilo tālruņa numuru",
+    "date": "Nevar rezervēt pagātnē"
+  },
   "footer-text": "Kaut kas nedarbojas tā, kā vajadzētu? Nosūti izstrādātājam e-pastu a.bogackins@gmail.com. Vietnes versija: {{version}}",
   "guest-over": "Vairāk par 5",
   "guest_one": "{{count}} viesis",
@@ -29,6 +34,7 @@
   "phone": "telefons",
   "privacy": "privātums",
   "reservation": "Rezervācija",
+  "reservation-success": "Paldies par rezevāciju. Drīz sazināsimies",
   "resources": "resursi",
   "reviews": "atsauksmes",
   "seats": "viesu skaits",

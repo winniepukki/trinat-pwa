@@ -9,6 +9,16 @@
     background: rgba(0, 0, 0, .97);
     z-index: 9999;
 
+    &-Message {
+        &-Error {
+            color: var(--notification-alert);
+        }
+
+        &-Success {
+            color: var(--notification-success);
+        }
+    }
+
     &-Wrapper {
         height: 100%;
         display: flex;
