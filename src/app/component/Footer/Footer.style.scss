@@ -46,6 +46,15 @@
                     max-width: 60%;
                 }
             }
+
+            .Payment-Image {
+                max-width: 5em;
+                margin-right: 5px;
+
+                @include tablet {
+                    max-width: 3em;
+                }
+            }
         }
     }
 

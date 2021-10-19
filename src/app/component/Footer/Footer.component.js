@@ -41,6 +41,28 @@ export class Footer extends React.Component {
                                 <p className="Simple-Text">
                                     { t('footer-text', { version: CURRENT_VERSION }) }
                                 </p>
+                                <div className="Footer-Block-Item-Payment">
+                                    <img
+                                      className="Payment-Image"
+                                      src="/assets/img/social/apple.svg"
+                                      alt="Apple pay payment option"
+                                    />
+                                    <img
+                                      className="Payment-Image"
+                                      src="/assets/img/social/visa.svg"
+                                      alt="Visa pay payment option"
+                                    />
+                                    <img
+                                      className="Payment-Image"
+                                      src="/assets/img/social/mastercard.svg"
+                                      alt="Mastercard pay payment option"
+                                    />
+                                    <img
+                                      className="Payment-Image"
+                                      src="/assets/img/social/americanexpress.svg"
+                                      alt="AmericanExpress pay payment option"
+                                    />
+                                </div>
                             </div>
                             <div className="Footer-Block-Item col-xs-6 col-sm-2">
                                 <h3>{ t('overview') }</h3>
