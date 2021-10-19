@@ -20,7 +20,8 @@
     "length": "Lūdzu aizpildiet visus laukus",
     "phone": "Lūdzu ievadiet Latvijas mobilo tālruņa numuru",
     "time": "Mūsu darba laiks ir no 11.00 – 22.00",
-    "date": "Nevar rezervēt pagātnē"
+    "date": "Nevar rezervēt pagātnē",
+    "network": "Kaut kas nogājis greizi. Lūdzu rezervējiet pa tālruni!"
   },
   "footer-text": "Kaut kas nedarbojas tā, kā vajadzētu? Nosūti izstrādātājam e-pastu a.bogackins@gmail.com. Vietnes versija: {{version}}",
   "guest-over": "Vairāk par 5",
@@ -29,6 +30,10 @@
   "hero": {
     "text": "Ekskluzīva mājās ēdienu gatavošana kopš 2017. gada. Rezervējiet vietnē vai pa tālruni +371 29740898"
   },
+  "our": "musu",
+  "menu": "menu",
+  "visit": "ciemos",
+  "new": "jaunumi",
   "location": "lokācija",
   "name": "vārds",
   "overview": "pārskats",

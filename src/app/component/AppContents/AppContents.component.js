@@ -5,13 +5,21 @@
 * @license MIT
 */
 
+import PropTypes from 'prop-types';
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 
 import Hero from '@component/Hero';
 import Blockquote from '@component/Blockquote';
+import Delimiter from '@component/Delimiter';
 
 export class AppContents extends React.Component {
+    static propTypes = {
+        t: PropTypes.func.isRequired
+    }
+
     render() {
+        const { t } = this.props;
         return (
             <section
               className="AppContents"
@@ -22,9 +30,19 @@ export class AppContents extends React.Component {
                   descriptionKey="blockquote.description"
                   authorKey="blockquote.author"
                 />
+                <Delimiter
+                  headline={ t('menu') }
+                  subtitle={ t('our') }
+                />
+                <Delimiter
+                  headline={ t('visit') }
+                  subtitle={ t('welcome') }
+                  positionDefault={ false }
+                  imgIndex={ 2 }
+                />
             </section>
         );
     }
 }
 
-export default AppContents;
+export default withTranslation()(AppContents);

@@ -169,8 +169,10 @@ export class ReservationContainer extends React.Component {
                 });
                 this.handleFieldReset();
             })
-            .catch((error) => {
-                console.log(error);
+            .catch(() => {
+                this.setState({
+                    message: 'error.network'
+                });
             });
     }
 
