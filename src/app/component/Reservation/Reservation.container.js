@@ -17,7 +17,7 @@ import {
 import {
     dateInPast,
     validateInputLength,
-    validatePhoneNumber
+    validatePhoneNumber, validateWorkingHours
 } from '@util/Validator';
 
 import createReservation from '@query/Reservation.query';
@@ -141,6 +141,14 @@ export class ReservationContainer extends React.Component {
         if (dateInPast(date)) {
             this.setState({
                 message: 'error.date'
+            });
+
+            return;
+        }
+
+        if (!validateWorkingHours(time)) {
+            this.setState({
+                message: 'error.time'
             });
 
             return;

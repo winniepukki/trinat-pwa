@@ -19,6 +19,7 @@
   "error": {
     "length": "Lūdzu aizpildiet visus laukus",
     "phone": "Lūdzu ievadiet Latvijas mobilo tālruņa numuru",
+    "time": "Mūsu darba laiks ir no 11.00 – 22.00",
     "date": "Nevar rezervēt pagātnē"
   },
   "footer-text": "Kaut kas nedarbojas tā, kā vajadzētu? Nosūti izstrādātājam e-pastu a.bogackins@gmail.com. Vietnes versija: {{version}}",
