@@ -30,7 +30,8 @@ export class ReservationContainer extends React.Component {
 
     containerFunctions = {
         handleChange: this.handleChange.bind(this),
-        handleSubmit: this.handleSubmit.bind(this)
+        handleSubmit: this.handleSubmit.bind(this),
+        handleInsideElementClick: this.handleInsideElementClick.bind(this)
     }
 
     constructor(props) {
@@ -76,6 +77,10 @@ export class ReservationContainer extends React.Component {
                 guests
             }
         };
+    }
+
+    handleInsideElementClick(e) {
+        e.stopPropagation();
     }
 
     handleChange(e) {

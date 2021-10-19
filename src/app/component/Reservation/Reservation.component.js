@@ -22,6 +22,7 @@ export class Reservation extends React.Component {
         onClose: PropTypes.func.isRequired,
         handleChange: PropTypes.func.isRequired,
         handleSubmit: PropTypes.func.isRequired,
+        handleInsideElementClick: PropTypes.func.isRequired,
         message: PropTypes.string.isRequired,
         status: PropTypes.bool.isRequired,
         values: ReservationType.isRequired
@@ -43,6 +44,7 @@ export class Reservation extends React.Component {
             } = {},
             handleChange,
             handleSubmit,
+            handleInsideElementClick,
             message
         } = this.props;
 
@@ -58,9 +60,11 @@ export class Reservation extends React.Component {
             >
                 <div
                   className="Reservation-Wrapper"
+                  onClick={ onClose }
                 >
                     <div
                       className="Reservation-Box"
+                      onClick={ handleInsideElementClick }
                     >
                         <h2>
                             <p className="Subtitle">Galdu</p>

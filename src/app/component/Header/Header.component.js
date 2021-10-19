@@ -9,6 +9,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { withTranslation, getI18n } from 'react-i18next';
 
+import RefType from '@type/Ref';
+
 import Language from '@component/Language';
 
 import './Header.style.scss';
@@ -18,10 +20,7 @@ export class Header extends React.Component {
         t: PropTypes.func.isRequired,
         handleOpenState: PropTypes.func.isRequired,
         open: PropTypes.bool.isRequired,
-        headerDetails: PropTypes.oneOfType([
-            PropTypes.func,
-            PropTypes.shape({ current: PropTypes.instanceOf(Element) })
-        ]).isRequired
+        headerDetails: RefType.isRequired
     }
 
     render() {
@@ -35,7 +34,7 @@ export class Header extends React.Component {
         const { language } = getI18n();
 
         return (
-            <section className="Header">
+            <header className="Header">
                 <div className="container">
                     <div className="row">
                         <div
@@ -92,7 +91,7 @@ export class Header extends React.Component {
                         </div>
                     </div>
                 </div>
-            </section>
+            </header>
         );
     }
 }

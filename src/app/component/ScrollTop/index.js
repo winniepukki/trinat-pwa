@@ -5,4 +5,4 @@
 * @license MIT
 */
 
-export { default } from './ScrollTop.component';
+export { default } from './ScrollTop.container';

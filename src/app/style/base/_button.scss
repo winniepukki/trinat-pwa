@@ -66,12 +66,13 @@
         bottom: 10px;
         right: 10px;
         cursor: pointer;
-        transition: color .3s, background-color .3s, opacity .3s;
-        -moz-transition: color .3s, background-color .3s, opacity .3s;
-        -o-transition: color .3s, background-color .3s, opacity .3s;
-        -webkit-transition: color .3s, background-color .3s, opacity .3s;
+        transition: color .3s, background-color .3s, opacity .3s, visibility .3s;
+        -moz-transition: color .3s, background-color .3s, opacity .3s, visibility .3s;
+        -o-transition: color .3s, background-color .3s, opacity .3s, visibility .3s;
+        -webkit-transition: color .3s, background-color .3s, opacity .3s, visibility .3s;
         z-index: 9999;
         opacity: .5;
+        visibility: hidden;
         display: block;
         border-radius: 5px;
         border: 1px solid transparent;

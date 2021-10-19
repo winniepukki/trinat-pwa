@@ -9,6 +9,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 
+import RefType from '@type/Ref';
+
 import Reservation from '@component/Reservation';
 
 import './Menu.style.scss';
@@ -19,10 +21,7 @@ export class Menu extends React.Component {
         handleOpenState: PropTypes.func.isRequired,
         open: PropTypes.bool.isRequired,
         defaultLogo: PropTypes.bool.isRequired,
-        menu: PropTypes.oneOfType([
-            PropTypes.func,
-            PropTypes.shape({ current: PropTypes.instanceOf(Element) })
-        ]).isRequired
+        menu: RefType.isRequired
     }
 
     render() {
