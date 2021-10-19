@@ -9,6 +9,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 
+import CURRENT_VERSION from './Footer.config';
+
 import './Footer.style.scss';
 
 export class Footer extends React.Component {
@@ -37,13 +39,11 @@ export class Footer extends React.Component {
                                   alt="Logo"
                                 />
                                 <p className="Simple-Text">
-                                    Dolor church-key veniam, fap Bushwick mumblecore
-                                    irure Vice consectetur 3 wolf moon
-                                    sapiente literally quinoa.
+                                    { t('footer-text', { version: CURRENT_VERSION }) }
                                 </p>
                             </div>
                             <div className="Footer-Block-Item col-xs-6 col-sm-2">
-                                <h3>Overview</h3>
+                                <h3>{ t('overview') }</h3>
                                 <ul className="List List-Light">
                                   <li className="List-Light-Item">Home</li>
                                   <li className="List-Light-Item">Food menu</li>
@@ -52,7 +52,7 @@ export class Footer extends React.Component {
                                 </ul>
                             </div>
                             <div className="Footer-Block-Item col-xs-6 col-sm-2">
-                                <h3>Resources</h3>
+                                <h3>{ t('resources') }</h3>
                                 <ul className="List List-Light">
                                     <li className="List-Light-Item">Home</li>
                                     <li className="List-Light-Item">Food menu</li>
@@ -61,7 +61,7 @@ export class Footer extends React.Component {
                                 </ul>
                             </div>
                             <div className="Footer-Block-Item col-sm-2">
-                                <h3>Contact info</h3>
+                                <h3>{ t('contact') }</h3>
                                 <ul className="List List-Elementor">
                                     <li className="List-Elementor-Item">
                                         <a
@@ -105,7 +105,7 @@ export class Footer extends React.Component {
                                 </ul>
                             </div>
                             <div className="Footer-Block-Item col-sm-3">
-                                <h3>Location</h3>
+                                <h3>{ t('location') }</h3>
                                 <ul className="List List-Elementor">
                                     <li className="List-Elementor-Item">
                                         <a
@@ -137,9 +137,15 @@ export class Footer extends React.Component {
                                 <ul
                                   className="List List-Footer"
                                 >
-                                  <li className="List-Footer-Item">Our menu</li>
-                                  <li className="List-Footer-Item">Careers</li>
-                                  <li className="List-Footer-Item">Reviews</li>
+                                  <li className="List-Footer-Item">
+                                      <a href="https://bit.ly/3Bequ7s">{ t('privacy') }</a>
+                                  </li>
+                                  <li className="List-Footer-Item">
+                                      <a href="https://www.facebook.com/3nataly/jobs">{ t('careers') }</a>
+                                  </li>
+                                  <li className="List-Footer-Item">
+                                      <a href="https://www.facebook.com/3nataly/reviews/">{ t('reviews') }</a>
+                                  </li>
                                 </ul>
                             </div>
                         </div>

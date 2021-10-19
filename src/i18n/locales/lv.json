@@ -1,40 +1,48 @@
 {
   "address": {
+    "email": "info@trinat.lv",
     "line": "Kurzemes prospekts 92a",
     "line-full": "Kurzemes pr. 92a, Imanta, Riga, Latvia",
     "phone": "29740898",
     "phone-full": "+371 29740898",
-    "email": "info@trinat.lv",
     "web": "https://trinat.lv"
   },
+  "blockquote": {
+    "author": "John Phillipe",
+    "content": "Until i discovered cooking i was never really interested in anything",
+    "description": "our founder john phillipe"
+  },
+  "careers": "vakances",
+  "contact": "kontakti",
+  "copyright": "Autortiesības {{year}} © Atsauce uz TRINAT.LV ir obligāta",
+  "date": "datums",
+  "footer-text": "Kaut kas nedarbojas tā, kā vajadzētu? Nosūti izstrādātājam e-pastu a.bogackins@gmail.com. Vietnes versija: {{version}}",
+  "guest-over": "Vairāk par 5",
   "guest_one": "{{count}} viesis",
   "guest_other": "{{count}} viesi",
-  "guest-over": "Vairāk par 5",
-  "blockquote": {
-    "content": "Until i discovered cooking i was never really interested in anything",
-    "description": "our founder john phillipe",
-    "author": "John Phillipe"
-  },
-  "copyright": "Autortiesības {{year}} © Atsauce uz TRINAT.LV ir obligāta",
-  "trinat": {
-    "title": "Trinat",
-    "type": "Kafejnīca"
-  },
   "hero": {
     "text": "Ekskluzīva mājās ēdienu gatavošana kopš 2017. gada. Rezervējiet vietnē vai pa tālruni +371 29740898"
   },
-  "reservation": "Rezervācija",
+  "location": "lokācija",
   "name": "vārds",
-  "surname": "uzvārds",
-  "submit": "iesniegt",
+  "overview": "pārskats",
   "phone": "telefons",
-  "date": "datums",
-  "time": "laiks",
+  "privacy": "privātums",
+  "reservation": "Rezervācija",
+  "resources": "resursi",
+  "reviews": "atsauksmes",
   "seats": "viesu skaits",
   "story": {
-    "title": "",
     "description": "",
-    "text": ""
+    "text": "",
+    "title": ""
+  },
+  "submit": "iesniegt",
+  "surname": "uzvārds",
+  "time": "laiks",
+  "trinat": {
+    "title": "Trinat",
+    "type": "Kafejnīca"
   },
   "welcome": "Laipni lugti"
 }

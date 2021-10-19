@@ -1,41 +1,49 @@
 {
   "address": {
+    "email": "info@trinat.lv",
     "line": "Kurzemes prospekts 92a",
     "line-full": "Kurzemes pr. 92a, Imanta, Riga, Latvia",
     "phone": "29740898",
     "phone-full": "+371 29740898",
-    "email": "info@trinat.lv",
     "web": "https://trinat.lv"
   },
-  "guest_one": "{{count}} гость",
+  "blockquote": {
+    "author": "Александр Богачкин",
+    "content": "",
+    "description": ""
+  },
+  "careers": "вакансии",
+  "contact": "контакты",
+  "copyright": "Авторское право {{year}} © Все Права Защищены",
+  "date": "число",
+  "footer-text": "Что-то не работает? Напиши на a.bogackins@gmail.com. Версия сайта: {{version}}",
+  "guest-over": "Больше 5",
   "guest_few": "{{count}} гостя",
   "guest_many": "{{count}} гостей",
-  "guest-over": "Больше 5",
-  "blockquote": {
-    "blockquote-content": "",
-    "description": "",
-    "author": "Александр Богачкин"
-  },
-  "copyright": "Авторское право {{year}} © Все Права Защищены",
-  "trinat": {
-    "title": "Trinat",
-    "type": "Кафе"
-  },
+  "guest_one": "{{count}} гость",
   "hero": {
     "text": "Готовим эксклюзивную домашнюю еду с 2017. Бронируйте онлайн или по телефону +371 29740898"
   },
-  "reservation": "Резервация",
+  "location": "адрес",
   "name": "имя",
-  "surname": "фамилия",
-  "submit": "отправить",
+  "overview": "обзор",
   "phone": "номер телефона",
-  "date": "число",
-  "time": "время",
+  "privacy": "приватность",
+  "reservation": "Резервация",
+  "resources": "ресурсы",
+  "reviews": "отзывы",
   "seats": "гости",
   "story": {
-    "title": "",
     "description": "",
-    "text": ""
+    "text": "",
+    "title": ""
+  },
+  "submit": "отправить",
+  "surname": "фамилия",
+  "time": "время",
+  "trinat": {
+    "title": "Trinat",
+    "type": "Кафе"
   },
   "welcome": "Warm welcome"
 }
