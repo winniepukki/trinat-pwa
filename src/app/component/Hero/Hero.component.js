@@ -27,7 +27,7 @@ export class Hero extends React.Component {
                         <div className="row">
                             <div className="col-sm-6">
                                 <h2>
-                                    <p className="Subtitle">Warm Welcome!</p>
+                                    <p className="Subtitle">{ t('welcome') }</p>
                                     <p className="Headline">
                                         { t('trinat.title') }
                                         <strong>{ t('trinat.type') }</strong>
