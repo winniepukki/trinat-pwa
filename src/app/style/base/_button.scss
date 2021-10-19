@@ -52,8 +52,9 @@
 
         &:hover {
             transition: all 300ms;
-            background: var(--primary-base-color);
-            border-color: var(--primary-base-color);
+            color: var(--bs-white) !important;
+            background: var(--primary-base-color) !important;
+            border-color: var(--primary-base-color) !important;
         }
     }
 

@@ -17,14 +17,19 @@ export class Header extends React.Component {
     static propTypes = {
         t: PropTypes.func.isRequired,
         handleOpenState: PropTypes.func.isRequired,
-        open: PropTypes.bool.isRequired
+        open: PropTypes.bool.isRequired,
+        headerDetails: PropTypes.oneOfType([
+            PropTypes.func,
+            PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+        ]).isRequired
     }
 
     render() {
         const {
             t,
             open,
-            handleOpenState
+            handleOpenState,
+            headerDetails
         } = this.props;
 
         const { language } = getI18n();
@@ -33,7 +38,10 @@ export class Header extends React.Component {
             <section className="Header">
                 <div className="container">
                     <div className="row">
-                        <div className="Header-Details col-sm-7">
+                        <div
+                          className="Header-Details col-sm-7"
+                          ref={ headerDetails }
+                        >
                             <a
                               href="https://www.waze.com/en/live-map/directions/latvia/riga/trinat?place=ChIJuR9jcTbF7kYREaS40W3ryts"
                               className="Header-Details-Link"

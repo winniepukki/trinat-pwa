@@ -17,26 +17,36 @@ export class Menu extends React.Component {
     static propTypes = {
         t: PropTypes.func.isRequired,
         handleOpenState: PropTypes.func.isRequired,
-        open: PropTypes.bool.isRequired
+        open: PropTypes.bool.isRequired,
+        defaultLogo: PropTypes.bool.isRequired,
+        menu: PropTypes.oneOfType([
+            PropTypes.func,
+            PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+        ]).isRequired
     }
 
     render() {
         const {
             t,
             open,
-            handleOpenState
+            handleOpenState,
+            defaultLogo,
+            menu
         } = this.props;
+
+        const logoString = defaultLogo ? '' : '-dark';
 
         return (
             <section
               className="Menu"
+              ref={ menu }
             >
                 <div className="container">
                     <div className="row">
                         <div className="Menu-Logo col">
                             <img
                               className="Logo"
-                              src="/assets/img/logo/logo.png"
+                              src={ `/assets/img/logo/logo${logoString}.png` }
                               alt="Logo"
                             />
                         </div>

@@ -5,7 +5,7 @@
 * @license MIT
 */
 
-import React from 'react';
+import React, { createRef } from 'react';
 import Header from './Header.component';
 
 export class HeaderContainer extends React.Component {
@@ -16,16 +16,36 @@ export class HeaderContainer extends React.Component {
     constructor(props) {
         super(props);
 
+        this.headerDetailsRef = createRef();
         this.state = {
             open: false
         };
+
+        this.handleScroll = this.handleScroll.bind(this);
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
     }
 
     containerProps() {
         const { open } = this.state;
         return {
-            open
+            open,
+            headerDetails: this.headerDetailsRef
         };
+    }
+
+    handleScroll() {
+        const currentPos = window.pageYOffset;
+        const headerNode = this.headerDetailsRef.current;
+        const MAX_WIDTH = 500;
+
+        if (currentPos > 100 && document.body.offsetWidth <= MAX_WIDTH) {
+            headerNode.classList.add('Header-Short');
+        } else {
+            headerNode.classList.remove('Header-Short');
+        }
     }
 
     handleOpenState() {

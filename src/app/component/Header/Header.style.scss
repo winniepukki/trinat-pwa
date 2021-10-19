@@ -11,6 +11,11 @@
     color: var(--bs-white);
     display: flex;
     align-items: center;
+    transition: all 500ms;
+
+    &-Short {
+        display: none;
+    }
 
     @include media(mobile, tablet) {
         padding: 5px 0;

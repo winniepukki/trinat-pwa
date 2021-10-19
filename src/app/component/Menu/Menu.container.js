@@ -5,7 +5,7 @@
  * @license MIT
  */
 
-import React from 'react';
+import React, { createRef } from 'react';
 
 import Menu from './Menu.component';
 
@@ -17,15 +17,25 @@ export class MenuContainer extends React.Component {
     constructor(props) {
         super(props);
 
+        this.menuRef = createRef();
         this.state = {
-            open: false
+            open: false,
+            defaultLogo: true
         };
+
+        this.handleScroll = this.handleScroll.bind(this);
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
     }
 
     containerProps() {
-        const { open } = this.state;
+        const { open, defaultLogo } = this.state;
         return {
-            open
+            open,
+            defaultLogo,
+            menu: this.menuRef
         };
     }
 
@@ -33,6 +43,23 @@ export class MenuContainer extends React.Component {
         this.setState(({ open }) => ({
             open: !open
         }));
+    }
+
+    handleScroll() {
+        const currentPos = window.pageYOffset;
+        const menuNode = this.menuRef.current;
+
+        if (currentPos > 100) {
+            menuNode.classList.add('Menu-Light');
+            this.setState({
+                defaultLogo: false
+            });
+        } else {
+            menuNode.classList.remove('Menu-Light');
+            this.setState({
+                defaultLogo: true
+            });
+        }
     }
 
     render() {

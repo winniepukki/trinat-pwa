@@ -2,9 +2,20 @@
     position: relative;
     left: 0;
     width: 100%;
-    // background: rgba(255, 255, 255, .8);
     box-shadow: 3px 3px 15px rgba(var(--black), .2);
     padding: 30px 0 30px 0;
+    transition: all 500ms;
+
+    &-Light {
+        padding: 0 0;
+        transition: all 500ms;
+        background: rgba(255, 255, 255, .8);
+
+        .Menu-Links .Button {
+            color: var(--bs-black);
+            border-color: var(--bs-black);
+        }
+    }
 
     &-Logo,
     &-Links {
