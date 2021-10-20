@@ -13,10 +13,10 @@ export const ProductType = PropTypes.shape({
         title: PropTypes.string,
         priority: PropTypes.number
     }),
-    title: PropTypes.string,
-    description: PropTypes.string,
-    price: PropTypes.number,
-    image_url: PropTypes.string
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    promotion: PropTypes.string
 });
 
 export default ProductType;

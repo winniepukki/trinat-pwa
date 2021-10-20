@@ -27,3 +27,41 @@
         background-color: hsl(200, 20%, 95%);
     }
 }
+
+@keyframes text-rotate {
+    0% {
+        transform: rotateX(45deg) translateY(-30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotateX(0) translateY(0);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes text-rotate {
+    0% {
+        transform: rotateX(45deg) translateY(-30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotateX(0) translateY(0);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes text-rotate {
+    0% {
+        transform: rotateX(45deg) translateY(-30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotateX(0) translateY(0);
+        opacity: 1;
+    }
+}
+
+@include fadeIn-animation-generation;

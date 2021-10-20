@@ -12,6 +12,7 @@ import { withTranslation } from 'react-i18next';
 import Hero from '@component/Hero';
 import Blockquote from '@component/Blockquote';
 import Delimiter from '@component/Delimiter';
+import Products from '@component/Products';
 
 export class AppContents extends React.Component {
     static propTypes = {
@@ -34,6 +35,7 @@ export class AppContents extends React.Component {
                   headline={ t('menu') }
                   subtitle={ t('our') }
                 />
+                <Products />
                 <Delimiter
                   headline={ t('visit') }
                   subtitle={ t('welcome') }

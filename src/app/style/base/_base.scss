@@ -24,18 +24,21 @@ blockquote {
         font-weight: 500;
         font-size: 30px;
         text-transform: uppercase;
+        opacity: 0;
     }
 
     .Blockquote-Description {
         letter-spacing: .3em;
         font-size: .7em;
         text-transform: uppercase;
+        opacity: 0;
     }
 
     .Blockquote-Author {
         font-size: 40px;
         font-weight: 600;
         font-family: var(--secondary-font-family);
+        opacity: 0;
     }
 }
 
@@ -107,6 +110,12 @@ h3 {
     padding: 0;
     margin: 0;
     line-height: 1;
+}
+
+h4 {
+    text-align: center;
+    font-weight: 800;
+    font-size: 2.6em;
 }
 
 .Main-Section {

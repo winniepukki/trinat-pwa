@@ -1,0 +1,12 @@
+@import '../../style/abstract/media';
+
+.Products {
+    &-Special {
+        width: 60%;
+        margin: 0 auto;
+
+        @include media(tablet, mobile) {
+            width: 100%;
+        }
+    }
+}
