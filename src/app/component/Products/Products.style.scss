@@ -1,6 +1,13 @@
 @import '../../style/abstract/media';
 
 .Products {
+    @include tablet {
+        .container {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
     &-Special {
         width: 60%;
         margin: 0 auto;
@@ -8,5 +15,10 @@
         @include media(tablet, mobile) {
             width: 100%;
         }
+    }
+
+    &-Categories {
+        display: flex;
+        flex-wrap: wrap;
     }
 }

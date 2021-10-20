@@ -1,0 +1,17 @@
+@import '../../style/abstract/media';
+
+.Category {
+    width: 50%;
+    flex: 50%;
+
+    @include mobile {
+        width: 100%;
+        flex: 100%;
+    }
+
+    &-Title {
+        text-transform: capitalize;
+        font-size: 36px;
+        font-weight: 900;
+    }
+}

@@ -30,7 +30,7 @@ export class ProductsContainer extends React.Component {
     }
 
     containerProps() {
-        const { products } = this.state;
+        const { products = [] } = this.state;
 
         return {
             products

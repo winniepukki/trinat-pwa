@@ -13,6 +13,17 @@
     "description": "Amerikāņu pavārmākslas skolotājs"
   },
   "careers": "vakances",
+  "category": {
+    "hot_dishes": "karstie ēdieni",
+    "desserts": "deserti",
+    "breakfast": "brokasti",
+    "snacks": "uzkodas",
+    "sides": "piedavas",
+    "salads": "salāti",
+    "soups": "zupas",
+    "special": "speciālie piedāvājumi",
+    "kids": "bērniem"
+  },
   "contact": "kontakti",
   "copyright": "Autortiesības {{year}} © Atsauce uz TRINAT.LV ir obligāta",
   "date": "datums",
