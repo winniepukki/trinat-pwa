@@ -7,6 +7,7 @@
     "phone-full": "+371 29740898",
     "web": "https://trinat.lv"
   },
+  "allergy-notice": "* – satur alergēni / majonēze (olas, sinepes)",
   "blockquote": {
     "author": "Julia Carolyn Child",
     "content": "Līdz es atklāju kulināriju es tiku nekad patiešām ieinteresēts jebkur",
@@ -50,6 +51,8 @@
   "overview": "pārskats",
   "phone": "telefons",
   "privacy": "privātums",
+  "recommended": "Šefpavāra izvēle",
+  "recent": "Jaunums",
   "reservation": "Rezervācija",
   "reservation-success": "Paldies par rezevāciju. Drīz sazināsimies",
   "resources": "resursi",

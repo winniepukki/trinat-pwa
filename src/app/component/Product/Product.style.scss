@@ -41,7 +41,7 @@
 
         @include mobile {
             width: unset !important;
-            white-space: unset !important;
+            white-space: break-spaces;
         }
     }
 

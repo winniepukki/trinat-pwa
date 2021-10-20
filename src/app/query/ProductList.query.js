@@ -17,6 +17,8 @@ const query = `query {
         image_url
         price
         language
+        isRecommended
+        isRecent
     }
 }
 `;

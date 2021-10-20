@@ -7,6 +7,7 @@
     "phone-full": "+371 29740898",
     "web": "https://trinat.lv"
   },
+  "allergy-notice": "* – содержит аллергены / майонез (яйца, горчица)",
   "blockquote": {
     "author": "Julia Carolyn Child",
     "content": "Пока я не открыла для себя кулинарию, меня ничто особо не интересовало",
@@ -51,6 +52,8 @@
   "overview": "обзор",
   "phone": "номер телефона",
   "privacy": "приватность",
+  "recommended": "Выбор шефа",
+  "recent": "Новинка",
   "reservation": "Резервация",
   "reservation-success": "Спасибо за резервацию! Мы скоро с вами свяжемся!",
   "resources": "ресурсы",

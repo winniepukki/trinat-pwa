@@ -16,7 +16,8 @@ export const ProductType = PropTypes.shape({
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    promotion: PropTypes.string
+    isRecommended: PropTypes.bool,
+    isRecent: PropTypes.bool
 });
 
 export default ProductType;
