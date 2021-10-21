@@ -15,6 +15,7 @@ import { SPECIAL } from './Products.config';
 
 import Category from '@component/Category';
 import Product from '@component/Product';
+import Skeleton from '@component/Skeleton';
 
 import './Products.style.scss';
 
@@ -47,6 +48,18 @@ export class Products extends React.Component {
                 language: lang
             } = {}
         } = this.props;
+
+        if (!this.getProductList().length) {
+            return (
+              <section
+                className="Skeleton-Grid"
+              >
+                  <Skeleton />
+                  <Skeleton />
+                  <Skeleton />
+              </section>
+            );
+        }
 
         return this.getProductList().map((product) => {
             const {
@@ -110,11 +123,11 @@ export class Products extends React.Component {
             >
                 <div className="container">
                     <h4>{ t('special') }</h4>
+                    <p className="custom-tac">{ t('allergy-notice') }</p>
+
                     <div className="Products-Special">
                         { this.renderSpecialProducts() }
                     </div>
-
-                    <p className="custom-tac">{ t('allergy-notice') }</p>
 
                     <div className="Products-Categories">
                         { this.renderProductsWithCategories() }

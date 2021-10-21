@@ -1,19 +1,12 @@
 @import '../../style/abstract/media';
 
 .Products {
+    overflow-x: hidden;
+
     @include tablet {
         .container {
             width: 100%;
             max-width: 100%;
-        }
-    }
-
-    &-Special {
-        width: 60%;
-        margin: 0 auto;
-
-        @include media(tablet, mobile) {
-            width: 100%;
         }
     }
 

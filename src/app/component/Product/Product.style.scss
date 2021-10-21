@@ -39,8 +39,9 @@
         white-space: nowrap;
         padding-right: 5px;
 
-        @include mobile {
-            width: unset !important;
+        @include media(mobile, tablet) {
+            display: flex !important;
+            width: 100% !important;
             white-space: break-spaces;
         }
     }
