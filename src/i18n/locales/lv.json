@@ -26,8 +26,12 @@
     "kids": "bērniem"
   },
   "contact": "kontakti",
+  "covid": "covid-19",
+  "certificate": "Sertifikāts",
   "copyright": "Autortiesības {{year}} © Atsauce uz TRINAT.LV ir obligāta",
   "date": "datums",
+  "developer": "izstrādātājs",
+  "gallery": "galerija",
   "error": {
     "length": "Lūdzu aizpildiet visus laukus",
     "phone": "Lūdzu ievadiet Latvijas mobilo tālruņa numuru",

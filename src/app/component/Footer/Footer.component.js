@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /**
 * SIA Trinat restaurant project
 * Copyright © winniepukki. All rights reserved.
@@ -67,19 +68,67 @@ export class Footer extends React.Component {
                             <div className="Footer-Block-Item col-xs-6 col-sm-2">
                                 <h3>{ t('overview') }</h3>
                                 <ul className="List List-Light">
-                                  <li className="List-Light-Item">Home</li>
-                                  <li className="List-Light-Item">Food menu</li>
-                                  <li className="List-Light-Item">Online delivery</li>
-                                  <li className="List-Light-Item">About us</li>
+                                    <li className="List-Light-Item Custom-TTC">
+                                        <a
+                                          href="https://www.facebook.com/3nataly/reviews/"
+                                          aria-label="External link to reviews"
+                                        >
+                                            { t('reviews') }
+                                        </a>
+                                    </li>
+                                    <li className="List-Light-Item Custom-TTC">
+                                        <a
+                                          href="https://www.facebook.com/3nataly/jobs"
+                                          aria-label="External link to careers"
+                                        >
+                                            { t('careers') }
+                                        </a>
+                                    </li>
+                                    <li className="List-Light-Item Custom-TTC">
+                                        <a
+                                          href="https://github.com/winniepukki"
+                                          aria-label="External link to project developer"
+                                        >
+                                            { t('developer') }
+                                        </a>
+                                    </li>
+                                    <li className="List-Light-Item Custom-TTC">
+                                        <a
+                                          href="https://www.instagram.com/siatrinat/"
+                                          aria-label="External link to gallery"
+                                        >
+                                            { t('gallery') }
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                             <div className="Footer-Block-Item col-xs-6 col-sm-2">
                                 <h3>{ t('resources') }</h3>
                                 <ul className="List List-Light">
-                                    <li className="List-Light-Item">Home</li>
-                                    <li className="List-Light-Item">Food menu</li>
-                                    <li className="List-Light-Item">Online delivery</li>
-                                    <li className="List-Light-Item">About us</li>
+                                    <li className="List-Light-Item Custom-TTC">
+                                        <a
+                                          href="https://covid19.gov.lv/"
+                                          aria-label="External link to COVID-19 governmental advice"
+                                        >
+                                            { t('covid') }
+                                        </a>
+                                    </li>
+                                    <li className="List-Light-Item Custom-TTC">
+                                        <a
+                                          href="https://covid19sertifikats.lv/"
+                                          aria-label="External link to COVID-19 certificate"
+                                        >
+                                            { t('certificate') }
+                                        </a>
+                                    </li>
+                                    <li className="List-Light-Item Custom-TTC">
+                                        <a
+                                          href="https://bit.ly/3Bequ7s"
+                                          aria-label="External link to Privacy Policy"
+                                        >
+                                            { t('privacy') }
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                             <div className="Footer-Block-Item col-sm-2">
@@ -89,6 +138,7 @@ export class Footer extends React.Component {
                                         <a
                                           href={ `tel:${ t('address.phone') }` }
                                           className="Footer-Link"
+                                          aria-label="Call us by phone"
                                         >
                                             <span>
                                                 <i className="fas fa-phone-alt" />
@@ -102,6 +152,7 @@ export class Footer extends React.Component {
                                         <a
                                           href={ `mailto:${ t('address.email') }` }
                                           className="Footer-Link"
+                                          aria-label="Write us an email"
                                         >
                                             <span>
                                                 <i className="far fa-envelope" />
@@ -115,6 +166,7 @@ export class Footer extends React.Component {
                                         <a
                                           href="#"
                                           className="Footer-Link"
+                                          aria-label="Our webpage address"
                                         >
                                             <span>
                                                 <i className="fas fa-link" />
@@ -133,6 +185,7 @@ export class Footer extends React.Component {
                                         <a
                                           href="https://goo.gl/maps/2erjPnp65Ksf3DVy5"
                                           className="Footer-Link"
+                                          aria-label="Our venue address"
                                         >
                                             <span>
                                                 <i className="fas fa-map-marker-alt" />
@@ -160,13 +213,28 @@ export class Footer extends React.Component {
                                   className="List List-Footer"
                                 >
                                   <li className="List-Footer-Item">
-                                      <a href="https://bit.ly/3Bequ7s">{ t('privacy') }</a>
+                                      <a
+                                        href="https://bit.ly/3Bequ7s"
+                                        aria-label="External link to Privacy Policy"
+                                      >
+                                          { t('privacy') }
+                                      </a>
                                   </li>
                                   <li className="List-Footer-Item">
-                                      <a href="https://www.facebook.com/3nataly/jobs">{ t('careers') }</a>
+                                      <a
+                                        href="https://www.facebook.com/3nataly/jobs"
+                                        aria-label="External link to careers"
+                                      >
+                                          { t('careers') }
+                                      </a>
                                   </li>
                                   <li className="List-Footer-Item">
-                                      <a href="https://www.facebook.com/3nataly/reviews/">{ t('reviews') }</a>
+                                      <a
+                                        href="https://www.facebook.com/3nataly/reviews/"
+                                        aria-label="External link to reviews"
+                                      >
+                                        { t('reviews') }
+                                      </a>
                                   </li>
                                 </ul>
                             </div>

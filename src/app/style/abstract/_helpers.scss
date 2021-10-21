@@ -157,6 +157,10 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+.Custom-TTC {
+    text-transform: capitalize;
+}
+
 .Text-Dark {
     color: var(--bs-black);
 }
