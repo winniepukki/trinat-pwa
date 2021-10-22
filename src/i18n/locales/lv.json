@@ -15,48 +15,47 @@
   },
   "careers": "vakances",
   "category": {
-    "hot_dishes": "karstie ēdieni",
-    "desserts": "deserti",
     "breakfast": "brokasti",
-    "snacks": "uzkodas",
-    "sides": "piedavas",
+    "desserts": "deserti",
+    "hot_dishes": "karstie ēdieni",
+    "kids": "bērniem",
     "salads": "salāti",
+    "sides": "piedavas",
+    "snacks": "uzkodas",
     "soups": "zupas",
-    "special": "speciālie piedāvājumi",
-    "kids": "bērniem"
+    "special": "speciālie piedāvājumi"
   },
-  "contact": "kontakti",
-  "covid": "covid-19",
   "certificate": "Sertifikāts",
+  "contact": "kontakti",
   "copyright": "Autortiesības {{year}} © Atsauce uz TRINAT.LV ir obligāta",
+  "covid": "covid-19",
   "date": "datums",
   "developer": "izstrādātājs",
-  "gallery": "galerija",
   "error": {
-    "length": "Lūdzu aizpildiet visus laukus",
-    "phone": "Lūdzu ievadiet Latvijas mobilo tālruņa numuru",
-    "time": "Mūsu darba laiks ir no 11.00 – 22.00",
     "date": "Nevar rezervēt pagātnē",
-    "network": "Kaut kas nogājis greizi. Lūdzu rezervējiet pa tālruni!"
+    "length": "Lūdzu aizpildiet visus laukus",
+    "network": "Kaut kas nogājis greizi. Lūdzu rezervējiet pa tālruni!",
+    "phone": "Lūdzu ievadiet Latvijas mobilo tālruņa numuru",
+    "time": "Mūsu darba laiks ir no 11.00 – 22.00"
   },
   "footer-text": "Kaut kas nedarbojas tā, kā vajadzētu? Nosūti izstrādātājam e-pastu a.bogackins@gmail.com. Vietnes versija: {{version}}",
+  "gallery": "galerija",
   "guest-over": "Vairāk par 5",
   "guest_one": "{{count}} viesis",
   "guest_other": "{{count}} viesi",
   "hero": {
-    "text": "Ekskluzīva mājās ēdienu gatavošana kopš 2017. gada. Rezervējiet vietnē vai pa tālruni +371 29740898"
+    "text": "Ekskluzīva mājās ēdienu gatavošana kopš 2017. gada. Rezervējiet vietnē vai pa tālruni 29740898"
   },
-  "our": "musu",
-  "menu": "menu",
-  "visit": "ciemos",
-  "new": "jaunumi",
   "location": "lokācija",
+  "menu": "menu",
   "name": "vārds",
+  "new": "jaunumi",
+  "our": "musu",
   "overview": "pārskats",
   "phone": "telefons",
   "privacy": "privātums",
-  "recommended": "Šefpavāra izvēle",
   "recent": "Jaunums",
+  "recommended": "Šefpavāra izvēle",
   "reservation": "Rezervācija",
   "reservation-success": "Paldies par rezevāciju. Drīz sazināsimies",
   "resources": "resursi",
@@ -75,5 +74,6 @@
     "title": "Trinat",
     "type": "Kafejnīca"
   },
+  "visit": "ciemos",
   "welcome": "Laipni lugti"
 }

@@ -1,13 +1,53 @@
+@import '../../style/abstract/media';
+
 .Section {
+    &-Item:nth-child(1) {
+        width: 70vw;
+
+        @include mobile {
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+
+    &-Item:nth-child(2) {
+        position: relative;
+        width: 30vw;
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    .container {
+        display: flex;
+
+        @include tablet {
+            max-width: 100%;
+        }
+    }
+
     &-Contents {
+        position: absolute;
         box-shadow: 0 2px 60px 0 rgb(0 0 0 / 10%);
-        margin: 120px 0 0 0;
+        // margin: 120px 0 0 0;
         padding: 60px 60px 65px 60px;
         border-radius: 5px 5px 5px 5px;
-
+        background: var(--bs-white);
+        width: 500px;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition-duration: 1000ms;
+        transition-timing-function: cubic-bezier(.23, 1, .32, 1);
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @include mobile {
+            position: relative;
+            width: 100%;
+        }
 
         h2 {
             line-height: 1;
@@ -36,6 +76,11 @@
             max-width: 300px;
             border-radius: 1em;
             margin-right: 1em;
+
+            @include mobile {
+                width: 50%;
+                max-width: 50%;
+            }
         }
     }
 }

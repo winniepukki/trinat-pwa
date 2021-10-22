@@ -7,12 +7,17 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withTranslation } from 'react-i18next';
+
+import RefType from '@type/Ref';
 
 import './Section.style.scss';
 
 export class Section extends React.Component {
     static propTypes = {
-        gallery: PropTypes.arrayOf(PropTypes.string)
+        t: PropTypes.func.isRequired,
+        gallery: PropTypes.arrayOf(PropTypes.string),
+        contentRef: RefType.isRequired
     };
 
     static defaultProps = {
@@ -40,12 +45,18 @@ export class Section extends React.Component {
     }
 
     renderSectionContents() {
+        const {
+            t,
+            contentRef
+        } = this.props;
+
         return (
             <div
               className="Section-Contents"
+              ref={ contentRef }
             >
                 <h2>
-                    <p className="Subtitle">Warm Welcome!</p>
+                    <p className="Subtitle">{ t('welcome') }</p>
                     <p className="Headline-Strong">
                         Our Story
                     </p>
@@ -55,6 +66,10 @@ export class Section extends React.Component {
                   src="/assets/img/icons/leaf.png"
                   alt="Section delimiter"
                 />
+                <p className="custom-tac">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Dolor dolores eveniet impedit maxime, nesciunt unde.
+                </p>
             </div>
         );
     }
@@ -66,8 +81,16 @@ export class Section extends React.Component {
             >
                 <div className="container">
                     <div className="row">
-                        <div className="col">{ this.renderGallery() }</div>
-                        <div className="col">{ this.renderSectionContents() }</div>
+                        <div
+                          className="Section-Item col-sm-6"
+                        >
+                            { this.renderGallery() }
+                        </div>
+                        <div
+                          className="Section-Item col-sm-6"
+                        >
+                            { this.renderSectionContents() }
+                        </div>
                     </div>
                 </div>
             </section>
@@ -75,4 +98,4 @@ export class Section extends React.Component {
     }
 }
 
-export default Section;
+export default withTranslation()(Section);

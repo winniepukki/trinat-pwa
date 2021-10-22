@@ -5,4 +5,4 @@
 * @license MIT
 */
 
-export { default } from './Section.component';
+export { default } from './Section.container';

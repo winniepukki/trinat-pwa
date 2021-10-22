@@ -11,6 +11,7 @@ import { withTranslation } from 'react-i18next';
 
 import Hero from '@component/Hero';
 import Blockquote from '@component/Blockquote';
+import Section from '@component/Section';
 import Delimiter from '@component/Delimiter';
 import Products from '@component/Products';
 
@@ -30,6 +31,12 @@ export class AppContents extends React.Component {
                   contentKey="blockquote.content"
                   descriptionKey="blockquote.description"
                   authorKey="blockquote.author"
+                />
+                <Section
+                  gallery={ [
+                      '/assets/img/section/section-stirs.jpg',
+                      '/assets/img/section/section-plate.jpg'
+                  ] }
                 />
                 <Delimiter
                   headline={ t('menu') }
