@@ -47,6 +47,7 @@
         @include mobile {
             position: relative;
             width: 100%;
+            padding: 60px 0 65px 0;
         }
 
         h2 {
@@ -64,6 +65,10 @@
 
             .Headline-Strong {
                 font-size: .8em !important;
+            }
+
+            @include mobile {
+                font-size: 3em;
             }
         }
     }
