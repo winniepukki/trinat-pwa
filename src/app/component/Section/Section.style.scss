@@ -1,6 +1,12 @@
 @import '../../style/abstract/media';
 
 .Section {
+    margin-bottom: 60px;
+
+    @include media(mobile, tablet) {
+        margin-bottom: 0;
+    }
+
     &-Item:nth-child(1) {
         width: 70vw;
 
@@ -30,7 +36,6 @@
     &-Contents {
         position: absolute;
         box-shadow: 0 2px 60px 0 rgb(0 0 0 / 10%);
-        // margin: 120px 0 0 0;
         padding: 60px 60px 65px 60px;
         border-radius: 5px 5px 5px 5px;
         background: var(--bs-white);
@@ -64,7 +69,7 @@
             }
 
             .Headline-Strong {
-                font-size: .8em !important;
+                font-size: .8em;
             }
 
             @include mobile {

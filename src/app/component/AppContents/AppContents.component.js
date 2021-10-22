@@ -33,6 +33,9 @@ export class AppContents extends React.Component {
                   authorKey="blockquote.author"
                 />
                 <Section
+                  titleKey="story.title"
+                  descriptionKey="story.description"
+                  textKey="story.text"
                   gallery={ [
                       '/assets/img/section/section-stirs.jpg',
                       '/assets/img/section/section-plate.jpg'

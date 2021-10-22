@@ -63,9 +63,9 @@
   "seats": "viesu skaits",
   "special": "Īpašs piedāvājums",
   "story": {
-    "description": "",
-    "text": "",
-    "title": ""
+    "description": "vēsturi",
+    "text": "Kafejnīca ieguva savu nosaukumu, pateicoties trim brīnišķīgām sievietēm, kuras vienoja viens kopīgs mērķis - iepriecināt ar gardu virtuvi un dot brīnišķīgu noskaņu",
+    "title": "Atklaj musu"
   },
   "submit": "iesniegt",
   "surname": "uzvārds",

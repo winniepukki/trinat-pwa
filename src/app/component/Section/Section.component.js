@@ -16,6 +16,9 @@ import './Section.style.scss';
 export class Section extends React.Component {
     static propTypes = {
         t: PropTypes.func.isRequired,
+        titleKey: PropTypes.string.isRequired,
+        descriptionKey: PropTypes.string.isRequired,
+        textKey: PropTypes.string.isRequired,
         gallery: PropTypes.arrayOf(PropTypes.string),
         contentRef: RefType.isRequired
     };
@@ -47,6 +50,9 @@ export class Section extends React.Component {
     renderSectionContents() {
         const {
             t,
+            titleKey = '',
+            descriptionKey = '',
+            textKey = '',
             contentRef
         } = this.props;
 
@@ -56,9 +62,9 @@ export class Section extends React.Component {
               ref={ contentRef }
             >
                 <h2>
-                    <p className="Subtitle">{ t('welcome') }</p>
+                    <p className="Subtitle">{ t(titleKey) }</p>
                     <p className="Headline-Strong">
-                        Our Story
+                        { t(descriptionKey) }
                     </p>
                 </h2>
                 <img
@@ -67,8 +73,7 @@ export class Section extends React.Component {
                   alt="Section delimiter"
                 />
                 <p className="custom-tac">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Dolor dolores eveniet impedit maxime, nesciunt unde.
+                    { t(textKey) }
                 </p>
             </div>
         );
