@@ -72,6 +72,7 @@ export class Reservation extends React.Component {
                                 { t('reservation') }
                             </p>
                         </h2>
+                        <p className="Text-Light">{ t('working-hours') }</p>
                         <p className={ `Reservation-Message-${reservationClass}` }>{ t(message) }</p>
                         <div className="Reservation-Group">
                             <label htmlFor="name">

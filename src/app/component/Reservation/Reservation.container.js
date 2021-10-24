@@ -11,6 +11,9 @@ import React from 'react';
 import Reservation from './Reservation.component';
 
 import {
+    RESET_TIME_IN_MS
+} from './Reservation.config';
+import {
     MIN_INPUT_LENGTH,
     MAX_INPUT_LENGTH
 } from '@util/Validator/Validator.config';
@@ -167,7 +170,15 @@ export class ReservationContainer extends React.Component {
                     message: 'reservation-success',
                     status: true
                 });
+
                 this.handleFieldReset();
+
+                setTimeout(() => {
+                    this.setState({
+                        message: '',
+                        status: false
+                    });
+                }, RESET_TIME_IN_MS);
             })
             .catch(() => {
                 this.setState({

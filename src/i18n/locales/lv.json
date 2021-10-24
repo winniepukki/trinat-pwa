@@ -38,7 +38,7 @@
     "phone": "Lūdzu ievadiet Latvijas mobilo tālruņa numuru",
     "time": "Mūsu darba laiks ir no 11.00 – 22.00"
   },
-  "footer-text": "Kaut kas nedarbojas tā, kā vajadzētu? Nosūti izstrādātājam e-pastu a.bogackins@gmail.com. Vietnes versija: {{version}}",
+  "footer-text": "Izstrādāja ar mīlestību un uztur @winniepukki. Vietnes versija: {{version}}",
   "gallery": "galerija",
   "guest-over": "Vairāk par 5",
   "guest_one": "{{count}} viesis",
@@ -53,7 +53,7 @@
   "our": "musu",
   "overview": "pārskats",
   "phone": "telefons",
-  "privacy": "privātums",
+  "privacy": "Privātuma politika",
   "recent": "Jaunums",
   "recommended": "Šefpavāra izvēle",
   "reservation": "Rezervācija",
@@ -75,5 +75,6 @@
     "type": "Kafejnīca"
   },
   "visit": "ciemos",
-  "welcome": "Laipni lugti"
+  "welcome": "Laipni lugti",
+  "working-hours": "Virtuves darba laiks ir no 11.00 līdz 21.00"
 }
