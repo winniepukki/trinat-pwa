@@ -17,7 +17,10 @@ import {
 
 import store from '@store/index';
 
+const Navigation = lazy(() => import('@component/Navigation'));
 const App = lazy(() => import('@component/App'));
+const ScrollTop = lazy(() => import('@component/ScrollTop'));
+const Footer = lazy(() => import('@component/Footer'));
 
 export class Router extends React.Component {
     render() {
@@ -27,9 +30,12 @@ export class Router extends React.Component {
             >
               <BrowserRouter>
                   <Provider store={ store }>
+                      <Navigation />
                       <Switch>
                           <Route path="/" component={ App } exact />
                       </Switch>
+                      <ScrollTop />
+                      <Footer />
                   </Provider>
               </BrowserRouter>
             </section>
