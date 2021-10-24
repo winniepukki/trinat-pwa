@@ -26,8 +26,8 @@ export class Category extends React.Component {
     renderCategoryProducts() {
         const {
             i18n: {
-                language: lang
-            },
+                language: lang = ''
+            } = {},
             products = []
         } = this.props;
 
@@ -38,7 +38,7 @@ export class Category extends React.Component {
         return products.map((product) => {
             const {
                 _id = '',
-                language
+                language = ''
             } = product;
 
             if (language !== lang) {
@@ -52,7 +52,7 @@ export class Category extends React.Component {
     render() {
         const {
             t,
-            title
+            title = ''
         } = this.props;
 
         return (

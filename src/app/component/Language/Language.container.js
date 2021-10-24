@@ -17,18 +17,21 @@ export class LanguageContainer extends React.Component {
     }
 
     containerProps() {
-        const { open } = this.props;
+        const {
+            open,
+            handleOpenState
+        } = this.props;
+
         return {
-            open
+            open,
+            handleOpenState
         };
     }
 
     render() {
-        const { handleOpenState } = this.props;
         return (
           <Language
             { ...this.containerProps() }
-            handleOpenState={ handleOpenState }
           />
         );
     }

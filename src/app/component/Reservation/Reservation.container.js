@@ -56,6 +56,11 @@ export class ReservationContainer extends React.Component {
 
     containerProps() {
         const {
+            open,
+            onClose
+        } = this.props;
+
+        const {
             message,
             status,
             values: {
@@ -69,6 +74,8 @@ export class ReservationContainer extends React.Component {
         } = this.state;
 
         return {
+            open,
+            onClose,
             message,
             status,
             values: {
@@ -188,15 +195,8 @@ export class ReservationContainer extends React.Component {
     }
 
     render() {
-        const {
-            open,
-            onClose
-        } = this.props;
-
         return (
             <Reservation
-              open={ open }
-              onClose={ onClose }
               { ...this.containerProps() }
               { ...this.containerFunctions }
             />

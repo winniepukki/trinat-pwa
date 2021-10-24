@@ -42,7 +42,7 @@ export class Delimiter extends React.Component {
         const {
             headline = '',
             subtitle = '',
-            imgIndex
+            imgIndex = 1
         } = this.props;
 
         const accuratePosition = this.getAccuratePosition();

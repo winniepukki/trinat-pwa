@@ -30,12 +30,14 @@ export class SectionContainer extends React.Component {
 
     containerProps() {
         const {
+            gallery = [],
             titleKey = '',
             descriptionKey = '',
             textKey = ''
         } = this.props;
 
         return {
+            gallery,
             titleKey,
             descriptionKey,
             textKey,
@@ -56,11 +58,8 @@ export class SectionContainer extends React.Component {
     }
 
     render() {
-        const { gallery = [] } = this.props;
-
         return (
             <Section
-              gallery={ gallery }
               { ...this.containerProps() }
             />
         );

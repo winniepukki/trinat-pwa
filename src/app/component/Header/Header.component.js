@@ -26,7 +26,7 @@ export class Header extends React.Component {
     render() {
         const {
             t,
-            open,
+            open = false,
             handleOpenState,
             headerDetails
         } = this.props;
