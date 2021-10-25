@@ -76,7 +76,7 @@ export class Section extends React.Component {
                 <img
                   className="Leaf-Delimiter"
                   src="/assets/img/icons/leaf.png"
-                  alt="Section delimiter"
+                  alt={ t('aria.section-delim-bg') }
                 />
                 <p className="custom-tac">
                     { t(textKey) }
