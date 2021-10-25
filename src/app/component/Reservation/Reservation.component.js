@@ -161,7 +161,7 @@ export class Reservation extends React.Component {
                         <div className="Reservation-Box-Submit">
                             <button
                               className="Button Button-Reservation Button-Light"
-                              aria-label="Submit the reservation form"
+                              aria-label={ t('aria.submit-reservation') }
                               onClick={ handleSubmit }
                               disabled={ !name.length || !surname.length || !phone.length || !date.length || !time.length }
                             >
@@ -171,7 +171,7 @@ export class Reservation extends React.Component {
                         <button
                           onClick={ onClose }
                           className="Button Button-Close Button-Light"
-                          aria-label="Close the reservation form"
+                          aria-label={ t('aria.close-reservation') }
                         >
                             <i className="far fa-times-circle" />
                         </button>

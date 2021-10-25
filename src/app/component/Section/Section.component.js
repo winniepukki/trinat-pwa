@@ -29,11 +29,17 @@ export class Section extends React.Component {
 
     renderGalleryItems() {
         const {
+            t,
             gallery = []
         } = this.props;
 
         return gallery.map((item) => (
-            <img className="Section-Gallery-Item" key={ item } src={ item } alt="" />
+            <img
+              key={ item }
+              className="Section-Gallery-Item"
+              src={ item }
+              alt={ t('aria.section-gallery') }
+            />
         ));
     }
 

@@ -14,6 +14,7 @@ import './Language.style.scss';
 
 export class Language extends React.Component {
     static propTypes = {
+        t: PropTypes.func.isRequired,
         open: PropTypes.bool.isRequired,
         handleOpenState: PropTypes.func.isRequired,
         i18n: PropTypes.instanceOf(Object).isRequired
@@ -45,6 +46,7 @@ export class Language extends React.Component {
 
     render() {
         const {
+            t,
             open = false,
             handleOpenState
         } = this.props;
@@ -59,7 +61,7 @@ export class Language extends React.Component {
                   data-language="lv"
                   onClick={ this.changeLanguage }
                   className="Button Button-Language-Option"
-                  aria-label="Change language to Latvian"
+                  aria-label={ t('aria.lang-switch-lv') }
                 >
                   Latviski
                 </button>
@@ -67,14 +69,14 @@ export class Language extends React.Component {
                   data-language="ru"
                   onClick={ this.changeLanguage }
                   className="Button Button-Language-Option"
-                  aria-label="Change language to Russian"
+                  aria-label={ t('aria.lang-switch-ru') }
                 >
                   По-русски
                 </button>
                 <button
                   onClick={ handleOpenState }
                   className="Button Button-Close Text-Dark"
-                  aria-label="Close language switcher"
+                  aria-label={ t('aria.lang-switch-close') }
                 >
                     <i className="far fa-times-circle" />
                 </button>

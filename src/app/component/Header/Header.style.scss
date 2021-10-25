@@ -44,9 +44,16 @@
 
         @include media(mobile, tablet) {
             display: block;
-            text-align: center;
             padding: .4rem 0;
             margin-right: 0;
+        }
+
+        @include mobile {
+            text-align: center;
+        }
+
+        @include tablet {
+            text-align: left;
         }
     }
 

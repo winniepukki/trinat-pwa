@@ -7,6 +7,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 
 import {
     DEFAULT_POSITION,
@@ -17,6 +18,7 @@ import './Delimiter.style.scss';
 
 export class Delimiter extends React.Component {
     static propTypes = {
+        t: PropTypes.func.isRequired,
         headline: PropTypes.string.isRequired,
         subtitle: PropTypes.string.isRequired,
         positionDefault: PropTypes.bool,
@@ -40,6 +42,7 @@ export class Delimiter extends React.Component {
 
     render() {
         const {
+            t,
             headline = '',
             subtitle = '',
             imgIndex = 1
@@ -64,16 +67,16 @@ export class Delimiter extends React.Component {
                 <img
                   className={ `Elementor Elementor-${accuratePosition}` }
                   src="/assets/img/icons/elementor.svg"
-                  alt="Section delimiter boundary"
+                  alt={ t('aria.section-end-bound') }
                 />
                 <img
                   className="Delimiter-Image"
                   src={ `/assets/img/section/section-delimiter-${imgIndex}.jpg` }
-                  alt="Section delimiter background"
+                  alt={ t('aria.section-delim-bg') }
                 />
             </section>
         );
     }
 }
 
-export default Delimiter;
+export default withTranslation()(Delimiter);

@@ -46,14 +46,14 @@ export class Menu extends React.Component {
                             <img
                               className="Logo"
                               src={ `/assets/img/logo/logo${logoString}.png` }
-                              alt="Logo"
+                              aria-label={ t('aria.logo') }
                             />
                         </div>
                         <div className="Menu-Links col">
                             <button
                               className="Button Button-Reservation Button-Light"
                               onClick={ handleOpenState }
-                              aria-label="Open the reservation form"
+                              aria-label={ t('aria.open-reservation') }
                             >
                                 { t('reservation') }
                             </button>

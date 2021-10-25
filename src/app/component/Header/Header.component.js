@@ -44,6 +44,7 @@ export class Header extends React.Component {
                             <a
                               href="https://www.waze.com/en/live-map/directions/latvia/riga/trinat?place=ChIJuR9jcTbF7kYREaS40W3ryts"
                               className="Header-Details-Link"
+                              aria-label={ t('aria.visit-us') }
                             >
                                 <i className="fas fa-map-marker-alt" />
                                 <span
@@ -55,6 +56,7 @@ export class Header extends React.Component {
                             <a
                               href={ `tel:${ t('address.phone') }` }
                               className="Header-Details-Link"
+                              aria-label={ t('aria.call-us') }
                             >
                                 <i className="fas fa-phone-alt" />
                                 <span
@@ -68,21 +70,21 @@ export class Header extends React.Component {
                             <a
                               className="Header-Social-Link"
                               href="https://www.facebook.com/3nataly"
-                              aria-label="External link to Facebook page"
+                              aria-label={ t('aria.link-fb') }
                             >
                                 <i className="fab fa-facebook" />
                             </a>
                             <a
                               className="Header-Social-Link"
                               href="https://www.instagram.com/siatrinat/"
-                              aria-label="External link to Instagram page"
+                              aria-label={ t('aria.link-ig') }
                             >
                                 <i className="fab fa-instagram" />
                             </a>
                             <button
                               className="Button Button-Language-Switcher Button-Light"
                               onClick={ handleOpenState }
-                              aria-label="Open language switcher"
+                              aria-label={ t('aria.lang-switch-open') }
                             >
                                 <i className="fas fa-chevron-down" />
                                 <span className="Current-Language">{ language }</span>

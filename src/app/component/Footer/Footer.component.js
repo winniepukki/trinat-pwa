@@ -37,7 +37,7 @@ export class Footer extends React.Component {
                                 <img
                                   className="Logo"
                                   src="/assets/img/logo/logo.png"
-                                  alt="Logo"
+                                  alt={ t('aria.logo') }
                                 />
                                 <p className="Simple-Text">
                                     { t('footer-text', { version: CURRENT_VERSION }) }
@@ -46,22 +46,22 @@ export class Footer extends React.Component {
                                     <img
                                       className="Payment-Image"
                                       src="/assets/img/social/apple.svg"
-                                      alt="Apple pay payment option"
+                                      alt={ t('aria.pay-apple') }
                                     />
                                     <img
                                       className="Payment-Image"
                                       src="/assets/img/social/visa.svg"
-                                      alt="Visa pay payment option"
+                                      alt={ t('aria.pay-visa') }
                                     />
                                     <img
                                       className="Payment-Image"
                                       src="/assets/img/social/mastercard.svg"
-                                      alt="Mastercard pay payment option"
+                                      alt={ t('aria.pay-mc') }
                                     />
                                     <img
                                       className="Payment-Image"
                                       src="/assets/img/social/americanexpress.svg"
-                                      alt="AmericanExpress pay payment option"
+                                      alt={ t('aria.pay-ax') }
                                     />
                                 </div>
                             </div>
@@ -71,7 +71,7 @@ export class Footer extends React.Component {
                                     <li className="List-Light-Item Custom-TTC">
                                         <a
                                           href="https://www.facebook.com/3nataly/reviews/"
-                                          aria-label="External link to reviews"
+                                          aria-label={ t('aria.link-reviews') }
                                         >
                                             { t('reviews') }
                                         </a>
@@ -79,7 +79,7 @@ export class Footer extends React.Component {
                                     <li className="List-Light-Item Custom-TTC">
                                         <a
                                           href="https://www.facebook.com/3nataly/jobs"
-                                          aria-label="External link to careers"
+                                          aria-label={ t('aria.link-careers') }
                                         >
                                             { t('careers') }
                                         </a>
@@ -87,7 +87,7 @@ export class Footer extends React.Component {
                                     <li className="List-Light-Item Custom-TTC">
                                         <a
                                           href="https://github.com/winniepukki"
-                                          aria-label="External link to project developer"
+                                          aria-label={ t('aria.link-dev') }
                                         >
                                             { t('developer') }
                                         </a>
@@ -95,7 +95,7 @@ export class Footer extends React.Component {
                                     <li className="List-Light-Item Custom-TTC">
                                         <a
                                           href="https://www.instagram.com/siatrinat/"
-                                          aria-label="External link to gallery"
+                                          aria-label={ t('aria.link-gallery') }
                                         >
                                             { t('gallery') }
                                         </a>
@@ -108,7 +108,7 @@ export class Footer extends React.Component {
                                     <li className="List-Light-Item Custom-TTC">
                                         <a
                                           href="https://covid19.gov.lv/"
-                                          aria-label="External link to COVID-19 governmental advice"
+                                          aria-label={ t('aria.link-covid') }
                                         >
                                             { t('covid') }
                                         </a>
@@ -116,7 +116,7 @@ export class Footer extends React.Component {
                                     <li className="List-Light-Item Custom-TTC">
                                         <a
                                           href="https://covid19sertifikats.lv/"
-                                          aria-label="External link to COVID-19 certificate"
+                                          aria-label={ t('aria.link-cert') }
                                         >
                                             { t('certificate') }
                                         </a>
@@ -124,7 +124,7 @@ export class Footer extends React.Component {
                                     <li className="List-Light-Item Custom-TTC">
                                         <a
                                           href="https://bit.ly/3Bequ7s"
-                                          aria-label="External link to Privacy Policy"
+                                          aria-label={ t('aria.link-privacy') }
                                         >
                                             { t('privacy') }
                                         </a>
@@ -138,7 +138,7 @@ export class Footer extends React.Component {
                                         <a
                                           href={ `tel:${ t('address.phone') }` }
                                           className="Footer-Link"
-                                          aria-label="Call us by phone"
+                                          aria-label={ t('aria.call-us') }
                                         >
                                             <span>
                                                 <i className="fas fa-phone-alt" />
@@ -152,7 +152,7 @@ export class Footer extends React.Component {
                                         <a
                                           href={ `mailto:${ t('address.email') }` }
                                           className="Footer-Link"
-                                          aria-label="Write us an email"
+                                          aria-label={ t('aria.email-us') }
                                         >
                                             <span>
                                                 <i className="far fa-envelope" />
@@ -166,7 +166,7 @@ export class Footer extends React.Component {
                                         <a
                                           href="#"
                                           className="Footer-Link"
-                                          aria-label="Our webpage address"
+                                          aria-label={ t('aria.webpage') }
                                         >
                                             <span>
                                                 <i className="fas fa-link" />
@@ -185,7 +185,7 @@ export class Footer extends React.Component {
                                         <a
                                           href="https://goo.gl/maps/2erjPnp65Ksf3DVy5"
                                           className="Footer-Link"
-                                          aria-label="Our venue address"
+                                          aria-label={ t('aria.visit-us') }
                                         >
                                             <span>
                                                 <i className="fas fa-map-marker-alt" />
@@ -215,7 +215,7 @@ export class Footer extends React.Component {
                                   <li className="List-Footer-Item">
                                       <a
                                         href="https://bit.ly/3Bequ7s"
-                                        aria-label="External link to Privacy Policy"
+                                        aria-label={ t('aria.link-privacy') }
                                       >
                                           { t('privacy') }
                                       </a>
@@ -223,7 +223,7 @@ export class Footer extends React.Component {
                                   <li className="List-Footer-Item">
                                       <a
                                         href="https://www.facebook.com/3nataly/jobs"
-                                        aria-label="External link to careers"
+                                        aria-label={ t('aria.link-careers') }
                                       >
                                           { t('careers') }
                                       </a>
@@ -231,7 +231,7 @@ export class Footer extends React.Component {
                                   <li className="List-Footer-Item">
                                       <a
                                         href="https://www.facebook.com/3nataly/reviews/"
-                                        aria-label="External link to reviews"
+                                        aria-label={ t('aria.link-reviews') }
                                       >
                                         { t('reviews') }
                                       </a>
