@@ -123,7 +123,6 @@ export class Products extends React.Component {
             >
                 <div className="container">
                     <h4>{ t('special') }</h4>
-                    <p className="custom-tac">{ t('allergy-notice') }</p>
 
                     <div className="Products-Special">
                         { this.renderSpecialProducts() }
@@ -132,6 +131,8 @@ export class Products extends React.Component {
                     <div className="Products-Categories">
                         { this.renderProductsWithCategories() }
                     </div>
+
+                    <p className="custom-tac">{ t('allergy-notice') }</p>
                 </div>
             </section>
         );
