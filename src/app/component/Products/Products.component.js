@@ -45,7 +45,7 @@ export class Products extends React.Component {
     renderSpecialProducts() {
         const {
             i18n: {
-                language: lang
+                language: lang = ''
             } = {}
         } = this.props;
 
@@ -65,9 +65,9 @@ export class Products extends React.Component {
             const {
                 _id = '',
                 category: {
-                    title
+                    title = ''
                 } = {},
-                language
+                language = ''
             } = product;
 
             if (title !== SPECIAL || lang !== language) {
@@ -91,7 +91,7 @@ export class Products extends React.Component {
     renderProductsWithCategories() {
         return this.getSortedCategories().map((category) => {
             const {
-                title
+                title = ''
             } = category;
 
             if (title === SPECIAL) {
@@ -101,7 +101,7 @@ export class Products extends React.Component {
             /* Sort products on sorted category and product category */
             const sortedProducts = this.getProductList()
                 .filter((
-                    { category: { title: categoryTitle } }
+                    { category: { title: categoryTitle = '' } = {} }
                 ) => categoryTitle === title);
 
             return (
