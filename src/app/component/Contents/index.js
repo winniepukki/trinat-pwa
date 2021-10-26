@@ -5,4 +5,4 @@
 * @license MIT
 */
 
-export { default } from './AppContents.component';
+export { default } from './Contents.component';

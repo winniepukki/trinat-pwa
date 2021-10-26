@@ -8,7 +8,7 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 
-import AppContents from '@component/AppContents';
+import Contents from '@component/Contents';
 
 import ErrorBoundary from '@util/ErrorBoundary/ErrorBoundary';
 import useScript from '@util/Script/useScript';
@@ -30,7 +30,7 @@ export class App extends React.Component {
               className="App"
             >
                 <ErrorBoundary>
-                    <AppContents />
+                    <Contents />
                 </ErrorBoundary>
             </section>
         );

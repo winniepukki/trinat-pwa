@@ -73,7 +73,6 @@ export class Reservation extends React.Component {
                             </p>
                         </h2>
                         <p className="Text-Light">{ t('working-hours') }</p>
-                        <p className={ `Reservation-Message-${reservationClass}` }>{ t(message) }</p>
                         <div className="Reservation-Group">
                             <label htmlFor="name">
                                 { t('name') }
@@ -159,6 +158,8 @@ export class Reservation extends React.Component {
                             </select>
                         </div>
                         <div className="Reservation-Box-Submit">
+                            <p className={ `Reservation-Message-${reservationClass}` }>{ t(message) }</p>
+
                             <button
                               className="Button Button-Reservation Button-Light"
                               aria-label={ t('aria.submit-reservation') }

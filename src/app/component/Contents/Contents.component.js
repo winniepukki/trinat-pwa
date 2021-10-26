@@ -15,7 +15,7 @@ import Section from '@component/Section';
 import Delimiter from '@component/Delimiter';
 import Products from '@component/Products';
 
-export class AppContents extends React.Component {
+export class Contents extends React.Component {
     static propTypes = {
         t: PropTypes.func.isRequired
     }
@@ -57,4 +57,4 @@ export class AppContents extends React.Component {
     }
 }
 
-export default withTranslation()(AppContents);
+export default withTranslation()(Contents);
