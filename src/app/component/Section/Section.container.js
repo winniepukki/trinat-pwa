@@ -14,8 +14,17 @@ export class SectionContainer extends React.Component {
     static propTypes = {
         titleKey: PropTypes.string.isRequired,
         descriptionKey: PropTypes.string.isRequired,
-        textKey: PropTypes.string.isRequired,
-        gallery: PropTypes.arrayOf(PropTypes.string).isRequired
+        textKey: PropTypes.string,
+        scrollable: PropTypes.bool,
+        mapEnabled: PropTypes.bool,
+        gallery: PropTypes.arrayOf(PropTypes.string)
+    }
+
+    static defaultProps = {
+        scrollable: true,
+        mapEnabled: false,
+        gallery: [],
+        textKey: ''
     }
 
     constructor(props) {
@@ -33,10 +42,14 @@ export class SectionContainer extends React.Component {
             gallery = [],
             titleKey = '',
             descriptionKey = '',
-            textKey = ''
+            textKey = '',
+            scrollable,
+            mapEnabled
         } = this.props;
 
         return {
+            scrollable,
+            mapEnabled,
             gallery,
             titleKey,
             descriptionKey,
@@ -46,13 +59,17 @@ export class SectionContainer extends React.Component {
     }
 
     handleScroll() {
+        const {
+            scrollable = true
+        } = this.props;
+
         const currentPos = window.pageYOffset;
         const node = this.contentRef.current;
         const nodeOffsetTop = node.getBoundingClientRect().top;
 
         const DIVIDER = 18;
 
-        if (currentPos > nodeOffsetTop) {
+        if (scrollable && currentPos > nodeOffsetTop) {
             node.style.transform = `translateY(-${currentPos / DIVIDER}%)`;
         }
     }

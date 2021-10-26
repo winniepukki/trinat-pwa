@@ -12,18 +12,21 @@ label {
     text-align: left;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='date'],
-input[type='time'] {
+.Reservation-Input,
+.Contact-Input {
+    box-sizing: border-box;
     font-family: var(--primary-font-family);
     font-size: 100%;
+    width: 100%;
+    outline: none;
+}
+
+.Reservation-Input {
     padding: 13px 10px;
     background: 0 0 !important;
     border: 0;
     border-bottom: 1px solid var(--bs-white);
     color: var(--bs-white);
-    width: 100%;
     border-radius: 0;
     outline: none;
 
@@ -34,6 +37,13 @@ input[type='time'] {
     &:focus ~ label {
         color: var(--primary-base-color);
     }
+}
+
+.Contact-Input {
+    color: #444;
+    padding: 10px 10px;
+    margin: 0;
+    border: 1px solid #e1e1e1;
 }
 
 select {

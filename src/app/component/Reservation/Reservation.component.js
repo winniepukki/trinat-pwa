@@ -84,6 +84,7 @@ export class Reservation extends React.Component {
                               type="text"
                               value={ name }
                               onChange={ handleChange }
+                              className="Reservation-Input"
                             />
                         </div>
                         <div className="Reservation-Group">
@@ -97,6 +98,7 @@ export class Reservation extends React.Component {
                               type="text"
                               value={ surname }
                               onChange={ handleChange }
+                              className="Reservation-Input"
                             />
                         </div>
                         <div className="Reservation-Group Input-Last">
@@ -110,6 +112,7 @@ export class Reservation extends React.Component {
                               type="text"
                               value={ phone }
                               onChange={ handleChange }
+                              className="Reservation-Input"
                             />
                         </div>
                         <div className="Reservation-Group">
@@ -123,6 +126,7 @@ export class Reservation extends React.Component {
                               type="date"
                               value={ date }
                               onChange={ handleChange }
+                              className="Reservation-Input"
                             />
                         </div>
                         <div className="Reservation-Group">
@@ -136,6 +140,7 @@ export class Reservation extends React.Component {
                               type="time"
                               value={ time }
                               onChange={ handleChange }
+                              className="Reservation-Input"
                             />
                         </div>
                         <div className="Reservation-Group Input-Last">
@@ -148,6 +153,7 @@ export class Reservation extends React.Component {
                               id="guests"
                               value={ guests }
                               onChange={ handleChange }
+                              className="Reservation-Input"
                             >
                                 <option value="1">{ t('guest', { count: 1 }) }</option>
                                 <option value="2">{ t('guest', { count: 2 }) }</option>

@@ -1,0 +1,15 @@
+@import '../../style/abstract/media';
+
+.Map {
+    width: 60vw;
+
+    @include mobile {
+        width: 100%;
+    }
+
+    &-Frame {
+        width: 100%;
+        height: 450px;
+        border: 1px solid transparent;
+    }
+}

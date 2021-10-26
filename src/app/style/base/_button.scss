@@ -6,6 +6,11 @@
         color: var(--bs-white);
     }
 
+    &-Filled {
+        color: var(--bs-white);
+        background: var(--primary-base-color) !important;
+    }
+
     &-Close {
         position: absolute;
         top: 15px;

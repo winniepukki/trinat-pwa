@@ -52,6 +52,12 @@ export class Contents extends React.Component {
                   positionDefault={ false }
                   imgIndex={ 2 }
                 />
+                <Section
+                  scrollable={ false }
+                  mapEnabled
+                  titleKey={ t('contact-us') }
+                  descriptionKey={ t('us') }
+                />
             </section>
         );
     }

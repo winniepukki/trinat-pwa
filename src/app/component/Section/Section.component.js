@@ -9,6 +9,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 
+import Contact from '@component/Contact';
+import Map from '@component/Map';
+
 import RefType from '@type/Ref';
 
 import './Section.style.scss';
@@ -18,13 +21,16 @@ export class Section extends React.Component {
         t: PropTypes.func.isRequired,
         titleKey: PropTypes.string.isRequired,
         descriptionKey: PropTypes.string.isRequired,
-        textKey: PropTypes.string.isRequired,
+        textKey: PropTypes.string,
+        mapEnabled: PropTypes.bool,
         gallery: PropTypes.arrayOf(PropTypes.string),
         contentRef: RefType.isRequired
     };
 
     static defaultProps = {
-        gallery: []
+        gallery: [],
+        mapEnabled: false,
+        textKey: ''
     }
 
     renderGalleryItems() {
@@ -53,12 +59,39 @@ export class Section extends React.Component {
         );
     }
 
+    renderSectionMap() {
+        return (
+            <div
+              className="Section-Map"
+            >
+                <Map />
+            </div>
+        );
+    }
+
+    renderContent() {
+        const {
+            t,
+            textKey = '',
+            mapEnabled = false
+        } = this.props;
+
+        return (
+            mapEnabled
+                ? <Contact />
+                : (
+                  <p className="custom-tac">
+                    { t(textKey) }
+                  </p>
+                )
+        );
+    }
+
     renderSectionContents() {
         const {
             t,
             titleKey = '',
             descriptionKey = '',
-            textKey = '',
             contentRef
         } = this.props;
 
@@ -68,9 +101,9 @@ export class Section extends React.Component {
               ref={ contentRef }
             >
                 <h2>
-                    <p className="Subtitle">{ t(titleKey) }</p>
+                    <p className="Subtitle">{ titleKey }</p>
                     <p className="Headline-Strong">
-                        { t(descriptionKey) }
+                        { descriptionKey }
                     </p>
                 </h2>
                 <img
@@ -78,24 +111,28 @@ export class Section extends React.Component {
                   src="/assets/img/icons/leaf.png"
                   alt={ t('aria.section-delim-bg') }
                 />
-                <p className="custom-tac">
-                    { t(textKey) }
-                </p>
+                { this.renderContent() }
             </div>
         );
     }
 
     render() {
+        const {
+            mapEnabled = false
+        } = this.props;
+
         return (
             <section
-              className="Section"
+              className={ mapEnabled ? 'Section Section-Mapped' : 'Section' }
             >
                 <div className="container">
                     <div className="row">
                         <div
                           className="Section-Item col-sm-6"
                         >
-                            { this.renderGallery() }
+                            { mapEnabled
+                                ? this.renderSectionMap()
+                                : this.renderGallery() }
                         </div>
                         <div
                           className="Section-Item col-sm-6"
