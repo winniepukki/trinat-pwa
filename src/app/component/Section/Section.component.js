@@ -101,9 +101,9 @@ export class Section extends React.Component {
               ref={ contentRef }
             >
                 <h2>
-                    <p className="Subtitle">{ titleKey }</p>
+                    <p className="Subtitle">{ t(titleKey) }</p>
                     <p className="Headline-Strong">
-                        { descriptionKey }
+                        { t(descriptionKey) }
                     </p>
                 </h2>
                 <img
