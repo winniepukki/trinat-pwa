@@ -13,6 +13,8 @@ import './i18n/i18n';
 import 'bootstrap/dist/css/bootstrap-grid.css';
 import './app/style/main.scss';
 
+import Loading from '@component/Loading';
+
 const Router = lazy(() => import('@route/Router.component'));
 
 // if ('serviceWorker' in navigator) {
@@ -24,7 +26,7 @@ const Router = lazy(() => import('@route/Router.component'));
 
 ReactDOM.render(
   <React.StrictMode>
-    <Suspense fallback={ <div>Loading!</div> }>
+    <Suspense fallback={ <Loading /> }>
       <BrowserRouter>
         <Router />
       </BrowserRouter>
