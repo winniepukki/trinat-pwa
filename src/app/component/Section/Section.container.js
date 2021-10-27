@@ -16,14 +16,12 @@ export class SectionContainer extends React.Component {
         descriptionKey: PropTypes.string.isRequired,
         textKey: PropTypes.string,
         scrollable: PropTypes.bool,
-        mapEnabled: PropTypes.bool,
-        gallery: PropTypes.arrayOf(PropTypes.string)
+        mapEnabled: PropTypes.bool
     }
 
     static defaultProps = {
         scrollable: true,
         mapEnabled: false,
-        gallery: [],
         textKey: ''
     }
 
@@ -39,7 +37,6 @@ export class SectionContainer extends React.Component {
 
     containerProps() {
         const {
-            gallery = [],
             titleKey = '',
             descriptionKey = '',
             textKey = '',
@@ -50,7 +47,6 @@ export class SectionContainer extends React.Component {
         return {
             scrollable,
             mapEnabled,
-            gallery,
             titleKey,
             descriptionKey,
             textKey,

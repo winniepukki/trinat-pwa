@@ -67,16 +67,6 @@ export class ProductContainer extends React.Component {
         });
     }
 
-    isEditButtonVisible() {
-        const {
-            account: {
-                email = ''
-            } = {}
-        } = this.props;
-
-        return email === 'a.bogackins@gmail.com';
-    }
-
     containerProps() {
         const {
             values: {
@@ -89,7 +79,10 @@ export class ProductContainer extends React.Component {
         } = this.state;
 
         const {
-            product
+            product,
+            account: {
+                admin = false
+            } = {}
         } = this.props;
 
         return {
@@ -98,10 +91,10 @@ export class ProductContainer extends React.Component {
                 description,
                 price
             },
+            admin,
             product,
             message,
-            showEditComponent,
-            isEditingEnabled: this.isEditButtonVisible()
+            showEditComponent
         };
     }
 

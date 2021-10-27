@@ -6,19 +6,18 @@
 * @license MIT
 */
 
-import PropTypes, { element } from 'prop-types';
+import PropTypes from 'prop-types';
 import React from 'react';
 import { withTranslation } from 'react-i18next';
+
+import ChildrenType from '@type/Children';
 
 import './ErrorBoundary.style.scss';
 
 class ErrorBoundary extends React.Component {
     static propTypes = {
         t: PropTypes.func.isRequired,
-        children: PropTypes.oneOfType([
-            PropTypes.element,
-            PropTypes.arrayOf(element)
-        ]).isRequired
+        children: ChildrenType.isRequired
     }
 
     static getDerivedStateFromError() {

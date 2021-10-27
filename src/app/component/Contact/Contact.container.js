@@ -39,12 +39,12 @@ export class ContactContainer extends React.Component {
 
     containerProps() {
         const {
-            message,
+            message = '',
             values: {
-                name,
-                email,
-                review
-            }
+                name = '',
+                email = '',
+                review = ''
+            } = {}
         } = this.state;
 
         return {

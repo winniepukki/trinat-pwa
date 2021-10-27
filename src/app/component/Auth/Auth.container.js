@@ -17,6 +17,8 @@ import {
     subscribeAccount
 } from '@store/Account/Account.action';
 
+import verifyAdmin from '@query/VerifyAdmin.query';
+
 export const mapStateToProps = () => ({});
 
 export const mapDispatchToProps = (dispatch) => ({
@@ -34,6 +36,8 @@ export class AuthContainer extends React.Component {
 
     handleSignIn() {
         const provider = new firebase.auth.GoogleAuthProvider();
+
+        /* Authenticate through Firebase */
         firebase.auth().signInWithPopup(provider)
             .then((result) => {
                 const { subscribeAccount } = this.props;
@@ -45,7 +49,20 @@ export class AuthContainer extends React.Component {
                 } = result;
 
                 if (email.length) {
-                    subscribeAccount({ email, name });
+                    /* Verify if the user is admin */
+                    verifyAdmin(email)
+                        .then((result) => {
+                            const {
+                                data: {
+                                    verifyAdmin: {
+                                        success: admin = false
+                                    } = {}
+                                } = {}
+                            } = result;
+
+                            /* Subscribe the account to Redux */
+                            subscribeAccount({ email, name, admin });
+                        });
                 }
             })
             .catch(() => {});

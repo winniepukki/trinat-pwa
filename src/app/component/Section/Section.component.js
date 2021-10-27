@@ -9,10 +9,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 
+import RefType from '@type/Ref';
+
 import Contact from '@component/Contact';
 import Map from '@component/Map';
-
-import RefType from '@type/Ref';
 
 import './Section.style.scss';
 
@@ -23,38 +23,33 @@ export class Section extends React.Component {
         descriptionKey: PropTypes.string.isRequired,
         textKey: PropTypes.string,
         mapEnabled: PropTypes.bool,
-        gallery: PropTypes.arrayOf(PropTypes.string),
         contentRef: RefType.isRequired
     };
 
     static defaultProps = {
-        gallery: [],
         mapEnabled: false,
         textKey: ''
     }
 
-    renderGalleryItems() {
+    renderGallery() {
         const {
-            t,
-            gallery = []
+            t
         } = this.props;
 
-        return gallery.map((item) => (
-            <img
-              key={ item }
-              className="Section-Gallery-Item"
-              src={ item }
-              alt={ t('aria.section-gallery') }
-            />
-        ));
-    }
-
-    renderGallery() {
         return (
             <div
               className="Section-Gallery"
             >
-                { this.renderGalleryItems() }
+                <img
+                  className="Section-Gallery-Item"
+                  src="/assets/img/section/section-stirs.jpg"
+                  alt={ t('aria.section-gallery') }
+                />
+                <img
+                  className="Section-Gallery-Item"
+                  src="/assets/img/section/section-plate.jpg"
+                  alt={ t('aria.section-gallery') }
+                />
             </div>
         );
     }

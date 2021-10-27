@@ -23,7 +23,7 @@ export class Product extends React.Component {
         handleSubmit: PropTypes.func.isRequired,
         showEditComponent: PropTypes.bool.isRequired,
         message: PropTypes.string.isRequired,
-        isEditingEnabled: PropTypes.bool.isRequired,
+        admin: PropTypes.bool.isRequired,
         values: EditProduct.isRequired
     }
 
@@ -121,7 +121,7 @@ export class Product extends React.Component {
                 price = 0
             } = {},
             handleEditButtonClick,
-            isEditingEnabled
+            admin
         } = this.props;
 
         return (
@@ -141,7 +141,7 @@ export class Product extends React.Component {
                 <div className="Product-Content-Bottom-Holder">
                     <p className="Product-Description">{ description }</p>
                 </div>
-                { isEditingEnabled
+                { admin
                     ? (
                         <button
                           className="Button Button-Reservation Button-Filled"

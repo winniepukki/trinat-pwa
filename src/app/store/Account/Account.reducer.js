@@ -13,7 +13,8 @@ import {
 const initialState = {
     account: {
         email: '',
-        name: ''
+        name: '',
+        admin: false
     }
 };
 

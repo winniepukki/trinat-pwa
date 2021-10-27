@@ -11,7 +11,8 @@ export const UNSUBSCRIBE_ACCOUNT = 'UNSUBSCRIBE_ACCOUNT';
 const initialState = {
     account: {
         email: '',
-        name: ''
+        name: '',
+        admin: false
     }
 };
 

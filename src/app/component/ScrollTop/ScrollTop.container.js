@@ -7,7 +7,7 @@
 
 import React, { createRef } from 'react';
 
-import ScrollTop from '@component/ScrollTop/ScrollTop.component';
+import ScrollTop from './ScrollTop.component';
 
 export class ScrollTopContainer extends React.Component {
     containerFunctions = {
