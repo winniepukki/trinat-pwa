@@ -10,6 +10,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 
+import Auth from '@component/Auth';
+
 import CURRENT_VERSION from './Footer.config';
 
 import './Footer.style.scss';
@@ -128,6 +130,9 @@ export class Footer extends React.Component {
                                         >
                                             { t('privacy') }
                                         </a>
+                                    </li>
+                                    <li className="List-Light-Item Custom-TTC">
+                                        <Auth />
                                     </li>
                                 </ul>
                             </div>

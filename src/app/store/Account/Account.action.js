@@ -9,8 +9,10 @@ export const SUBSCRIBE_ACCOUNT = 'SUBSCRIBE_ACCOUNT';
 export const UNSUBSCRIBE_ACCOUNT = 'UNSUBSCRIBE_ACCOUNT';
 
 const initialState = {
-    email: '',
-    fullName: ''
+    account: {
+        email: '',
+        name: ''
+    }
 };
 
 export const subscribeAccount = (account = initialState) => ({

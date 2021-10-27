@@ -11,6 +11,14 @@
         background: var(--primary-base-color) !important;
     }
 
+    &-Submit {
+        background: var(--notification-success) !important;
+    }
+
+    &-Cancel {
+        background: var(--notification-alert) !important;
+    }
+
     &-Close {
         position: absolute;
         top: 15px;

@@ -5,4 +5,4 @@
 * @license MIT
 */
 
-export { default } from './Product.container';
+export { default } from './Auth.container';

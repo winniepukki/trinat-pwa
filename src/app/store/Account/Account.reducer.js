@@ -11,18 +11,21 @@ import {
 } from './Account.action';
 
 const initialState = {
-    currentAccount: ''
+    account: {
+        email: '',
+        name: ''
+    }
 };
 
 const accountReducer = (state = initialState, action) => {
     switch (action.type) {
     case SUBSCRIBE_ACCOUNT: return {
         ...state,
-        currentAccount: action.payload
+        account: action.payload
     };
     case UNSUBSCRIBE_ACCOUNT: return {
         ...state,
-        currentAccount: ''
+        account: {}
     };
     default: return { ...state };
     }

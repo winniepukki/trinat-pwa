@@ -16,7 +16,18 @@ import './Product.style.scss';
 export class Product extends React.Component {
     static propTypes = {
         t: PropTypes.func.isRequired,
-        product: ProductType.isRequired
+        product: ProductType.isRequired,
+        handleEditButtonClick: PropTypes.func.isRequired,
+        handleChange: PropTypes.func.isRequired,
+        handleSubmit: PropTypes.func.isRequired,
+        showEditComponent: PropTypes.bool.isRequired,
+        message: PropTypes.string.isRequired,
+        isEditingEnabled: PropTypes.bool.isRequired,
+        values: PropTypes.shape({
+            title: PropTypes.string,
+            description: PropTypes.string,
+            price: PropTypes.number
+        }).isRequired
     }
 
     renderProductPromotion() {
@@ -45,15 +56,113 @@ export class Product extends React.Component {
         );
     }
 
-    render() {
+    renderProductEdit() {
         const {
+            t,
+            values: {
+                title,
+                description,
+                price
+            },
+            message,
+            handleChange,
+            handleSubmit,
+            handleEditButtonClick
+        } = this.props;
+
+        return (
+            <div>
+                <p>{ t(message) }</p>
+                <input
+                  className="Contact-Input"
+                  onChange={ handleChange }
+                  type="text"
+                  name="title"
+                  value={ title }
+                />
+
+                <input
+                  className="Contact-Input"
+                  onChange={ handleChange }
+                  type="text"
+                  name="description"
+                  value={ description }
+                />
+
+                <input
+                  className="Contact-Input"
+                  onChange={ handleChange }
+                  type="text"
+                  name="price"
+                  value={ price }
+                />
+
+                <button
+                  className="Button Button-Reservation Button-Filled Button-Submit"
+                  onClick={ handleSubmit }
+                >
+                    { t('submit') }
+                </button>
+                <button
+                  className="Button Button-Reservation Button-Filled Button-Cancel"
+                  onClick={ handleEditButtonClick }
+                >
+                    { t('cancel') }
+                </button>
+            </div>
+        );
+    }
+
+    renderProductContent() {
+        const {
+            t,
             product: {
                 title = '',
                 description = '',
-                price = 0,
-                isRecent,
-                isRecommended
-            } = {}
+                price = 0
+            } = {},
+            handleEditButtonClick,
+            isEditingEnabled
+        } = this.props;
+
+        return (
+            <div className="Product-Content">
+                <div className="Product-Content-Top-Holder">
+                    <div className="Product-Title-Holder">
+                        <p className="Product-Title">{ title }</p>
+                    </div>
+                    <div className="Product-Content-Line" />
+                    <div className="Product-Price">
+                        <span>
+                            { price }
+                            &euro;
+                        </span>
+                    </div>
+                </div>
+                <div className="Product-Content-Bottom-Holder">
+                    <p className="Product-Description">{ description }</p>
+                </div>
+                { isEditingEnabled
+                    ? (
+                        <button
+                          className="Button Button-Reservation Button-Filled"
+                          onClick={ handleEditButtonClick }
+                        >
+                            { t('edit') }
+                        </button>
+                    )
+                    : null }
+            </div>
+        );
+    }
+
+    render() {
+        const {
+            product: {
+                isRecent = false,
+                isRecommended = false
+            } = {},
+            showEditComponent = false
         } = this.props;
 
         return (
@@ -62,23 +171,9 @@ export class Product extends React.Component {
                   ? 'Product Product-Promoted' : 'Product' }
             >
                 { this.renderProductPromotion() }
-                <div className="Product-Content">
-                    <div className="Product-Content-Top-Holder">
-                        <div className="Product-Title-Holder">
-                            <p className="Product-Title">{ title }</p>
-                        </div>
-                        <div className="Product-Content-Line" />
-                        <div className="Product-Price">
-                        <span>
-                            { price }
-                            &euro;
-                        </span>
-                        </div>
-                    </div>
-                    <div className="Product-Content-Bottom-Holder">
-                        <p className="Product-Description">{ description }</p>
-                    </div>
-                </div>
+                { showEditComponent
+                    ? this.renderProductEdit()
+                    : this.renderProductContent() }
             </div>
         );
     }
