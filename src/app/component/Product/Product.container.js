@@ -98,10 +98,10 @@ export class ProductContainer extends React.Component {
                 description,
                 price
             },
-            isEditingEnabled: this.isEditButtonVisible(),
             product,
+            message,
             showEditComponent,
-            message
+            isEditingEnabled: this.isEditButtonVisible()
         };
     }
 

@@ -25,7 +25,7 @@ export class Auth extends React.Component {
 
         return (
             <button
-              className="Auth"
+              className="Button Auth"
               onClick={ handleSignIn }
               aria-label={ t('aria.auth-attempt') }
             >

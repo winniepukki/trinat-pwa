@@ -10,6 +10,7 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 
 import ProductType from '@type/Product';
+import EditProduct from '@type/EditProduct';
 
 import './Product.style.scss';
 
@@ -23,11 +24,7 @@ export class Product extends React.Component {
         showEditComponent: PropTypes.bool.isRequired,
         message: PropTypes.string.isRequired,
         isEditingEnabled: PropTypes.bool.isRequired,
-        values: PropTypes.shape({
-            title: PropTypes.string,
-            description: PropTypes.string,
-            price: PropTypes.number
-        }).isRequired
+        values: EditProduct.isRequired
     }
 
     renderProductPromotion() {
