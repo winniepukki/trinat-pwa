@@ -131,9 +131,6 @@ export class Footer extends React.Component {
                                             { t('privacy') }
                                         </a>
                                     </li>
-                                    <li className="List-Light-Item Custom-TTC">
-                                        <Auth />
-                                    </li>
                                 </ul>
                             </div>
                             <div className="Footer-Block-Item col-sm-2">
@@ -218,6 +215,9 @@ export class Footer extends React.Component {
                                   className="List List-Footer"
                                 >
                                   <li className="List-Footer-Item">
+                                      <Auth />
+                                  </li>
+                                  <li className="List-Footer-Item">
                                       <a
                                         href="https://bit.ly/3Bequ7s"
                                         aria-label={ t('aria.link-privacy') }
@@ -231,14 +231,6 @@ export class Footer extends React.Component {
                                         aria-label={ t('aria.link-careers') }
                                       >
                                           { t('careers') }
-                                      </a>
-                                  </li>
-                                  <li className="List-Footer-Item">
-                                      <a
-                                        href="https://www.facebook.com/3nataly/reviews/"
-                                        aria-label={ t('aria.link-reviews') }
-                                      >
-                                        { t('reviews') }
                                       </a>
                                   </li>
                                 </ul>

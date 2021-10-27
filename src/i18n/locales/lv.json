@@ -9,6 +9,7 @@
   },
   "allergy-notice": "* - satur alergēnus. Veicot pasūtījumu, lūdzam konsultēties ar mūsu darbiniekiem par jebkādām alergēnu prasībām",
   "aria": {
+    "auth-attempt": "Piesakieties ar Google",
     "call-us": "Sazinieties ar mums pa mobilo tālruni",
     "close-reservation": "Aizvērt rezervācijas formu",
     "email-us": "Sazinieties ar mums pa e-pastu",
@@ -31,11 +32,14 @@
     "pay-ax": "AmericanExpress maksājuma veids",
     "pay-mc": "MasterCard maksājuma veids",
     "pay-visa": "Visa maksājuma veids",
+    "product-edit-cancel": "Atsaukt produkta rediģēšanu",
     "scroll-top": "Pāršķirstīt lapu uz augšu",
     "section-delim": "Sadalīšanas sadaļa",
     "section-delim-bg": "Sadalītāja fona attēls",
     "section-end-bound": "Robeža beigu posma",
     "section-gallery": "Sadaļas parastais fona attēls",
+    "submit-contact": "Iesniedziet atsauksmes formu",
+    "submit-product": "Iesniedziet atjaunotu produktu",
     "submit-reservation": "Iesniedziet rezervācijas formu",
     "visit-us": "Ārēja saite uz karti ar mūsu ģeogrāfisko atrašanās vietu",
     "webpage": "Apmeklējiet mūsu tīmekļa lapu"
@@ -67,12 +71,13 @@
   "covid": "covid-19",
   "date": "datums",
   "developer": "izstrādātājs",
-  "edit": "Rediget",
+  "edit": "rediģēt",
   "email": "e-pasts",
   "error": {
     "date": "Nevar rezervēt pagātnē",
     "length": "Lūdzu aizpildiet visus laukus",
-    "network": "Kaut kas nogājis greizi. Lūdzu rezervējiet pa tālruni!",
+    "network": "Kaut kas nogājis greizi. Lūdzu, pamēģiniet vēlreiz vēlāk",
+    "network-reservation": "Kaut kas nogājis greizi. Lūdzu rezervējiet pa tālruni!",
     "phone": "Lūdzu ievadiet Latvijas mobilo tālruņa numuru",
     "time": "Mūsu darba laiks ir no 11.00 – 22.00"
   },

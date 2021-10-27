@@ -9,6 +9,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 
+import './Auth.style.scss';
+
 export class Auth extends React.Component {
     static propTypes = {
         t: PropTypes.func.isRequired,
@@ -22,12 +24,13 @@ export class Auth extends React.Component {
         } = this.props;
 
         return (
-            <span
+            <button
               className="Auth"
               onClick={ handleSignIn }
+              aria-label={ t('aria.auth-attempt') }
             >
                 { t('auth') }
-            </span>
+            </button>
         );
     }
 }

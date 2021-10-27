@@ -82,6 +82,7 @@ export class Contact extends React.Component {
                   className="Button Button-Reservation Button-Filled"
                   onClick={ handleSubmit }
                   disabled={ !name.length || !email.length || !review.length }
+                  aria-label={ t('aria.submit-contact') }
                 >
                     { t('submit') }
                 </button>

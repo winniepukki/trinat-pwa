@@ -189,7 +189,7 @@ export class ReservationContainer extends React.Component {
             })
             .catch(() => {
                 this.setState({
-                    message: 'error.network'
+                    message: 'error.network-reservation'
                 });
             });
     }

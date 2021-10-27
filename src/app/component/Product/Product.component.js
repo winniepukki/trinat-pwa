@@ -100,12 +100,14 @@ export class Product extends React.Component {
                 <button
                   className="Button Button-Reservation Button-Filled Button-Submit"
                   onClick={ handleSubmit }
+                  aria-label={ t('aria.submit-product') }
                 >
                     { t('submit') }
                 </button>
                 <button
                   className="Button Button-Reservation Button-Filled Button-Cancel"
                   onClick={ handleEditButtonClick }
+                  aria-label={ t('aria.product-edit-cancel') }
                 >
                     { t('cancel') }
                 </button>
