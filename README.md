@@ -7,8 +7,9 @@
 - Installation
 - Updating
 - Deployment
-- Contribution
 - Tests
+- Contribution
+- Case studies
 - License
 - Learn more
 
@@ -51,6 +52,12 @@ Thanks to these **awesome** 🖤 people for contribution!
 <a href="https://github.com/winniepukki/trinat/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=winniepukki/trinat" />
 </a>
+
+## Case studies
+
+| Release version | Case study  |
+|---|---|
+| `3.0.0` | [Google Sheets](https://docs.google.com/spreadsheets/d/1a7S5Nre_qzWO9E_EBg9bte9VfL94Rz8y0l54XfK27dk/edit?usp=sharing) |
 
 ## License
 This project is under [MIT License](https://github.com/winniepukki/trinat/blob/main/LICENSE)
