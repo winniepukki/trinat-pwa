@@ -22,7 +22,7 @@ export const createReviewMutation = async (
     fullName = '',
     email = '',
     review = ''
-) => fetch('https://winniepukki.ddns.net', {
+) => fetch('https://graphql.reaktive.cc', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',

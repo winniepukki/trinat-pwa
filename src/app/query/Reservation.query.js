@@ -38,7 +38,7 @@ export const createReservationMutation = async (
     date = '',
     time = '',
     guests = 0
-) => fetch('https://winniepukki.ddns.net', {
+) => fetch('https://graphql.reaktive.cc', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',

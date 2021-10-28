@@ -16,7 +16,7 @@ const query = `query($email: String!) {
 
 export const verifyAdminQuery = async (
     email = ''
-) => fetch('https://winniepukki.ddns.net', {
+) => fetch('https://graphql.reaktive.cc', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',

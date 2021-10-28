@@ -23,7 +23,7 @@ const query = `query {
 }
 `;
 
-export const fetchProductListQuery = async () => fetch('https://winniepukki.ddns.net', {
+export const fetchProductListQuery = async () => fetch('https://graphql.reaktive.cc', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
