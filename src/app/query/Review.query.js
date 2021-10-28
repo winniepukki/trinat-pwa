@@ -18,7 +18,11 @@ const query = `mutation($fullName: String! $email: String! $review: String!) {
 }
 `;
 
-export const createReview = async (fullName, email, review) => fetch('https://winniepukki.ddns.net', {
+export const createReview = async (
+    fullName = '',
+    email = '',
+    review = ''
+) => fetch('https://graphql.reaktive.cc', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
