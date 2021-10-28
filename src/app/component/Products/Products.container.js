@@ -9,7 +9,7 @@ import React from 'react';
 
 import Products from './Products.component';
 
-import fetchProductList from '@query/ProductList.query';
+import fetchProductListQuery from '@query/ProductList.query';
 
 export class ProductsContainer extends React.Component {
     constructor(props) {
@@ -38,7 +38,7 @@ export class ProductsContainer extends React.Component {
     }
 
     async getProductList() {
-        return fetchProductList()
+        return fetchProductListQuery()
             .then(({ data: { products = [] } = {} }) => products);
     }
 

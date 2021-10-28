@@ -14,7 +14,9 @@ const query = `query($email: String!) {
 }
 `;
 
-export const verifyAdmin = async (email = '') => fetch('https://winniepukki.ddns.net', {
+export const verifyAdminQuery = async (
+    email = ''
+) => fetch('https://winniepukki.ddns.net', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
@@ -30,4 +32,4 @@ export const verifyAdmin = async (email = '') => fetch('https://winniepukki.ddns
     .then((response) => response.json())
     .then((data) => data);
 
-export default verifyAdmin;
+export default verifyAdminQuery;

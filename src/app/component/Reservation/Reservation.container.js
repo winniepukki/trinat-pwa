@@ -23,7 +23,7 @@ import {
     validatePhoneNumber, validateWorkingHours
 } from '@util/Validator';
 
-import createReservation from '@query/Reservation.query';
+import createReservationMutation from '@query/Reservation.query';
 
 export class ReservationContainer extends React.Component {
     static propTypes = {
@@ -164,7 +164,7 @@ export class ReservationContainer extends React.Component {
             return;
         }
 
-        createReservation(
+        createReservationMutation(
             name,
             surname,
             phone,

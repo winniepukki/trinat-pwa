@@ -13,7 +13,7 @@ import AccountType from '@type/Account';
 
 import Product from './Product.component';
 
-import updateProduct from '@query/UpdateProduct.query';
+import updateProductMutation from '@query/UpdateProduct.query';
 
 import RESET_TIME_IN_MS from '@component/Reservation/Reservation.config';
 
@@ -126,7 +126,7 @@ export class ProductContainer extends React.Component {
             } = {}
         } = this.state;
 
-        updateProduct(_id, title, description, price)
+        updateProductMutation(_id, title, description, price)
             .then((result) => {
                 const {
                     data: {

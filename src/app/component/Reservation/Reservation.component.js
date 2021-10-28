@@ -67,7 +67,9 @@ export class Reservation extends React.Component {
                       onClick={ handleInsideElementClick }
                     >
                         <h2>
-                            <p className="Subtitle">Galdu</p>
+                            <p className="Subtitle">
+                                { t('table') }
+                            </p>
                             <p className="Headline">
                                 { t('reservation') }
                             </p>

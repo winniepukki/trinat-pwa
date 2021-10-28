@@ -23,7 +23,7 @@ const query = `query {
 }
 `;
 
-export const fetchProductList = async () => fetch('https://winniepukki.ddns.net', {
+export const fetchProductListQuery = async () => fetch('https://winniepukki.ddns.net', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
@@ -36,4 +36,4 @@ export const fetchProductList = async () => fetch('https://winniepukki.ddns.net'
     .then((response) => response.json())
     .then((data) => data);
 
-export default fetchProductList;
+export default fetchProductListQuery;

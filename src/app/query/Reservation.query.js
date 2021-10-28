@@ -31,7 +31,7 @@ const query = `mutation(
 }
 `;
 
-export const createReservation = async (
+export const createReservationMutation = async (
     name = '',
     surname = '',
     phone = '',
@@ -59,4 +59,4 @@ export const createReservation = async (
     .then((response) => response.json())
     .then((data) => data);
 
-export default createReservation;
+export default createReservationMutation;

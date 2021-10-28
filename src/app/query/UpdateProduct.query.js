@@ -22,11 +22,11 @@ const query = `mutation(
 }
 `;
 
-export const updateProduct = async (
-    id,
-    title,
-    description,
-    price
+export const updateProductMutation = async (
+    id = '',
+    title = '',
+    description = '',
+    price = 0
 ) => fetch('https://winniepukki.ddns.net', {
     method: 'POST',
     headers: {
@@ -46,4 +46,4 @@ export const updateProduct = async (
     .then((response) => response.json())
     .then((data) => data);
 
-export default updateProduct;
+export default updateProductMutation;

@@ -18,7 +18,11 @@ const query = `mutation($fullName: String! $email: String! $review: String!) {
 }
 `;
 
-export const createReview = async (fullName, email, review) => fetch('https://winniepukki.ddns.net', {
+export const createReviewMutation = async (
+    fullName = '',
+    email = '',
+    review = ''
+) => fetch('https://winniepukki.ddns.net', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
@@ -32,4 +36,4 @@ export const createReview = async (fullName, email, review) => fetch('https://wi
     .then((response) => response.json())
     .then((data) => data);
 
-export default createReview;
+export default createReviewMutation;

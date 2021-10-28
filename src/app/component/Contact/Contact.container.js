@@ -9,7 +9,7 @@ import React from 'react';
 
 import Contact from './Contact.component';
 
-import createReview from '@query/CreateReview.query';
+import createReviewMutation from '@query/CreateReview.query';
 
 import { validateInputLength } from '@util/Validator';
 import { RESET_TIME_IN_MS } from '@component/Reservation/Reservation.config';
@@ -96,7 +96,7 @@ export class ContactContainer extends React.Component {
             return;
         }
 
-        createReview(
+        createReviewMutation(
             name,
             email,
             review

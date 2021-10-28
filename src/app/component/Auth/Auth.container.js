@@ -17,7 +17,7 @@ import {
     subscribeAccount
 } from '@store/Account/Account.action';
 
-import verifyAdmin from '@query/VerifyAdmin.query';
+import verifyAdminQuery from '@query/VerifyAdmin.query';
 
 export const mapStateToProps = () => ({});
 
@@ -50,7 +50,7 @@ export class AuthContainer extends React.Component {
 
                 if (email.length) {
                     /* Verify if the user is admin */
-                    verifyAdmin(email)
+                    verifyAdminQuery(email)
                         .then((result) => {
                             const {
                                 data: {
