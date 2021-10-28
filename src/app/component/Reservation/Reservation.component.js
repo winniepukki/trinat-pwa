@@ -162,7 +162,7 @@ export class Reservation extends React.Component {
                                 <option value="3">{ t('guest', { count: 3 }) }</option>
                                 <option value="4">{ t('guest', { count: 4 }) }</option>
                                 <option value="5">{ t('guest', { count: 5 }) }</option>
-                                <option value="more">{ t('guest-over') }</option>
+                                <option value="100">{ t('guest-over') }</option>
                             </select>
                         </div>
                         <div className="Reservation-Box-Submit">
