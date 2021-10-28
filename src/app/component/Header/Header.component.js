@@ -31,7 +31,7 @@ export class Header extends React.Component {
             headerDetails
         } = this.props;
 
-        const { language } = getI18n();
+        const { language = '' } = getI18n();
 
         return (
             <header className="Header">

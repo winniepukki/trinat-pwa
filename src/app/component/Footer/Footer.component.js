@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /**
 * SIA Trinat restaurant project
 * Copyright © winniepukki. All rights reserved.

@@ -30,7 +30,7 @@ export class Contact extends React.Component {
                 email = '',
                 review = ''
             } = {},
-            message,
+            message = '',
             handleChange,
             handleSubmit
         } = this.props;

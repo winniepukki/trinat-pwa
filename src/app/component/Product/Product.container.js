@@ -106,10 +106,9 @@ export class ProductContainer extends React.Component {
     }
 
     handleEditButtonClick() {
-        const { showEditComponent = false } = this.state;
-        this.setState({
+        this.setState(({ showEditComponent }) => ({
             showEditComponent: !showEditComponent
-        });
+        }));
     }
 
     handleSubmit() {

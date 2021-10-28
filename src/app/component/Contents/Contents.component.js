@@ -24,7 +24,7 @@ export class Contents extends React.Component {
         const { t } = this.props;
         return (
             <section
-              className="AppContents"
+              className="Contents"
             >
                 <Hero />
                 <Blockquote

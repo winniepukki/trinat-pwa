@@ -26,7 +26,7 @@ export class Category extends React.Component {
     renderCategoryProducts() {
         const {
             i18n: {
-                language: lang = ''
+                language: selectedLanguage = ''
             } = {},
             products = []
         } = this.props;
@@ -41,7 +41,7 @@ export class Category extends React.Component {
                 language = ''
             } = product;
 
-            if (language !== lang) {
+            if (language !== selectedLanguage) {
                 return null;
             }
 

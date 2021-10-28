@@ -30,7 +30,11 @@ export const createReviewMutation = async (
     },
     body: JSON.stringify({
         query,
-        variables: { fullName, email, review }
+        variables: {
+            fullName,
+            email,
+            review
+        }
     })
 })
     .then((response) => response.json())

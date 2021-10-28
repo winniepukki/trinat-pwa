@@ -32,6 +32,7 @@ export class Reservation extends React.Component {
         const {
             t,
             open = false,
+            message = '',
             onClose,
             status,
             values: {
@@ -44,8 +45,7 @@ export class Reservation extends React.Component {
             } = {},
             handleChange,
             handleSubmit,
-            handleInsideElementClick,
-            message
+            handleInsideElementClick
         } = this.props;
 
         if (!open) {
@@ -172,7 +172,11 @@ export class Reservation extends React.Component {
                               className="Button Button-Reservation Button-Light"
                               aria-label={ t('aria.submit-reservation') }
                               onClick={ handleSubmit }
-                              disabled={ !name.length || !surname.length || !phone.length || !date.length || !time.length }
+                              disabled={ !name.length
+                                  || !surname.length
+                                  || !phone.length
+                                  || !date.length
+                                  || !time.length }
                             >
                                 { t('submit') }
                             </button>

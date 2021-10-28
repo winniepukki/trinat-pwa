@@ -11,11 +11,9 @@ import {
 } from 'redux';
 
 import accountReducer from './Account/Account.reducer';
-import productsReducer from './Products/Products.reducer';
 
 const rootReducer = combineReducers({
-    AccountReducer: accountReducer,
-    ProductsReducer: productsReducer
+    AccountReducer: accountReducer
 });
 
 const store = createStore(

@@ -31,6 +31,7 @@ export class HeaderContainer extends React.Component {
 
     containerProps() {
         const { open } = this.state;
+
         return {
             open,
             headerDetails: this.headerDetailsRef

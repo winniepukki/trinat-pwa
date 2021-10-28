@@ -45,7 +45,7 @@ export class Products extends React.Component {
     renderSpecialProducts() {
         const {
             i18n: {
-                language: lang = ''
+                language: selectedLanguage = ''
             } = {}
         } = this.props;
 
@@ -70,7 +70,7 @@ export class Products extends React.Component {
                 language = ''
             } = product;
 
-            if (title !== SPECIAL || lang !== language) {
+            if (title !== SPECIAL || selectedLanguage !== language) {
                 return null;
             }
 

@@ -30,25 +30,18 @@ export class Delimiter extends React.Component {
         imgIndex: 1
     }
 
-    getAccuratePosition() {
-        const { positionDefault } = this.props;
-
-        if (positionDefault) {
-            return DEFAULT_POSITION;
-        }
-
-        return SECONDARY_POSITION;
-    }
-
     render() {
         const {
             t,
             headline = '',
             subtitle = '',
-            imgIndex = 1
+            imgIndex = 1,
+            positionDefault = true
         } = this.props;
 
-        const accuratePosition = this.getAccuratePosition();
+        const accuratePosition = positionDefault
+            ? DEFAULT_POSITION
+            : SECONDARY_POSITION;
 
         return (
             <section

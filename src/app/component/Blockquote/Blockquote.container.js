@@ -26,7 +26,7 @@ export class BlockquoteContainer extends React.Component {
     }
 
     componentDidMount() {
-        window.addEventListener('scroll', this.handleAppearance.bind(this));
+        window.addEventListener('scroll', this.handleAnimatedAppearance.bind(this));
     }
 
     containerProps() {
@@ -46,7 +46,7 @@ export class BlockquoteContainer extends React.Component {
         };
     }
 
-    handleAppearance() {
+    handleAnimatedAppearance() {
         const windowBottom = window.screenY + window.innerHeight;
 
         const contentNode = this.contentRef.current;
