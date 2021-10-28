@@ -4,6 +4,6 @@
 *
 * @license MIT
 */
-export const CURRENT_VERSION = '2.0.3';
+export const CURRENT_VERSION = '2.0.4';
 
 export default CURRENT_VERSION;
