@@ -1,5 +1,5 @@
 {
-  "name": "trinat-pwa",
+  "name": "trinat",
   "version": "3.0.0",
   "description": "SIA Trinat local area restaurant in Riga small-scope project. Developed on React, Google Firebase, RaspberryPi and GraphQL API in business purposes",
   "main": "src/index.js",
