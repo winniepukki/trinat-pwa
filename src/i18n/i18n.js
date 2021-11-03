@@ -12,6 +12,7 @@ import { initReactI18next } from 'react-i18next';
 
 import lv from './locales/lv.json';
 import ru from './locales/ru.json';
+import en from './locales/en.json';
 
 const resources = {
     lv: {
@@ -19,6 +20,9 @@ const resources = {
     },
     ru: {
         translation: ru
+    },
+    en: {
+        translation: en
     }
 };
 

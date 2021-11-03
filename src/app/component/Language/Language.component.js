@@ -74,6 +74,14 @@ export class Language extends React.Component {
                   По-русски
                 </button>
                 <button
+                  data-language="en"
+                  onClick={ this.changeLanguage }
+                  className="Button Button-Language-Option"
+                  aria-label={ t('aria.lang-switch-en') }
+                >
+                    English
+                </button>
+                <button
                   onClick={ handleOpenState }
                   className="Button Button-Close Text-Dark"
                   aria-label={ t('aria.lang-switch-close') }
