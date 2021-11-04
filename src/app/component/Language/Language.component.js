@@ -17,38 +17,15 @@ export class Language extends React.Component {
         t: PropTypes.func.isRequired,
         open: PropTypes.bool.isRequired,
         handleOpenState: PropTypes.func.isRequired,
-        i18n: PropTypes.instanceOf(Object).isRequired
-    }
-
-    constructor(props) {
-        super(props);
-
-        this.changeLanguage = this.changeLanguage.bind(this);
-    }
-
-    changeLanguage(event) {
-        const {
-            i18n = {},
-            handleOpenState
-        } = this.props;
-
-        const {
-            target: {
-                dataset: {
-                    language = ''
-                } = {}
-            } = {}
-        } = event;
-
-        i18n.changeLanguage(language);
-        handleOpenState();
+        changeLanguage: PropTypes.func.isRequired
     }
 
     render() {
         const {
             t,
             open = false,
-            handleOpenState
+            handleOpenState,
+            changeLanguage
         } = this.props;
 
         if (!open) {
@@ -59,7 +36,7 @@ export class Language extends React.Component {
             <div className="Language">
                 <button
                   data-language="lv"
-                  onClick={ this.changeLanguage }
+                  onClick={ changeLanguage }
                   className="Button Button-Language-Option"
                   aria-label={ t('aria.lang-switch-lv') }
                 >
@@ -67,7 +44,7 @@ export class Language extends React.Component {
                 </button>
                 <button
                   data-language="ru"
-                  onClick={ this.changeLanguage }
+                  onClick={ changeLanguage }
                   className="Button Button-Language-Option"
                   aria-label={ t('aria.lang-switch-ru') }
                 >
@@ -75,7 +52,7 @@ export class Language extends React.Component {
                 </button>
                 <button
                   data-language="en"
-                  onClick={ this.changeLanguage }
+                  onClick={ changeLanguage }
                   className="Button Button-Language-Option"
                   aria-label={ t('aria.lang-switch-en') }
                 >
