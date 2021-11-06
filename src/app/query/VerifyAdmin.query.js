@@ -6,9 +6,7 @@
 */
 
 const query = `query($email: String!) {
-  verifyAdmin(authInput: {
-    email: $email
-  }) {
+  verifyAdmin(email: $email) {
     success
   }
 }
@@ -16,7 +14,7 @@ const query = `query($email: String!) {
 
 export const verifyAdminQuery = async (
     email = ''
-) => fetch('https://graphql.reaktive.cc', {
+) => fetch('http://localhost:4000/graphql', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
