@@ -9,12 +9,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 
-import ProductType from '@type/Product';
+import CategoryType from '@type/Category';
 
 import { SPECIAL } from './Products.config';
 
 import Category from '@component/Category';
-import Product from '@component/Product';
 import Skeleton from '@component/Skeleton';
 
 import './Products.style.scss';
@@ -22,34 +21,23 @@ import './Products.style.scss';
 export class Products extends React.Component {
     static propTypes = {
         t: PropTypes.func.isRequired,
-        i18n: PropTypes.instanceOf(Object).isRequired,
-        products: PropTypes.arrayOf(ProductType)
+        categories: PropTypes.arrayOf(CategoryType).isRequired
     }
 
-    static defaultProps = {
-        products: []
-    }
-
-    getProductList() {
+    getCategoriesList() {
         const {
-            products = []
+            categories = []
         } = this.props;
 
-        if (!products && !products.length) {
+        if (!categories && !categories.length) {
             return null;
         }
 
-        return products;
+        return categories;
     }
 
     renderSpecialProducts() {
-        const {
-            i18n: {
-                language: selectedLanguage = ''
-            } = {}
-        } = this.props;
-
-        if (!this.getProductList().length) {
+        if (!this.getCategoriesList().length) {
             return (
               <section
                 className="Skeleton-Grid"
@@ -61,54 +49,42 @@ export class Products extends React.Component {
             );
         }
 
-        return this.getProductList().map((product) => {
+        return this.getCategoriesList().map((category) => {
             const {
-                _id = '',
-                category: {
-                    title = ''
-                } = {},
-                language = ''
-            } = product;
-
-            if (title !== SPECIAL || selectedLanguage !== language) {
-                return null;
-            }
-
-            return <Product key={ _id } product={ product } />;
-        });
-    }
-
-    getSortedCategories() {
-        return this.getProductList()
-            /* Extract category from a product */
-            .map(({ category }) => category)
-            /* Sort categories based on priority */
-            .sort((a, b) => parseFloat(a.priority) - parseFloat(b.priority))
-            /* Remove duplicates */
-            .filter((v, i, a) => a.findIndex((t) => (t.title === v.title)) === i);
-    }
-
-    renderProductsWithCategories() {
-        return this.getSortedCategories().map((category) => {
-            const {
-                title = ''
+                key,
+                products
             } = category;
 
-            if (title === SPECIAL) {
+            if (key !== SPECIAL) {
                 return null;
             }
-
-            /* Sort products on sorted category and product category */
-            const sortedProducts = this.getProductList()
-                .filter((
-                    { category: { title: categoryTitle = '' } = {} }
-                ) => categoryTitle === title);
 
             return (
                 <Category
-                  key={ title }
-                  title={ title }
-                  products={ sortedProducts }
+                  key={ key }
+                  title={ key }
+                  products={ products }
+                />
+            );
+        });
+    }
+
+    renderProductsWithCategories() {
+        return this.getCategoriesList().map((category) => {
+            const {
+                key = '',
+                products
+            } = category;
+
+            if (key === SPECIAL) {
+                return null;
+            }
+
+            return (
+                <Category
+                  key={ key }
+                  title={ key }
+                  products={ products }
                 />
             );
         });

@@ -5,24 +5,19 @@
 * @license MIT
 */
 
-const query = `mutation($fullName: String! $email: String! $review: String!) {
-  createReview(reviewInput: {
-    fullName: $fullName
-    email: $email
-    review: $review
-  }) {
-    fullName
-    email
-    review
+const query = `mutation($review: ReviewInput) {
+  createReview(review: $review) {
+    message
+    success
   }
 }
 `;
 
-export const createReviewMutation = async (
-    fullName = '',
+export const createReviewMutation = async ({
+    name = '',
     email = '',
     review = ''
-) => fetch('https://graphql.reaktive.cc', {
+}) => fetch('http://localhost:4000/graphql', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
@@ -31,9 +26,11 @@ export const createReviewMutation = async (
     body: JSON.stringify({
         query,
         variables: {
-            fullName,
-            email,
-            review
+            review: {
+                name,
+                email,
+                review
+            }
         }
     })
 })

@@ -96,12 +96,28 @@ export class ContactContainer extends React.Component {
             return;
         }
 
-        createReviewMutation(
+        createReviewMutation({
             name,
             email,
             review
-        )
-            .then(() => {
+        })
+            .then((response) => {
+                const {
+                    data: {
+                        createReview: {
+                            success = false
+                        } = {}
+                    } = {}
+                } = response;
+
+                if (!success) {
+                    this.setState({
+                        message: 'error.network'
+                    });
+
+                    return;
+                }
+
                 this.setState({
                     message: 'contact-success'
                 });

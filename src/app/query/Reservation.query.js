@@ -5,40 +5,22 @@
  * @license MIT
  */
 
-const query = `mutation(
-  $name: String!
-  $surname: String!
-  $phone: String!
-  $date: String!
-  $time: String!
-  $guests: Float!
-) {
-  createReservation(reservationInput: {
-    name: $name
-    surname: $surname
-    phone: $phone
-    date: $date
-    time: $time
-    guests: $guests
-  }) {
-    name
-    surname
-    phone
-    date
-    time
-    guests
+const query = `mutation($reservation: ReservationInput) {
+  createReservation(reservation: $reservation) {
+    message
+    success
   }
 }
 `;
 
-export const createReservationMutation = async (
+export const createReservationMutation = async ({
     name = '',
     surname = '',
     phone = '',
     date = '',
     time = '',
     guests = 0
-) => fetch('https://graphql.reaktive.cc', {
+}) => fetch('http://localhost:4000/graphql', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
@@ -47,12 +29,14 @@ export const createReservationMutation = async (
     body: JSON.stringify({
         query,
         variables: {
-            name,
-            surname,
-            phone,
-            date,
-            time,
-            guests
+            reservation: {
+                name,
+                surname,
+                phone,
+                date,
+                time,
+                guests
+            }
         }
     })
 })

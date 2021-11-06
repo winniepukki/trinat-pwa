@@ -1,9 +1,9 @@
 /**
- * Immersive Technologies project
- * Copyright © winniepukki. All rights reserved.
- *
- * @license MIT
- */
+* SIA Trinat restaurant project
+* Copyright © winniepukki. All rights reserved.
+*
+* @license MIT
+*/
 
 const query = `query($email: String!) {
   verifyAdmin(authInput: {

@@ -1,22 +1,20 @@
 /**
- * SIA Trinat restaurant project
- * Copyright © winniepukki. All rights reserved.
- *
- * @license MIT
- */
+* SIA Trinat restaurant project
+* Copyright © winniepukki. All rights reserved.
+*
+* @license MIT
+*/
 
 const query = `mutation(
-  $id: String! 
-  $title: String! 
-  $description: String! 
-  $price: Float!
+    $id: ID!,
+    $lang: String!,
+    $product: EditProduct
 ) {
-  updateProduct(updateInput: {
-    _id: $id
-    title: $title
-    description: $description
-    price: $price
-  }) {
+  updateProduct(
+    id: $id, 
+    lang: $lang, 
+    product: $product
+) {
     success
   }
 }
@@ -24,10 +22,9 @@ const query = `mutation(
 
 export const updateProductMutation = async (
     id = '',
-    title = '',
-    description = '',
-    price = 0
-) => fetch('https://graphql.reaktive.cc', {
+    lang = '',
+    { title, description, price }
+) => fetch('http://localhost:4000/graphql', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
@@ -37,9 +34,12 @@ export const updateProductMutation = async (
         query,
         variables: {
             id,
-            title,
-            description,
-            price
+            lang,
+            product: {
+                title,
+                description,
+                price
+            }
         }
     })
 })

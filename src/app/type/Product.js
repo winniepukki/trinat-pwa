@@ -8,13 +8,10 @@
 import PropTypes from 'prop-types';
 
 export const ProductType = PropTypes.shape({
-    id: PropTypes.number,
-    category: PropTypes.shape({
-        title: PropTypes.string,
-        priority: PropTypes.number
-    }),
-    title: PropTypes.string.isRequired,
+    id: PropTypes.string,
+    title: PropTypes.string,
     description: PropTypes.string.isRequired,
+    lang: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     isRecommended: PropTypes.bool,
     isRecent: PropTypes.bool

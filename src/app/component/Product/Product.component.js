@@ -89,7 +89,7 @@ export class Product extends React.Component {
                 <input
                   className="Contact-Input"
                   onChange={ handleChange }
-                  type="text"
+                  type="number"
                   name="price"
                   value={ price }
                 />
@@ -115,13 +115,13 @@ export class Product extends React.Component {
     renderProductContent() {
         const {
             t,
+            admin,
             product: {
                 title = '',
                 description = '',
                 price = 0
             } = {},
-            handleEditButtonClick,
-            admin
+            handleEditButtonClick
         } = this.props;
 
         return (

@@ -13,7 +13,7 @@ export const ReservationType = PropTypes.shape({
     phone: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
-    guests: PropTypes.number.isRequired
+    guests: PropTypes.string.isRequired
 });
 
 export default ReservationType;

@@ -9,7 +9,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 
-import ProductType from '@type/Product';
+import { SPECIAL } from '@component/Products/Products.config';
+
+import UnsortedProduct from '@type/UnsortedProduct';
 
 import Product from '@component/Product';
 
@@ -19,7 +21,7 @@ export class Category extends React.Component {
     static propTypes = {
         t: PropTypes.func.isRequired,
         title: PropTypes.string.isRequired,
-        products: PropTypes.arrayOf(ProductType).isRequired,
+        products: PropTypes.arrayOf(UnsortedProduct).isRequired,
         i18n: PropTypes.instanceOf(Object).isRequired
     }
 
@@ -35,31 +37,53 @@ export class Category extends React.Component {
             return null;
         }
 
-        return products.map((product) => {
-            const {
-                _id = '',
-                language = ''
-            } = product;
+        return products.map(({
+            id = '',
+            price = 0,
+            isRecommended = false,
+            isRecent = false,
+            locales = []
+        }) => {
+            /**
+             * Sorting the current language-based product selection
+             * Priorities are sorted on the Server-side automatically
+            */
+            const productData = locales.find(({ lang }) => lang === selectedLanguage);
 
-            if (language !== selectedLanguage) {
-                return null;
-            }
+            const product = {
+                price,
+                isRecent,
+                isRecommended,
+                ...productData
+            };
 
-            return <Product key={ _id } product={ product } />;
+            return <Product key={ id } product={ product } />;
         });
     }
 
-    render() {
+    renderCategoryTitle() {
         const {
             t,
             title = ''
         } = this.props;
 
+        if (title === SPECIAL) {
+            return null;
+        }
+
+        return <p className="Category-Title">{ t(`category.${title}`) }</p>;
+    }
+
+    render() {
+        const {
+            title = ''
+        } = this.props;
+
         return (
             <section
-              className="Category"
+              className={ title === SPECIAL ? 'Category-Special' : 'Category' }
             >
-                <p className="Category-Title">{ t(`category.${title}`) }</p>
+                { this.renderCategoryTitle() }
                 { this.renderCategoryProducts() }
             </section>
         );

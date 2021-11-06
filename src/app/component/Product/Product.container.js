@@ -50,6 +50,19 @@ export class ProductContainer extends React.Component {
     }
 
     componentDidMount() {
+        this.refreshProductState();
+    }
+
+    componentDidUpdate(prevProps) {
+        const { product } = this.props;
+        const { product: prevProduct } = prevProps;
+
+        if (prevProduct !== product) {
+            this.refreshProductState();
+        }
+    }
+
+    refreshProductState() {
         const {
             product: {
                 title = '',
@@ -85,11 +98,13 @@ export class ProductContainer extends React.Component {
             } = {}
         } = this.props;
 
+        const parsedPrice = parseFloat(price);
+
         return {
             values: {
                 title,
                 description,
-                price
+                price: parsedPrice
             },
             admin,
             product,
@@ -114,7 +129,8 @@ export class ProductContainer extends React.Component {
     handleSubmit() {
         const {
             product: {
-                _id = ''
+                id = '',
+                lang = ''
             } = {}
         } = this.props;
         const {
@@ -125,7 +141,13 @@ export class ProductContainer extends React.Component {
             } = {}
         } = this.state;
 
-        updateProductMutation(_id, title, description, price)
+        const parsedPrice = parseFloat(price);
+
+        updateProductMutation(id, lang, {
+            title,
+            description,
+            price: parsedPrice
+        })
             .then((result) => {
                 const {
                     data: {
@@ -143,7 +165,6 @@ export class ProductContainer extends React.Component {
                         this.setState({
                             message: ''
                         });
-                        this.handleEditButtonClick();
                     }, RESET_TIME_IN_MS);
                 }
             });

@@ -9,37 +9,37 @@ import React from 'react';
 
 import Products from './Products.component';
 
-import fetchProductListQuery from '@query/ProductList.query';
+import fetchCategoriesWithProducts from '@query/Categories.query';
 
 export class ProductsContainer extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            products: []
+            categories: []
         };
 
         this.getProductList = this.getProductList.bind(this);
     }
 
     async componentDidMount() {
-        const products = await this.getProductList();
+        const categories = await this.getProductList();
         this.setState({
-            products
+            categories
         });
     }
 
     containerProps() {
-        const { products = [] } = this.state;
+        const { categories = [] } = this.state;
 
         return {
-            products
+            categories
         };
     }
 
     async getProductList() {
-        return fetchProductListQuery()
-            .then(({ data: { products = [] } = {} }) => products);
+        return fetchCategoriesWithProducts()
+            .then(({ data: { getCategories = [] } = {} }) => getCategories);
     }
 
     render() {

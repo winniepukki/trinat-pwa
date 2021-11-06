@@ -49,7 +49,7 @@ export class ReservationContainer extends React.Component {
                 phone: '',
                 date: '',
                 time: '',
-                guests: 1
+                guests: '1'
             }
         };
     }
@@ -69,7 +69,7 @@ export class ReservationContainer extends React.Component {
                 phone = '',
                 date = '',
                 time = '',
-                guests = 1
+                guests = ''
             } = {}
         } = this.state;
 
@@ -108,7 +108,7 @@ export class ReservationContainer extends React.Component {
                 phone: '',
                 date: '',
                 time: '',
-                guests: 1
+                guests: ''
             }
         });
     }
@@ -121,7 +121,7 @@ export class ReservationContainer extends React.Component {
                 phone = '',
                 date = '',
                 time = '',
-                guests = 1
+                guests = ''
             } = {}
         } = this.state;
 
@@ -164,15 +164,35 @@ export class ReservationContainer extends React.Component {
             return;
         }
 
-        createReservationMutation(
+        createReservationMutation({
             name,
             surname,
             phone,
             date,
             time,
-            +guests
-        )
-            .then(() => {
+            guests
+        })
+            .then((response) => {
+                const {
+                    data: {
+                        createReservation: {
+                            success = false,
+                            message = ''
+                        } = {}
+                    } = {}
+                } = response;
+
+                console.log(success);
+
+                if (!success) {
+                    this.setState({
+                        message,
+                        status: false
+                    });
+
+                    return;
+                }
+
                 this.setState({
                     message: 'reservation-success',
                     status: true
