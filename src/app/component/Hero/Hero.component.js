@@ -47,7 +47,7 @@ export class Hero extends React.Component {
                 />
                 <img
                   className="Hero-Image"
-                  src="/assets/img/section/hero.jpg"
+                  src="/assets/img/section/hero.webp"
                   alt={ t('aria.section-bg') }
                 />
             </section>

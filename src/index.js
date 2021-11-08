@@ -17,12 +17,12 @@ import Loading from '@component/Loading';
 
 const Router = lazy(() => import('@route/Router.component'));
 
-// if ('serviceWorker' in navigator) {
-//     window.addEventListener('load', async () => {
-//         const swUrl = './sw.js';
-//         await navigator.serviceWorker.register(swUrl, { scope: '/' });
-//     });
-// }
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', async () => {
+        const swUrl = './sw.js';
+        await navigator.serviceWorker.register(swUrl, { scope: '/' });
+    });
+}
 
 ReactDOM.render(
   <React.StrictMode>

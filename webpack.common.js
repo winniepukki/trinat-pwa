@@ -28,7 +28,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: paths.dist,
-        filename: '[name].[contenthash].js'
+        filename: '[name].js'
     },
     externals: {
         paths
@@ -62,7 +62,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'css/[name].[contenthash].css'
+            filename: 'css/[name].css'
         }),
         new HTMLWebpackPlugin({
             template: './src/public/index.html',
@@ -73,8 +73,8 @@ module.exports = {
                 { from: './src/public/assets/img/', to: 'assets/img' },
                 { from: './src/public/assets/icons/', to: 'assets/icons' },
                 { from: './src/public/assets/favicon', to: 'assets/favicon' },
-                { from: './src/public/manifest.json', to: './[name].[ext]' }
-                // { from: './src/sw.js', to: './[name].[ext]' }
+                { from: './src/public/manifest.json', to: './manifest.json' },
+                { from: './src/sw.js', to: './sw.js' }
             ]
         })
     ],
