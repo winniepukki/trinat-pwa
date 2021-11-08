@@ -51,6 +51,7 @@ export class Category extends React.Component {
             const productData = locales.find(({ lang }) => lang === selectedLanguage);
 
             const product = {
+                id,
                 price,
                 isRecent,
                 isRecommended,
