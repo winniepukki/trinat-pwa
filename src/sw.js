@@ -5,26 +5,34 @@
 * @license MIT
 */
 
-const cacheName = '1.0.0';
-const assets = [
-    'index.html',
-    'manifest.json',
-    'main.js',
-    'vendor.js',
-    'main.css'
-];
+self.addEventListener('activate', () => self.clients.claim());
 
-async function cacheFirst(request) {
-    const cached = await caches.match(request);
-    // eslint-disable-next-line no-return-await
-    return cached ?? await fetch(request);
-}
-
-self.addEventListener('install', async () => {
-    const cache = await caches.open(cacheName);
-    await cache.addAll(assets);
+self.addEventListener('install', async (event) => {
+    event.waitUntil(
+        caches.open('v1').then((cache) => cache.addAll([
+            'index.html',
+            'css/main.css',
+            'main.js',
+            '/assets/img/icons/elementor.svg',
+            '/assets/img/section/hero.webp',
+            '/assets/img/logo/logo.png',
+            '/assets/img/logo/logo-dark.png'
+        ]))
+    );
 });
 
-self.addEventListener('fetch', (e) => {
-    e.respondWith(cacheFirst(e.request));
+self.addEventListener('fetch', (ev) => {
+    // console.log(`Service worker intercepted request for: ${ev.request.url}`);
+    ev.respondWith(
+        caches.match(ev.request)
+            .then((res) => {
+                if (res) {
+                    // console.log('This is in the cache');
+                    return res;
+                }
+
+                // console.log('This is NOT in the cache - fetching from web');
+                return fetch(ev.request);
+            })
+    );
 });

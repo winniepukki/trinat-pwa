@@ -19,7 +19,7 @@ const Router = lazy(() => import('@route/Router.component'));
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
-        const swUrl = './sw.js';
+        const swUrl = './service-worker.js';
         await navigator.serviceWorker.register(swUrl, { scope: '/' });
     });
 }
