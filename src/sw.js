@@ -5,11 +5,23 @@
 * @license MIT
 */
 
-self.addEventListener('activate', () => self.clients.claim());
+const cacheVersion = 'v10';
+
+self.addEventListener('activate', () => {
+    caches.keys().then((keyList) => Promise.all(keyList.map((key) => {
+        if (cacheVersion.indexOf(key) === -1) {
+            return caches.delete(key);
+        }
+
+        return null;
+    })));
+
+    self.clients.claim();
+});
 
 self.addEventListener('install', async (event) => {
     event.waitUntil(
-        caches.open('v7').then((cache) => cache.addAll([
+        caches.open(cacheVersion).then((cache) => cache.addAll([
             '/',
             'index.html',
             'css/main.css',
@@ -43,16 +55,13 @@ self.addEventListener('install', async (event) => {
 });
 
 self.addEventListener('fetch', (ev) => {
-    // console.log(`Service worker intercepted request for: ${ev.request.url}`);
     ev.respondWith(
         caches.match(ev.request)
             .then((res) => {
                 if (res) {
-                    // console.log('This is in the cache');
                     return res;
                 }
 
-                // console.log('This is NOT in the cache - fetching from web');
                 return fetch(ev.request);
             })
     );
