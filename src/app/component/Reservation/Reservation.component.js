@@ -41,7 +41,7 @@ export class Reservation extends React.Component {
                 phone = '',
                 date = '',
                 time = '',
-                guests = 0
+                guests = '1'
             } = {},
             handleChange,
             handleSubmit,

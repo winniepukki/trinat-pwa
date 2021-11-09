@@ -108,7 +108,7 @@ export class ReservationContainer extends React.Component {
                 phone: '',
                 date: '',
                 time: '',
-                guests: ''
+                guests: '1'
             }
         });
     }
@@ -181,8 +181,6 @@ export class ReservationContainer extends React.Component {
                         } = {}
                     } = {}
                 } = response;
-
-                console.log(success);
 
                 if (!success) {
                     this.setState({
