@@ -42,7 +42,7 @@ export class Section extends React.Component {
             >
                 <img
                   className="Section-Gallery-Item"
-                  src="/assets/img/section/section-stirs.webp"
+                  src="/assets/img/section/section-stairs.webp"
                   alt={ t('aria.section-gallery') }
                 />
                 <img
