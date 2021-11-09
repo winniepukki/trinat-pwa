@@ -13,16 +13,16 @@ self.addEventListener('install', async (event) => {
             'index.html',
             'css/main.css',
             'css/vendor.css',
-            'css/src_app_component_App_index_js.css',
-            'css/src_app_component_Footer_index_js.css',
-            'css/src_app_component_Navigation_index_js.css',
+            'css/App.css',
+            'css/Footer.css',
+            'css/Navigation.css',
             'main.js',
             'vendor.js',
-            'src_app_component_App_index_js.js',
-            'src_app_component_Footer_index_js.js',
-            'src_app_component_Navigation_index_js.js',
-            'src_app_component_ScrollTop_index_js.js',
-            'src_app_route_Router_component_js.js'
+            'App.js',
+            'Footer.js',
+            'Navigation.js',
+            'ScrollTop.js',
+            'Router.js'
         ]))
     );
 });

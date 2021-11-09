@@ -15,7 +15,9 @@ import './app/style/main.scss';
 
 import Loading from '@component/Loading';
 
-const Router = lazy(() => import('@route/Router.component'));
+const Router = lazy(() => import(
+    /* webpackChunkName: "Router" */ '@route/Router.component'
+));
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {

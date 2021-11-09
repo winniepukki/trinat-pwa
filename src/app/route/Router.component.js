@@ -17,10 +17,18 @@ import {
 
 import store from '@store/index';
 
-const Navigation = lazy(() => import('@component/Navigation'));
-const App = lazy(() => import('@component/App'));
-const ScrollTop = lazy(() => import('@component/ScrollTop'));
-const Footer = lazy(() => import('@component/Footer'));
+const Navigation = lazy(() => import(
+    /* webpackChunkName: "Navigation" */ '@component/Navigation'
+));
+const App = lazy(() => import(
+    /* webpackChunkName: "App" */ '@component/App'
+));
+const ScrollTop = lazy(() => import(
+    /* webpackChunkName: "ScrollTop" */ '@component/ScrollTop'
+));
+const Footer = lazy(() => import(
+    /* webpackChunkName: "Footer" */ '@component/Footer'
+));
 
 export class Router extends React.Component {
     render() {
