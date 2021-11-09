@@ -9,7 +9,7 @@ self.addEventListener('activate', () => self.clients.claim());
 
 self.addEventListener('install', async (event) => {
     event.waitUntil(
-        caches.open('v5').then((cache) => cache.addAll([
+        caches.open('v7').then((cache) => cache.addAll([
             '/',
             'index.html',
             'css/main.css',
@@ -28,9 +28,11 @@ self.addEventListener('install', async (event) => {
             'assets/img/icons/leaf.png',
             'assets/img/logo/logo.png',
             'assets/img/logo/logo-dark.png',
+            'assets/img/logo/logo-img.png',
             'assets/img/social/americanexpress.svg',
             'assets/img/social/apple.svg',
             'assets/img/social/mastercard.svg',
+            'assets/img/social/visa.svg',
             'assets/img/section/hero.webp',
             'assets/img/section/section-delimiter-1.webp',
             'assets/img/section/section-delimiter-2.webp',
