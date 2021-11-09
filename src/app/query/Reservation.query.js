@@ -19,7 +19,7 @@ export const createReservationMutation = async ({
     phone = '',
     date = '',
     time = '',
-    guests = 0
+    guests = ''
 }) => fetch('http://localhost:4000/graphql', {
     method: 'POST',
     headers: {

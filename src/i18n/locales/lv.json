@@ -99,6 +99,11 @@
   "overview": "pārskats",
   "phone": "telefons",
   "privacy": "Privātuma politika",
+  "product-form-input": {
+    "description": "Produkta apraksts",
+    "price": "Produkta cena",
+    "title": "Produkta nosaukums"
+  },
   "product-success": "Jūs esat veiksmīgi nomainījis preci!",
   "recent": "Jaunums",
   "recommended": "Šefpavāra izvēle",

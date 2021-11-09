@@ -12,11 +12,17 @@ self.addEventListener('install', async (event) => {
         caches.open('v1').then((cache) => cache.addAll([
             'index.html',
             'css/main.css',
+            'css/vendor.css',
+            'css/src_app_component_App_index_js.css',
+            'css/src_app_component_Footer_index_js.css',
+            'css/src_app_component_Navigation_index_js.css',
             'main.js',
-            '/assets/img/icons/elementor.svg',
-            '/assets/img/section/hero.webp',
-            '/assets/img/logo/logo.png',
-            '/assets/img/logo/logo-dark.png'
+            'vendor.js',
+            'src_app_component_App_index_js.js',
+            'src_app_component_Footer_index_js.js',
+            'src_app_component_Navigation_index_js.js',
+            'src_app_component_ScrollTop_index_js.js',
+            'src_app_route_Router_component_js.js'
         ]))
     );
 });

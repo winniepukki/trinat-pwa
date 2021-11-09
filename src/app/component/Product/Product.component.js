@@ -76,6 +76,7 @@ export class Product extends React.Component {
                   type="text"
                   name="title"
                   value={ title }
+                  placeholder={ t('product-form-input.title') }
                 />
 
                 <input
@@ -84,6 +85,7 @@ export class Product extends React.Component {
                   type="text"
                   name="description"
                   value={ description }
+                  placeholder={ t('product-form-input.description') }
                 />
 
                 <input
@@ -92,6 +94,7 @@ export class Product extends React.Component {
                   type="number"
                   name="price"
                   value={ price }
+                  placeholder={ t('product-form-input.price') }
                 />
 
                 <button

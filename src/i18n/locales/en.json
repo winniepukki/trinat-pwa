@@ -99,6 +99,11 @@
   "overview": "overview",
   "phone": "Phone",
   "privacy": "Privacy Policy",
+  "product-form-input": {
+    "description": "Product description",
+    "price": "Product price",
+    "title": "Product title"
+  },
   "product-success": "You have successfully changed the product!",
   "recent": "New",
   "recommended": "Chief's choice",

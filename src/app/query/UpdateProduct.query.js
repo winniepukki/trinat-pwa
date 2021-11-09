@@ -5,16 +5,8 @@
 * @license MIT
 */
 
-const query = `mutation(
-    $id: ID!,
-    $lang: String!,
-    $product: EditProduct
-) {
-  updateProduct(
-    id: $id, 
-    lang: $lang, 
-    product: $product
-) {
+const query = `mutation($id: ID!, $lang: String!, $product: EditProduct) {
+  updateProduct(id: $id, lang: $lang, product: $product) {
     success
   }
 }
