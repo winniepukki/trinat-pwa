@@ -7,6 +7,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 
 import Reservation from './Reservation.component';
 
@@ -28,7 +29,8 @@ import createReservationMutation from '@query/Reservation.query';
 export class ReservationContainer extends React.Component {
     static propTypes = {
         open: PropTypes.bool.isRequired,
-        onClose: PropTypes.func.isRequired
+        onClose: PropTypes.func.isRequired,
+        i18n: PropTypes.instanceOf(Object).isRequired
     }
 
     containerFunctions = {
@@ -115,6 +117,11 @@ export class ReservationContainer extends React.Component {
 
     handleSubmit() {
         const {
+            i18n: {
+                language = ''
+            } = {}
+        } = this.props;
+        const {
             values: {
                 name = '',
                 surname = '',
@@ -164,7 +171,7 @@ export class ReservationContainer extends React.Component {
             return;
         }
 
-        createReservationMutation({
+        createReservationMutation(language, {
             name,
             surname,
             phone,
@@ -222,4 +229,4 @@ export class ReservationContainer extends React.Component {
     }
 }
 
-export default ReservationContainer;
+export default withTranslation()(ReservationContainer);

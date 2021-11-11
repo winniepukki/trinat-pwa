@@ -5,22 +5,24 @@
  * @license MIT
  */
 
-const query = `mutation($reservation: ReservationInput) {
-  createReservation(reservation: $reservation) {
+const query = `mutation($language: String!, $reservation: ReservationInput) {
+  createReservation(language: $language, reservation: $reservation) {
     message
     success
   }
 }
 `;
 
-export const createReservationMutation = async ({
-    name = '',
-    surname = '',
-    phone = '',
-    date = '',
-    time = '',
-    guests = ''
-}) => fetch('http://localhost:4000/graphql', {
+export const createReservationMutation = async (
+    language = '', {
+        name = '',
+        surname = '',
+        phone = '',
+        date = '',
+        time = '',
+        guests = ''
+    }
+) => fetch('http://localhost:4000/graphql', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
@@ -29,6 +31,7 @@ export const createReservationMutation = async ({
     body: JSON.stringify({
         query,
         variables: {
+            language,
             reservation: {
                 name,
                 surname,
