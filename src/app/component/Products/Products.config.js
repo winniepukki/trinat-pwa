@@ -7,3 +7,4 @@
 
 export const SPECIAL = 'special';
 export const KIDS = 'kids';
+export const DB_VERSION = 1;

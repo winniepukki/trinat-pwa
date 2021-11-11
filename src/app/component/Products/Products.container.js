@@ -7,6 +7,8 @@
 
 import React from 'react';
 
+import { DB_VERSION } from './Products.config';
+
 import Products from './Products.component';
 
 import fetchCategoriesWithProducts from '@query/Categories.query';
@@ -26,15 +28,17 @@ export class ProductsContainer extends React.Component {
         const categories = await this.getProductList()
             .catch(() => this.getProductsFromIndexedDB());
 
-        this.setState({
-            categories
-        });
+        if (categories.length) {
+            this.setState({
+                categories
+            });
 
-        this.putProductsToIndexedDB();
+            this.putProductsToIndexedDB();
+        }
     }
 
     getProductsFromIndexedDB() {
-        const request = window.indexedDB.open('products', 1);
+        const request = window.indexedDB.open('products', DB_VERSION);
         request.onsuccess = (event) => {
             const db = event.target.result;
             const transaction = db.transaction('products');
@@ -44,26 +48,23 @@ export class ProductsContainer extends React.Component {
             request.onsuccess = () => {
                 const { result: products = [] } = request;
 
-                return products;
+                if (products.length) {
+                    this.setState({
+                        categories: products
+                    });
+                }
             };
         };
     }
 
     putProductsToIndexedDB() {
-        // eslint-disable-next-line no-unused-vars
-        let db;
-        const request = window.indexedDB.open('products', 1);
-
         const { categories } = this.state;
-
-        request.onsuccess = (e) => {
-            db = e.target.result;
-        };
+        const request = window.indexedDB.open('products', DB_VERSION);
 
         request.onupgradeneeded = (e) => {
             const db = e.target.result;
 
-            if (db.version >= 2) {
+            if (db.version !== DB_VERSION) {
                 db.deleteObjectStore('products');
             }
 
