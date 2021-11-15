@@ -83,7 +83,7 @@
     "phone": "Lūdzu ievadiet Latvijas mobilo tālruņa numuru",
     "time": "Mūsu darba laiks ir no 11.00 – 22.00"
   },
-  "footer-text": "Izstrādāja ar mīlestību un uztur @winniepukki. Vietnes versija: {{version}}",
+  "footer-text": "Izstrādāja ar mīlestību un uztur <1>{{ DEVELOPER }}</1>. Vietnes versija: {{ CURRENT_VERSION }}",
   "gallery": "galerija",
   "guest-over": "Vairāk par 5",
   "guest_one": "{{count}} viesis",

@@ -6,4 +6,5 @@
 */
 
 export const PHONE = '29740898';
-export const SECONDARY_PHONE = '29760502';
+
+export default PHONE;

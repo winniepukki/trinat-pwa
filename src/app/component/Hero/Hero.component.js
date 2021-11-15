@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Trans, withTranslation } from 'react-i18next';
 
-import { PHONE } from './Hero.config';
+import PHONE from './Hero.config';
 
 import './Hero.style.scss';
 

@@ -7,11 +7,11 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { withTranslation } from 'react-i18next';
+import { Trans, withTranslation } from 'react-i18next';
 
 import Auth from '@component/Auth';
 
-import CURRENT_VERSION from './Footer.config';
+import { CURRENT_VERSION, DEVELOPER } from './Footer.config';
 
 import './Footer.style.scss';
 
@@ -41,7 +41,16 @@ export class Footer extends React.Component {
                                   alt={ t('aria.logo') }
                                 />
                                 <p className="Simple-Text">
-                                    { t('footer-text', { version: CURRENT_VERSION }) }
+                                    <Trans i18nKey="footer-text">
+                                        { t('footer-text') }
+                                        <a
+                                          href="https://www.instagram.com/winniepukki/"
+                                          aria-label={ t('aria.link-dev') }
+                                        >
+                                            { { DEVELOPER } }
+                                            { { CURRENT_VERSION } }
+                                        </a>
+                                    </Trans>
                                 </p>
                                 <div className="Footer-Block-Item-Payment">
                                     <img

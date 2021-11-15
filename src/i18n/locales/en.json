@@ -83,7 +83,7 @@
     "phone": "Please enter your Latvian mobile phone number",
     "time": "Our working hours are from 11.00 to 22.00"
   },
-  "footer-text": "Designed with love by @winniepukki. Website version: {{version}}",
+  "footer-text": "Designed with love by <1>{{ DEVELOPER }}</1>. Website version: {{ CURRENT_VERSION }}",
   "gallery": "gallery",
   "guest-over": "Over 5 guests",
   "guest_one": "{{count}} guest",
