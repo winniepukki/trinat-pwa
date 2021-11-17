@@ -1,7 +1,7 @@
 {
-  "name": "Trinat Caffe",
-  "short_name": "TrinatCaffe",
-  "description": "Trinat Caffe official website",
+  "name": "Trinat Cafe",
+  "short_name": "TrinatCafe",
+  "description": "Trinat Cafe official website",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#333",
