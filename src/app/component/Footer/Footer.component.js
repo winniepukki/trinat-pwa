@@ -80,7 +80,7 @@ export class Footer extends React.Component {
                                 <ul className="List List-Light">
                                     <li className="List-Light-Item Custom-TTC">
                                         <a
-                                          href="https://www.facebook.com/3nataly/reviews/"
+                                          href="https://bit.ly/3oLLttk"
                                           aria-label={ t('aria.link-reviews') }
                                         >
                                             { t('reviews') }
