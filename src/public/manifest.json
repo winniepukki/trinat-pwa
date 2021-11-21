@@ -19,6 +19,11 @@
       "sizes": "96x96"
     },
     {
+      "src": "./assets/icons/icon-120x120.png",
+      "type": "image/png",
+      "sizes": "120x120"
+    },
+    {
       "src": "./assets/icons/icon-128x128.png",
       "type": "image/png",
       "sizes": "128x128"
@@ -32,6 +37,11 @@
       "src": "./assets/icons/icon-152x152.png",
       "type": "image/png",
       "sizes": "152x152"
+    },
+    {
+      "src": "./assets/icons/icon-180x180.png",
+      "type": "image/png",
+      "sizes": "180x180"
     },
     {
       "src": "./assets/icons/icon-192x192.png",
