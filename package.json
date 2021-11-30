@@ -92,7 +92,9 @@
     "moduleNameMapper": {
       "^@component(.*)$": "<rootDir>/src/app/component$1",
       "^@store(.*)$": "<rootDir>/src/app/store$1",
+      "^@route(.*)$": "<rootDir>/src/app/route$1",
       "^@util(.*)$": "<rootDir>/src/app/util$1",
+      "^@style(.*)$": "<rootDir>/src/app/style$1",
       "^@type(.*)$": "<rootDir>/src/app/type$1",
       "^@query(.*)$": "<rootDir>/src/app/query$1"
     }
