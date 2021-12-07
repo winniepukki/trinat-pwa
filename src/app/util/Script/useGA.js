@@ -4,6 +4,7 @@
 *
 * @license MIT
 */
+
 export const useGA = (tag) => {
     const script = document.createElement('script');
 

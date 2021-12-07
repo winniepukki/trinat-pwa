@@ -4,147 +4,98 @@
 *
 * @license MIT
 */
-import React, { Component } from 'react';
+
 import PropTypes from 'prop-types';
-import { withTranslation } from 'react-i18next';
-import { DIVIDER } from './Header.config';
-import {
-    LANG_CODE_LV,
-    LANG_CODE_RU
-} from '@component/App/App.config';
+import React from 'react';
+import { withTranslation, getI18n } from 'react-i18next';
+
+import RefType from '@type/Ref';
+
+import Language from '@component/Language';
 
 import './Header.style.scss';
 
-class Header extends Component {
-  static propTypes = {
-      t: PropTypes.instanceOf(Object).isRequired,
-      i18n: PropTypes.instanceOf(Object).isRequired,
-      parentCallback: PropTypes.func.isRequired
-  };
+export class Header extends React.Component {
+    static propTypes = {
+        t: PropTypes.func.isRequired,
+        handleOpenState: PropTypes.func.isRequired,
+        open: PropTypes.bool.isRequired,
+        headerDetails: RefType.isRequired
+    }
 
-  constructor(props) {
-      super(props);
-      this.state = {
-          menu: true
-      };
-      this.handleScroll = this.handleScroll.bind(this);
-      this.handleLanguage = this.handleLanguage.bind(this);
-  }
+    render() {
+        const {
+            t,
+            open = false,
+            handleOpenState,
+            headerDetails
+        } = this.props;
 
-  componentDidMount() {
-      window.addEventListener('scroll', this.handleScroll);
-  }
+        const { language = '' } = getI18n();
 
-  /**
-   * Show/ hide header upon reaching 50%
-   * of the Hero components height
-   */
-  handleScroll() {
-      const currentScrollPos = window.pageYOffset;
-      const heroFrame = document.getElementById('hero').offsetHeight / DIVIDER;
-      if (currentScrollPos > heroFrame) {
-          this.setState({
-              menu: false
-          });
-      } else {
-          this.setState({
-              menu: true
-          });
-      }
-  }
-
-  handleLanguage() {
-      const {
-          i18n: {
-              language = ''
-          } = {},
-          parentCallback
-      } = this.props;
-
-      /**
-       * Change PWA language on the
-       * language selection
-       */
-      if (language === LANG_CODE_LV) {
-          parentCallback(LANG_CODE_RU);
-      } else {
-          parentCallback(LANG_CODE_LV);
-      }
-  }
-
-  renderLanguageSwitcher() {
-      const {
-          i18n: {
-              language = ''
-          } = {}
-      } = this.props;
-
-      return (
-          <a className="language-button" onClick={ this.handleLanguage }>
-            { language === LANG_CODE_LV
-                ? (
-                  <span>
-                    <img
-                      src="assets/img/icons/russia.svg"
-                      alt="Russian language switcher"
-                      className="language-switcher"
-                    />
-                  </span>
-                )
-                : (
-                  <span>
-                    <img
-                      src="assets/img/icons/latvia.svg"
-                      alt="Latvian language switcher"
-                      className="language-switcher"
-                    />
-                  </span>
-                ) }
-          </a>
-      );
-  }
-
-  render() {
-      const { menu } = this.state;
-      const { t } = this.props;
-
-      return (
-          <div className={ menu ? 'Header' : 'hidden' }>
-            <div className="container">
-              <div className="row justify-content-center align-items-center">
-                <div className="col header-item">
-                  <span className="header-venue-address">
-                    <i className="fas fa-map-marker-alt" />
-                    { ' ' }
-                    <a href="https://www.waze.com/en/live-map/directions/latvia/riga/trinat?place=ChIJuR9jcTbF7kYREaS40W3ryts">{ t('address.line') }</a>
-                  </span>
-                  <span>
-                    <i className="fas fa-phone-alt" />
-                    <a href="tel:">{ t('address.phone') }</a>
-                  </span>
+        return (
+            <header className="Header">
+                <div className="container">
+                    <div className="row">
+                        <div
+                          className="Header-Details col-sm-7"
+                          ref={ headerDetails }
+                        >
+                            <a
+                              href="https://www.waze.com/en/live-map/directions/latvia/riga/trinat?place=ChIJuR9jcTbF7kYREaS40W3ryts"
+                              className="Header-Details-Link"
+                              aria-label={ t('aria.visit-us') }
+                            >
+                                <i className="fas fa-map-marker-alt" />
+                                <span
+                                  className="Header-Details-Text"
+                                >
+                                    { t('address.line') }
+                                </span>
+                            </a>
+                            <a
+                              href={ `tel:${ t('address.phone') }` }
+                              className="Header-Details-Link"
+                              aria-label={ t('aria.call-us') }
+                            >
+                                <i className="fas fa-phone-alt" />
+                                <span
+                                  className="Header-Details-Text"
+                                >
+                                    { t('address.phone') }
+                                </span>
+                            </a>
+                        </div>
+                        <div className="Header-Social col-sm-5">
+                            <a
+                              className="Header-Social-Link"
+                              href="https://www.facebook.com/3nataly"
+                              aria-label={ t('aria.link-fb') }
+                            >
+                                <i className="fab fa-facebook" />
+                            </a>
+                            <a
+                              className="Header-Social-Link"
+                              href="https://www.instagram.com/siatrinat/"
+                              aria-label={ t('aria.link-ig') }
+                            >
+                                <i className="fab fa-instagram" />
+                            </a>
+                            <button
+                              className="Button Button-Language-Switcher Button-Light"
+                              onClick={ handleOpenState }
+                              aria-label={ t('aria.lang-switch-open') }
+                            >
+                                <i className="fas fa-chevron-down" />
+                                <span className="Current-Language">{ language }</span>
+                            </button>
+                            <Language handleOpenState={ handleOpenState } open={ open } />
+                        </div>
+                    </div>
                 </div>
-                <div className="col header-item custom-tar">
-                  <a
-                    href="http://bit.ly/3nataly"
-                    className="header-social-network"
-                    aria-label="Visit us on Facebook button"
-                  >
-                      <i className="fab fa-facebook-f" />
-                  </a>
-                  <a
-                    href="https://www.flickr.com/photos/3nataly/"
-                    className="header-social-network"
-                    aria-label="Visit us on Flickr button"
-                  >
-                      <i className="fab fa-flickr" />
-                  </a>
-                  { this.renderLanguageSwitcher() }
-                </div>
-              </div>
-            </div>
-          </div>
-      );
-  }
+            </header>
+        );
+    }
 }
 
 export default withTranslation()(Header);

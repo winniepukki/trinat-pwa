@@ -5,4 +5,4 @@
 * @license MIT
 */
 
-export { default } from './Blockquote.component';
+export { default } from './Blockquote.container';

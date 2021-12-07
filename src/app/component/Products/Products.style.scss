@@ -1,0 +1,17 @@
+@import '../../style/abstract/media';
+
+.Products {
+    overflow-x: hidden;
+
+    @include tablet {
+        .container {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    &-Categories {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

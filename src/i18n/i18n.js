@@ -4,27 +4,31 @@
 *
 * @license MIT
 */
+
 import i18n from 'i18next';
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
-import translationLV from './locales/lv/translation';
-import translationRU from './locales/ru/translation';
-import { LANG_CODE_LV } from '@component/App/App.config';
+import lv from './locales/lv.json';
+import ru from './locales/ru.json';
+import en from './locales/en.json';
 
 const resources = {
     lv: {
-        translation: translationLV
+        translation: lv
     },
     ru: {
-        translation: translationRU
+        translation: ru
+    },
+    en: {
+        translation: en
     }
 };
 
 i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
     resources,
-    fallbackLng: LANG_CODE_LV,
+    fallbackLng: 'lv',
     // Ensure the debugging mode is set to *false* in production
     debug: false,
     detection: {

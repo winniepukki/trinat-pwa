@@ -1,8 +1,8 @@
 /**
- * SIA Trinat restaurant project
- * Copyright © winniepukki. All rights reserved.
- *
- * @license MIT
- */
+* SIA Trinat restaurant project
+* Copyright © winniepukki. All rights reserved.
+*
+* @license MIT
+*/
 
-export { default } from './Reservation.component';
+export { default } from './Reservation.container';

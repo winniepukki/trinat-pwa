@@ -5,4 +5,4 @@
 * @license MIT
 */
 
-export { default } from './Contact.component';
+export { default } from './Contact.container';

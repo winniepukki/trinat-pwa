@@ -1,20 +1,20 @@
 /**
- * SIA Trinat restaurant project
- * Copyright © winniepukki. All rights reserved.
- *
- * @license MIT
- */
+* SIA Trinat restaurant project
+* Copyright © winniepukki. All rights reserved.
+*
+* @license MIT
+*/
+
 import PropTypes from 'prop-types';
 
-// eslint-disable-next-line import/prefer-default-export
 export const ProductType = PropTypes.shape({
-    id: PropTypes.number,
-    category: PropTypes.shape({
-        title: PropTypes.string,
-        priority: PropTypes.number
-    }),
+    id: PropTypes.string,
     title: PropTypes.string,
-    description: PropTypes.string,
-    price: PropTypes.number,
-    image_url: PropTypes.string
+    description: PropTypes.string.isRequired,
+    lang: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    isRecommended: PropTypes.bool,
+    isRecent: PropTypes.bool
 });
+
+export default ProductType;

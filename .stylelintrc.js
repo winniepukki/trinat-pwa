@@ -1,9 +1,10 @@
 /**
- * SIA Trinat restaurant project
- * Copyright © winniepukki. All rights reserved.
- *
- * @license MIT
- */
+* SIA Trinat restaurant project
+* Copyright © winniepukki. All rights reserved.
+*
+* @license MIT
+*/
+
 module.exports = {
     'plugins': [
         'stylelint-scss',
@@ -14,7 +15,7 @@ module.exports = {
         'stylelint-config-standard'
     ],
     'rules': {
-        'unit-allowed-list': ['ms', 'fr', 'px', 'em', 'rem', '%', 's', 'vmin', 'vmax', 'vh', 'deg'],
+        'unit-allowed-list': ['ms', 'fr', 'vw', 'px', 'em', 'rem', '%', 's', 'vmin', 'vmax', 'vh', 'deg'],
         'at-rule-no-unknown': null,
         'at-rule-empty-line-before': null,
         'declaration-empty-line-before': null,

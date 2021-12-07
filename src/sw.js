@@ -5,97 +5,64 @@
 * @license MIT
 */
 
-const cacheName = '2.0.3';
-const assets = [
-    'index.html',
-    'manifest.json'
-];
+const cacheVersion = 'v1';
 
-const PRODUCTS_DB = 'products';
-
-const STATUS_OK = 200;
-const STATUS_CREATED = 201;
-
-async function putProductListToIndexedDb() {
-    const request = {
-        query: `
-            query {
-                products {
-                    _id
-                    title
-                    category {
-                        title
-                        priority
-                    }    
-                    description
-                    image_url
-                    price
-                    language
-                }
-            }
-            `
-    };
-
-    await fetch('https://winniepukki.ddns.net', {
-        method: 'POST',
-        body: JSON.stringify(request),
-        headers: {
-            'Content-Type': 'application/json'
+self.addEventListener('activate', () => {
+    caches.keys().then((keyList) => Promise.all(keyList.map((key) => {
+        if (cacheVersion.indexOf(key) === -1) {
+            return caches.delete(key);
         }
-    })
-        .then((response) => {
-            const { status } = response;
-            if (status !== STATUS_OK && status !== STATUS_CREATED) {
-                throw new Error('Unable to process your request!');
-            }
 
-            return response.json();
-        })
-        .then((data) => data)
-        .then((data) => {
-            const {
-                data: {
-                    products = []
-                } = {}
-            } = data;
+        return null;
+    })));
 
-            const request = indexedDB.open(PRODUCTS_DB, 2);
-            request.onupgradeneeded = (event) => {
-                const db = event.target.result;
-
-                const objectStore = db.createObjectStore(PRODUCTS_DB, {
-                    keyPath: 'title'
-                });
-
-                objectStore.createIndex('title', 'title', { unique: false });
-
-                objectStore.transaction.oncomplete = () => {
-                    const customerObjectStore = db
-                        .transaction(PRODUCTS_DB, 'readwrite')
-                        .objectStore(PRODUCTS_DB);
-
-                    products.forEach((product) => {
-                        customerObjectStore.add(product);
-                    });
-                };
-            };
-        })
-        .catch(() => {});
-}
-
-async function cacheFirst(request) {
-    const cached = await caches.match(request);
-    // eslint-disable-next-line no-return-await
-    return cached ?? await fetch(request);
-}
-
-self.addEventListener('install', async () => {
-    const cache = await caches.open(cacheName);
-    await cache.addAll(assets);
-
-    await putProductListToIndexedDb();
+    self.clients.claim();
 });
 
-self.addEventListener('fetch', (e) => {
-    e.respondWith(cacheFirst(e.request));
+self.addEventListener('install', async (event) => {
+    event.waitUntil(
+        caches.open(cacheVersion).then((cache) => cache.addAll([
+            '/',
+            'index.html',
+            'css/main.css',
+            'css/vendor.css',
+            'css/App.css',
+            'css/Footer.css',
+            'css/Navigation.css',
+            'main.js',
+            'vendor.js',
+            'App.js',
+            'Footer.js',
+            'Navigation.js',
+            'ScrollTop.js',
+            'Router.js',
+            'assets/img/icons/elementor.svg',
+            'assets/img/icons/leaf.png',
+            'assets/img/logo/logo.png',
+            'assets/img/logo/logo-dark.png',
+            'assets/img/logo/logo-img.png',
+            'assets/img/social/americanexpress.svg',
+            'assets/img/social/apple.svg',
+            'assets/img/social/mastercard.svg',
+            'assets/img/social/visa.svg',
+            'assets/img/section/hero.webp',
+            'assets/img/section/section-delimiter-1.webp',
+            'assets/img/section/section-delimiter-2.webp',
+            'assets/img/section/section-plate.webp',
+            'assets/img/section/section-stairs.webp'
+        ]))
+    );
+});
+
+self.addEventListener('fetch', (ev) => {
+    ev.respondWith(
+        caches.match(ev.request)
+            .then((res) => {
+                if (res) {
+                    return res;
+                }
+
+                return fetch(ev.request);
+            })
+    );
 });

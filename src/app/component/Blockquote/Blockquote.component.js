@@ -4,45 +4,49 @@
 *
 * @license MIT
 */
-import React from 'react';
+
 import PropTypes from 'prop-types';
+import React from 'react';
 import { withTranslation } from 'react-i18next';
 
-class Blockquote extends React.Component {
+import RefType from '@type/Ref';
+
+export class Blockquote extends React.Component {
     static propTypes = {
-        content: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        author: PropTypes.string.isRequired
-    };
-
-    constructor(props) {
-        super(props);
-        this.renderBlockquoteEntities = this.renderBlockquoteEntities.bind(this);
-    }
-
-    renderBlockquoteEntities() {
-        const {
-            content = '',
-            description = '',
-            author = ''
-        } = this.props;
-
-        return (
-            <div className="container">
-              <p className="blockquote-content">{ content }</p>
-              <p className="description">{ description }</p>
-              <p className="author">{ author }</p>
-            </div>
-        );
+        t: PropTypes.func.isRequired,
+        contentKey: PropTypes.string.isRequired,
+        descriptionKey: PropTypes.string.isRequired,
+        authorKey: PropTypes.string.isRequired,
+        contentRef: RefType.isRequired,
+        descriptionRef: RefType.isRequired,
+        authorRef: RefType.isRequired
     }
 
     render() {
+        const {
+            t,
+            contentKey = '',
+            descriptionKey = '',
+            authorKey = '',
+            contentRef,
+            descriptionRef,
+            authorRef
+        } = this.props;
+
         return (
-            <div className="Blockquote">
-              <blockquote className="custom-tac">
-                { this.renderBlockquoteEntities() }
-              </blockquote>
-            </div>
+            <blockquote
+              className="Blockquote"
+            >
+                <div className="Blockquote-Content" ref={ contentRef }>
+                    { t(contentKey) }
+                </div>
+                <div className="Blockquote-Description" ref={ descriptionRef }>
+                    { t(descriptionKey) }
+                </div>
+                <div className="Blockquote-Author" ref={ authorRef }>
+                    { t(authorKey) }
+                </div>
+            </blockquote>
         );
     }
 }

@@ -1,40 +1,63 @@
+@import '../../style/abstract/media';
+
 .Header {
-    position: fixed;
+    position: relative;
     top: 0;
     right: 0;
     width: 100%;
-    z-index: 9999;
+    z-index: 1111;
     min-height: 40px;
-    font-size: 14px;
-    color: var(--white);
-    background: rgba(var(--primary-base-color), .85);
-    @media screen and (max-width: 1300px) {
-        padding: 10px 0;
+    background: var(--primary-base-color);
+    color: var(--bs-white);
+    display: flex;
+    align-items: center;
+    transition: all 500ms;
 
-        .header-venue-address {
-            width: 200px;
+    &-Short {
+        display: none;
+    }
+
+    @include media(mobile, tablet) {
+        padding: 5px 0;
+    }
+
+    &-Social {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        @include mobile {
+            width: unset;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: .4rem;
+            padding-bottom: .4rem;
+        }
+
+        &-Link {
+            padding: 0 10px;
+        }
+    }
+
+    &-Details-Link {
+        margin-right: 1rem;
+
+        @include media(mobile, tablet) {
             display: block;
+            padding: .4rem 0;
+            margin-right: 0;
+        }
+
+        @include mobile {
+            text-align: center;
+        }
+
+        @include tablet {
+            text-align: left;
         }
     }
 
-    @media screen and (max-width: 600px) {
-        .language-button {
-            width: 1px;
-            display: inline-block;
-        }
+    &-Details-Text {
+        margin-left: 1rem;
     }
-
-    .language-switcher,
-    span {
-        cursor: pointer;
-    }
-
-    .container,
-    .row {
-        min-height: inherit;
-    }
-}
-
-.header-social-network {
-    font-size: 19px;
 }

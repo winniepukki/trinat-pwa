@@ -1,138 +1,103 @@
-button {
-    cursor: pointer;
-    display: block;
+.Button {
+    background: transparent;
     border: transparent;
-    font-family: 'Roboto', Arial, sans-serif;
 
-    &:focus {
-        outline: none;
+    &-Light {
+        color: var(--bs-white);
     }
-}
 
-.reservation {
-    position: relative;
-    cursor: pointer;
-}
+    &-Filled {
+        color: var(--bs-white);
+        background: var(--primary-base-color) !important;
+    }
 
-.button-close {
-    float: right;
-    color: var(--white);
-    background: transparent;
-}
+    &-Submit {
+        background: var(--notification-success) !important;
+    }
 
-.reservation-button {
-    border: 1px solid var(--white);
-    text-decoration: none;
-    text-transform: uppercase;
-    max-width: 200px;
-    display: block;
-    text-align: center;
-    position: relative;
-    transition: .5s;
-    padding: 10px 15px;
-    overflow: hidden;
-}
+    &-Cancel {
+        background: var(--notification-alert) !important;
+    }
 
-.reservation-button::before,
-.reservation-button::after {
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: rgba(var(--primary-base-color), 1);
-    top: 0;
-    left: -100%;
-    opacity: .5;
-    transition: .3s;
-    z-index: -1;
-}
+    &-Close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 1rem;
+    }
 
-.reservation-button::after {
-    opacity: 1;
-    transition-delay: .2s;
-}
+    &-Language-Switcher {
+        .Current-Language {
+            margin-left: .5rem;
+            text-transform: uppercase;
+        }
+    }
 
-.reservation-button:hover {
-    color: #fff;
-}
+    &-Language-Option {
+        display: block;
+        font-size: 1rem;
+        color: var(--bs-black);
+        padding: 10px 0;
 
-.reservation-button:hover::before,
-.reservation-button:hover::after {
-    left: 0;
-}
+        &:hover {
+            color: var(--primary-base-color);
+        }
+    }
 
-.reservation-close-btn {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    font-size: 25px;
-    background: transparent !important;
-    color: var(--white);
-    outline: none;
-
-    &:hover {
-        cursor: pointer;
-        transform: rotate(360deg);
+    &-Reservation {
+        margin: auto 0;
+        justify-self: end;
+        display: inline-block;
+        line-height: 1;
+        padding: 12px 24px;
+        text-align: center;
+        max-width: 150px;
+        font-size: 15px;
+        font-weight: 900;
+        text-transform: capitalize;
+        letter-spacing: 0;
+        background-color: #02010100;
+        border-style: solid;
+        border-width: 2px 2px 2px 2px;
+        border-color: var(--bs-white);
+        border-radius: 5px 5px 5px 5px;
         transition: all 300ms;
+
+        &:hover {
+            transition: all 300ms;
+            color: var(--bs-white) !important;
+            background: var(--primary-base-color) !important;
+            border-color: var(--primary-base-color) !important;
+        }
+    }
+
+    &-Scroll-Top {
+        background: #eee;
+        text-align: center;
+        padding: 15px;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        cursor: pointer;
+        transition: color .3s, background-color .3s, opacity .3s, visibility .3s;
+        -moz-transition: color .3s, background-color .3s, opacity .3s, visibility .3s;
+        -o-transition: color .3s, background-color .3s, opacity .3s, visibility .3s;
+        -webkit-transition: color .3s, background-color .3s, opacity .3s, visibility .3s;
+        z-index: 9999;
+        opacity: .5;
+        visibility: hidden;
+        display: block;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        box-shadow: 5px 5px 15px rgb(0 0 0 / 30%);
+
+        &:hover {
+            opacity: 1;
+        }
     }
 }
 
-.button-default {
-    text-transform: uppercase;
-    background: rgb(var(--black));
-    color: var(--white);
-    height: 45px;
-    width: 180px;
-    padding: 10px 35px;
-    letter-spacing: 1px;
-    font-weight: 300;
-    @media screen and (max-width: 1000px) {
-        width: 100% !important;
-    }
-}
-
-.button-dark {
-    background: rgb(var(--black));
-
-    &:disabled {
-        background: var(--button-disabled-color);
-    }
-
-    &:hover {
-        border: 1px solid rgb(var(--black));
-        color: rgb(var(--black));
-        background: transparent;
-    }
-}
-
-.button-light {
-    background: rgb(var(--primary-base-color));
-
-    &:hover {
-        border: 1px solid rgb(var(--primary-base-color));
-        color: rgb(var(--primary-base-color));
-        background: transparent;
-    }
-}
-
-.scroll-top-button {
-    position: absolute;
-    top: -20px;
-    padding: 10px 10px;
-    font-size: 20px;
-    color: var(--white);
-    background: rgb(var(--primary-base-color));
-}
-
-.book-meal-button {
-    background: rgb(var(--primary-base-color));
-    color: var(--white);
-    border-radius: 6px;
-    width: 100%;
-}
-
-.button-auth {
-    background: transparent;
-    color: #fff;
-    float: left;
+button:disabled,
+button[disabled] {
+    opacity: .5;
 }

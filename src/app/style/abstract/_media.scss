@@ -1,0 +1,87 @@
+@mixin media($keys...) {
+    @each $key in $keys {
+        @if ($key == mobile) {
+            @include mobile {
+                @content;
+            }
+        }
+        @else if ($key == tablet) {
+            @include tablet {
+                @content;
+            }
+        }
+        @else if ($key == desktop) {
+            @include desktop {
+                @content;
+            }
+        }
+        @else {
+            @error 'Key \'#{$key}\' doesn\'t exist';
+        }
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 811px) {
+        @content;
+    }
+}
+
+@mixin ultra-narrow-desktop {
+    @media (min-width: 810px)
+        and (max-width: 1160px) {
+        @content;
+    }
+}
+
+@mixin narrow-desktop {
+    @media (min-width: 1024px)
+        and (max-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin wide-desktop {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 576px)
+        and (max-width: 992px)
+        and (-webkit-min-device-pixel-ratio: 1) {
+        @content;
+    }
+}
+
+@mixin tablet-portrait {
+    @media (min-width: 576px)
+        and (max-width: 768px)
+        and (-webkit-min-device-pixel-ratio: 1)
+        and (orientation: portrait) {
+        @content;
+    }
+}
+
+@mixin tablet-landscape {
+    @media(min-width: 811px)
+        and (max-width: 1023px)
+        and (-webkit-min-device-pixel-ratio: 1)
+        and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 576px) {
+        @content;
+    }
+}
+
+@mixin standalone {
+    /* stylelint-disable-next-line media-feature-name-no-unknown */
+    @media all and (display-mode: standalone) {
+        @content;
+    }
+}

@@ -1,0 +1,88 @@
+@import '../../style/abstract/media';
+
+.Product {
+    margin: 0 0 10px 0;
+    box-sizing: border-box;
+
+    &-Promoted {
+        border: 1px solid var(--bs-black);
+        border-radius: 5px;
+    }
+
+    &-Promotion {
+        padding: 8px 20px;
+        background: var(--bs-black);
+        -webkit-border-top-left-radius: 5px;
+        -webkit-border-top-right-radius: 5px;
+        -moz-border-radius-topleft: 5px;
+        -moz-border-radius-topright: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+        h5 {
+            margin: 0;
+            color: var(--bs-white);
+            font-size: 20px;
+            letter-spacing: 1px;
+            font-weight: 800;
+            text-transform: capitalize;
+        }
+    }
+
+    &-Content {
+        padding: 0 20px;
+    }
+
+    &-Title-Holder {
+        display: table-cell;
+        width: 1%;
+        white-space: nowrap;
+        padding-right: 5px;
+
+        @include media(mobile, tablet) {
+            display: flex !important;
+            width: 100% !important;
+            white-space: break-spaces;
+        }
+    }
+
+    &-Price {
+        display: table-cell;
+        width: 1%;
+        padding-left: 7px;
+        white-space: nowrap;
+
+        span {
+            padding-left: 5px;
+            font-size: 18px;
+            font-weight: 400;
+        }
+    }
+
+    &-Title {
+        font-size: 20px;
+        color: var(--bs-black);
+        font-weight: 900;
+        text-transform: none;
+        letter-spacing: 0;
+        margin-bottom: 0;
+    }
+
+    &-Content-Line {
+        height: 3px;
+        border-bottom: .2em dotted var(--bs-black);
+        display: table-cell;
+        width: 98%;
+        z-index: 1;
+        position: relative;
+        bottom: 13px;
+    }
+
+    &-Content-Bottom-Holder {
+        margin-bottom: -5px;
+    }
+
+    &-Description {
+        margin-top: 0;
+    }
+}

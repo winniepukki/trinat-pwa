@@ -1,93 +1,199 @@
+/* eslint-disable max-len,jsx-a11y/label-has-associated-control */
 /**
 * SIA Trinat restaurant project
 * Copyright © winniepukki. All rights reserved.
 *
 * @license MIT
 */
-import React from 'react';
-import PropTypes from 'prop-types';
-import { LANG_CODE_LV } from '@component/App/App.config';
-import {
-    RESERVATION_PHONE_PRIMARY,
-    RESERVATION_PHONE_SECONDARY
-} from './Reservation.config';
 
-import { Trans, withTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { withTranslation } from 'react-i18next';
+
+import ReservationType from '@type/Reservation';
 
 import './Reservation.style.scss';
 
-class Reservation extends React.Component {
-  static propTypes = {
-      t: PropTypes.func.isRequired,
-      handler: PropTypes.func.isRequired,
-      lang: PropTypes.string.isRequired
-  };
+export class Reservation extends React.Component {
+    static propTypes = {
+        t: PropTypes.func.isRequired,
+        open: PropTypes.bool.isRequired,
+        onClose: PropTypes.func.isRequired,
+        handleChange: PropTypes.func.isRequired,
+        handleSubmit: PropTypes.func.isRequired,
+        handleInsideElementClick: PropTypes.func.isRequired,
+        message: PropTypes.string.isRequired,
+        status: PropTypes.bool.isRequired,
+        values: ReservationType.isRequired
+    }
 
-  constructor(props) {
-      super(props);
-      this.renderReservationNotice = this.renderReservationNotice.bind(this);
-  }
+    render() {
+        const {
+            t,
+            open = false,
+            message = '',
+            onClose,
+            status,
+            values: {
+                name = '',
+                surname = '',
+                phone = '',
+                date = '',
+                time = '',
+                guests = '1'
+            } = {},
+            handleChange,
+            handleSubmit,
+            handleInsideElementClick
+        } = this.props;
 
-  renderReservationNotice() {
-      const { t } = this.props;
-      const reservation = RESERVATION_PHONE_PRIMARY;
-      const reservation_sec = RESERVATION_PHONE_SECONDARY;
+        if (!open) {
+            return null;
+        }
 
-      return (
-          <p className="reservation-notice">
-              <Trans
-                i18nKey="reservation-notice"
-              >
-                  { t('reservation-notice') }
-                  <a href={ `tel:${reservation}` }>
-                    { { reservation } }
-                  </a>
-                  <a href={ `tel:${reservation_sec}` }>
-                    { { reservation_sec } }
-                  </a>
-              </Trans>
-          </p>
-      );
-  }
+        const reservationClass = status ? 'Success' : 'Error';
 
-  handleInsideElementClick(e) {
-      e.stopPropagation();
-  }
-
-  render() {
-      const {
-          t,
-          handler,
-          lang
-      } = this.props;
-
-      return (
-          <div className="Reservation-Form" onClick={ handler }>
-            <div
-              className="Reservation-Form-Wrapper"
-              onClick={ this.handleInsideElementClick }
+        return ReactDOM.createPortal(
+            <section
+              className="Reservation"
             >
-              <h2 className="custom-tac">
-                { lang === LANG_CODE_LV ? (
-                    <p className="title-first">{ t('table') }</p>
-                ) : <p className="title-first" style={ { marginTop: '72px' } } /> }
-                <p className="title-caption">{ t('reservation') }</p>
-              </h2>
-              <div className="container">
-                { this.renderReservationNotice() }
-              </div>
-              <button
-                type="button"
-                onClick={ handler }
-                className="reservation-close-btn"
-                aria-label="Close reservation button"
-              >
-                <i className="far fa-times-circle" />
-              </button>
-            </div>
-          </div>
-      );
-  }
+                <div
+                  className="Reservation-Wrapper"
+                  onClick={ onClose }
+                >
+                    <div
+                      className="Reservation-Box"
+                      onClick={ handleInsideElementClick }
+                    >
+                        <h2>
+                            <p className="Subtitle">
+                                { t('table') }
+                            </p>
+                            <p className="Headline">
+                                { t('reservation') }
+                            </p>
+                        </h2>
+                        <p className="Text-Light">{ t('working-hours') }</p>
+                        <div className="Reservation-Group">
+                            <label htmlFor="name">
+                                { t('name') }
+                                *
+                            </label>
+                            <input
+                              id="name"
+                              name="name"
+                              type="text"
+                              value={ name }
+                              onChange={ handleChange }
+                              className="Reservation-Input"
+                            />
+                        </div>
+                        <div className="Reservation-Group">
+                            <label htmlFor="surname">
+                                { t('surname') }
+                                *
+                            </label>
+                            <input
+                              id="surname"
+                              name="surname"
+                              type="text"
+                              value={ surname }
+                              onChange={ handleChange }
+                              className="Reservation-Input"
+                            />
+                        </div>
+                        <div className="Reservation-Group Input-Last">
+                            <label htmlFor="phone">
+                                { t('phone') }
+                                *
+                            </label>
+                            <input
+                              id="phone"
+                              name="phone"
+                              type="text"
+                              value={ phone }
+                              onChange={ handleChange }
+                              className="Reservation-Input"
+                            />
+                        </div>
+                        <div className="Reservation-Group">
+                            <label htmlFor="date">
+                                { t('date') }
+                                *
+                            </label>
+                            <input
+                              id="date"
+                              name="date"
+                              type="date"
+                              value={ date }
+                              onChange={ handleChange }
+                              className="Reservation-Input"
+                            />
+                        </div>
+                        <div className="Reservation-Group">
+                            <label htmlFor="time">
+                                { t('time') }
+                                *
+                            </label>
+                            <input
+                              id="time"
+                              name="time"
+                              type="time"
+                              value={ time }
+                              onChange={ handleChange }
+                              className="Reservation-Input"
+                            />
+                        </div>
+                        <div className="Reservation-Group Input-Last">
+                            <label htmlFor="guests">
+                                { t('seats') }
+                                *
+                            </label>
+                            <select
+                              name="guests"
+                              id="guests"
+                              value={ guests }
+                              onChange={ handleChange }
+                              className="Reservation-Input"
+                            >
+                                <option value="1">{ t('guest', { count: 1 }) }</option>
+                                <option value="2">{ t('guest', { count: 2 }) }</option>
+                                <option value="3">{ t('guest', { count: 3 }) }</option>
+                                <option value="4">{ t('guest', { count: 4 }) }</option>
+                                <option value="5">{ t('guest', { count: 5 }) }</option>
+                                <option value="100">{ t('guest-over') }</option>
+                            </select>
+                        </div>
+                        <div className="Reservation-Box-Submit">
+                            <p className={ `Reservation-Message-${reservationClass}` }>{ t(message) }</p>
+
+                            <button
+                              className="Button Button-Reservation Button-Light"
+                              aria-label={ t('aria.submit-reservation') }
+                              onClick={ handleSubmit }
+                              disabled={ !name.length
+                                  || !surname.length
+                                  || !phone.length
+                                  || !date.length
+                                  || !time.length }
+                            >
+                                { t('submit') }
+                            </button>
+                        </div>
+                        <button
+                          onClick={ onClose }
+                          className="Button Button-Close Button-Light"
+                          aria-label={ t('aria.close-reservation') }
+                        >
+                            <i className="far fa-times-circle" />
+                        </button>
+                    </div>
+                </div>
+            </section>,
+            document.getElementById('modal-root')
+        );
+    }
 }
 
 export default withTranslation()(Reservation);

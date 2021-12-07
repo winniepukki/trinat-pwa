@@ -4,6 +4,7 @@
 *
 * @license MIT
 */
+
 module.exports = {
     apiKey: '',
     authDomain: '',

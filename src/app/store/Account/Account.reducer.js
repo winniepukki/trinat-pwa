@@ -1,27 +1,32 @@
 /**
- * SIA Trinat restaurant project
- * Copyright © winniepukki. All rights reserved.
- *
- * @license MIT
- */
+* SIA Trinat restaurant project
+* Copyright © winniepukki. All rights reserved.
+*
+* @license MIT
+*/
+
 import {
     SUBSCRIBE_ACCOUNT,
     UNSUBSCRIBE_ACCOUNT
 } from './Account.action';
 
 const initialState = {
-    currentAccount: ''
+    account: {
+        email: '',
+        name: '',
+        admin: false
+    }
 };
 
 const accountReducer = (state = initialState, action) => {
     switch (action.type) {
     case SUBSCRIBE_ACCOUNT: return {
         ...state,
-        currentAccount: action.payload
+        account: action.payload
     };
     case UNSUBSCRIBE_ACCOUNT: return {
         ...state,
-        currentAccount: ''
+        account: {}
     };
     default: return { ...state };
     }

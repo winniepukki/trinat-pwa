@@ -5,5 +5,6 @@
 * @license MIT
 */
 
-export const RESERVATION_PHONE_PRIMARY = '29740898';
-export const RESERVATION_PHONE_SECONDARY = '29672165';
+export const RESET_TIME_IN_MS = 5000;
+
+export default RESET_TIME_IN_MS;

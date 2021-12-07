@@ -104,6 +104,14 @@
     }
 }
 
+@mixin fadeIn-animation-generation {
+    @for $i from 1 through $animation-classes {
+        .Animated-Text-#{$i} {
+            animation: text-rotate 1s cubic-bezier(.23, 1, .32, 1) #{$i - .5}s forwards;
+        }
+    }
+}
+
 .custom-tal {
     text-align: left !important;
 }
@@ -149,11 +157,14 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.custom-grid-4-fixed {
-    display: grid;
-    grid-template-columns: 50px 50px 50px 50px;
+.Custom-TTC {
+    text-transform: capitalize;
 }
 
-.custom-mg-25 {
-    margin: 25px 0;
+.Text-Dark {
+    color: var(--bs-black);
+}
+
+.Text-Light {
+    color: var(--bs-white);
 }

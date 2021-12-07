@@ -4,168 +4,251 @@
 *
 * @license MIT
 */
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withTranslation } from 'react-i18next';
-import { LANG_CODE_LV } from '@component/App/App.config';
 
-import {
-    CURRENT_VERSION
-} from './Footer.config';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Trans, withTranslation } from 'react-i18next';
+
+import Auth from '@component/Auth';
+
+import { CURRENT_VERSION, DEVELOPER } from './Footer.config';
 
 import './Footer.style.scss';
 
-import ScrollComponent from '@component/Scroll';
-import GoogleLogIn from '@component/GoogleLogIn';
+export class Footer extends React.Component {
+    static propTypes = {
+        t: PropTypes.func.isRequired
+    }
 
-class Footer extends React.Component {
-  static propTypes = {
-      t: PropTypes.func.isRequired,
-      lang: PropTypes.string.isRequired
-  };
+    render() {
+        const { t } = this.props;
+        const year = new Date().getFullYear();
 
-  constructor(props) {
-      super(props);
-      this.renderPaymentMethods = this.renderPaymentMethods.bind(this);
-      this.renderFooter = this.renderFooter.bind(this);
-      this.renderFooterNotice = this.renderFooterNotice.bind(this);
-  }
-
-  renderPaymentMethods() {
-      return (
-          <div className="payment-methods custom-grid-4-fixed">
-            <img src="assets/img/social/apple.svg" alt="Apple pay icon" />
-            <img src="assets/img/social/visa.svg" alt="Visa icon" />
-            <img src="assets/img/social/mastercard.svg" alt="Mastercard icon" />
-            <img src="assets/img/social/americanexpress.svg" alt="AmericanExpress icon" />
-          </div>
-      );
-  }
-
-  renderFooter() {
-      const { t, lang } = this.props;
-      return (
-          <div className="Footer">
-            <ScrollComponent showBelow={ 250 } />
-            <div className="container">
-              <div className="row">
-                <div className="col-sm-3">
-                  <h5>
-                    <p>{ t('trinat.title') }</p>
-                    <p className={ (lang === LANG_CODE_LV
-                        ? ''
-                        : 'type-sm') }
-                    >
-                        { t('trinat.type') }
-                    </p>
-                  </h5>
-                  <p className="simple-text">
-                    { t('footer-text', { version: CURRENT_VERSION }) }
-                  </p>
-                  { this.renderPaymentMethods() }
+        return (
+            <section className="Footer">
+                <img
+                  className="Elementor Elementor-Top"
+                  src="/assets/img/icons/elementor.svg"
+                  alt="Footer section start boundary"
+                />
+                <div className="Footer-Block">
+                    <div className="container">
+                        <div className="row">
+                            <div className="Footer-Block-Item col-sm-3">
+                                <img
+                                  className="Logo"
+                                  src="/assets/img/logo/logo.png"
+                                  alt={ t('aria.logo') }
+                                />
+                                <p className="Simple-Text">
+                                    <Trans i18nKey="footer-text">
+                                        { t('footer-text') }
+                                        <a
+                                          href="https://www.instagram.com/winniepukki/"
+                                          aria-label={ t('aria.link-dev') }
+                                        >
+                                            { { DEVELOPER } }
+                                            { { CURRENT_VERSION } }
+                                        </a>
+                                    </Trans>
+                                </p>
+                                <div className="Footer-Block-Item-Payment">
+                                    <img
+                                      className="Payment-Image"
+                                      src="/assets/img/social/apple.svg"
+                                      alt={ t('aria.pay-apple') }
+                                    />
+                                    <img
+                                      className="Payment-Image"
+                                      src="/assets/img/social/visa.svg"
+                                      alt={ t('aria.pay-visa') }
+                                    />
+                                    <img
+                                      className="Payment-Image"
+                                      src="/assets/img/social/mastercard.svg"
+                                      alt={ t('aria.pay-mc') }
+                                    />
+                                    <img
+                                      className="Payment-Image"
+                                      src="/assets/img/social/americanexpress.svg"
+                                      alt={ t('aria.pay-ax') }
+                                    />
+                                </div>
+                            </div>
+                            <div className="Footer-Block-Item col-xs-6 col-sm-2">
+                                <h3>{ t('overview') }</h3>
+                                <ul className="List List-Light">
+                                    <li className="List-Light-Item Custom-TTC">
+                                        <a
+                                          href="https://bit.ly/3oLLttk"
+                                          aria-label={ t('aria.link-reviews') }
+                                        >
+                                            { t('reviews') }
+                                        </a>
+                                    </li>
+                                    <li className="List-Light-Item Custom-TTC">
+                                        <a
+                                          href="https://www.facebook.com/3nataly/jobs"
+                                          aria-label={ t('aria.link-careers') }
+                                        >
+                                            { t('careers') }
+                                        </a>
+                                    </li>
+                                    <li className="List-Light-Item Custom-TTC">
+                                        <a
+                                          href="https://github.com/winniepukki"
+                                          aria-label={ t('aria.link-dev') }
+                                        >
+                                            { t('developer') }
+                                        </a>
+                                    </li>
+                                    <li className="List-Light-Item Custom-TTC">
+                                        <a
+                                          href="https://www.instagram.com/siatrinat/"
+                                          aria-label={ t('aria.link-gallery') }
+                                        >
+                                            { t('gallery') }
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="Footer-Block-Item col-xs-6 col-sm-2">
+                                <h3>{ t('resources') }</h3>
+                                <ul className="List List-Light">
+                                    <li className="List-Light-Item Custom-TTC">
+                                        <a
+                                          href="https://covid19.gov.lv/"
+                                          aria-label={ t('aria.link-covid') }
+                                        >
+                                            { t('covid') }
+                                        </a>
+                                    </li>
+                                    <li className="List-Light-Item Custom-TTC">
+                                        <a
+                                          href="https://covid19sertifikats.lv/"
+                                          aria-label={ t('aria.link-cert') }
+                                        >
+                                            { t('certificate') }
+                                        </a>
+                                    </li>
+                                    <li className="List-Light-Item Custom-TTC">
+                                        <a
+                                          href="https://bit.ly/3Bequ7s"
+                                          aria-label={ t('aria.link-privacy') }
+                                        >
+                                            { t('privacy') }
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="Footer-Block-Item col-sm-2">
+                                <h3>{ t('contact') }</h3>
+                                <ul className="List List-Elementor">
+                                    <li className="List-Elementor-Item">
+                                        <a
+                                          href={ `tel:${ t('address.phone') }` }
+                                          className="Footer-Link"
+                                          aria-label={ t('aria.call-us') }
+                                        >
+                                            <span>
+                                                <i className="fas fa-phone-alt" />
+                                            </span>
+                                            <span className="Elementor-Text">
+                                                { t('address.phone') }
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li className="List-Elementor-Item">
+                                        <a
+                                          href={ `mailto:${ t('address.email') }` }
+                                          className="Footer-Link"
+                                          aria-label={ t('aria.email-us') }
+                                        >
+                                            <span>
+                                                <i className="far fa-envelope" />
+                                            </span>
+                                            <span className="Elementor-Text">
+                                                { t('address.email') }
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li className="List-Elementor-Item">
+                                        <a
+                                          href="#"
+                                          className="Footer-Link"
+                                          aria-label={ t('aria.webpage') }
+                                        >
+                                            <span>
+                                                <i className="fas fa-link" />
+                                            </span>
+                                            <span className="Elementor-Text">
+                                                { t('address.web') }
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="Footer-Block-Item col-sm-3">
+                                <h3>{ t('location') }</h3>
+                                <ul className="List List-Elementor">
+                                    <li className="List-Elementor-Item">
+                                        <a
+                                          href="https://goo.gl/maps/2erjPnp65Ksf3DVy5"
+                                          className="Footer-Link"
+                                          aria-label={ t('aria.visit-us') }
+                                        >
+                                            <span>
+                                                <i className="fas fa-map-marker-alt" />
+                                            </span>
+                                            <span className="Elementor-Text">
+                                                { t('address.line-full') }
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="col-sm-3">
-                  <h6>{ t('recent-posts') }</h6>
+                <div className="Footer-Notice">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-sm-6">
+                                <span className="Copyright-Notice">
+                                    { t('copyright', { year }) }
+                                </span>
+                            </div>
+                            <div className="col-sm-6">
+                                <ul
+                                  className="List List-Footer"
+                                >
+                                  <li className="List-Footer-Item">
+                                      <Auth />
+                                  </li>
+                                  <li className="List-Footer-Item">
+                                      <a
+                                        href="https://bit.ly/3Bequ7s"
+                                        aria-label={ t('aria.link-privacy') }
+                                      >
+                                          { t('privacy') }
+                                      </a>
+                                  </li>
+                                  <li className="List-Footer-Item">
+                                      <a
+                                        href="https://www.facebook.com/3nataly/jobs"
+                                        aria-label={ t('aria.link-careers') }
+                                      >
+                                          { t('careers') }
+                                      </a>
+                                  </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="col-sm-3">
-                  <h6>{ t('view-gallery') }</h6>
-                </div>
-                <div className="col-sm-3">
-                  <h6>{ t('footer-contact-info') }</h6>
-                  <p className="simple-text">
-                    <i className="fas fa-map-marker-alt" />
-                    <span>{ t('address.line') }</span>
-                  </p>
-                  <p className="simple-text">
-                    <i className="fas fa-phone-alt" />
-                    <a
-                      href={ `tel:${t('address.phone')}` }
-                    >
-                      { t('address.phone') }
-                    </a>
-                  </p>
-                  <p className="simple-text">
-                    <i className="fas fa-at" />
-                    <a
-                      href={ `mailto:${t('address.email')}` }
-                    >
-                      { t('address.email') }
-                    </a>
-                  </p>
-                  <p className="simple-text">
-                    <i className="fas fa-globe" />
-                    <span>{ t('address.web') }</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-      );
-  }
-
-  renderFooterNotice() {
-      const {
-          t,
-          lang: currentLanguage = ''
-      } = this.props;
-
-      return (
-          <div className="Footer-Notice">
-            <div className="container">
-              <div className="row align-items-center justify-content-center">
-                <div className="col-sm-6 custom-flexbox custom-align-ic">
-                  <a href="https://twitter.com/winniepukki" aria-label="This website developers' copyright notice">
-                    <img
-                      src="assets/img/social/winniepukki.svg"
-                      alt=""
-                      className="copyright"
-                    />
-                  </a>
-                  <span className="footer-notice-text">{ t('copyright') }</span>
-                </div>
-                <div className="col-sm-6">
-                  <ul className="Footer-Links custom-justify-spe">
-                      <li className="footer-notice-text">
-                          <a
-                            href="https://bit.ly/3Bequ7s"
-                            aria-label="Footer link to our privacy policy"
-                          >
-                              { t('privacy-policy') }
-                          </a>
-                      </li>
-                      <li className="footer-notice-text">
-                          <a
-                            href="https://www.facebook.com/3nataly/jobs"
-                            aria-label="Footer link to careers page"
-                          >
-                              { t('careers') }
-                          </a>
-                      </li>
-                      <li className="footer-notice-text">
-                          <a
-                            href="https://www.facebook.com/3nataly/reviews/"
-                            aria-label="Footer link to the reviews page"
-                          >
-                              { t('reviews') }
-                          </a>
-                      </li>
-                      <GoogleLogIn lang={ currentLanguage } />
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-      );
-  }
-
-  render() {
-      return (
-          <div>
-            { this.renderFooter() }
-            { this.renderFooterNotice() }
-          </div>
-      );
-  }
+            </section>
+        );
+    }
 }
 
 export default withTranslation()(Footer);
