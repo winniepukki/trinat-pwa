@@ -60,7 +60,7 @@
     "hot_dishes": "karstie ēdieni",
     "kids": "bērniem",
     "salads": "salāti",
-    "sides": "piedavas",
+    "sides": "piedevas",
     "snacks": "uzkodas",
     "soups": "zupas",
     "special": "speciālie piedāvājumi"
@@ -89,7 +89,7 @@
   "guest_one": "{{count}} viesis",
   "guest_other": "{{count}} viesi",
   "hero": {
-    "text": "Ekskluzīva mājās ēdienu gatavošana kopš 2017. gada. Rezervējiet vietnē vai pa tālruni <1>{{ PHONE }}</1>"
+    "text": "Mājās ēdienu gatavošana kopš 2017. gada. Rezervējiet vietnē vai pa tālruni <1>{{ PHONE }}</1>"
   },
   "location": "lokācija",
   "menu": "menu",
