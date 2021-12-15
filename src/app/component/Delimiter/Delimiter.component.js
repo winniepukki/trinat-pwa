@@ -64,7 +64,7 @@ export class Delimiter extends React.Component {
                 />
                 <img
                   className="Delimiter-Image"
-                  src={ `/assets/img/section/section-delimiter-${imgIndex}.webp` }
+                  src={ `/assets/img/section/section-delimiter-${imgIndex}.jpg` }
                   alt={ t('aria.section-delim-bg') }
                 />
             </section>
