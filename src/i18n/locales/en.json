@@ -89,7 +89,7 @@
   "guest_one": "{{count}} guest",
   "guest_other": "{{count}} guests",
   "hero": {
-    "text": "we cook exclusive home cuisine since 2017. book online or by phone at <1>{{ PHONE }}</1>"
+    "text": "we cook home cuisine since 2017. book online or by phone at <1>{{ PHONE }}</1>"
   },
   "location": "location",
   "menu": "our menu",

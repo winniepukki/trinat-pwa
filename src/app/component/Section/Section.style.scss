@@ -94,6 +94,8 @@
             max-width: 300px;
             border-radius: 1em;
             margin-right: 1em;
+            object-fit: cover;
+            object-position: left center;
 
             @include mobile {
                 width: 50%;
