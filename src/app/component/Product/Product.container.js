@@ -15,7 +15,7 @@ import Product from './Product.component';
 
 import updateProductMutation from '@query/UpdateProduct.query';
 
-import RESET_TIME_IN_MS from '@component/Reservation/Reservation.config';
+import { RESET_TIME_IN_MS } from '@component/Reservation/Reservation.config';
 
 export const mapStateToProps = (state) => ({
     account: state.AccountReducer.account

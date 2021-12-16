@@ -20,7 +20,8 @@ export const createReservationMutation = async (
         phone = '',
         date = '',
         time = '',
-        guests = ''
+        guests = '',
+        note = ''
     }
 ) => fetch('https://graphql.reaktivelab.co/graphql', {
     method: 'POST',
@@ -38,7 +39,8 @@ export const createReservationMutation = async (
                 phone,
                 date,
                 time,
-                guests
+                guests,
+                note
             }
         }
     })

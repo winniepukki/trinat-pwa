@@ -51,7 +51,8 @@ export class ReservationContainer extends React.Component {
                 phone: '',
                 date: '',
                 time: '',
-                guests: '1'
+                guests: '1',
+                note: ''
             }
         };
     }
@@ -71,7 +72,8 @@ export class ReservationContainer extends React.Component {
                 phone = '',
                 date = '',
                 time = '',
-                guests = ''
+                guests = '',
+                note = ''
             } = {}
         } = this.state;
 
@@ -86,7 +88,8 @@ export class ReservationContainer extends React.Component {
                 phone,
                 date,
                 time,
-                guests
+                guests,
+                note
             }
         };
     }
@@ -110,7 +113,8 @@ export class ReservationContainer extends React.Component {
                 phone: '',
                 date: '',
                 time: '',
-                guests: '1'
+                guests: '1',
+                note: ''
             }
         });
     }
@@ -128,7 +132,8 @@ export class ReservationContainer extends React.Component {
                 phone = '',
                 date = '',
                 time = '',
-                guests = ''
+                guests = '',
+                note
             } = {}
         } = this.state;
 
@@ -177,7 +182,8 @@ export class ReservationContainer extends React.Component {
             phone,
             date,
             time,
-            guests
+            guests,
+            note
         })
             .then((response) => {
                 const {

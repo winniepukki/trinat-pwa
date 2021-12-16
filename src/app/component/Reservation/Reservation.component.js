@@ -11,6 +11,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { withTranslation } from 'react-i18next';
 
+import { NOTE_MAX_VALUE } from './Reservation.config';
+
 import ReservationType from '@type/Reservation';
 
 import './Reservation.style.scss';
@@ -28,6 +30,32 @@ export class Reservation extends React.Component {
         values: ReservationType.isRequired
     }
 
+    renderReservationNoteCount() {
+        const {
+            t,
+            values: {
+                note = ''
+            } = {}
+        } = this.props;
+
+        const count = note.length - NOTE_MAX_VALUE;
+        const countReverse = NOTE_MAX_VALUE - note.length;
+
+        if (countReverse < 0) {
+            return (
+              <span className="Reservation-Message-Error">
+                  { t('note-error', { count }) }
+              </span>
+            );
+        }
+
+        return (
+            <span>
+                { t('note-limit', { count: countReverse }) }
+            </span>
+        );
+    }
+
     render() {
         const {
             t,
@@ -41,7 +69,8 @@ export class Reservation extends React.Component {
                 phone = '',
                 date = '',
                 time = '',
-                guests = '1'
+                guests = '1',
+                note = ''
             } = {},
             handleChange,
             handleSubmit,
@@ -164,6 +193,22 @@ export class Reservation extends React.Component {
                                 <option value="5">{ t('guest', { count: 5 }) }</option>
                                 <option value="100">{ t('guest-over') }</option>
                             </select>
+                        </div>
+                        <div className="Reservation-Group Reservation-Note">
+                            <label htmlFor="note">
+                                { t('note') }
+                                &nbsp;
+                                (
+                                { this.renderReservationNoteCount() }
+                                )
+                            </label>
+                            <textarea
+                              className="Reservation-Comment"
+                              value={ note }
+                              onChange={ handleChange }
+                              name="note"
+                              id="note"
+                            />
                         </div>
                         <div className="Reservation-Box-Submit">
                             <p className={ `Reservation-Message-${reservationClass}` }>{ t(message) }</p>
