@@ -39,8 +39,9 @@ export class Reservation extends React.Component {
         } = this.props;
 
         const count = note.length - NOTE_MAX_VALUE;
+        const countReverse = NOTE_MAX_VALUE - note.length;
 
-        if ((NOTE_MAX_VALUE - note.length) < 0) {
+        if (countReverse < 0) {
             return (
               <span className="Reservation-Message-Error">
                   { t('note-error', { count }) }
@@ -50,7 +51,7 @@ export class Reservation extends React.Component {
 
         return (
             <span>
-                { t('note-limit', { count: NOTE_MAX_VALUE - note.length }) }
+                { t('note-limit', { count: countReverse }) }
             </span>
         );
     }
