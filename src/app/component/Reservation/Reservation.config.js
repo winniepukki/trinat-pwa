@@ -6,5 +6,4 @@
 */
 
 export const RESET_TIME_IN_MS = 5000;
-
-export default RESET_TIME_IN_MS;
+export const NOTE_MAX_VALUE = 40;

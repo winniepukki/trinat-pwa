@@ -9,6 +9,35 @@
     background: rgba(0, 0, 0, .97);
     z-index: 9999;
 
+    &-Comment {
+        background: 0 0 !important;
+        border: 0;
+        color: #fff;
+        width: 100%;
+        font-size: 100%;
+        border-bottom: 1px solid #e1e1e1;
+        margin: 0;
+        height: 100px;
+        overflow: auto;
+        padding: 13px 10px;
+        outline: none;
+        -webkit-transition: border-color linear .2s;
+        -moz-transition: border-color linear .2s;
+        -o-transition: border-color linear .2s;
+        transition: border-color linear .2s;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        border-radius: 5px;
+    }
+
+    &-Note {
+        width: 100% !important;
+
+        input {
+            width: 100%;
+        }
+    }
+
     &-Message {
         &-Error {
             color: var(--notification-alert);
