@@ -1,6 +1,7 @@
 # SIA Trinat
 
 - [Developer guide](https://docs.cream.camp/) - learn how to develop the Software product with the official Winniepukki Docs documentation
+- [Download for iOS](https://apps.apple.com/us/app/trinat/id1588230052) – download the latest native application from the App Store
 
 ## Table of contents
 - Installation
