@@ -24,6 +24,7 @@ self.addEventListener('install', async (event) => {
         caches.open(cacheVersion).then((cache) => cache.addAll([
             '/',
             'index.html',
+            'privacy_policy.html',
             'css/main.css',
             'css/vendor.css',
             'css/App.css',

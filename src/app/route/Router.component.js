@@ -23,6 +23,9 @@ const Navigation = lazy(() => import(
 const App = lazy(() => import(
     /* webpackChunkName: "App" */ '@component/App'
 ));
+const Policy = lazy(() => import(
+    /* webpackChunkName: "Policy" */ '@component/Policy'
+));
 const ScrollTop = lazy(() => import(
     /* webpackChunkName: "ScrollTop" */ '@component/ScrollTop'
 ));
@@ -41,6 +44,7 @@ export class Router extends React.Component {
                       <Navigation />
                       <Switch>
                           <Route path="/" component={ App } exact />
+                          <Route path="/privacy_policy.html" component={ Policy } exact />
                       </Switch>
                       <ScrollTop />
                       <Footer />
