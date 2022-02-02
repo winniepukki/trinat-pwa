@@ -133,7 +133,7 @@ export class Footer extends React.Component {
                                     </li>
                                     <li className="List-Light-Item Custom-TTC">
                                         <a
-                                          href="https://bit.ly/3Bequ7s"
+                                          href="/assets/docs/privacy_policy.pdf"
                                           aria-label={ t('aria.link-privacy') }
                                         >
                                             { t('privacy') }
@@ -227,7 +227,7 @@ export class Footer extends React.Component {
                                   </li>
                                   <li className="List-Footer-Item">
                                       <a
-                                        href="https://bit.ly/3Bequ7s"
+                                        href="/assets/docs/privacy_policy.pdf"
                                         aria-label={ t('aria.link-privacy') }
                                       >
                                           { t('privacy') }
