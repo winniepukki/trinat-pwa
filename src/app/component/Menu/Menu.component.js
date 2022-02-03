@@ -43,11 +43,13 @@ export class Menu extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="Menu-Logo col">
-                            <img
-                              className="Logo"
-                              src={ `/assets/img/logo/logo${logoString}.png` }
-                              aria-label={ t('aria.logo') }
-                            />
+                            <a href="/">
+                                <img
+                                  className="Logo"
+                                  src={ `/assets/img/logo/logo${logoString}.png` }
+                                  aria-label={ t('aria.logo') }
+                                />
+                            </a>
                         </div>
                         <div className="Menu-Links col">
                             <button

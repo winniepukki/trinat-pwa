@@ -1,0 +1,19 @@
+@import '../../style/abstract/media';
+
+.Policy {
+    &-Content {
+        line-height: 35px;
+    }
+
+    @include mobile {
+        .Delimiter {
+            max-height: 80vh;
+            height: 80vh;
+            word-break: break-word;
+
+            &-Image {
+                height: 100%;
+            }
+        }
+    }
+}

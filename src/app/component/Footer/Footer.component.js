@@ -35,11 +35,13 @@ export class Footer extends React.Component {
                     <div className="container">
                         <div className="row">
                             <div className="Footer-Block-Item col-sm-3">
-                                <img
-                                  className="Logo"
-                                  src="/assets/img/logo/logo.png"
-                                  alt={ t('aria.logo') }
-                                />
+                                <a href="/">
+                                    <img
+                                      className="Logo"
+                                      src="/assets/img/logo/logo.png"
+                                      alt={ t('aria.logo') }
+                                    />
+                                </a>
                                 <p className="Simple-Text">
                                     <Trans i18nKey="footer-text">
                                         { t('footer-text') }
@@ -133,7 +135,7 @@ export class Footer extends React.Component {
                                     </li>
                                     <li className="List-Light-Item Custom-TTC">
                                         <a
-                                          href="/assets/docs/privacy_policy.pdf"
+                                          href="/privacy_policy.html"
                                           aria-label={ t('aria.link-privacy') }
                                         >
                                             { t('privacy') }
@@ -227,7 +229,7 @@ export class Footer extends React.Component {
                                   </li>
                                   <li className="List-Footer-Item">
                                       <a
-                                        href="/assets/docs/privacy_policy.pdf"
+                                        href="/privacy_policy.html"
                                         aria-label={ t('aria.link-privacy') }
                                       >
                                           { t('privacy') }
