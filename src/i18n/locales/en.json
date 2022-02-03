@@ -34,6 +34,7 @@
     "pay-mc": "MasterCard payment method",
     "pay-visa": "Visa payment method",
     "product-edit-cancel": "Undo Product Editing",
+    "privacy-download": "Download Privacy Policy",
     "scroll-top": "Scroll the page up",
     "section-bg": "Section background picture",
     "section-delim": "Dividing section",
@@ -104,6 +105,14 @@
   "overview": "overview",
   "phone": "Phone",
   "privacy": "Privacy Policy",
+  "privacy-policy": {
+    "primary": "<1>Principles of Processing Personal Data</1> (hereinafter – the Principles) describe how SIA Trinat processes Personal Data. To contact SIA Trinat and/or exercise the rights of a data subject, see Sections 11 and 12 of the Principles.",
+    "main": "Thank you for choosing to be part of our community at SIA Trinat (\"Company\", \"we\", \"us\", or \"our\"). We are committed to protecting your personal information and your right to privacy. When you visit our website <1>https://trinat.lv</1> and use our services, you trust us with your personal information. We take your privacy very seriously and seek to explain to you in the clearest way possible what information we collect, how we use it, and what rights you have in relation to it. We hope you take some time to read through it carefully, as it is important.",
+    "consent": "If there are any terms in these Principles that you do not agree with, please discontinue the use of our Sites and our services. These Principles apply to all information collected through our website (such as <1>https://trinat.lv</1>), and/or any related services, sales, marketing, or events (we refer to them collectively as the “Services”).",
+    "info": "Please read carefully as it will help you make informed decisions about sharing your personal information with us.",
+    "valid": "Valid as of February 2, 2022"
+  },
+  "processing-principles": "Principles of Processing Personal Data",
   "product-form-input": {
     "description": "Product description",
     "price": "Product price",

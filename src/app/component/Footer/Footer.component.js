@@ -35,11 +35,13 @@ export class Footer extends React.Component {
                     <div className="container">
                         <div className="row">
                             <div className="Footer-Block-Item col-sm-3">
-                                <img
-                                  className="Logo"
-                                  src="/assets/img/logo/logo.png"
-                                  alt={ t('aria.logo') }
-                                />
+                                <a href="/">
+                                    <img
+                                      className="Logo"
+                                      src="/assets/img/logo/logo.png"
+                                      alt={ t('aria.logo') }
+                                    />
+                                </a>
                                 <p className="Simple-Text">
                                     <Trans i18nKey="footer-text">
                                         { t('footer-text') }

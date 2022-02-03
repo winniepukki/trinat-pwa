@@ -15,6 +15,9 @@ import {
     withRouter
 } from 'react-router-dom';
 
+import useScript from '@util/Script/useScript';
+import useGA from '@util/Script/useGA';
+
 import store from '@store/index';
 
 const Navigation = lazy(() => import(
@@ -34,6 +37,15 @@ const Footer = lazy(() => import(
 ));
 
 export class Router extends React.Component {
+    componentDidMount() {
+        /* Google Analytics */
+        useScript('https://www.googletagmanager.com/gtag/js?id=G-9VHZCCXJS9', true);
+        useGA('G-9VHZCCXJS9');
+
+        /* Font Awesome */
+        useScript('https://use.fontawesome.com/releases/v5.15.1/js/all.js');
+    }
+
     render() {
         return (
             <section

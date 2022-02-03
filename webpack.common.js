@@ -76,6 +76,7 @@ module.exports = {
             patterns: [
                 { from: './src/public/assets/img/', to: 'assets/img' },
                 { from: './src/public/assets/icons/', to: 'assets/icons' },
+                { from: './src/public/assets/docs/', to: 'assets/docs' },
                 { from: './src/public/assets/favicon', to: 'assets/favicon' },
                 { from: './src/public/manifest.json', to: './manifest.json' },
                 { from: './src/sw.js', to: './service-worker.js' }
