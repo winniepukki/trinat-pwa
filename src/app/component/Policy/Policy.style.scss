@@ -1,13 +1,19 @@
+@import '../../style/abstract/media';
+
 .Policy {
-    p {
+    &-Content {
         line-height: 35px;
     }
 
-    a {
-        color: var(--primary-base-color);
-    }
+    @include mobile {
+        .Delimiter {
+            max-height: 80vh;
+            height: 80vh;
+            word-break: break-all;
 
-    button {
-        max-width: unset;
+            &-Image {
+                height: 100%;
+            }
+        }
     }
 }

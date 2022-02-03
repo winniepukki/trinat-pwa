@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /**
 * SIA Trinat restaurant project
 * Copyright © winniepukki. All rights reserved.
@@ -39,21 +40,22 @@ export class Policy extends React.Component {
                         { t('processing-principles') }
                     </h1>
 
-                    <p>
+                    <p className="Policy-Content">
                         { t('privacy-policy.valid') }
                     </p>
 
-                    <p>
+                    <p className="Policy-Content">
                         <Trans i18nKey="privacy-policy.primary">
                             { t('privacy-policy.primary') }
                             <b />
                         </Trans>
                     </p>
 
-                    <p>
+                    <p className="Policy-Content">
                         <Trans i18nKey="privacy-policy.main">
                             { t('privacy-policy.main') }
                             <a
+                              className="Link Policy-Link"
                               href="https://trinat.lv"
                               aria-label={ t('trinat.title') }
                             >
@@ -62,10 +64,11 @@ export class Policy extends React.Component {
                         </Trans>
                     </p>
 
-                    <p>
+                    <p className="Policy-Content">
                         <Trans i18nKey="privacy-policy.consent">
                             { t('privacy-policy.consent') }
                             <a
+                              className="Link Policy-Link"
                               href="https://trinat.lv"
                               aria-label={ t('trinat.title') }
                             >
@@ -74,17 +77,17 @@ export class Policy extends React.Component {
                         </Trans>
                     </p>
 
-                    <p>
+                    <p className="Policy-Content">
                         { t('privacy-policy.info') }
                     </p>
 
-                    <p>
+                    <p className="Policy-Content">
                         <a
                           href="assets/docs/privacy_policy.pdf"
                           aria-label={ t('aria.link-privacy') }
                         >
                             <button
-                              className="Button Button-Reservation Button-Filled"
+                              className="Button Button-Reservation Button-Filled Button-Policy"
                               aria-label={ t('aria.privacy-download') }
                             >
                                 <i className="fas fa-download" />
