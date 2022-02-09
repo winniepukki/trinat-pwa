@@ -5,7 +5,7 @@
 * @license MIT
 */
 
-const cacheVersion = 'v6';
+const cacheVersion = 'v7';
 
 self.addEventListener('activate', () => {
     caches.keys().then((keyList) => Promise.all(keyList.map((key) => {
@@ -24,7 +24,7 @@ self.addEventListener('install', async (event) => {
         caches.open(cacheVersion).then((cache) => cache.addAll([
             '/',
             'index.html',
-            'privacy_policy.html',
+            '/privacy_policy.html',
             'css/main.css',
             'css/vendor.css',
             'css/App.css',
@@ -47,6 +47,7 @@ self.addEventListener('install', async (event) => {
             'assets/img/social/mastercard.svg',
             'assets/img/social/visa.svg',
             'assets/img/section/hero.webp',
+            'assets/img/section/section-hero.webp',
             'assets/img/section/section-delimiter-1.webp',
             'assets/img/section/section-delimiter-2.webp',
             'assets/img/section/section-plate.webp',
