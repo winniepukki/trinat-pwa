@@ -5,7 +5,7 @@
 * @license MIT
 */
 
-const cacheVersion = 'v8';
+const cacheVersion = 'v9';
 
 self.addEventListener('activate', () => {
     caches.keys().then((keyList) => Promise.all(keyList.map((key) => {
@@ -29,11 +29,13 @@ self.addEventListener('install', async (event) => {
             'css/vendor.css',
             'css/App.css',
             'css/Footer.css',
+            'css/Policy.css',
             'css/Navigation.css',
             'main.js',
             'vendor.js',
             'App.js',
             'Footer.js',
+            'Policy.js',
             'Navigation.js',
             'ScrollTop.js',
             'Router.js',
