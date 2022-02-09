@@ -5,7 +5,7 @@
 * @license MIT
 */
 
-const cacheVersion = 'v9';
+const cacheVersion = 'v7';
 
 self.addEventListener('activate', () => {
     caches.keys().then((keyList) => Promise.all(keyList.map((key) => {
@@ -52,6 +52,7 @@ self.addEventListener('install', async (event) => {
             'assets/img/section/section-hero.webp',
             'assets/img/section/section-delimiter-1.webp',
             'assets/img/section/section-delimiter-2.webp',
+            'assets/img/section/section-delimiter-3.webp',
             'assets/img/section/section-nuggets.webp',
             'assets/img/section/section-fish.webp'
         ]))
