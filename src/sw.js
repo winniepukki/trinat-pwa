@@ -5,7 +5,7 @@
 * @license MIT
 */
 
-const cacheVersion = 'v6';
+const cacheVersion = 'v7';
 
 self.addEventListener('activate', () => {
     caches.keys().then((keyList) => Promise.all(keyList.map((key) => {
@@ -29,11 +29,13 @@ self.addEventListener('install', async (event) => {
             'css/vendor.css',
             'css/App.css',
             'css/Footer.css',
+            'css/Policy.css',
             'css/Navigation.css',
             'main.js',
             'vendor.js',
             'App.js',
             'Footer.js',
+            'Policy.js',
             'Navigation.js',
             'ScrollTop.js',
             'Router.js',
@@ -47,10 +49,12 @@ self.addEventListener('install', async (event) => {
             'assets/img/social/mastercard.svg',
             'assets/img/social/visa.svg',
             'assets/img/section/hero.webp',
+            'assets/img/section/section-hero.webp',
             'assets/img/section/section-delimiter-1.webp',
             'assets/img/section/section-delimiter-2.webp',
-            'assets/img/section/section-plate.webp',
-            'assets/img/section/section-stairs.webp'
+            'assets/img/section/section-delimiter-3.webp',
+            'assets/img/section/section-nuggets.webp',
+            'assets/img/section/section-fish.webp'
         ]))
     );
 });
