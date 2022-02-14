@@ -19,7 +19,7 @@
         width: 70vw;
 
         @include mobile {
-            width: 90%;
+            width: 100%;
             margin: 0 auto;
         }
     }
@@ -88,12 +88,13 @@
 
     &-Gallery {
         display: flex;
+        justify-content: space-evenly;
+        gap: 10px;
 
         &-Item {
             float: left;
             max-width: 300px;
             border-radius: 1em;
-            margin-right: 1em;
             object-fit: cover;
             object-position: left center;
 
