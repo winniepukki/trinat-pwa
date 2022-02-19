@@ -1,4 +1,4 @@
-/* eslint-disable max-len,jsx-a11y/label-has-associated-control */
+/* eslint-disable max-len,jsx-a11y/label-has-associated-control,no-nested-ternary */
 /**
 * SIA Trinat restaurant project
 * Copyright © winniepukki. All rights reserved.
@@ -26,6 +26,7 @@ export class Reservation extends React.Component {
         handleSubmit: PropTypes.func.isRequired,
         handleInsideElementClick: PropTypes.func.isRequired,
         message: PropTypes.string.isRequired,
+        loading: PropTypes.bool.isRequired,
         status: PropTypes.bool.isRequired,
         values: ReservationType.isRequired
     }
@@ -63,6 +64,7 @@ export class Reservation extends React.Component {
             message = '',
             onClose,
             status,
+            loading,
             values: {
                 name = '',
                 surname = '',
@@ -81,7 +83,7 @@ export class Reservation extends React.Component {
             return null;
         }
 
-        const reservationClass = status ? 'Success' : 'Error';
+        const reservationClass = loading ? 'Pending' : status ? 'Success' : 'Error';
 
         return ReactDOM.createPortal(
             <section

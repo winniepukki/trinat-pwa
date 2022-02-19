@@ -44,6 +44,7 @@ export class ReservationContainer extends React.Component {
 
         this.state = {
             status: false,
+            loading: false,
             message: '',
             values: {
                 name: '',
@@ -66,6 +67,7 @@ export class ReservationContainer extends React.Component {
         const {
             message,
             status,
+            loading,
             values: {
                 name = '',
                 surname = '',
@@ -80,6 +82,7 @@ export class ReservationContainer extends React.Component {
         return {
             open,
             onClose,
+            loading,
             message,
             status,
             values: {
@@ -176,6 +179,11 @@ export class ReservationContainer extends React.Component {
             return;
         }
 
+        this.setState({
+            loading: true,
+            message: 'pending'
+        });
+
         createReservationMutation(language, {
             name,
             surname,
@@ -198,7 +206,8 @@ export class ReservationContainer extends React.Component {
                 if (!success) {
                     this.setState({
                         message,
-                        status: false
+                        status: false,
+                        loading: false
                     });
 
                     return;
@@ -206,7 +215,8 @@ export class ReservationContainer extends React.Component {
 
                 this.setState({
                     message: 'reservation-success',
-                    status: true
+                    status: true,
+                    loading: false
                 });
 
                 this.handleFieldReset();
@@ -220,7 +230,8 @@ export class ReservationContainer extends React.Component {
             })
             .catch(() => {
                 this.setState({
-                    message: 'error.network-reservation'
+                    message: 'error.network-reservation',
+                    loading: false
                 });
             });
     }

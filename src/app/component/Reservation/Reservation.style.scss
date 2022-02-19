@@ -42,6 +42,10 @@
         &-Success {
             color: var(--notification-success);
         }
+
+        &-Pending {
+            color: var(--notification-pending);
+        }
     }
 
     &-Wrapper {

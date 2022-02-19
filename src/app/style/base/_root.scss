@@ -10,6 +10,7 @@
     --notification-success: var(--imported-notification-success, #{$notification-success});
     --notification-alert: var(--imported-notification-alert, #{$notification-alert});
     --notification-info: var(--import-notification-info, #{$notification-info});
+    --notification-pending: var(--imported-notification-pending, #{$notification-pending});
     --button-disabled-color: var(--imported-button-disabled-color, #{$button-disabled-color});
     --auxiliary-color-lightener: var(--imported-auxiliary-color-lightener, #{$auxiliary-color-lightener});
     --loading-background: var(--imported-loading-background, #{$secondary-light-color});

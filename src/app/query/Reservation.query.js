@@ -23,7 +23,7 @@ export const createReservationMutation = async (
         guests = '',
         note = ''
     }
-) => fetch('https://graphql.reaktivelab.co/graphql', {
+) => fetch('http://localhost:4000/graphql', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
