@@ -2,7 +2,7 @@
 name: Bug report
 about: Create a report to help us improve
 title: ''
-labels: 'Core, Type: QA BUG, enhancement'
+labels: 'Core, Type: bug'
 assignees: ''
 
 ---
