@@ -14,6 +14,9 @@ import lv from './locales/lv.json';
 import ru from './locales/ru.json';
 import en from './locales/en.json';
 
+const fallbackLanguage = getComputedStyle(document.documentElement)
+    .getPropertyValue('--language') || 'lv';
+
 const resources = {
     lv: {
         translation: lv
@@ -28,7 +31,7 @@ const resources = {
 
 i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
     resources,
-    fallbackLng: 'lv',
+    fallbackLng: fallbackLanguage,
     // Ensure the debugging mode is set to *false* in production
     debug: false,
     detection: {
