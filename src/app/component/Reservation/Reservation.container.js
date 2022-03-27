@@ -140,6 +140,8 @@ export class ReservationContainer extends React.Component {
             } = {}
         } = this.state;
 
+        const cleanPhone = phone.trim();
+
         if (!validateInputLength(
             MIN_INPUT_LENGTH,
             MAX_INPUT_LENGTH,
@@ -155,7 +157,7 @@ export class ReservationContainer extends React.Component {
             return;
         }
 
-        if (!validatePhoneNumber(phone)) {
+        if (!validatePhoneNumber(cleanPhone)) {
             this.setState({
                 message: 'error.phone'
             });

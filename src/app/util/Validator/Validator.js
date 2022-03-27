@@ -18,23 +18,21 @@ import {
 } from './Validator.config';
 
 export const validatePhoneNumber = (phoneNumber = '') => {
-    const cleanPhone = phoneNumber.trim();
-
     if (
-        cleanPhone.length !== MIN_PHONE_LENGTH
-        && cleanPhone.length !== MAX_PHONE_LENGTH
+        phoneNumber.length !== MIN_PHONE_LENGTH
+        && phoneNumber.length !== MAX_PHONE_LENGTH
     ) {
         return false;
     }
 
     if (
-        cleanPhone.match(/(\+371)/gm)
-        && cleanPhone.charAt(NO_EXT_NUM_INDEX) === LV_PHONE_START_NUM
+        phoneNumber.match(/(\+371)/gm)
+        && phoneNumber.charAt(NO_EXT_NUM_INDEX) === LV_PHONE_START_NUM
     ) {
         return true;
     }
 
-    return cleanPhone.charAt(0) === LV_PHONE_START_NUM;
+    return phoneNumber.charAt(0) === LV_PHONE_START_NUM;
 };
 
 export const dateInPast = (date) => {
