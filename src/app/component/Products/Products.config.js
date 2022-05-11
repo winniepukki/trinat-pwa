@@ -6,4 +6,4 @@
 */
 
 export const SPECIAL = 'special';
-export const DB_VERSION = 2;
+export const DB_VERSION = 3;
