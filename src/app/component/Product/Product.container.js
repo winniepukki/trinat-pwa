@@ -128,6 +128,9 @@ export class ProductContainer extends React.Component {
 
     handleSubmit() {
         const {
+            account: {
+                email = ''
+            } = {},
             product: {
                 id = '',
                 lang = ''
@@ -143,11 +146,15 @@ export class ProductContainer extends React.Component {
 
         const parsedPrice = parseFloat(price);
 
-        updateProductMutation(id, lang, {
-            title,
-            description,
-            price: parsedPrice
-        })
+        updateProductMutation(
+            id,
+            lang,
+            email, {
+                title,
+                description,
+                price: parsedPrice
+            }
+        )
             .then((result) => {
                 const {
                     data: {
