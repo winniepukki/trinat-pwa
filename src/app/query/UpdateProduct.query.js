@@ -5,8 +5,14 @@
 * @license MIT
 */
 
-const query = `mutation($id: ID!, $lang: String!, $product: EditProduct) {
-  updateProduct(id: $id, lang: $lang, product: $product) {
+const query = `mutation(
+    $id: ID!,
+    $lang:
+    String!,
+    $email: String!,
+    $product: EditProduct
+) {
+  updateProduct(id: $id, lang: $lang, email: $email, product: $product) {
     success
   }
 }
@@ -15,7 +21,11 @@ const query = `mutation($id: ID!, $lang: String!, $product: EditProduct) {
 export const updateProductMutation = async (
     id = '',
     lang = '',
-    { title, description, price }
+    email = '', {
+        title,
+        description,
+        price
+    }
 ) => fetch('https://graphql.reaktivelab.co/graphql', {
     method: 'POST',
     headers: {
@@ -27,6 +37,7 @@ export const updateProductMutation = async (
         variables: {
             id,
             lang,
+            email,
             product: {
                 title,
                 description,
