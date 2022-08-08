@@ -77,6 +77,7 @@ module.exports = {
                 { from: './src/public/assets/img/', to: 'assets/img' },
                 { from: './src/public/assets/icons/', to: 'assets/icons' },
                 { from: './src/public/assets/docs/', to: 'assets/docs' },
+                { from: './src/public/assets/fonts/', to: 'assets/fonts' },
                 { from: './src/public/assets/favicon', to: 'assets/favicon' },
                 { from: './src/public/manifest.json', to: './manifest.json' },
                 { from: './src/sw.js', to: './service-worker.js' }
@@ -102,7 +103,10 @@ module.exports = {
                             esModule: false
                         }
                     },
-                    'css-loader',
+                    {
+                        loader: 'css-loader',
+                        options: { url: false }
+                    },
                     'sass-loader'
                 ]
             },
@@ -110,6 +114,8 @@ module.exports = {
                 test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'file-loader',
                 options: {
+                    outputPath: 'assets/fonts',
+                    type: 'asset/resource',
                     name: '[name].[ext]'
                 }
             },

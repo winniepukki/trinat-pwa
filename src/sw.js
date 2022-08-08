@@ -5,7 +5,7 @@
 * @license MIT
 */
 
-const cacheVersion = 'v16';
+const cacheVersion = 'v17';
 
 self.addEventListener('activate', () => {
     caches.keys().then((keyList) => Promise.all(keyList.map((key) => {
@@ -39,6 +39,7 @@ self.addEventListener('install', async (event) => {
             'Navigation.js',
             'ScrollTop.js',
             'Router.js',
+            'assets/fonts/beyond_infinity_400.woff2',
             'assets/img/icons/elementor.svg',
             'assets/img/icons/leaf.png',
             'assets/img/logo/logo.png',
