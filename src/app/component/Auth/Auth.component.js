@@ -14,22 +14,24 @@ import './Auth.style.scss';
 export class Auth extends React.Component {
     static propTypes = {
         t: PropTypes.func.isRequired,
-        handleSignIn: PropTypes.func.isRequired
+        email: PropTypes.string.isRequired,
+        handleAuthState: PropTypes.func.isRequired
     }
 
     render() {
         const {
             t,
-            handleSignIn
+            email,
+            handleAuthState
         } = this.props;
 
         return (
             <button
               className="Button Auth"
-              onClick={ handleSignIn }
+              onClick={ handleAuthState }
               aria-label={ t('aria.auth-attempt') }
             >
-                { t('auth') }
+                { t(email ? 'signOut' : 'auth') }
             </button>
         );
     }
