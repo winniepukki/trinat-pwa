@@ -11,6 +11,7 @@
     transform-origin: top center;
     z-index: 9999;
     max-width: 150px;
+    border-radius: 10px;
 
     &::before {
         content: '';

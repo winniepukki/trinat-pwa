@@ -116,6 +116,7 @@ export class Reservation extends React.Component {
                               name="name"
                               type="text"
                               value={ name }
+                              autoComplete="off"
                               onChange={ handleChange }
                               className="Reservation-Input"
                             />
@@ -130,6 +131,7 @@ export class Reservation extends React.Component {
                               name="surname"
                               type="text"
                               value={ surname }
+                              autoComplete="off"
                               onChange={ handleChange }
                               className="Reservation-Input"
                             />
@@ -144,6 +146,7 @@ export class Reservation extends React.Component {
                               name="phone"
                               type="text"
                               value={ phone }
+                              autoComplete="off"
                               onChange={ handleChange }
                               className="Reservation-Input"
                             />
@@ -186,7 +189,7 @@ export class Reservation extends React.Component {
                               id="guests"
                               value={ guests }
                               onChange={ handleChange }
-                              className="Reservation-Input"
+                              className="Reservation-Input Reservation-Select"
                             >
                                 <option value="1">{ t('guest', { count: 1 }) }</option>
                                 <option value="2">{ t('guest', { count: 2 }) }</option>
@@ -230,7 +233,7 @@ export class Reservation extends React.Component {
                         </div>
                         <button
                           onClick={ onClose }
-                          className="Button Button-Close Button-Light"
+                          className="Button Button-Close-Reservation Button-Light"
                           aria-label={ t('aria.close-reservation') }
                         >
                             <i className="far fa-times-circle" />
