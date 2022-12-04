@@ -24,7 +24,7 @@ const query = `query {
 }
 `;
 
-export const fetchCategoriesWithProducts = async () => fetch('https://graphql.reaktivelab.co/graphql', {
+export const fetchCategoriesWithProducts = async () => fetch('https://graphql.trinatdata.info/graphql', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
