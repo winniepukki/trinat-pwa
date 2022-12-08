@@ -23,7 +23,7 @@ export const createReservationMutation = async (
         guests = '',
         note = ''
     }
-) => fetch('https://graphql.reaktivelab.co/graphql', {
+) => fetch('https://trinat-graphql.herokuapp.com/graphql', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',

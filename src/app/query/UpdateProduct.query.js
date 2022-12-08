@@ -26,7 +26,7 @@ export const updateProductMutation = async (
         description,
         price
     }
-) => fetch('https://graphql.reaktivelab.co/graphql', {
+) => fetch('https://trinat-graphql.herokuapp.com/graphql', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
