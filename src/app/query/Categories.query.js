@@ -24,7 +24,7 @@ const query = `query {
 }
 `;
 
-export const fetchCategoriesWithProducts = async () => fetch('https://graphql.trinatdata.info/graphql', {
+export const fetchCategoriesWithProducts = async () => fetch('https://trinat-graphql.herokuapp.com/graphql', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',

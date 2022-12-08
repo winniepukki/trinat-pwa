@@ -17,7 +17,7 @@ export const createReviewMutation = async ({
     name = '',
     email = '',
     review = ''
-}) => fetch('https://graphql.trinatdata.info/graphql', {
+}) => fetch('https://trinat-graphql.herokuapp.com/graphql', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',

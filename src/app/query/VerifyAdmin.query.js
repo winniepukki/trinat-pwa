@@ -14,7 +14,7 @@ const query = `query($email: String!) {
 
 export const verifyAdminQuery = async (
     email = ''
-) => fetch('https://graphql.trinatdata.info/graphql', {
+) => fetch('https://trinat-graphql.herokuapp.com/graphql', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
