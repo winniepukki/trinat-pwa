@@ -7,6 +7,7 @@
 */
 
 const path = require('path');
+const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -82,6 +83,11 @@ module.exports = {
                 { from: './src/public/manifest.json', to: './manifest.json' },
                 { from: './src/sw.js', to: './service-worker.js' }
             ]
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                LOGROCKET_APP_ID: JSON.stringify(process.env.LOGROCKET_APP_ID)
+            }
         })
     ],
     module: {
