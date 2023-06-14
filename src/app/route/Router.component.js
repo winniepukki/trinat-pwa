@@ -15,6 +15,8 @@ import {
     withRouter
 } from 'react-router-dom';
 
+import LogRocket from 'logrocket';
+
 import useScript from '@util/Script/useScript';
 import useGA from '@util/Script/useGA';
 
@@ -44,6 +46,10 @@ export class Router extends React.Component {
 
         /* Font Awesome */
         useScript('https://use.fontawesome.com/releases/v5.15.1/js/all.js');
+
+        if (process.env.NODE_ENV === 'production') {
+            LogRocket.init(process.env.LOGROCKET_APP_ID);
+        }
     }
 
     render() {
