@@ -5,7 +5,7 @@
 * @license MIT
 */
 
-const cacheVersion = 'v23';
+const cacheVersion = 'v24';
 
 self.addEventListener('activate', () => {
     caches.keys().then((keyList) => Promise.all(keyList.map((key) => {
