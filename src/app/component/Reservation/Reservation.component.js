@@ -119,6 +119,7 @@ export class Reservation extends React.Component {
                               autoComplete="off"
                               onChange={ handleChange }
                               className="Reservation-Input"
+                              data-private="redact"
                             />
                         </div>
                         <div className="Reservation-Group">
@@ -134,6 +135,7 @@ export class Reservation extends React.Component {
                               autoComplete="off"
                               onChange={ handleChange }
                               className="Reservation-Input"
+                              data-private="redact"
                             />
                         </div>
                         <div className="Reservation-Group Input-Last">
@@ -149,6 +151,7 @@ export class Reservation extends React.Component {
                               autoComplete="off"
                               onChange={ handleChange }
                               className="Reservation-Input"
+                              data-private="redact"
                             />
                         </div>
                         <div className="Reservation-Group">
