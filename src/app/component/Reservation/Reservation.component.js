@@ -212,6 +212,7 @@ export class Reservation extends React.Component {
                             </label>
                             <textarea
                               className="Reservation-Comment"
+                              placeholder={ t('keepCommentSpecific') }
                               value={ note }
                               onChange={ handleChange }
                               name="note"
