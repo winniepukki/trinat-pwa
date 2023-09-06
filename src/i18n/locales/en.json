@@ -92,6 +92,7 @@
   "hero": {
     "text": "we cook home cuisine since 2017. book online or by phone at <1>{{ PHONE }}</1>"
   },
+  "keepCommentSpecific": "Do not use this field to specify menu preferences or reserve wakes and banquets. To do this, do not hesitate to get in touch with us by phone",
   "location": "location",
   "menu": "our menu",
   "name": "name",

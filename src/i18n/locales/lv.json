@@ -92,6 +92,7 @@
   "hero": {
     "text": "Mājas ēdienu gatavošana kopš 2017. gada. Rezervējiet vietnē vai pa tālruni <1>{{ PHONE }}</1>"
   },
+  "keepCommentSpecific": "Neizmantojiet šo lauku, lai norādītu ēdienkartes preferences vai rezervētu piemiņas un banketus. Lai to izdarītu, lūdzam, sazinieties ar mums pa tālruni",
   "location": "lokācija",
   "menu": "ēdienkarte",
   "name": "vārds",
