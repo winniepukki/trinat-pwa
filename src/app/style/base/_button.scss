@@ -147,6 +147,12 @@
         max-width: unset;
         width: unset;
     }
+
+    &-GetAndroidApp-Close {
+        margin-right: 10px;
+        font-size: 18px;
+        color: #333;
+    }
 }
 
 button:disabled,
