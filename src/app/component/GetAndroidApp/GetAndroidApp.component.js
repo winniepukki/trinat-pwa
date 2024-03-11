@@ -32,6 +32,7 @@ export class GetAndroidApp extends React.Component {
                 <button
                   className="Button Button-GetAndroidApp-Close"
                   onClick={ handleOpenState }
+                  aria-label={ t('aria.close-google-play-smart-banner') }
                 >
                     x
                 </button>
@@ -40,7 +41,7 @@ export class GetAndroidApp extends React.Component {
                   className="GetAndroidApp-Logo"
                   height={ 50 }
                   width={ 50 }
-                  alt=""
+                  alt={ t('aria.logo') }
                 />
                 <div className="GetAndroidApp-Text-Contents">
                     <p className="GetAndroidApp-Text-Contents-Headline">
