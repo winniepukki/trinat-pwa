@@ -1,0 +1,40 @@
+
+.GetAndroidApp {
+    display: flex;
+    align-items: center;
+    padding: 13px;
+    background-color: #fff;
+
+    &-Logo {
+        margin-right: 15px;
+    }
+
+    &-Text-Contents {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: flex-start;
+
+        p {
+            padding: 0;
+            margin: 0;
+        }
+
+        &-Headline {
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        &-Marketing {
+            font-size: 12px;
+        }
+    }
+
+    &-View-Now-Button {
+        display: flex;
+        text-align: end;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-left: auto;
+    }
+}

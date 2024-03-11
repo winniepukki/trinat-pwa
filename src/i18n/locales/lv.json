@@ -11,6 +11,7 @@
   "aria": {
     "auth-attempt": "Piesakieties ar Google",
     "call-us": "Sazinieties ar mums pa mobilo tālruni",
+    "close-google-play-smart-banner": "Aizvērt Google Play Smart Banner",
     "close-reservation": "Aizvērt rezervācijas formu",
     "email-us": "Sazinieties ar mums pa e-pastu",
     "lang-switch-close": "Aizvērt valodas pārslēdzēju",
@@ -18,6 +19,7 @@
     "lang-switch-lv": "Samainīt valodu uz latviešu",
     "lang-switch-open": "Atvērt valodas pārslēdzēju",
     "lang-switch-ru": "Samainīt valodu uz krievu",
+    "link-app-play-store": "Ārēja saite uz mūsu aplikāciju Play Store",
     "link-careers": "Ārēja saite uz mūsu vakances",
     "link-cert": "Ārēja saite uz informāciju par Covid-19 sertifikātu Latvijā",
     "link-covid": "Ārēja saite uz informācijas vietni par Covid-19 izplatību Latvijā",
@@ -74,6 +76,7 @@
   "covid": "covid-19",
   "date": "datums",
   "developer": "izstrādātājs",
+  "download-free": "BEZ MAKSAS – Google Play Store",
   "edit": "rediģēt",
   "email": "e-pasts",
   "error": {
@@ -140,11 +143,13 @@
   "surname": "uzvārds",
   "table": "Galdu",
   "time": "laiks",
+  "trinat-app": "Trinat aplikācija",
   "trinat": {
     "title": "Trinat",
     "type": "Kafejnīca"
   },
   "us": "mums",
+  "view": "skatīt",
   "visit": "ciemos",
   "welcome": "Laipni lugti",
   "working-hours": "Virtuves darba laiks ir no 11.00 līdz 21.00",
