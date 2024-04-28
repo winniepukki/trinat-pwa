@@ -14,6 +14,7 @@ import RefType from '@type/Ref';
 import Language from '@component/Language';
 
 import './Header.style.scss';
+import useClientSideDevice from '@util/Script/useClientSideDevice';
 
 export class Header extends React.Component {
     static propTypes = {
@@ -32,6 +33,7 @@ export class Header extends React.Component {
         } = this.props;
 
         const { language = '' } = getI18n();
+        const { isAppleDevice } = useClientSideDevice();
 
         return (
             <header className="Header">
@@ -81,6 +83,23 @@ export class Header extends React.Component {
                             >
                                 <i className="fab fa-instagram" />
                             </a>
+                            { isAppleDevice ? (
+                                <a
+                                  className="Header-Social-Link"
+                                  href="https://trinat.app/download"
+                                  aria-label={ t('aria.link-download-appStore') }
+                                >
+                                    <i className="fab fa-apple" />
+                                </a>
+                            ) : (
+                                <a
+                                  className="Header-Social-Link"
+                                  href="https://trinat.app/download"
+                                  aria-label={ t('aria.link-download-android') }
+                                >
+                                    <i className="fab fa-android" />
+                                </a>
+                            ) }
                             <button
                               className="Button Button-Language-Switcher Button-Light"
                               onClick={ handleOpenState }
