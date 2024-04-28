@@ -9,12 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get latest code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Use Node.js 12
-        uses: actions/setup-node@v2.4.1
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
         with:
-          node-version: '12'
+          node-version: '20'
 
       - name: 🔥 Install project dependencies
         run: npm install
@@ -30,13 +30,13 @@ jobs:
     needs: [run-tests]
     runs-on: ubuntu-latest
     steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v2
+      - name: Get latest code
+        uses: actions/checkout@v4
 
-      - name: Use Node.js 12
-        uses: actions/setup-node@v2-beta
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
         with:
-          node-version: '12'
+          node-version: '20'
 
       - name: 🔨 Build Project
         run: |
