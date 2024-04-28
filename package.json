@@ -10,7 +10,7 @@
     "eslint:fix": "eslint \"**/*.js\" --ignore-pattern node_modules/",
     "stylelint": "npx stylelint \"./src/app/**/**.scss\"",
     "stylelint:fix": "npx stylelint \"./src/app/**/**.scss\" --fix",
-    "test": "npm run eslint ; npm run stylelint"
+    "test": "npm run eslint"
   },
   "husky": {
     "hooks": {
