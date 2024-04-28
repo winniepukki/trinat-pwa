@@ -14,6 +14,7 @@ import Auth from '@component/Auth';
 import { CURRENT_VERSION, DEVELOPER } from './Footer.config';
 
 import './Footer.style.scss';
+import useClientSideDevice from '@util/Script/useClientSideDevice';
 
 export class Footer extends React.Component {
     static propTypes = {
@@ -23,6 +24,8 @@ export class Footer extends React.Component {
     render() {
         const { t } = this.props;
         const year = new Date().getFullYear();
+
+        const { isAppleDevice } = useClientSideDevice();
 
         return (
             <section className="Footer">
@@ -46,7 +49,7 @@ export class Footer extends React.Component {
                                     <Trans i18nKey="footer-text">
                                         { t('footer-text') }
                                         <a
-                                          href="https://www.instagram.com/winniepukki/"
+                                          href="https://www.linkedin.com/in/winniepukki/"
                                           aria-label={ t('aria.link-dev') }
                                         >
                                             { { DEVELOPER } }
@@ -86,6 +89,18 @@ export class Footer extends React.Component {
                                           aria-label={ t('aria.link-reviews') }
                                         >
                                             { t('reviews') }
+                                        </a>
+                                    </li>
+                                    <li className="List-Light-Item Custom-TTC">
+                                        <a
+                                          href="https://trinat.app/download"
+                                          aria-label={ t(
+                                              isAppleDevice
+                                                  ? 'aria.link-download-appStore'
+                                                  : 'aria.link-download-android'
+                                          ) }
+                                        >
+                                            { t('trinat-app') }
                                         </a>
                                     </li>
                                     <li className="List-Light-Item Custom-TTC">
