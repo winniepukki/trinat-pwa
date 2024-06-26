@@ -11,15 +11,13 @@ import { withTranslation } from 'react-i18next';
 
 import RefType from '@type/Ref';
 
-import Reservation from '@component/Reservation';
-
 import './Menu.style.scss';
 
 export class Menu extends React.Component {
     static propTypes = {
         t: PropTypes.func.isRequired,
-        handleOpenState: PropTypes.func.isRequired,
-        open: PropTypes.bool.isRequired,
+        // handleOpenState: PropTypes.func.isRequired,
+        // open: PropTypes.bool.isRequired,
         defaultLogo: PropTypes.bool.isRequired,
         menu: RefType.isRequired
     }
@@ -27,8 +25,8 @@ export class Menu extends React.Component {
     render() {
         const {
             t,
-            open,
-            handleOpenState,
+            // open,
+            // handleOpenState,
             defaultLogo,
             menu
         } = this.props;
@@ -52,14 +50,14 @@ export class Menu extends React.Component {
                             </a>
                         </div>
                         <div className="Menu-Links col">
-                            <button
+                            { /* <button
                               className="Button Button-Reservation Button-Light"
                               onClick={ handleOpenState }
                               aria-label={ t('aria.open-reservation') }
                             >
                                 { t('reservation') }
                             </button>
-                            <Reservation open={ open } onClose={ handleOpenState } />
+                            <Reservation open={ open } onClose={ handleOpenState } /> */ }
                         </div>
                     </div>
                 </div>
