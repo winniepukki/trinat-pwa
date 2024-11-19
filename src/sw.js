@@ -55,7 +55,8 @@ self.addEventListener('install', async (event) => {
             'assets/img/section/section-delimiter-2.webp',
             'assets/img/section/section-delimiter-3.webp',
             'assets/img/section/section-nuggets.webp',
-            'assets/img/section/section-fish.webp'
+            'assets/img/section/section-fish.webp',
+            'assets/fonts/Tangerine-Regular.woff2'
         ]))
     );
 });
